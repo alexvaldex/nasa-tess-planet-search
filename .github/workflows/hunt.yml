@@ -1,0 +1,47 @@
+name: Hunt for planets
+
+# The autonomous bot. Every 6 hours it screens a fresh batch of TESS stars,
+# commits the results, and refreshes the public dashboard. Free on public repos.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      n:
+        description: "Number of new stars to screen"
+        default: "400"
+      hours:
+        description: "Time budget in hours (max ~5.3)"
+        default: "4.5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hunt
+  cancel-in-progress: false
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Screen stars
+        run: python -m tph hunt --n "${{ github.event.inputs.n || '400' }}" --hours "${{ github.event.inputs.hours || '4.5' }}"
+      - name: Commit results
+        if: always()
+        run: |
+          python -m tph dashboard || true
+          git config user.name "tess-hunter-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results docs models data/*.csv || true
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -m "bot: screened batch $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && break; sleep 10; done

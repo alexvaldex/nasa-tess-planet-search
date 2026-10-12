@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+data/tois.csv
+data/tois_nea.csv
+data/confirmed.csv
+.DS_Store
