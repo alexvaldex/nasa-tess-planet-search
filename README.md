@@ -17,6 +17,24 @@ Every 6 hours a GitHub Actions bot:
 
 **Results dashboard:** see the GitHub Pages site for this repo (`docs/`), or [`results/SUMMARY.md`](results/SUMMARY.md).
 
+## Watch it work: Mission Control
+
+`docs/live.html` (on the GitHub Pages site) shows the bot in action:
+
+- **Replay theater** walks through each star step by step: pick → download → clean → search → fold → check → verdict, with animated plots and a plain-English caption for every step. Built for a booth screen: add `?kiosk=1` for full-screen auto-play of candidates.
+- **All-sky map** of every star searched, colour-coded by verdict, with the Milky Way plane (skipped: too crowded) marked.
+- **Live feed** of the current run, refreshed from `docs/status.json`, which the bot pushes every ~15 minutes while it works. The raw log is linked from the page (GitHub Actions tab).
+
+## How do we know this isn't already-searched data?
+
+Honest answer: the *pixels* are not untouched. NASA's SPOC and MIT's QLP pipelines run automated transit searches on these light curves, and citizen-science projects look too. What matters is whether a **signal** is already known. Three layers handle that:
+
+1. **The bot never repeats itself.** Every star it screens goes into `results/screened.csv` and is excluded from future runs.
+2. **Every detection is cross-matched against every public TESS catalog:** all TESS Objects of Interest (NASA's official candidate list), Community TOIs (independent and citizen-science finds), the NASA Exoplanet Archive's confirmed planets, and the TESS eclipsing binary catalog. Matches are by star ID *and* by sky position (within 2 TESS pixels, catching light leaking from a known neighbour), at the same period or a harmonic.
+3. **Only what survives is called "new".** A new candidate is a signal no public catalog lists. These exist because official pipelines use fixed thresholds, mostly single-sector searches, and limited human vetting time for faint stars, so real shallow or multi-sector signals slip through.
+
+Before claiming a find publicly, also check the star on ExoFOP (linked for every candidate) and search the literature.
+
 ## Example diagnostic
 
 Each candidate gets a one-page vetting sheet: raw and detrended light curve, BLS periodogram, phase-folded transit, odd/even comparison and secondary-eclipse check.

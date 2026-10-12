@@ -1,0 +1,9 @@
+[project]
+name = "tess-planet-search"
+version = "0.1.0"
+description = "Autonomous search for transiting exoplanet candidates in NASA TESS light curves"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

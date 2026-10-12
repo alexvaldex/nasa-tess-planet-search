@@ -38,10 +38,10 @@ def _periodogram(sig, n=420):
             j = np.argmax(np.where(m, s, -np.inf))
             px.append(p[j]); sy.append(s[j])
     return {"period": _r(px, 5), "sde": _r(sy, 2), "peak_period": round(sig.period, 5),
-            "peak_sde": round(sig.sde, 2), "threshold": config.MIN_SDE}
+            "peak_sde": round(sig.sde, 2), "threshold": config.MIN_SDE, "n_periods": int(p.size)}
 
 
-def _fold(t, f, sig, nbins=70, nscatter=500, seed=0):
+def _fold(t, f, sig, nbins=40, nscatter=500, seed=0):
     P, t0, dur = sig.period, sig.t0, sig.duration
     ph = (((t - t0 + 0.5 * P) % P) - 0.5 * P) * 24
     w = max(3 * dur * 24, 4.0)
@@ -133,7 +133,7 @@ def prune_and_index(max_recent=80):
         return []
     entries = []
     for p in STARS_DIR.glob("*.json"):
-        if p.name == "index.json":
+        if p.name in ("index.json", "demo.json"):
             continue
         try:
             d = json.loads(p.read_text())

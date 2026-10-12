@@ -41,6 +41,8 @@ def test_eclipsing_binary_is_flagged():
 def test_analyze_end_to_end(tmp_path, monkeypatch):
     from tph import config
     monkeypatch.setattr(config, "PLOTS", tmp_path)
+    from tph import replay
+    monkeypatch.setattr(replay, "STARS_DIR", tmp_path)
     t, f, e = _planet_lc(seed=2)
     star = {"tic": 123, "rstar": 1.0, "mstar": 1.0, "ra": 10.0, "dec": -40.0, "tmag": 11, "teff": 5700}
     screened, cands = analyze(star, {"t": t, "f": f, "e": e, "sectors": [1], "authors": ["SPOC"]})

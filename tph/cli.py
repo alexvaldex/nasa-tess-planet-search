@@ -64,9 +64,11 @@ def _checkpoint_push(msg):
     if os.environ.get("GITHUB_ACTIONS") != "true":
         return
     import subprocess
+    who = ("-c user.name=tess-hunter-bot "
+           "-c user.email=41898282+github-actions[bot]@users.noreply.github.com")
     cmd = ("git add results docs models data/*.csv 2>/dev/null; "
-           "git diff --cached --quiet || (git commit -qm \"%s\" && "
-           "(git pull -q --rebase -X theirs && git push -q) || true)") % msg
+           f"git diff --cached --quiet || (git {who} commit -qm \"{msg}\" && "
+           f"(git {who} pull -q --rebase -X theirs && git push -q) || true)")
     subprocess.run(cmd, shell=True, cwd=config.ROOT)
 
 
@@ -269,10 +271,13 @@ def cmd_demo(a):
                                    simulate.a_over_rs(period, rstar, mstar), b=0.3)
     flux = flux * (1 - drop)
     star = {"tic": 0, "tmag": 11.0, "teff": 5300, "rstar": rstar, "mstar": mstar,
-            "ra": np.nan, "dec": np.nan}
+            "ra": 84.29, "dec": -35.17}
     lc = {"t": t, "f": flux, "e": np.full_like(t, sigma), "sectors": ["sim1", "sim2"],
           "authors": ["simulated"]}
     screened, cands = analyze(star, lc)
+    from .replay import STARS_DIR
+    if (STARS_DIR / "0.json").exists():
+        (STARS_DIR / "0.json").replace(STARS_DIR / "demo.json")   # sample for Mission Control
     print(f"injected: P={period} d, Rp={rp} Re, depth={k**2*1e6:.0f} ppm, noise={sigma*1e6:.0f} ppm")
     for c in cands:
         print("recovered:", {kk: c[kk] for kk in ("id", "status", "score", "period", "rp_earth", "snr", "flags", "plot")})
