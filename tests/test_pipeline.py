@@ -63,3 +63,12 @@ def test_known_object_matching(monkeypatch):
     assert k.classify(222, 50, 50, 1.0)[0] == "known_eb"
     assert k.classify(333, 10.005, -40.0, 3.0)[0] == "blend_of_known"  # 18" away
     assert k.classify(444, 100, 20, 3.0)[0] == "new"
+
+
+def test_common_period_veto():
+    from tph import postprocess
+    c = pd.DataFrame({"tic": [1, 2, 3, 4], "sectors": ["70 71"] * 4, "period": [8.386, 8.39, 8.383, 3.1],
+                      "status": ["likely_eb", "candidate", "low_score", "strong_candidate"], "flags": ["", "", "", ""]})
+    out, changed = postprocess.veto_common_periods(c)
+    assert set(out.status[:3]) == {"systematic"} and out.status[3] == "strong_candidate"
+    assert changed == {1, 2, 3}

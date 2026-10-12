@@ -10,6 +10,8 @@ from . import config, detrend, model, plots, replay, search, vet
 def classify(score, flags, known_status):
     if known_status != "new":
         return known_status
+    if {"single_event", "common_period"} & set(flags):
+        return "systematic"          # instrument artefact, not astrophysical
     if {"too_large", "secondary", "odd_even"} & set(flags):
         return "likely_eb"
     if not np.isfinite(score):
@@ -78,8 +80,7 @@ def analyze(star, lc, known=None, make_plots=True):
         checks.append(replay.check_record(sig, feats, extras, flags, score, status, note, known))
     screened["n_signals"] = len(cands)
     if cands:
-        order = ["strong_candidate", "candidate", "known_planet", "known_toi", "blend_of_known",
-                 "known_system", "known_eb", "likely_eb", "low_score"]
+        from .postprocess import ORDER as order
         screened["status"] = min((c["status"] for c in cands),
                                  key=lambda s: order.index(s) if s in order else 99)
     try:

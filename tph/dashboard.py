@@ -8,8 +8,7 @@ import pandas as pd
 
 from . import config
 
-ORDER = ["strong_candidate", "candidate", "known_planet", "known_toi", "blend_of_known",
-         "known_system", "known_eb", "likely_eb", "low_score"]
+from .postprocess import ORDER
 
 
 def _load(path):
@@ -36,6 +35,8 @@ def stats():
 
 def build():
     config.DOCS.mkdir(exist_ok=True)
+    from . import postprocess
+    postprocess.apply()
     st = stats()
     c = _load(config.CANDIDATES_CSV)
     if len(c):
@@ -119,7 +120,7 @@ h2{margin:40px 0 12px;font-size:20px}
 .cand img{width:100%;border-radius:8px;background:#fff;cursor:zoom-in}
 .pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:600}
 .s-strong_candidate{background:#3ddc9722;color:var(--good)}.s-candidate{background:#ffc85722;color:var(--warn)}
-.s-likely_eb,.s-low_score{background:#ff5d7322;color:var(--bad)}
+.s-likely_eb,.s-low_score{background:#ff5d7322;color:var(--bad)}.s-systematic{background:#b48cff22;color:#c9a8ff}
 .s-known_planet,.s-known_toi,.s-known_system,.s-known_eb,.s-blend_of_known{background:#5aa9ff22;color:var(--blue)}
 .mono{font-family:"JetBrains Mono",monospace;font-size:13px}
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}

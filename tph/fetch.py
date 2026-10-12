@@ -53,7 +53,17 @@ def get_lightcurve(tic, max_sectors=config.MAX_SECTORS):
         for sec in sectors:
             i = best[sec][1]
             try:
-                lc = sr[i].download(download_dir=tmp, quality_bitmask="default")
+                author = str(tab["author"][i])
+                if author == "QLP":
+                    # QLP's default column is raw SAP flux (full of scattered light);
+                    # KSPSAP is QLP's own systematics-corrected flux.
+                    try:
+                        lc = sr[i].download(download_dir=tmp, quality_bitmask="default",
+                                            flux_column="kspsap_flux")
+                    except Exception:
+                        lc = sr[i].download(download_dir=tmp, quality_bitmask="default")
+                else:
+                    lc = sr[i].download(download_dir=tmp, quality_bitmask="default")
             except Exception as exc:
                 print(f"    TIC {tic} S{sec}: download failed ({exc})")
                 continue

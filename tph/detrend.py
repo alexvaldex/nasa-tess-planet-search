@@ -64,9 +64,26 @@ def clean(t, f, e):
     return t[keep], f[keep], e[keep]
 
 
+def trim_edges(t, f, e, gap_days=0.5, trim_days=0.3):
+    """Drop data right next to gaps and sector edges, where scattered light and
+    thermal settling after data downlinks create fake dips."""
+    o = np.argsort(t)
+    t, f, e = t[o], f[o], e[o]
+    starts = np.r_[t[0], t[1:][np.diff(t) > gap_days]]
+    ends = np.r_[t[:-1][np.diff(t) > gap_days], t[-1]]
+    bad = np.zeros_like(t, dtype=bool)
+    for a in starts:
+        bad |= (t >= a) & (t < a + trim_days)
+    for b in ends:
+        bad |= (t <= b) & (t > b - trim_days)
+    return t[~bad], f[~bad], e[~bad]
+
+
 def prepare(t, f, e, bin_minutes=config.BIN_MINUTES):
     """Full preprocessing chain used by both the hunter and the simulator."""
     t, f, e = clean(np.asarray(t, float), np.asarray(f, float), np.asarray(e, float))
+    if t.size > 100:
+        t, f, e = trim_edges(t, f, e)
     m = np.median(f)
     f, e = f / m, e / m
     cadence = np.median(np.diff(np.sort(t))) * 1440 if t.size > 1 else bin_minutes

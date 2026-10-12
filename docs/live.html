@@ -39,7 +39,7 @@ canvas{display:block;width:100%}
 .feed li:hover{background:#ffffff05}
 .chip{display:inline-block;padding:1px 8px;border-radius:99px;font:600 11px Inter,sans-serif;white-space:nowrap}
 .c-strong_candidate{background:#3ddc9722;color:var(--good)}.c-candidate{background:#ffc85722;color:var(--warn)}
-.c-likely_eb,.c-low_score{background:#ff5d7322;color:var(--bad)}
+.c-likely_eb,.c-low_score{background:#ff5d7322;color:var(--bad)}.c-systematic{background:#b48cff22;color:#c9a8ff}
 .c-known_planet,.c-known_toi,.c-known_system,.c-known_eb,.c-blend_of_known{background:#5aa9ff22;color:var(--blue)}
 .c-no_signal,.c-no_tess_data,.c-too_little_data,.c-download_error,.c-analysis_error,.c-worker_error{background:#ffffff0d;color:var(--mute)}
 .theater{margin-top:14px}
@@ -118,6 +118,7 @@ body.kiosk .wrap{max-width:none}
       <span><i style="background:var(--good)"></i>strong candidate</span>
       <span><i style="background:var(--blue)"></i>already known</span>
       <span><i style="background:var(--bad)"></i>eclipsing binary</span>
+      <span><i style="background:#a88be0"></i>spacecraft artefact</span>
       <span><i style="background:transparent;border:1px solid #ffffff55"></i>Milky Way plane (skipped: too crowded)</span>
     </div>
   </div>
@@ -134,7 +135,7 @@ body.kiosk .wrap{max-width:none}
 
 <script>
 const C={bg:"#070d19",grid:"#16213a",axis:"#2a3756",ink:"#e8edf6",mute:"#8693aa",dim:"#56637d",accent:"#ff7a45",good:"#3ddc97",warn:"#ffc857",bad:"#ff5d73",blue:"#5aa9ff"};
-const STATUS_COL={strong_candidate:C.good,candidate:C.warn,likely_eb:C.bad,known_eb:C.bad,known_planet:C.blue,known_toi:C.blue,known_system:C.blue,blend_of_known:C.blue,low_score:"#8a6d78"};
+const STATUS_COL={strong_candidate:C.good,candidate:C.warn,likely_eb:C.bad,known_eb:C.bad,known_planet:C.blue,known_toi:C.blue,known_system:C.blue,blend_of_known:C.blue,low_score:"#8a6d78",systematic:"#a88be0"};
 const LABEL=s=>(s||"").replace(/_/g," ");
 const $=id=>document.getElementById(id);
 const bust=u=>u+(u.includes("?")?"&":"?")+"t="+Date.now();
@@ -274,6 +275,7 @@ function verdictText(){const v=REC.verdict,g=REC._sig;const sc=g&&g.score!=null?
   known_toi:`<span class="big" style="color:var(--blue)">Already on NASA's candidate list: ${g?.note||""}.</span> Independent recovery, logged as known.`,
   known_eb:`<span class="big" style="color:var(--blue)">Known eclipsing binary.</span> Already catalogued, so not counted as new.`,
   blend_of_known:`<span class="big" style="color:var(--blue)">Light leaking from a known neighbour.</span> ${g?.note||""}`,
+  systematic:`<span class="big" style="color:#c9a8ff">Spacecraft artefact, not a planet.</span> The same period turned up in unrelated stars observed at the same time, or one glitch dominated the signal. That's TESS itself (momentum dumps, scattered light), so it's thrown out.`,
   no_signal:`<span class="big">No planet signal.</span> This star's light stayed steady within the noise. Logged so it is never searched again.`}[v]||`<span class="big">${LABEL(v)}</span>`;
 }
 function runChecks(){const g=REC._sig;if(!g||!g.checks||g.status==="below_threshold"){setTimeout(()=>{if(step===5&&playing)goStep(6)},2500);return}
