@@ -26,5 +26,11 @@
       "planets_scored_above_0.5": 0.9136,
       "false_positives_rejected": 0.6102
     }
+  },
+  "pipeline_real": {
+    "real_planets": 220,
+    "real_false_positives": 118,
+    "planets_kept": 0.7818,
+    "false_positives_rejected": 0.7034
   }
 }

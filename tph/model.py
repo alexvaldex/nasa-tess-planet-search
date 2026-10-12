@@ -143,3 +143,31 @@ def score(feats):
         return float("nan")
     x = np.array([[feats[k] for k in m["features"]]], float)
     return float(m["model"].predict_proba(x)[0, 1])
+
+
+HARD_FLAGS = {"too_large", "secondary", "odd_even", "centroid_shift", "single_event", "outlier_driven"}
+
+
+def pipeline_metrics(df):
+    """Cross-validated accuracy of the *whole* vetting stage (AI score + red-flag rules)
+    on real TESS objects: how many confirmed planets survive, how many known false
+    positives are thrown out."""
+    X, y = df[vet.FEATURES].to_numpy(float), df["label"].to_numpy(int)
+    clf = HistGradientBoostingClassifier(max_iter=400, learning_rate=0.05, max_leaf_nodes=31,
+                                         l2_regularization=1.0, class_weight="balanced", random_state=0)
+    p = cross_val_predict(clf, X, y, cv=StratifiedKFold(5, shuffle=True, random_state=1),
+                          method="predict_proba")[:, 1]
+    real = df["kind"].astype(str).str.startswith("real").to_numpy()
+    if real.sum() < 20:
+        return None
+    r = df[real]
+    kept = []
+    for (_, row), prob in zip(r.iterrows(), p[real]):
+        feats = {k: row[k] for k in vet.FEATURES}
+        extras = {"rp_earth": row.get("rp_earth", 1.0), "n_transits": row.get("n_transits", 5),
+                  "outlier_ratio": row.get("outlier_ratio", 1.0)}
+        kept.append(prob >= config.CANDIDATE_SCORE and not (HARD_FLAGS & set(vet.rule_flags(feats, extras))))
+    kept, pl = np.array(kept), r["label"].to_numpy() == 1
+    return {"real_planets": int(pl.sum()), "real_false_positives": int((~pl).sum()),
+            "planets_kept": round(float(kept[pl].mean()), 4),
+            "false_positives_rejected": round(float(1 - kept[~pl].mean()), 4)}

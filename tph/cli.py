@@ -271,6 +271,7 @@ def cmd_train_real(a):
         import joblib
         m = joblib.load(config.MODEL_PATH); m["metrics"] = metrics; joblib.dump(m, config.MODEL_PATH)
     validation["model"] = metrics
+    validation["pipeline_real"] = model.pipeline_metrics(both)
     config.VALIDATION_JSON.parent.mkdir(exist_ok=True)
     config.VALIDATION_JSON.write_text(json.dumps(validation, indent=2))
     print(json.dumps(validation, indent=2))

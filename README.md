@@ -50,6 +50,12 @@ Two independent checks keep the results honest:
 - **Injection-recovery on simulations.** Thousands of realistic synthetic light curves (limb-darkened planet transits, eclipsing binaries, diluted background binaries, instrumental systematics, red noise, stellar rotation, data gaps) are run through the exact same pipeline. Metrics: [`models/metrics.json`](models/metrics.json).
 - **Blind recovery of real planets.** The `train-real` workflow runs the blind search on confirmed TESS planets and known false positives, reports the fraction of real planets it recovers, and retrains the vetter on real data. Results: [`results/validation.json`](results/validation.json).
 
+### Current numbers (October 2026)
+
+- Blind search recovered **241 of 281** confirmed TESS planets (86%).
+- On real TESS signals that were later proven *not* to be planets (the hardest impostors: they already passed NASA's own first cut), the full vetting stage rejects **70%** while keeping **78%** of real planets (5-fold cross-validated).
+- Vetting includes a centroid test (does the star's image move during the dip?) and a dip-to-dip consistency test, on top of odd/even depth, secondary eclipse, shape, size and duration physics.
+
 ## Important caveat
 
 Everything this finds is a **candidate**, not a confirmed planet. Confirmation needs follow-up: ground-based photometry to rule out nearby eclipsing binaries, spectroscopy for mass, high-resolution imaging. Strong candidates can be submitted to [ExoFOP-TESS](https://exofop.ipac.caltech.edu/tess/) as Community TOIs (CTOIs).
