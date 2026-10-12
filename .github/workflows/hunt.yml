@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: hunt
@@ -45,3 +46,13 @@ jobs:
           if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
           git commit -m "bot: screened batch $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3; do git pull --rebase -X theirs && git push && break; sleep 10; done
+      - name: Queue the next run
+        # GitHub's cron can be late or skipped on busy days, so each run queues the
+        # next one. It steps aside if anything else (like a retrain) is waiting.
+        # To pause Tess: Actions tab -> "Hunt for planets" -> Disable workflow.
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          waiting=$(gh run list -R "$GITHUB_REPOSITORY" --limit 20 --json status --jq '[.[]|select(.status=="queued" or .status=="pending" or .status=="waiting" or .status=="requested")]|length')
+          if [ "$waiting" = "0" ]; then gh workflow run hunt.yml -R "$GITHUB_REPOSITORY" --ref main && echo "next run queued"; else echo "another run is waiting; skipping"; fi
