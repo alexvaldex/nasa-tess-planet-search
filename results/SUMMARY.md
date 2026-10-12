@@ -1,13 +1,13 @@
 # Results summary
 
-_Last updated 2026-10-12 13:35 UTC by the hunting bot._
+_Last updated 2026-10-12 14:48 UTC by the hunting bot._
 
-- Stars analyzed: **440**
-- TESS sectors processed: **758**
-- Light curve points searched: **2,264,029**
-- Signals passing detection: **211**
+- Stars analyzed: **582**
+- TESS sectors processed: **943**
+- Light curve points searched: **2,865,218**
+- Signals passing detection: **289**
 
   - known eb: 5
-  - likely eb: 45
-  - systematic: 152
-  - low score: 9
+  - likely eb: 64
+  - systematic: 209
+  - low score: 11
