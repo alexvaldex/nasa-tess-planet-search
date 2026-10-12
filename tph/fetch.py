@@ -49,6 +49,7 @@ def get_lightcurve(tic, max_sectors=config.MAX_SECTORS):
     sectors = _longest_consecutive_block(best.keys(), max_sectors)
     tmp = tempfile.mkdtemp(prefix="tph_")
     ts, fs, es, used, authors = [], [], [], [], []
+    cxs, cys, secs = [], [], []
     try:
         for sec in sectors:
             i = best[sec][1]
@@ -86,10 +87,18 @@ def get_lightcurve(tic, max_sectors=config.MAX_SECTORS):
             if bad_e.any():
                 e[bad_e] = np.nanstd(f) if np.isfinite(np.nanstd(f)) else 1e-3
             ts.append(t); fs.append(f); es.append(e)
+            cx = cy = np.full_like(t, np.nan)
+            try:   # SPOC / TESS-SPOC files carry flux-weighted centroids; QLP doesn't
+                cx = np.asarray(lc.centroid_col.value, float)
+                cy = np.asarray(lc.centroid_row.value, float)
+            except Exception:
+                pass
+            cxs.append(cx); cys.append(cy); secs.append(np.full_like(t, sec, dtype=float))
             used.append(sec); authors.append(str(tab["author"][i]))
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     if not ts:
         return None
     return {"t": np.concatenate(ts), "f": np.concatenate(fs), "e": np.concatenate(es),
+            "cx": np.concatenate(cxs), "cy": np.concatenate(cys), "sec": np.concatenate(secs),
             "sectors": used, "authors": sorted(set(authors))}

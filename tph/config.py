@@ -27,7 +27,7 @@ DETREND_WINDOW_DAYS = 0.75      # ~3x the longest transit we search for
 
 # --- Transit search ---------------------------------------------------------
 PERIOD_MIN = 0.5
-PERIOD_MAX = 15.0
+PERIOD_MAX = 30.0
 DURATIONS = [0.03, 0.05, 0.08, 0.12, 0.17, 0.25]   # days
 MAX_PERIODS = 200_000
 MAX_SIGNALS_PER_STAR = 2

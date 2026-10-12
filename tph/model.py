@@ -27,6 +27,14 @@ def _simulate_one_inner(seed):
     rng = np.random.default_rng(seed)
     kind = rng.choice(simulate.CLASSES, p=[0.45, 0.2, 0.2, 0.15])
     t, f, e, truth = simulate.simulate(rng, kind)
+    lc = None
+    if rng.random() < 0.6:   # ~60% of real stars have SPOC centroids; the rest are QLP-only
+        noise = 10 ** rng.uniform(-3.5, -2.3)          # pixels
+        cx, cy = rng.normal(0, noise, t.size), rng.normal(0, noise, t.size)
+        if kind == "beb" and "in_transit" in truth:     # the light centre moves toward the binary
+            amp = noise * rng.uniform(0.3, 3.0)
+            cx = cx + amp * truth["in_transit"]; cy = cy + 0.5 * amp * truth["in_transit"]
+        lc = {"t": t, "cx": cx, "cy": cy, "sec": np.floor(t / 27.4)}
     t, f, e, _, _ = detrend.prepare(t, f, e)
     sig = search.bls_search(t, f, e)
     if sig is None or sig.sde < config.MIN_SDE * 0.8:
@@ -34,7 +42,7 @@ def _simulate_one_inner(seed):
     # Planet stellar params as a catalog would give them (10% scatter).
     r = truth["rstar"] * rng.normal(1, 0.1)
     m = truth["mstar"] * rng.normal(1, 0.1)
-    feats, extras = vet.compute_features(t, f, e, sig, r, m)
+    feats, extras = vet.compute_features(t, f, e, sig, r, m, lc=lc)
     recovered = kind == "planet" and abs(sig.period / truth["period"] - 1) < 0.01
     row = dict(feats, label=int(recovered), kind=kind, seed=int(seed),
                true_period=truth.get("period", np.nan), found_period=sig.period,

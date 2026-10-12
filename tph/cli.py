@@ -191,7 +191,7 @@ def _real_one(row):
             if abs(r - 1) < 0.01:
                 keep = s.keep
                 feats, extras = vet.compute_features(t[keep], f[keep], e[keep], s,
-                                                     row["rstar"], row["mstar"])
+                                                     row["rstar"], row["mstar"], lc=lc)
                 out.update(feats, found_period=s.period, sde=s.sde, snr=s.snr,
                            passes=vet.passes_detection(s, extras), **extras)
                 break
@@ -313,9 +313,10 @@ def main():
     ap = argparse.ArgumentParser(prog="tph", description="TESS Planet Hunter")
     sub = ap.add_subparsers(dest="cmd", required=True)
     w = max(2, (os.cpu_count() or 2))
+    hw = 2 * w   # downloads are network-bound, so the hunt can run more workers than cores
     p = sub.add_parser("hunt"); p.add_argument("--n", type=int, default=300)
     p.add_argument("--hours", type=float, default=4.0); p.add_argument("--seed", type=int)
-    p.add_argument("--workers", type=int, default=w)
+    p.add_argument("--workers", type=int, default=hw)
     p.add_argument("--push-minutes", type=float, default=15.0, dest="push_minutes")
     p.set_defaults(fn=cmd_hunt)
     p = sub.add_parser("train-synthetic"); p.add_argument("--n", type=int, default=2400)

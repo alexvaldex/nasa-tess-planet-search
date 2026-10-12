@@ -123,6 +123,7 @@ def simulate(rng, kind):
             if kind == "beb":
                 drop *= 10 ** rng.uniform(-2.3, -0.7)    # diluted by a brighter foreground star
         flux = flux * (1 - drop)
+        truth["in_transit"] = drop > 1e-6
         truth.update(period=P, t0=t0)
     err = np.full_like(t, sigma)
     return t, flux, err, truth

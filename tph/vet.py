@@ -14,7 +14,64 @@ FEATURES = [
     "log_sde", "log_snr", "log_depth_ppm", "log_dur_ratio", "log_q",
     "odd_even_sigma", "secondary_snr", "half_period_snr", "shape",
     "log_n_transits", "single_dominance", "log_rp", "harmonic_dll",
+    "depth_consistency", "centroid_sigma",
 ]
+
+
+def depth_consistency(t, f, e, sig):
+    """Reduced chi-square of individual transit depths around the mean depth.
+    A planet makes the same dip every time (~1); binaries blended with variable
+    stars, and spacecraft glitches, make dips that change from event to event."""
+    P, t0, dur = sig.period, sig.t0, sig.duration
+    n = np.round((t - t0) / P)
+    phase = t - (t0 + n * P)
+    inn = np.abs(phase) < dur / 2
+    depths, errs = [], []
+    for k in np.unique(n[inn]):
+        m = inn & (n == k)
+        if m.sum() >= 3:
+            depths.append(1 - np.mean(f[m]))
+            errs.append(np.median(e[m]) / np.sqrt(m.sum()))
+    if len(depths) < 2:
+        return np.nan
+    d, s = np.array(depths), np.maximum(np.array(errs), 1e-7)
+    w = 1 / s ** 2
+    mean = np.sum(w * d) / np.sum(w)
+    chi2 = np.sum(((d - mean) / s) ** 2) / (len(d) - 1)
+    return float(np.log10(max(chi2, 1e-3)))
+
+
+def centroid_sigma(lc, sig):
+    """Does the star's image shift on the detector during transit? If the light
+    centre moves, the dip is happening on a nearby star, not this one.
+    Uses SPOC centroid columns; returns NaN when they aren't available (QLP)."""
+    if lc is None or "cx" not in lc:
+        return np.nan
+    t, cx, cy, sec = (np.asarray(lc[k], float) for k in ("t", "cx", "cy", "sec"))
+    ok = np.isfinite(cx) & np.isfinite(cy) & np.isfinite(t)
+    if ok.sum() < 200:
+        return np.nan
+    t, cx, cy, sec = t[ok], cx[ok], cy[ok], sec[ok]
+    P, t0, dur = sig.period, sig.t0, sig.duration
+    ph = ((t - t0 + 0.5 * P) % P) - 0.5 * P
+    inn = np.abs(ph) < dur / 2
+    near = (np.abs(ph) > dur) & (np.abs(ph) < 3 * dur)
+    if inn.sum() < 10 or near.sum() < 20:
+        return np.nan
+    dx, dy, vx, vy = [], [], [], []
+    for s_ in np.unique(sec):
+        a, b = inn & (sec == s_), near & (sec == s_)
+        if a.sum() < 5 or b.sum() < 10:
+            continue
+        for arr, out, var in ((cx, dx, vx), (cy, dy, vy)):
+            out.append(np.mean(arr[a]) - np.mean(arr[b]))
+            var.append(np.var(arr[b]) / a.sum() + np.var(arr[b]) / b.sum())
+    if not dx:
+        return np.nan
+    w = lambda v: 1 / np.maximum(np.array(v), 1e-12)
+    mx = np.sum(w(vx) * dx) / np.sum(w(vx)); my = np.sum(w(vy) * dy) / np.sum(w(vy))
+    ex = 1 / np.sqrt(np.sum(w(vx))); ey = 1 / np.sqrt(np.sum(w(vy)))
+    return float(min(np.hypot(mx / ex, my / ey), 50.0))
 
 
 def expected_duration(period, rstar=1.0, mstar=1.0):
@@ -29,7 +86,7 @@ def _sigma(v):
     return float(val / err) if err > 0 and np.isfinite(err) else 0.0
 
 
-def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0):
+def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0, lc=None):
     st = sig.stats
     P, t0, dur = sig.period, sig.t0, sig.duration
     depth = max(sig.depth, 1e-7)
@@ -83,6 +140,8 @@ def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0):
         "single_dominance": dominance,
         "log_rp": np.log10(rp),
         "harmonic_dll": harm,
+        "depth_consistency": depth_consistency(t, f, e, sig),
+        "centroid_sigma": centroid_sigma(lc, sig),
     }
     extras = {"rp_earth": float(rp), "n_transits": n_tr, "depth_ppm": max(robust_depth, 0) * 1e6,
               "box_depth_ppm": depth * 1e6, "duration_hr": dur * 24,
@@ -107,6 +166,8 @@ def rule_flags(feats, extras):
         flags.append("v_shaped")
     if extras.get("outlier_ratio", 1) > 3:
         flags.append("outlier_driven")
+    if np.isfinite(feats.get("centroid_sigma", np.nan)) and feats["centroid_sigma"] > 4:
+        flags.append("centroid_shift")
     return flags
 
 

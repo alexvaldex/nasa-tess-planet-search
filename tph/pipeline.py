@@ -12,7 +12,7 @@ def classify(score, flags, known_status):
         return known_status
     if {"single_event", "common_period", "outlier_driven"} & set(flags):
         return "systematic"          # instrument artefact, not astrophysical
-    if {"too_large", "secondary", "odd_even"} & set(flags):
+    if {"too_large", "secondary", "odd_even", "centroid_shift"} & set(flags):
         return "likely_eb"
     if not np.isfinite(score):
         return "candidate"
@@ -47,7 +47,7 @@ def analyze(star, lc, known=None, make_plots=True):
     for k, sig in enumerate(signals):
         keep = sig.keep if sig.keep is not None else np.ones_like(t, bool)
         feats, extras = vet.compute_features(t[keep], flat[keep], e[keep], sig,
-                                             star.get("rstar", 1.0), star.get("mstar", 1.0))
+                                             star.get("rstar", 1.0), star.get("mstar", 1.0), lc=lc)
         if k == 0:
             screened.update(best_period=round(sig.period, 6), best_sde=round(sig.sde, 2))
         if not vet.passes_detection(sig, extras):

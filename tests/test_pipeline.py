@@ -72,3 +72,19 @@ def test_common_period_veto():
     out, changed = postprocess.veto_common_periods(c)
     assert set(out.status[:3]) == {"systematic"} and out.status[3] == "strong_candidate"
     assert changed == {1, 2, 3}
+
+
+def test_centroid_shift_detected():
+    t, f, e = _planet_lc(seed=3)
+    tt, ff, ee, _, _ = detrend.prepare(t, f, e)
+    s = search.bls_search(tt, ff, ee)
+    rng = np.random.default_rng(0)
+    ph = ((t - s.t0 + 0.5 * s.period) % s.period) - 0.5 * s.period
+    shift = np.where(np.abs(ph) < s.duration / 2, 0.02, 0.0)       # image moves 0.02 px in transit
+    base = {"t": t, "sec": np.ones_like(t)}
+    moved = dict(base, cx=100 + shift + rng.normal(0, 0.003, t.size), cy=50 + rng.normal(0, 0.003, t.size))
+    still = dict(base, cx=100 + rng.normal(0, 0.003, t.size), cy=50 + rng.normal(0, 0.003, t.size))
+    assert vet.centroid_sigma(moved, s) > 10
+    assert vet.centroid_sigma(still, s) < 4
+    feats, _ = vet.compute_features(tt, ff, ee, s)
+    assert np.isfinite(feats["depth_consistency"]) and 10 ** feats["depth_consistency"] < 3

@@ -9,10 +9,10 @@ on:
     inputs:
       n:
         description: "Number of new stars to screen"
-        default: "400"
+        default: "800"
       hours:
         description: "Time budget in hours (max ~5.3)"
-        default: "4.5"
+        default: "5"
 
 permissions:
   contents: write
@@ -34,7 +34,7 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt
       - name: Screen stars
-        run: python -m tph hunt --n "${{ github.event.inputs.n || '400' }}" --hours "${{ github.event.inputs.hours || '4.5' }}"
+        run: python -m tph hunt --n "${{ github.event.inputs.n || '800' }}" --hours "${{ github.event.inputs.hours || '5' }}"
       - name: Commit results
         if: always()
         run: |

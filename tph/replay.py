@@ -85,6 +85,16 @@ def check_record(sig, feats, extras, flags, score, status, note, known):
         ("Flat-bottomed shape", f"shape index {feats['shape']:.2f} (V-shaped below 0.35)",
          feats["shape"] >= 0.35,
          "A planet fully crossing the star gives a U-shaped dip; grazing binaries are V-shaped."),
+        ("Light comes from this star",
+         ("no centroid data for this light curve" if not np.isfinite(feats.get("centroid_sigma", np.nan))
+          else f"image shifts {feats['centroid_sigma']:.1f}σ during the dip (fail above 4σ)"),
+         not (np.isfinite(feats.get("centroid_sigma", np.nan)) and feats["centroid_sigma"] > 4),
+         "If the star's image on the detector moves during the dip, the dimming is on a neighbour."),
+        ("Same dip every time",
+         ("too few dips to compare" if not np.isfinite(feats.get("depth_consistency", np.nan))
+          else f"dip-to-dip variation {10 ** feats['depth_consistency']:.1f}x the noise (fail above 3x)"),
+         not (np.isfinite(feats.get("depth_consistency", np.nan)) and 10 ** feats["depth_consistency"] > 3),
+         "A planet blocks the same amount of light on every orbit."),
         ("Planet-sized", f"{extras['rp_earth']:.1f} Earth radii (max {config.MAX_PLANET_RADIUS_EARTH:g})",
          extras["rp_earth"] <= config.MAX_PLANET_RADIUS_EARTH,
          "Anything much bigger than Jupiter is a star, not a planet."),
