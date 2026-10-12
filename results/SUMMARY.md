@@ -1,6 +1,6 @@
 # Results summary
 
-_Last updated 2026-10-12 19:30 UTC by the hunting bot._
+_Last updated 2026-10-12 21:49 UTC by the hunting bot._
 
 - Stars analyzed: **582**
 - TESS sectors processed: **943**
@@ -12,4 +12,4 @@ _Last updated 2026-10-12 19:30 UTC by the hunting bot._
   - systematic: 209
   - low score: 11
 
-**Validation:** blind search recovered 125 of 144 confirmed TESS planets (87%).
+**Validation:** blind search recovered 241 of 281 confirmed TESS planets (86%).

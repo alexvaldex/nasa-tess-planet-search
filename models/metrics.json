@@ -1,23 +1,23 @@
 {
-  "source": "synthetic+real (205 real TOIs)",
-  "n_train": 2117,
-  "n_planets": 621,
-  "roc_auc": 0.971,
-  "avg_precision": 0.9289,
-  "precision@0.5": 0.8525,
-  "recall@0.5": 0.8937,
-  "f1@0.5": 0.8726,
+  "source": "synthetic+real (338 real TOIs)",
+  "n_train": 3186,
+  "n_planets": 957,
+  "roc_auc": 0.9769,
+  "avg_precision": 0.945,
+  "precision@0.5": 0.8857,
+  "recall@0.5": 0.9154,
+  "f1@0.5": 0.9003,
   "false_positive_rate_by_class": {
-    "eb": 0.0245,
-    "planet": 0.015,
-    "systematic": 0.0072,
-    "beb": 0.0979,
-    "real_false_positive": 0.4607
+    "eb": 0.0216,
+    "planet": 0.0139,
+    "systematic": 0.0075,
+    "beb": 0.0727,
+    "real_false_positive": 0.3898
   },
   "real_only": {
-    "n": 205,
-    "roc_auc": 0.8106,
-    "planets_scored_above_0.5": 0.8534,
-    "false_positives_rejected": 0.5393
+    "n": 338,
+    "roc_auc": 0.8601,
+    "planets_scored_above_0.5": 0.9136,
+    "false_positives_rejected": 0.6102
   }
 }
