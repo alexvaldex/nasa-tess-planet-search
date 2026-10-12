@@ -50,8 +50,22 @@ def build():
     html = TEMPLATE.replace("/*DATA*/", json.dumps({"stats": st, "rows": rows}))
     (config.DOCS / "index.html").write_text(html)
     (config.DOCS / ".nojekyll").write_text("")
+    _sky()
+    from . import replay
+    replay.prune_and_index()
     _summary(st, c)
     return st
+
+
+def _sky():
+    """Every star the bot has looked at, for the all-sky coverage map."""
+    s = _load(config.SCREENED_CSV)
+    out = {"ra": [], "dec": [], "s": [], "tic": []}
+    if len(s) and {"ra", "dec"}.issubset(s.columns):
+        s = s.dropna(subset=["ra", "dec"])
+        out = {"ra": s.ra.round(3).tolist(), "dec": s.dec.round(3).tolist(),
+               "s": s.status.astype(str).tolist(), "tic": s.tic.astype(int).tolist()}
+    (config.DOCS / "sky.json").write_text(json.dumps(out, separators=(",", ":")))
 
 
 def _summary(st, c):
@@ -126,6 +140,7 @@ footer{margin-top:50px;color:var(--mute);font-size:13px}
 <div class="wrap">
 <div class="lbl" style="color:var(--accent)">Autonomous exoplanet search · NASA TESS</div>
 <h1>TESS Planet Hunter</h1>
+<a href="live.html" style="display:inline-flex;align-items:center;gap:8px;margin:4px 0 14px;padding:10px 16px;border-radius:10px;background:var(--accent);color:#120800;font-weight:600;text-decoration:none"><span style="width:8px;height:8px;border-radius:50%;background:#120800;display:inline-block"></span>Watch the bot work: Mission Control</a>
 <p class="sub">A bot that wakes up every few hours, pulls light curves for stars NASA's TESS satellite observed but never examined closely, searches them for the tiny periodic dimming of a transiting planet, and ranks every signal with a machine-learning vetter. Everything below was found automatically.</p>
 <div class="grid" id="kpis"></div>
 

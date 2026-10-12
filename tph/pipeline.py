@@ -4,7 +4,7 @@ import traceback
 
 import numpy as np
 
-from . import config, detrend, model, plots, search, vet
+from . import config, detrend, model, plots, replay, search, vet
 
 
 def classify(score, flags, known_status):
@@ -30,12 +30,14 @@ def analyze(star, lc, known=None, make_plots=True):
     t, flat, e, raw, trend = detrend.prepare(lc["t"], lc["f"], lc["e"])
     screened = {"tic": star["tic"], "date": now, "sectors": " ".join(map(str, lc["sectors"])),
                 "authors": " ".join(lc["authors"]), "n_points": int(t.size),
+                "ra": star.get("ra"), "dec": star.get("dec"), "tmag": star.get("tmag"),
                 "best_period": np.nan, "best_sde": np.nan, "n_signals": 0, "status": "no_signal"}
     if t.size < 500:
         screened["status"] = "too_little_data"
         return screened, []
-    signals = search.iterative_search(t, flat, e)
+    signals, first = search.iterative_search(t, flat, e, return_first=True)
     cands = []
+    checks = []   # per-signal vetting record for the visual replay
     for k, sig in enumerate(signals):
         keep = sig.keep if sig.keep is not None else np.ones_like(t, bool)
         feats, extras = vet.compute_features(t[keep], flat[keep], e[keep], sig,
@@ -43,6 +45,7 @@ def analyze(star, lc, known=None, make_plots=True):
         if k == 0:
             screened.update(best_period=round(sig.period, 6), best_sde=round(sig.sde, 2))
         if not vet.passes_detection(sig, extras):
+            checks.append(replay.check_record(sig, feats, extras, [], float("nan"), "below_threshold", "", None))
             continue
         flags = vet.rule_flags(feats, extras)
         score = model.score(feats)
@@ -72,12 +75,17 @@ def analyze(star, lc, known=None, make_plots=True):
             except Exception:
                 traceback.print_exc()
         cands.append(row)
+        checks.append(replay.check_record(sig, feats, extras, flags, score, status, note, known))
     screened["n_signals"] = len(cands)
     if cands:
         order = ["strong_candidate", "candidate", "known_planet", "known_toi", "blend_of_known",
                  "known_system", "known_eb", "likely_eb", "low_score"]
         screened["status"] = min((c["status"] for c in cands),
                                  key=lambda s: order.index(s) if s in order else 99)
+    try:
+        replay.write(star, lc, t, raw, trend, flat, first, signals, checks, screened)
+    except Exception:
+        traceback.print_exc()
     return screened, cands
 
 

@@ -54,6 +54,8 @@ def test_known_object_matching(monkeypatch):
     monkeypatch.setattr(catalogs, "load_confirmed",
                         lambda: pd.DataFrame(columns=["tic", "name", "period", "ra", "dec"]))
     monkeypatch.setattr(catalogs, "load_tess_ebs", lambda: {222})
+    monkeypatch.setattr(catalogs, "load_ctois",
+                        lambda: pd.DataFrame(columns=["tic", "name", "period", "ra", "dec"]))
     k = catalogs.KnownObjects()
     assert k.classify(111, 10, -40, 6.0)[0] == "known_toi"          # 2x harmonic
     assert k.classify(222, 50, 50, 1.0)[0] == "known_eb"

@@ -81,13 +81,20 @@ def transit_mask(t, period, t0, duration, factor=1.5):
     return np.abs(phase) < factor * duration / 2.0
 
 
-def iterative_search(t, f, e, max_signals=config.MAX_SIGNALS_PER_STAR):
-    """Find the strongest signal, mask it, and search again (catches multi-planet systems)."""
+def iterative_search(t, f, e, max_signals=config.MAX_SIGNALS_PER_STAR, return_first=False):
+    """Find the strongest signal, mask it, and search again (catches multi-planet systems).
+    With return_first=True also returns the first search result even if it is too weak to
+    count as a signal (used to show the periodogram of every star in the replay)."""
     signals = []
+    first = None
     keep = np.ones_like(t, dtype=bool)
     periods = period_grid(t)
-    for _ in range(max_signals):
+    for i in range(max_signals):
         s = bls_search(t[keep], f[keep], e[keep], periods=periods)
+        if i == 0:
+            first = s
+            if s is not None:
+                s.keep = keep.copy()
         if s is None or s.sde < config.MIN_SDE * 0.8:
             break
         s.keep = keep.copy()
@@ -95,4 +102,4 @@ def iterative_search(t, f, e, max_signals=config.MAX_SIGNALS_PER_STAR):
         keep &= ~transit_mask(t, s.period, s.t0, s.duration)
         if keep.sum() < 200:
             break
-    return signals
+    return (signals, first) if return_first else signals

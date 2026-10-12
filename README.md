@@ -1,4 +1,4 @@
-# TESS Planet Hunter
+# NASA TESS Planet Search
 
 **An autonomous bot that searches NASA TESS data for undiscovered exoplanets.**
 

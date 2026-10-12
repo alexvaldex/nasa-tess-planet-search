@@ -44,41 +44,91 @@ def _append(path, rows):
     df.to_csv(path, index=False)
 
 
+def _write_status(state, run_start, n_total, n_done, feed, n_cands, note=""):
+    """Small JSON the Mission Control page polls to show what the bot is doing."""
+    import datetime as dt
+    config.DOCS.mkdir(exist_ok=True)
+    (config.DOCS / "status.json").write_text(json.dumps({
+        "state": state, "note": note,
+        "run_started": dt.datetime.fromtimestamp(run_start, dt.timezone.utc).isoformat(timespec="seconds"),
+        "updated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "targets": n_total, "done": n_done, "candidates_this_run": n_cands,
+        "run_id": os.environ.get("GITHUB_RUN_ID"),
+        "repo": os.environ.get("GITHUB_REPOSITORY"),
+        "feed": feed[-25:],
+    }, indent=1))
+
+
+def _checkpoint_push(msg):
+    """Inside GitHub Actions, push partial results so the public site updates mid-run."""
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    import subprocess
+    cmd = ("git add results docs models data/*.csv 2>/dev/null; "
+           "git diff --cached --quiet || (git commit -qm \"%s\" && "
+           "(git pull -q --rebase -X theirs && git push -q) || true)") % msg
+    subprocess.run(cmd, shell=True, cwd=config.ROOT)
+
+
 def cmd_hunt(a):
     from .catalogs import KnownObjects, select_targets
+    from .dashboard import build
     start = time.time()
     rng = np.random.default_rng(a.seed if a.seed is not None else int(time.time()))
+    _write_status("starting", start, 0, 0, [], 0, "loading catalogs and choosing stars")
     known = KnownObjects()
     from . import model
     m = model.load()   # rebuild once here (if needed) so workers just read the file
     print(f"[hunt] vetter: {m['metrics'].get('source') if m else 'none'}")
     done = set(pd.read_csv(config.SCREENED_CSV)["tic"]) if config.SCREENED_CSV.exists() else set()
-    print(f"[hunt] {len(done)} stars already screened; selecting {a.n} new targets")
+    print(f"[hunt] {len(done)} stars already screened (never repeated); selecting {a.n} new targets")
     targets = select_targets(rng, a.n, exclude=done)
     print(f"[hunt] {len(targets)} targets selected in {time.time() - start:.0f}s")
+    _write_status("running", start, len(targets), 0, [], 0)
+    _checkpoint_push("bot: run started")
     budget = a.hours * 3600
-    buf_s, buf_c, n_done = [], [], 0
+    buf_s, buf_c, n_done, n_cands, feed = [], [], 0, 0, []
+    last_push = time.time()
     with ProcessPoolExecutor(a.workers, initializer=_init_worker, initargs=(known,)) as ex:
         futs = {ex.submit(_hunt_one, s): s for s in targets}
         for fut in as_completed(futs):
+            star = futs[fut]
             try:
                 screened, cands = fut.result()
             except Exception as exc:
-                screened, cands = {"tic": futs[fut]["tic"], "status": "worker_error",
+                screened, cands = {"tic": star["tic"], "status": "worker_error",
                                    "note": str(exc)[:120]}, []
             buf_s.append(screened); buf_c.extend(cands); n_done += 1
+            n_cands += sum(c["status"] in ("strong_candidate", "candidate") for c in cands)
+            feed.append({"tic": int(star["tic"]), "status": screened.get("status"),
+                         "ra": star.get("ra"), "dec": star.get("dec"), "tmag": star.get("tmag"),
+                         "sectors": screened.get("sectors", ""), "period": screened.get("best_period"),
+                         "sde": screened.get("best_sde"), "seconds": screened.get("seconds")})
             tag = ", ".join(f"{c['id']}:{c['status']}" for c in cands)
             print(f"  [{n_done}/{len(targets)}] TIC {screened['tic']} {screened['status']} {tag}", flush=True)
             if len(buf_s) >= 10:
                 _append(config.SCREENED_CSV, buf_s); _append(config.CANDIDATES_CSV, buf_c)
                 buf_s, buf_c = [], []
+                _write_status("running", start, len(targets), n_done, feed, n_cands)
+            if time.time() - last_push > a.push_minutes * 60:
+                _append(config.SCREENED_CSV, buf_s); _append(config.CANDIDATES_CSV, buf_c)
+                buf_s, buf_c = [], []
+                build()
+                _write_status("running", start, len(targets), n_done, feed, n_cands)
+                _checkpoint_push(f"bot: progress {n_done}/{len(targets)}")
+                last_push = time.time()
             if time.time() - start > budget:
                 print("[hunt] time budget reached, stopping early")
                 for f in futs:
                     f.cancel()
                 break
     _append(config.SCREENED_CSV, buf_s); _append(config.CANDIDATES_CSV, buf_c)
-    from .dashboard import build
+    _append(config.RESULTS / "runs.csv", [{
+        "run_id": os.environ.get("GITHUB_RUN_ID", "local"),
+        "started_utc": time.strftime("%Y-%m-%d %H:%M", time.gmtime(start)),
+        "minutes": round((time.time() - start) / 60, 1), "stars": n_done,
+        "new_candidates": n_cands}])
+    _write_status("idle", start, len(targets), n_done, feed, n_cands, "next run in under 6 hours")
     build()
     print(f"[hunt] finished {n_done} stars in {(time.time() - start) / 60:.1f} min")
 
@@ -103,7 +153,7 @@ def _real_one(row):
         if lc is None:
             return None
         t, f, e, _, _ = detrend.prepare(lc["t"], lc["f"], lc["e"])
-        sigs = search.iterative_search(t, f, e)
+        sigs = search.iterative_search(t, f, e)  # list of signals
         out = {"tic": int(row["tic"]), "toi": row["toi"], "disp": row["disp"],
                "cat_period": row["period"], "recovered": False}
         for s in sigs:
@@ -234,7 +284,9 @@ def main():
     w = max(2, (os.cpu_count() or 2))
     p = sub.add_parser("hunt"); p.add_argument("--n", type=int, default=300)
     p.add_argument("--hours", type=float, default=4.0); p.add_argument("--seed", type=int)
-    p.add_argument("--workers", type=int, default=w); p.set_defaults(fn=cmd_hunt)
+    p.add_argument("--workers", type=int, default=w)
+    p.add_argument("--push-minutes", type=float, default=15.0, dest="push_minutes")
+    p.set_defaults(fn=cmd_hunt)
     p = sub.add_parser("train-synthetic"); p.add_argument("--n", type=int, default=2400)
     p.add_argument("--workers", type=int, default=w); p.set_defaults(fn=cmd_train_synthetic)
     p = sub.add_parser("train-real"); p.add_argument("--n", type=int, default=300)

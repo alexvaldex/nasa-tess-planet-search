@@ -43,6 +43,7 @@ footer{margin-top:50px;color:var(--mute);font-size:13px}
 <div class="wrap">
 <div class="lbl" style="color:var(--accent)">Autonomous exoplanet search · NASA TESS</div>
 <h1>TESS Planet Hunter</h1>
+<a href="live.html" style="display:inline-flex;align-items:center;gap:8px;margin:4px 0 14px;padding:10px 16px;border-radius:10px;background:var(--accent);color:#120800;font-weight:600;text-decoration:none"><span style="width:8px;height:8px;border-radius:50%;background:#120800;display:inline-block"></span>Watch the bot work: Mission Control</a>
 <p class="sub">A bot that wakes up every few hours, pulls light curves for stars NASA's TESS satellite observed but never examined closely, searches them for the tiny periodic dimming of a transiting planet, and ranks every signal with a machine-learning vetter. Everything below was found automatically.</p>
 <div class="grid" id="kpis"></div>
 
@@ -72,7 +73,7 @@ footer{margin-top:50px;color:var(--mute);font-size:13px}
 </div>
 <div class="modal" id="modal" onclick="this.style.display='none'"><img id="mimg" alt="Diagnostic plot"></div>
 <script>
-const D={"stats": {"updated": "2026-10-12 07:09 UTC", "stars_queried": 5, "stars_analyzed": 5, "sectors_analyzed": 10, "light_curve_points": 35000, "signals": 2, "counts": {"strong_candidate": 1, "likely_eb": 1}, "validation": {}, "model": {"source": "synthetic", "n_train": 97, "n_planets": 21, "roc_auc": 0.9298, "avg_precision": 0.8386, "precision@0.5": 0.72, "recall@0.5": 0.8571, "f1@0.5": 0.7826, "false_positive_rate_by_class": {"eb": 0.0, "planet": 0.1765, "systematic": 0.1429, "beb": 0.087}}}, "rows": [{"id": "TIC0.01", "tic": 0, "status": "strong_candidate", "score": 0.99, "period": 4.3704, "depth_ppm": 706, "rp_earth": 2.46, "duration_hr": 1.9, "sde": 25.3, "snr": 9.4, "n_transits": 13, "flags": null, "note": null, "tmag": 11, "plot": "TIC0.01.png"}, {"id": "TIC5.01", "tic": 5, "status": "likely_eb", "score": 0.01, "period": 1.23, "depth_ppm": 30000, "rp_earth": 30.0, "duration_hr": 2.0, "sde": 40.0, "snr": 200.0, "n_transits": 20, "flags": "too_large secondary", "note": null, "tmag": 10, "plot": null}]};
+const D={"stats": {"updated": "2026-10-12 12:08 UTC", "stars_queried": 0, "stars_analyzed": 0, "sectors_analyzed": 0, "light_curve_points": 0, "signals": 0, "counts": {}, "validation": {}, "model": {"source": "synthetic", "n_train": 669, "n_planets": 167, "roc_auc": 0.9715, "avg_precision": 0.9402, "precision@0.5": 0.8963, "recall@0.5": 0.8802, "f1@0.5": 0.8882, "false_positive_rate_by_class": {"eb": 0.0338, "planet": 0.0088, "systematic": 0.0098, "beb": 0.0725}}}, "rows": []};
 const S=D.stats, R=D.rows;
 const fmt=n=>n==null?"–":Number(n).toLocaleString();
 const kp=[["Stars analyzed",S.stars_analyzed],["TESS sectors",S.sectors_analyzed],["Data points searched",S.light_curve_points],["Signals detected",S.signals],["New candidates",(S.counts.strong_candidate||0)+(S.counts.candidate||0)],["Known planets recovered",(S.counts.known_planet||0)+(S.counts.known_toi||0)]];

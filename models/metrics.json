@@ -1,16 +1,16 @@
 {
   "source": "synthetic",
-  "n_train": 97,
-  "n_planets": 21,
-  "roc_auc": 0.9298,
-  "avg_precision": 0.8386,
-  "precision@0.5": 0.72,
-  "recall@0.5": 0.8571,
-  "f1@0.5": 0.7826,
+  "n_train": 669,
+  "n_planets": 167,
+  "roc_auc": 0.9715,
+  "avg_precision": 0.9402,
+  "precision@0.5": 0.8963,
+  "recall@0.5": 0.8802,
+  "f1@0.5": 0.8882,
   "false_positive_rate_by_class": {
-    "eb": 0.0,
-    "planet": 0.1765,
-    "systematic": 0.1429,
-    "beb": 0.087
+    "eb": 0.0338,
+    "planet": 0.0088,
+    "systematic": 0.0098,
+    "beb": 0.0725
   }
 }
