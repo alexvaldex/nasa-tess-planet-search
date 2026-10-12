@@ -10,7 +10,7 @@ from . import config, detrend, model, plots, replay, search, vet
 def classify(score, flags, known_status):
     if known_status != "new":
         return known_status
-    if {"single_event", "common_period"} & set(flags):
+    if {"single_event", "common_period", "outlier_driven"} & set(flags):
         return "systematic"          # instrument artefact, not astrophysical
     if {"too_large", "secondary", "odd_even"} & set(flags):
         return "likely_eb"

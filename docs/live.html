@@ -139,7 +139,7 @@ const STATUS_COL={strong_candidate:C.good,candidate:C.warn,likely_eb:C.bad,known
 const LABEL=s=>(s||"").replace(/_/g," ");
 const $=id=>document.getElementById(id);
 const bust=u=>u+(u.includes("?")?"&":"?")+"t="+Date.now();
-async function getJSON(u){try{const r=await fetch(bust(u));if(!r.ok)return null;return await r.json()}catch(e){return null}}
+async function getJSON(u){try{const r=await fetch(bust(u));if(!r.ok)return null;const t=await r.text();return JSON.parse(t.replace(/\bNaN\b|-?Infinity\b/g,"null"))}catch(e){return null}}
 const params=new URLSearchParams(location.search);
 if(params.get("kiosk"))document.body.classList.add("kiosk");
 $("kioskBtn").onclick=()=>{location.search="?kiosk=1";};

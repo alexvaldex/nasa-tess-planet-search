@@ -95,6 +95,18 @@ def prepare(t, f, e, bin_minutes=config.BIN_MINUTES):
     if cadence < bin_minutes * 0.9:
         t, f, e = bin_lightcurve(t, f, e, bin_minutes)
     t, flat, ef, trend = flatten(t, f, e)
+    # Remove isolated deep single points (cosmic rays, bad pixels): a real transit
+    # spans several consecutive points, so a lone point far below its neighbours is not one.
+    r = flat - 1.0
+    sig = robust_std(r)
+    if np.isfinite(sig) and sig > 0 and r.size > 3:
+        lo = r < -6 * sig
+        nb = np.r_[False, r[:-2] < -3 * sig, False] | np.r_[False, r[2:] < -3 * sig, False]
+        lone = lo & ~nb
+        lone |= flat < 0.5          # no planet removes half a star's light
+        if lone.any():
+            k = ~lone
+            t, flat, ef, trend = t[k], flat[k], ef[k], trend[k]
     # Fix flux uncertainties to the empirical scatter (pipeline errors are often wrong).
     scatter = robust_std(flat - 1.0)
     if np.isfinite(scatter) and scatter > 0:

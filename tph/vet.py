@@ -62,7 +62,11 @@ def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0):
     total_ll = float(np.sum(pos)) if pos.size else 1.0
     harm = float(np.sign(hdll) * np.log10(1 + abs(hdll) / max(total_ll, 1e-9)))
 
-    rp = np.sqrt(depth) * rstar * R_SUN_EARTH
+    # Robust depth: median of in-transit points. If the box-average depth is far deeper,
+    # a handful of bad points (not a real transit) are creating the signal.
+    in_tr = np.abs(phase) < dur / 2
+    robust_depth = float(1 - np.median(f[in_tr])) if in_tr.sum() >= 5 else depth
+    rp = np.sqrt(max(robust_depth, 1e-7)) * rstar * R_SUN_EARTH
     dur_ratio = dur / max(expected_duration(P, rstar, mstar), 1e-4)
 
     feats = {
@@ -80,8 +84,9 @@ def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0):
         "log_rp": np.log10(rp),
         "harmonic_dll": harm,
     }
-    extras = {"rp_earth": float(rp), "n_transits": n_tr, "depth_ppm": depth * 1e6,
-              "duration_hr": dur * 24}
+    extras = {"rp_earth": float(rp), "n_transits": n_tr, "depth_ppm": max(robust_depth, 0) * 1e6,
+              "box_depth_ppm": depth * 1e6, "duration_hr": dur * 24,
+              "outlier_ratio": float(depth / max(robust_depth, sig.depth_err, 1e-7))}
     return feats, extras
 
 
@@ -100,6 +105,8 @@ def rule_flags(feats, extras):
         flags.append("single_event")
     if feats["shape"] < 0.35:
         flags.append("v_shaped")
+    if extras.get("outlier_ratio", 1) > 3:
+        flags.append("outlier_driven")
     return flags
 
 

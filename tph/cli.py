@@ -55,7 +55,16 @@ def _write_status(state, run_start, n_total, n_done, feed, n_cands, note=""):
     """Small JSON the Mission Control page polls to show what the bot is doing."""
     import datetime as dt
     config.DOCS.mkdir(exist_ok=True)
-    (config.DOCS / "status.json").write_text(json.dumps({
+
+    def clean(v):   # browsers reject NaN in JSON
+        if isinstance(v, float) and not np.isfinite(v):
+            return None
+        if isinstance(v, dict):
+            return {k: clean(x) for k, x in v.items()}
+        if isinstance(v, list):
+            return [clean(x) for x in v]
+        return v
+    (config.DOCS / "status.json").write_text(json.dumps(clean({
         "state": state, "note": note,
         "run_started": dt.datetime.fromtimestamp(run_start, dt.timezone.utc).isoformat(timespec="seconds"),
         "updated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
@@ -63,7 +72,7 @@ def _write_status(state, run_start, n_total, n_done, feed, n_cands, note=""):
         "run_id": os.environ.get("GITHUB_RUN_ID"),
         "repo": os.environ.get("GITHUB_REPOSITORY"),
         "feed": feed[-25:],
-    }, indent=1))
+    }), indent=1))
 
 
 def _checkpoint_push(msg):
