@@ -1,4 +1,4 @@
-"""Builds the public results site (docs/index.html, served by GitHub Pages) and a
+"""Builds the data behind the public site (docs/data.json, docs/results.html) and a
 markdown summary (results/SUMMARY.md) from the accumulated CSVs."""
 import datetime as dt
 import json
@@ -48,8 +48,12 @@ def build():
         rows = json.loads(c[[k for k in cols if k in c]].replace({np.nan: None}).to_json(orient="records"))
     else:
         rows = []
-    html = TEMPLATE.replace("/*DATA*/", json.dumps({"stats": st, "rows": rows}))
-    (config.DOCS / "index.html").write_text(html)
+    payload = {"stats": st, "rows": rows}
+    html = TEMPLATE.replace("/*DATA*/", json.dumps(payload))
+    # index.html is the hand-built public site (it reads data.json);
+    # results.html is the full sortable table of every signal.
+    (config.DOCS / "results.html").write_text(html)
+    (config.DOCS / "data.json").write_text(json.dumps(payload, separators=(",", ":")))
     (config.DOCS / ".nojekyll").write_text("")
     _sky()
     from . import replay
@@ -141,7 +145,7 @@ footer{margin-top:50px;color:var(--mute);font-size:13px}
 <div class="wrap">
 <div class="lbl" style="color:var(--accent)">Autonomous exoplanet search · NASA TESS</div>
 <h1>TESS Planet Hunter</h1>
-<a href="live.html" style="display:inline-flex;align-items:center;gap:8px;margin:4px 0 14px;padding:10px 16px;border-radius:10px;background:var(--accent);color:#120800;font-weight:600;text-decoration:none"><span style="width:8px;height:8px;border-radius:50%;background:#120800;display:inline-block"></span>Watch the bot work: Mission Control</a>
+<a href="index.html" style="display:inline-block;margin:4px 0 14px;color:var(--blue)">Back to Tess</a>
 <p class="sub">A bot that wakes up every few hours, pulls light curves for stars NASA's TESS satellite observed but never examined closely, searches them for the tiny periodic dimming of a transiting planet, and ranks every signal with a machine-learning vetter. Everything below was found automatically.</p>
 <div class="grid" id="kpis"></div>
 

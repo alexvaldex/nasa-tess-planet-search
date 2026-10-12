@@ -17,9 +17,11 @@ Every 6 hours a GitHub Actions bot:
 
 **Results dashboard:** see the GitHub Pages site for this repo (`docs/`), or [`results/SUMMARY.md`](results/SUMMARY.md).
 
-## Watch it work: Mission Control
+## The website
 
-`docs/live.html` (on the GitHub Pages site) shows the bot in action:
+`docs/index.html` is Tess's public site (GitHub Pages). Tess, a line-drawn version of the TESS satellite, sweeps a sky dome pointing at every real star the bot has checked and says its verdict; visitors can drag the sky and click any star to ask about it. Below that: a live diary of the current run, an animated replay of how each star is judged, an all-sky coverage map, finds, and an FAQ. `docs/results.html` is the full table of every signal. The bot regenerates `data.json`, `sky.json`, `status.json` and `stars/*.json`; the page itself is hand-built and never overwritten.
+
+The replay section works as Mission Control:
 
 - **Replay theater** walks through each star step by step: pick → download → clean → search → fold → check → verdict, with animated plots and a plain-English caption for every step. Built for a booth screen: add `?kiosk=1` for full-screen auto-play of candidates.
 - **All-sky map** of every star searched, colour-coded by verdict, with the Milky Way plane (skipped: too crowded) marked.

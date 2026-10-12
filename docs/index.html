@@ -3,102 +3,570 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TESS Planet Hunter</title>
+<title>Tess, a planet-hunting bot</title>
+<meta name="description" content="Tess is an autonomous bot that searches NASA TESS satellite data for exoplanets nobody has spotted yet. Built by Alejandro Valdez at UCF.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#070b14;--panel:#0e1524;--line:#1d2840;--ink:#e8edf6;--mute:#8b97ad;--accent:#ff7a45;--good:#3ddc97;--warn:#ffc857;--bad:#ff5d73;--blue:#5aa9ff}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
-body:before{content:"";position:fixed;inset:0;background:radial-gradient(1px 1px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 80%,#fff6,transparent),radial-gradient(1px 1px at 40% 70%,#fff5,transparent),radial-gradient(1.5px 1.5px at 85% 20%,#fff7,transparent),radial-gradient(1px 1px at 10% 90%,#fff5,transparent);pointer-events:none;z-index:-1}
-.wrap{max-width:1180px;margin:0 auto;padding:40px 16px 80px}
-h1{font-size:clamp(28px,5vw,44px);margin:0 0 6px;letter-spacing:-.02em}
-.sub{color:var(--mute);max-width:760px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:28px 0}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
-.big{font-size:28px;font-weight:700;font-family:"JetBrains Mono",monospace}
-.lbl{color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
-h2{margin:40px 0 12px;font-size:20px}
-.cands{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
-.cand img{width:100%;border-radius:8px;background:#fff;cursor:zoom-in}
-.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:600}
-.s-strong_candidate{background:#3ddc9722;color:var(--good)}.s-candidate{background:#ffc85722;color:var(--warn)}
-.s-likely_eb,.s-low_score{background:#ff5d7322;color:var(--bad)}.s-systematic{background:#b48cff22;color:#c9a8ff}
-.s-known_planet,.s-known_toi,.s-known_system,.s-known_eb,.s-blend_of_known{background:#5aa9ff22;color:var(--blue)}
-.mono{font-family:"JetBrains Mono",monospace;font-size:13px}
-.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
-table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-th{color:var(--mute);font-weight:500;cursor:pointer;position:sticky;top:0;background:var(--panel)}
-tr:hover td{background:#ffffff06}
-.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-select,input{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 10px;font:inherit}
-a{color:var(--blue)}
-.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.how .n{color:var(--accent);font-weight:700;font-family:"JetBrains Mono",monospace}
-.modal{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:16px;z-index:9}
-.modal img{max-width:100%;max-height:92vh;border-radius:8px;background:#fff}
-footer{margin-top:50px;color:var(--mute);font-size:13px}
+:root{
+  --cyan:#1d4096;      /* cyanotype paper */
+  --deep:#122b6b;      /* inside the dome */
+  --paper:#eef3ff;     /* white line-work */
+  --line:#8ea5dc;      /* faded print */
+  --rule:#3557a8;      /* grid on the paper */
+  --hi:#ffd84a;        /* Tess's beam, candidates */
+  --no:#ff8f7e;        /* rejected */
+  --known:#9fe0ff;     /* already catalogued */
+  --sys:#c9b3ff;       /* spacecraft artefact */
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Newsreader",Georgia,serif;
+  --hand:"Kalam","Comic Sans MS",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--cyan);color:var(--paper);font:400 19px/1.62 var(--body);
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+  background-size:48px 48px;background-position:-1px -1px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 30% 10%,#ffffff10,transparent 60%),radial-gradient(ellipse at 80% 90%,#00000030,transparent 60%)}
+a{color:var(--paper);text-decoration-color:var(--line);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--hi)}
+:focus-visible{outline:2px solid var(--hi);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(34px,5vw,58px);font-variation-settings:"wdth" 80;max-width:16ch}
+h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
+p{margin:0 0 1em;max-width:60ch}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+main{overflow-x:clip}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:#1d4096ee;backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:62px}
+.mark{font:800 26px/1 var(--display);font-variation-settings:"wdth" 75;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark svg{width:30px;height:30px}
+.nav{display:flex;gap:22px;font:500 16px var(--display)}
+.nav a{text-decoration:none;opacity:.85}.nav a:hover{opacity:1}
+.sp{flex:1}
+.pulse{display:flex;align-items:center;gap:9px;font:500 15px var(--display);white-space:nowrap}
+.pulse i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.pulse.on i{background:var(--hi);animation:beat 1.4s infinite}
+@keyframes beat{0%{box-shadow:0 0 0 0 #ffd84a99}80%{box-shadow:0 0 0 12px #ffd84a00}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center;padding:64px 0 40px}
+.hero h1{font-size:clamp(44px,5.6vw,82px);font-variation-settings:"wdth" 76;font-weight:750;max-width:12ch}
+.hero .lede{font-size:22px;margin-top:26px;max-width:34ch}
+.hero .lede b{font-weight:600;color:#fff}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{font:600 17px var(--display);padding:13px 20px;border-radius:999px;border:1.5px solid var(--paper);color:var(--paper);background:transparent;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px}
+.btn.fill{background:var(--hi);border-color:var(--hi);color:#1a1400}
+.btn:hover{transform:translateY(-1px)}
+.stage{position:relative;aspect-ratio:1/1;max-height:720px;width:100%;margin-left:auto}
+#dome{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
+#dome.dragging{cursor:grabbing}
+#tess{position:absolute;width:27%;right:-2%;bottom:1%;cursor:pointer;filter:drop-shadow(0 8px 16px #0a1a4a66)}
+#tess .bob{animation:bob 4s ease-in-out infinite;transform-origin:50% 50%}
+@keyframes bob{50%{transform:translateY(-6px)}}
+#tess .lens{transition:fill .3s}
+#tess.scan .lens{fill:var(--hi)}
+#tess .wingL{transform-origin:46px 92px;transition:transform .4s}
+#tess .wingR{transform-origin:114px 92px;transition:transform .4s}
+#tess.wave .wingL{transform:rotate(-24deg)}#tess.wave .wingR{transform:rotate(24deg)}
+#tess .cams{transition:transform .9s cubic-bezier(.5,0,.2,1);transform-origin:80px 70px}
+#tess .blink{animation:blink 5s infinite;transform-origin:80px 52px}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@media (prefers-reduced-motion:reduce){#tess .bob,#tess .blink{animation:none}}
+.bubble{position:absolute;right:20%;bottom:25%;max-width:300px;background:var(--paper);color:#13265c;font:400 19px/1.3 var(--hand);padding:12px 16px 13px;border-radius:18px 18px 4px 18px;box-shadow:4px 4px 0 #0e2257;transition:opacity .25s}
+.bubble small{display:block;font:500 12px var(--display);color:#4a62a8;margin-bottom:2px}
+.hint{position:absolute;left:2%;bottom:0;font:400 15px var(--hand);color:var(--line);max-width:200px;line-height:1.25}
+
+/* sections */
+section.block{padding:96px 0;border-top:1px solid var(--rule)}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px}
+.split > div:first-child p{color:#d5def7}
+.kicker{font:400 20px var(--hand);color:var(--hi);margin-bottom:10px;display:block}
+
+/* diary */
+.diary{list-style:none;margin:0;padding:0;border-left:1.5px dashed var(--line)}
+.diary li{position:relative;padding:12px 0 12px 26px;font-size:18px}
+.diary li::before{content:"";position:absolute;left:-6px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--cyan);border:1.5px solid var(--line)}
+.diary li.hit::before{background:var(--hi);border-color:var(--hi)}
+.diary li.no::before{border-color:var(--no)}
+.diary .who{font:600 16px var(--display);margin-right:8px;font-variant-numeric:tabular-nums}
+.diary .say{font-family:var(--hand);font-size:19px}
+.progress{height:4px;background:var(--rule);border-radius:4px;overflow:hidden;margin:18px 0 6px;max-width:420px}
+.progress b{display:block;height:100%;width:0;background:var(--hi);transition:width .8s}
+.meta{font:400 16px var(--display);color:var(--line)}
+
+/* replay */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;margin:0 0 18px;padding:0;border:1.5px solid var(--paper);border-radius:14px;overflow:hidden}
+.steps li{padding:12px 12px 13px;font:500 15px/1.2 var(--display);cursor:pointer;border-right:1px solid var(--rule);color:var(--line);transition:background .25s,color .25s}
+.steps li:last-child{border-right:0}
+.steps li span{display:block;font:400 13px var(--display);opacity:.8;margin-bottom:3px;font-variant-numeric:tabular-nums}
+.steps li.done{color:var(--paper)}
+.steps li.cur{background:var(--paper);color:#13265c}
+.theatre{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(260px,1fr);gap:28px}
+#stagec{width:100%;aspect-ratio:16/9.2;background:var(--deep);border-radius:14px;border:1.5px solid var(--paper);display:block}
+.cap{margin-top:16px;font-size:20px;min-height:3.4em;max-width:60ch}
+.cap b{font-family:var(--display);font-weight:600}
+.facts{margin:0;font:400 16px var(--display)}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule)}
+.facts dt{color:var(--line)}.facts dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.checks{list-style:none;margin:16px 0 0;padding:0}
+.checks li{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule);font:400 15px/1.35 var(--display);opacity:0;transition:opacity .35s}
+.checks li.show{opacity:1}
+.checks .ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;border:1.5px solid}
+.checks .ok{color:var(--hi);border-color:var(--hi)}.checks .bad{color:var(--no);border-color:var(--no)}
+.checks b{font-weight:600;display:block}.checks small{color:var(--line);font-size:14px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px}
+.controls .btn{padding:9px 16px;font-size:15px}
+select{font:500 15px var(--display);background:var(--deep);color:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:9px 14px;max-width:100%}
+.chip{display:inline-block;padding:1px 10px;border-radius:999px;font:600 13px var(--display);border:1.5px solid currentColor;white-space:nowrap}
+.v-strong_candidate,.v-candidate{color:var(--hi)}
+.v-likely_eb,.v-low_score{color:var(--no)}
+.v-systematic{color:var(--sys)}
+.v-known_planet,.v-known_toi,.v-known_eb,.v-known_system,.v-blend_of_known{color:var(--known)}
+.v-no_signal,.v-no_tess_data,.v-too_little_data,.v-analysis_error,.v-download_error,.v-worker_error{color:var(--line)}
+
+/* sky map */
+#skymap{width:100%;aspect-ratio:2/1;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;font:400 15px var(--display);color:#d5def7;margin-top:14px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+
+/* finds */
+.finds{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;margin-top:10px}
+.find{border:1.5px solid var(--paper);border-radius:16px;padding:14px;background:#1a3a8a}
+.find img{width:100%;border-radius:8px;background:#fff;display:block}
+.find h3{font-size:20px;margin:12px 0 4px}
+.find p{font:400 15px var(--display);color:#d5def7;margin:0}
+.empty{font-size:19px;max-width:56ch;border:1.5px dashed var(--line);border-radius:16px;padding:22px 24px}
+.numbers{font-size:22px;max-width:44ch}
+.numbers b{font-family:var(--display);font-weight:650;color:#fff;font-variant-numeric:tabular-nums}
+
+/* faq */
+details{border-bottom:1px solid var(--rule);padding:18px 0}
+summary{font:600 22px/1.25 var(--display);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:400;color:var(--hi)}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:#d5def7}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:start}
+.sig{font:400 30px var(--hand);color:var(--hi);margin-top:6px}
+.links{display:flex;flex-direction:column;gap:12px;font:500 18px var(--display)}
+.links a{display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:12px 0;text-decoration:none}
+footer{padding:40px 0 70px;border-top:1px solid var(--rule);font:400 15px var(--display);color:var(--line)}
+footer p{max-width:90ch}
+
+/* booth mode: just Tess and the replay, big */
+body.kiosk .top,body.kiosk .block:not(#decide),body.kiosk footer,body.kiosk .controls,body.kiosk .actions,body.kiosk .hint{display:none}
+body.kiosk #decide{border:0;padding-top:20px}
+
+@media (max-width:980px){
+  .hero,.split,.theatre,.about{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+  .nav{display:none}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .steps li{border-bottom:1px solid var(--rule)}
+  .bubble{right:18%;max-width:240px;font-size:17px}
+}
+@media (max-width:520px){
+  body{font-size:18px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .hero .lede{font-size:20px}
+  .bubble{right:6%;bottom:30%}
+  #tess{width:30%}
+  .wrap{padding:0 16px}
+  .top .wrap{gap:12px}
+  .pulse{font-size:13px;white-space:normal;line-height:1.2;text-align:right}
+}
 </style>
 </head>
 <body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Tess, home">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="13" fill="none" stroke="#eef3ff" stroke-width="1.6"/><circle cx="11" cy="12" r="2.3" fill="#ffd84a"/><circle cx="19" cy="12" r="2.3" fill="#ffd84a"/><circle cx="11" cy="19" r="2.3" fill="#ffd84a"/><circle cx="19" cy="19" r="2.3" fill="#ffd84a"/></svg>
+      Tess
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#now">Right now</a>
+      <a href="#decide">How she decides</a>
+      <a href="#sky">Where she's looked</a>
+      <a href="#finds">Finds</a>
+      <a href="#about">Who built her</a>
+    </nav>
+    <span class="sp"></span>
+    <span class="pulse" id="pulse"><i></i><span id="pulseTxt">checking in…</span></span>
+  </div>
+</header>
+
+<main id="top">
 <div class="wrap">
-<div class="lbl" style="color:var(--accent)">Autonomous exoplanet search · NASA TESS</div>
-<h1>TESS Planet Hunter</h1>
-<a href="live.html" style="display:inline-flex;align-items:center;gap:8px;margin:4px 0 14px;padding:10px 16px;border-radius:10px;background:var(--accent);color:#120800;font-weight:600;text-decoration:none"><span style="width:8px;height:8px;border-radius:50%;background:#120800;display:inline-block"></span>Watch the bot work: Mission Control</a>
-<p class="sub">A bot that wakes up every few hours, pulls light curves for stars NASA's TESS satellite observed but never examined closely, searches them for the tiny periodic dimming of a transiting planet, and ranks every signal with a machine-learning vetter. Everything below was found automatically.</p>
-<div class="grid" id="kpis"></div>
-
-<h2>How it works</h2>
-<div class="how">
-<div class="card"><div class="n">01</div><b>Select</b><div class="sub">Random sky fields; FGK/M dwarfs, Tmag 9–13, low contamination, from the TESS Input Catalog.</div></div>
-<div class="card"><div class="n">02</div><b>Clean</b><div class="sub">Download SPOC/QLP light curves from MAST, remove flares, divide out stellar variability.</div></div>
-<div class="card"><div class="n">03</div><b>Search</b><div class="sub">Box Least Squares over 0.5–15 day periods, iterative to catch multi-planet systems.</div></div>
-<div class="card"><div class="n">04</div><b>Vet</b><div class="sub">Odd/even depth, secondary eclipse, shape, radius, duration physics, then an AI score.</div></div>
-<div class="card"><div class="n">05</div><b>Cross-match</b><div class="sub">Against every TOI, confirmed planet and TESS eclipsing binary to isolate what is new.</div></div>
+  <section class="hero" aria-label="Meet Tess">
+    <div>
+      <h1>Hi, I'm Tess. I hunt for planets in NASA's starlight.</h1>
+      <p class="lede" id="lede">Every six hours I wake up, pick a few hundred stars that NASA's TESS satellite has photographed, and check each one for the tiny, regular dip in brightness a passing planet causes.</p>
+      <div class="actions">
+        <a class="btn fill" href="#decide">Watch me check a star</a>
+        <a class="btn" href="#sky">See where I've looked</a>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="dome" aria-label="Sky dome showing stars Tess has checked. Drag to rotate, click a star to ask about it." role="img"></canvas>
+      <div class="bubble" id="bubble" aria-live="polite"><small id="bubbleWho">Tess</small><span id="bubbleTxt">Warming up my cameras…</span></div>
+      <svg id="tess" viewBox="0 0 160 160" role="button" tabindex="0" aria-label="Tess the bot. Click to say hi.">
+        <g class="bob">
+          <g class="wingL"><rect x="6" y="80" width="40" height="24" rx="3" fill="#1d4096" stroke="#eef3ff" stroke-width="2"/><path d="M19 80v24M32 80v24M6 92h40" stroke="#8ea5dc" stroke-width="1.2"/></g>
+          <g class="wingR"><rect x="114" y="80" width="40" height="24" rx="3" fill="#1d4096" stroke="#eef3ff" stroke-width="2"/><path d="M127 80v24M140 80v24M114 92h40" stroke="#8ea5dc" stroke-width="1.2"/></g>
+          <path d="M46 92h8M106 92h8" stroke="#eef3ff" stroke-width="2"/>
+          <rect x="54" y="74" width="52" height="44" rx="10" fill="#1d4096" stroke="#eef3ff" stroke-width="2.2"/>
+          <path d="M70 102q10 8 20 0" fill="none" stroke="#eef3ff" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="66" cy="90" r="2.4" fill="#ff8f7e" opacity=".7"/><circle cx="94" cy="90" r="2.4" fill="#ff8f7e" opacity=".7"/>
+          <path d="M68 118l-4 12M92 118l4 12" stroke="#eef3ff" stroke-width="2" stroke-linecap="round"/>
+          <g class="cams" id="cams">
+            <rect x="58" y="34" width="44" height="40" rx="8" fill="#122b6b" stroke="#eef3ff" stroke-width="2.2"/>
+            <path d="M58 40l-6-14h56l-6 14" fill="none" stroke="#8ea5dc" stroke-width="1.6"/>
+            <g class="blink">
+              <circle class="lens" cx="70" cy="47" r="6" fill="#8ea5dc" stroke="#eef3ff" stroke-width="1.6"/>
+              <circle class="lens" cx="90" cy="47" r="6" fill="#8ea5dc" stroke="#eef3ff" stroke-width="1.6"/>
+              <circle class="lens" cx="70" cy="62" r="6" fill="#8ea5dc" stroke="#eef3ff" stroke-width="1.6"/>
+              <circle class="lens" cx="90" cy="62" r="6" fill="#8ea5dc" stroke="#eef3ff" stroke-width="1.6"/>
+            </g>
+          </g>
+          <path d="M80 34v-10" stroke="#eef3ff" stroke-width="2"/><circle cx="80" cy="21" r="3.5" fill="#ffd84a"/>
+        </g>
+      </svg>
+      <p class="hint">Drag the sky to turn it. Click a lit star to ask me about it.</p>
+    </div>
+  </section>
 </div>
 
-<h2>Top new candidates</h2>
-<div class="cands" id="cands"></div>
+<section class="block" id="now">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">My diary</span>
+      <h2>What I'm doing right now</h2>
+      <p id="nowLine" style="margin-top:22px">Checking whether I'm awake…</p>
+      <div class="progress" aria-hidden="true"><b id="prog"></b></div>
+      <p class="meta" id="nowMeta"></p>
+      <p class="meta"><a id="logLink" href="https://github.com/alexvaldex/nasa-tess-planet-search/actions" target="_blank" rel="noopener">Read my raw log on GitHub</a></p>
+    </div>
+    <div>
+      <ul class="diary" id="diary"><li><span class="say">My first entries will show up here after my first run.</span></li></ul>
+    </div>
+  </div>
+</section>
 
-<h2>All signals</h2>
-<div class="controls">
-<select id="fstatus"><option value="">All statuses</option></select>
-<input id="fsearch" placeholder="Search TIC…">
-</div>
-<div class="tbl"><table id="tbl"><thead></thead><tbody></tbody></table></div>
+<section class="block" id="decide">
+  <div class="wrap">
+    <span class="kicker">Replay</span>
+    <h2 style="max-width:22ch;margin-bottom:30px">How I decide whether a star has a planet</h2>
+    <ol class="steps" id="steps"></ol>
+    <div class="theatre">
+      <div>
+        <canvas id="stagec" role="img" aria-label="Animated replay of Tess analysing one star"></canvas>
+        <p class="cap" id="cap" aria-live="polite"></p>
+        <div class="controls">
+          <button class="btn" id="prevBtn" type="button">Back a step</button>
+          <button class="btn fill" id="playBtn" type="button">Pause</button>
+          <button class="btn" id="nextBtn" type="button">Next star</button>
+          <label for="pick" style="position:absolute;left:-9999px">Choose a star</label>
+          <select id="pick"></select>
+        </div>
+      </div>
+      <div>
+        <dl class="facts" id="facts"></dl>
+        <ul class="checks" id="checks"></ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2>Model &amp; validation</h2>
-<div class="grid" id="val"></div>
+<section class="block" id="sky">
+  <div class="wrap">
+    <div class="split" style="margin-bottom:34px">
+      <div><span class="kicker">Coverage</span><h2>Everywhere I've looked so far</h2></div>
+      <div><p class="numbers" id="numbers">Loading my numbers…</p></div>
+    </div>
+    <canvas id="skymap" role="img" aria-label="Map of the whole sky with every star Tess has checked"></canvas>
+    <div class="legend">
+      <span><i style="background:#8ea5dc"></i>Checked, no planet</span>
+      <span><i style="background:var(--hi)"></i>Possible planet</span>
+      <span><i style="background:var(--known)"></i>Already known to astronomers</span>
+      <span><i style="background:var(--no)"></i>Two stars eclipsing</span>
+      <span><i style="background:var(--sys)"></i>Spacecraft glitch</span>
+      <span><i style="border:1.5px dashed #eef3ff"></i>Milky Way, skipped because it's too crowded</span>
+    </div>
+  </div>
+</section>
 
-<footer>Candidates are unconfirmed. A real planet needs follow-up (ground photometry, spectroscopy, high-resolution imaging). Data: NASA TESS via MAST, ExoFOP-TESS, NASA Exoplanet Archive, Prša et al. 2022 TESS EB catalog. <span id="upd"></span></footer>
-</div>
-<div class="modal" id="modal" onclick="this.style.display='none'"><img id="mimg" alt="Diagnostic plot"></div>
+<section class="block" id="finds">
+  <div class="wrap">
+    <span class="kicker">Finds</span>
+    <h2 style="max-width:20ch;margin-bottom:28px">Stars I think are worth a second look</h2>
+    <div id="findsBox"></div>
+    <p class="meta" style="margin-top:22px"><a href="results.html">Every signal I've ever flagged, in one table</a></p>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap split">
+    <div><span class="kicker">Fair questions</span><h2>Isn't someone already doing this?</h2></div>
+    <div>
+      <details open><summary>Hasn't NASA already searched this data?</summary>
+        <p>Partly. NASA and MIT run automatic searches on TESS data, and volunteers look too. But those searches use fixed cut-offs, mostly look at one month of data at a time, and humans only have time to vet so many faint stars. Real, shallow signals slip through. My job is to find the ones that did.</p></details>
+      <details><summary>How do you know a find is actually new?</summary>
+        <p>Every signal I detect is compared against every public TESS list: NASA's official candidates (TOIs), candidates found by independent teams and volunteers (CTOIs), all confirmed planets, and the catalog of known eclipsing binaries. I match by star ID and by position on the sky, so a known star's light leaking into a neighbour doesn't fool me. Anything that survives isn't on any of those lists.</p></details>
+      <details><summary>Do you ever check the same star twice?</summary>
+        <p>No. Every star I check is written down, and I skip it on every future run.</p></details>
+      <details><summary>How do you know you'd spot a real planet?</summary>
+        <p id="valText">I was tested on stars with confirmed TESS planets, without being told where the planets were.</p></details>
+      <details><summary>Does a "possible planet" mean you discovered a planet?</summary>
+        <p>Not yet. A candidate needs follow-up from real telescopes: ground-based measurements to rule out a nearby eclipsing star, and spectra to measure its mass. Strong candidates can be submitted to ExoFOP, where professional astronomers pick them up.</p></details>
+      <details><summary>What does this cost to run?</summary>
+        <p>Nothing. I run on GitHub's free computers for public projects, four times a day.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap about">
+    <div>
+      <span class="kicker">Who built her</span>
+      <h2>Made by Alejandro Valdez</h2>
+      <p style="margin-top:24px">I'm a first-year aerospace engineering student at the University of Central Florida. I built Tess because TESS has photographed almost the entire sky and most of that data has never been looked at closely, and I wanted to see whether a student with free tools could find something real in it.</p>
+      <p>Tess downloads light curves from NASA's MAST archive, cleans them, runs a Box Least Squares transit search, vets every signal with the same tests astronomers use, scores it with a machine-learning model, and cross-checks every public catalog. All of the code is open.</p>
+      <p class="sig">Alejandro</p>
+    </div>
+    <div class="links">
+      <a href="https://github.com/alexvaldex/nasa-tess-planet-search" target="_blank" rel="noopener"><span>Tess's source code</span><span>GitHub</span></a>
+      <a href="https://www.linkedin.com/in/alejandro-valdez15" target="_blank" rel="noopener"><span>Connect with me</span><span>LinkedIn</span></a>
+      <a href="results.html"><span>Every signal, as a table</span><span>Results</span></a>
+      <a href="?kiosk=1"><span>Full-screen replay for a booth</span><span>Booth mode</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Data from NASA's TESS mission via the Mikulski Archive for Space Telescopes, ExoFOP-TESS, the NASA Exoplanet Archive and the TESS eclipsing binary catalog (Prša et al. 2022). Light curves from the SPOC, TESS-SPOC and QLP pipelines. Candidates on this page are unconfirmed.</p>
+  </div>
+</footer>
+
 <script>
-const D={"stats": {"updated": "2026-10-12 15:26 UTC", "stars_queried": 276, "stars_analyzed": 254, "sectors_analyzed": 419, "light_curve_points": 1151594, "signals": 99, "counts": {"systematic": 57, "likely_eb": 28, "low_score": 9, "known_eb": 5}, "validation": {"date": "2026-10-12", "known_planets_tested": 144, "known_planets_recovered": 125, "recovery_rate": 0.8681, "false_positives_tested": 145, "model": {"source": "synthetic+real (205 real TOIs)", "n_train": 2117, "n_planets": 621, "roc_auc": 0.971, "avg_precision": 0.9289, "precision@0.5": 0.8525, "recall@0.5": 0.8937, "f1@0.5": 0.8726, "false_positive_rate_by_class": {"eb": 0.0245, "planet": 0.015, "systematic": 0.0072, "beb": 0.0979, "real_false_positive": 0.4607}, "real_only": {"n": 205, "roc_auc": 0.8106, "planets_scored_above_0.5": 0.8534, "false_positives_rejected": 0.5393}}}, "model": {"source": "synthetic+real (205 real TOIs)", "n_train": 2117, "n_planets": 621, "roc_auc": 0.971, "avg_precision": 0.9289, "precision@0.5": 0.8525, "recall@0.5": 0.8937, "f1@0.5": 0.8726, "false_positive_rate_by_class": {"eb": 0.0245, "planet": 0.015, "systematic": 0.0072, "beb": 0.0979, "real_false_positive": 0.4607}, "real_only": {"n": 205, "roc_auc": 0.8106, "planets_scored_above_0.5": 0.8534, "false_positives_rejected": 0.5393}}}, "rows": [{"id": "TIC139700621.02", "tic": 139700621, "status": "known_eb", "score": 0.8959, "period": 0.693573, "depth_ppm": 49674.9, "rp_earth": 31.93, "duration_hr": 1.224, "sde": 16.41, "snr": 37.64, "n_transits": 55, "flags": "too_large", "note": "in TESS EB catalog", "tmag": 9.6564, "teff": 6177.0, "rstar": 1.3133, "ra": 322.6324023553, "dec": -53.1082618679, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3127.07204}, {"id": "TIC79492099.02", "tic": 79492099, "status": "known_eb", "score": 0.0393, "period": 12.997692, "depth_ppm": 663909.0, "rp_earth": 140.0, "duration_hr": 5.976, "sde": 35.45, "snr": 4601.72, "n_transits": 3, "flags": "too_large odd_even common_period", "note": "in TESS EB catalog", "tmag": 11.1943, "teff": 6122.0, "rstar": 1.57492, "ra": 321.8050544279, "dec": -52.7655291881, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.32144}, {"id": "TIC79492099.01", "tic": 79492099, "status": "known_eb", "score": 0.0355, "period": 12.953606, "depth_ppm": 769746.9, "rp_earth": 150.75, "duration_hr": 5.976, "sde": 30.35, "snr": 6535.32, "n_transits": 3, "flags": "too_large odd_even common_period", "note": "in TESS EB catalog", "tmag": 11.1943, "teff": 6122.0, "rstar": 1.57492, "ra": 321.8050544279, "dec": -52.7655291881, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.10544}, {"id": "TIC468827257.01", "tic": 468827257, "status": "known_eb", "score": 0.0081, "period": 8.934035, "depth_ppm": 167473.0, "rp_earth": 69.02, "duration_hr": 5.976, "sde": 25.84, "snr": 2969.99, "n_transits": 4, "flags": "too_large odd_even", "note": "in TESS EB catalog", "tmag": 10.5894, "teff": 6208.0, "rstar": 1.54598, "ra": 91.9091119892, "dec": 69.7296629118, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2920.89494}, {"id": "TIC139700621.01", "tic": 139700621, "status": "known_eb", "score": 0.0005, "period": 0.693573, "depth_ppm": 45319.4, "rp_earth": 30.5, "duration_hr": 1.224, "sde": 14.05, "snr": 35.14, "n_transits": 56, "flags": "too_large secondary", "note": "in TESS EB catalog", "tmag": 9.6564, "teff": 6177.0, "rstar": 1.3133, "ra": 322.6324023553, "dec": -53.1082618679, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3127.41704}, {"id": "TIC367047857.02", "tic": 367047857, "status": "likely_eb", "score": 0.5932, "period": 13.645709, "depth_ppm": 34353.3, "rp_earth": 25.32, "duration_hr": 0.72, "sde": 23.99, "snr": 53.06, "n_transits": 8, "flags": "too_large v_shaped", "note": null, "tmag": 12.7885, "teff": 5786.0, "rstar": 1.25231, "ra": 316.2670155071, "dec": 72.4620489947, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1744.25924}, {"id": "TIC79491964.01", "tic": 79491964, "status": "likely_eb", "score": 0.0898, "period": 13.200782, "depth_ppm": 692946.9, "rp_earth": 136.06, "duration_hr": 4.104, "sde": 43.09, "snr": 2005.97, "n_transits": 3, "flags": "too_large odd_even", "note": null, "tmag": 12.8617, "teff": 5794.0, "rstar": 1.49811, "ra": 321.8906587984, "dec": -53.1975207832, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.15871}, {"id": "TIC468831987.01", "tic": 468831987, "status": "likely_eb", "score": 0.0103, "period": 4.954321, "depth_ppm": 683.0, "rp_earth": 4.33, "duration_hr": 5.976, "sde": 9.65, "snr": 13.37, "n_transits": 9, "flags": "secondary", "note": null, "tmag": 10.745, "teff": 6586.0, "rstar": 1.52012, "ra": 92.2059997075, "dec": 70.3881296533, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2916.64969}, {"id": "TIC315774126.02", "tic": 315774126, "status": "likely_eb", "score": 0.0063, "period": 13.433394, "depth_ppm": 46823.6, "rp_earth": 19.37, "duration_hr": 0.72, "sde": 34.4, "snr": 69.73, "n_transits": 8, "flags": "odd_even v_shaped", "note": null, "tmag": 12.9767, "teff": 4946.0, "rstar": 0.820589, "ra": 314.5540356291, "dec": 72.7043929997, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1745.47419}, {"id": "TIC79514209.01", "tic": 79514209, "status": "likely_eb", "score": 0.0043, "period": 13.074055, "depth_ppm": 612749.3, "rp_earth": 82.59, "duration_hr": 5.976, "sde": 28.31, "snr": 3884.8, "n_transits": 3, "flags": "too_large odd_even", "note": null, "tmag": 12.1454, "teff": 6267.0, "rstar": 0.967063, "ra": 321.9936379931, "dec": -53.1466868615, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.08607}, {"id": "TIC3812637.01", "tic": 3812637, "status": "likely_eb", "score": 0.0026, "period": 7.325127, "depth_ppm": 371658.4, "rp_earth": 82.79, "duration_hr": 1.224, "sde": 16.25, "snr": 674.21, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 12.3284, "teff": 6127.89, "rstar": 1.24475, "ra": 169.8589582334, "dec": 19.5359845399, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2638.27297}, {"id": "TIC364254028.02", "tic": 364254028, "status": "likely_eb", "score": 0.0026, "period": 9.312827, "depth_ppm": 46514.9, "rp_earth": 28.81, "duration_hr": 0.72, "sde": 28.88, "snr": 71.4, "n_transits": 9, "flags": "too_large odd_even v_shaped", "note": null, "tmag": 12.9005, "teff": 4400.0, "rstar": 1.2244, "ra": 313.812119694, "dec": 73.0204108153, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1744.52915}, {"id": "TIC3812706.01", "tic": 3812706, "status": "likely_eb", "score": 0.0025, "period": 7.103377, "depth_ppm": 339325.9, "rp_earth": 86.04, "duration_hr": 1.944, "sde": 13.97, "snr": 493.71, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 12.8988, "teff": 5711.82, "rstar": 1.35383, "ra": 169.845729162, "dec": 19.0421472817, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2638.24854}, {"id": "TIC147560958.01", "tic": 147560958, "status": "likely_eb", "score": 0.0016, "period": 7.766196, "depth_ppm": 298466.0, "rp_earth": 58.46, "duration_hr": 1.224, "sde": 28.77, "snr": 377.04, "n_transits": 3, "flags": "too_large odd_even", "note": null, "tmag": 12.7344, "teff": 5377.0, "rstar": 0.980778, "ra": 163.6081460264, "dec": 60.019986313, "sectors": "75", "plot": null, "date": "2026-10-12", "t0_btjd": 3344.15316}, {"id": "TIC468838146.02", "tic": 468838146, "status": "likely_eb", "score": 0.0014, "period": 4.263179, "depth_ppm": 763.2, "rp_earth": 3.44, "duration_hr": 5.976, "sde": 13.78, "snr": 24.49, "n_transits": 10, "flags": "secondary", "note": null, "tmag": 9.5324, "teff": 6301.0, "rstar": 1.14247, "ra": 92.8846607225, "dec": 70.273815158, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2914.69272}, {"id": "TIC367098324.02", "tic": 367098324, "status": "likely_eb", "score": 0.001, "period": 9.311571, "depth_ppm": 33023.2, "rp_earth": 27.49, "duration_hr": 0.72, "sde": 24.45, "snr": 50.13, "n_transits": 9, "flags": "too_large odd_even v_shaped", "note": null, "tmag": 12.9791, "teff": 5464.0, "rstar": 1.38653, "ra": 315.7057938027, "dec": 72.4343285175, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1744.53823}, {"id": "TIC437523728.02", "tic": 437523728, "status": "likely_eb", "score": 0.001, "period": 6.871192, "depth_ppm": 346929.0, "rp_earth": 68.04, "duration_hr": 1.224, "sde": 24.45, "snr": 842.77, "n_transits": 3, "flags": "too_large odd_even", "note": null, "tmag": 11.0633, "teff": 5686.0, "rstar": 1.05875, "ra": 252.8398661846, "dec": -20.9829561922, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.85146}, {"id": "TIC147560947.02", "tic": 147560947, "status": "likely_eb", "score": 0.0009, "period": 3.295131, "depth_ppm": 10026.1, "rp_earth": 15.2, "duration_hr": 1.944, "sde": 14.98, "snr": 30.5, "n_transits": 5, "flags": "secondary", "note": null, "tmag": 12.2781, "teff": 6054.0, "rstar": 1.39185, "ra": 163.6390020472, "dec": 60.091957032, "sectors": "75", "plot": null, "date": "2026-10-12", "t0_btjd": 3340.85108}, {"id": "TIC3817809.01", "tic": 3817809, "status": "likely_eb", "score": 0.0007, "period": 7.007387, "depth_ppm": 237001.6, "rp_earth": 67.11, "duration_hr": 5.976, "sde": 14.91, "snr": 738.4, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 12.5308, "teff": 6025.69, "rstar": 1.26362, "ra": 170.23421556, "dec": 19.2103789229, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2638.33736}, {"id": "TIC437490016.02", "tic": 437490016, "status": "likely_eb", "score": 0.0007, "period": 6.700036, "depth_ppm": 551610.0, "rp_earth": 92.07, "duration_hr": 4.104, "sde": 16.42, "snr": 5484.22, "n_transits": 3, "flags": "too_large odd_even", "note": null, "tmag": 10.0891, "teff": 5020.0, "rstar": 1.13623, "ra": 252.6228944, "dec": -21.1618274255, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3781.52648}, {"id": "TIC437536752.02", "tic": 437536752, "status": "likely_eb", "score": 0.0006, "period": 6.885851, "depth_ppm": 331421.1, "rp_earth": 85.02, "duration_hr": 5.976, "sde": 19.72, "snr": 2668.65, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 10.9402, "teff": 5938.0, "rstar": 1.35363, "ra": 252.9086809548, "dec": -20.9578194487, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.91746}, {"id": "TIC468860351.01", "tic": 468860351, "status": "likely_eb", "score": 0.0005, "period": 1.454385, "depth_ppm": 2693.0, "rp_earth": 4.38, "duration_hr": 1.944, "sde": 11.17, "snr": 28.7, "n_transits": 29, "flags": "secondary", "note": null, "tmag": 11.3452, "teff": 5428.0, "rstar": 0.774483, "ra": 93.6305685776, "dec": 69.9579523682, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2911.56019}, {"id": "TIC147560947.01", "tic": 147560947, "status": "likely_eb", "score": 0.0004, "period": 1.646992, "depth_ppm": 60213.6, "rp_earth": 37.26, "duration_hr": 1.944, "sde": 18.23, "snr": 243.1, "n_transits": 8, "flags": "too_large secondary", "note": null, "tmag": 12.2781, "teff": 6054.0, "rstar": 1.39185, "ra": 163.6390020472, "dec": 60.091957032, "sectors": "75", "plot": null, "date": "2026-10-12", "t0_btjd": 3341.68413}, {"id": "TIC437536752.01", "tic": 437536752, "status": "likely_eb", "score": 0.0004, "period": 6.919062, "depth_ppm": 383540.8, "rp_earth": 91.46, "duration_hr": 5.976, "sde": 22.24, "snr": 3246.79, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 10.9402, "teff": 5938.0, "rstar": 1.35363, "ra": 252.9086809548, "dec": -20.9578194487, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3781.19346}, {"id": "TIC139700087.01", "tic": 139700087, "status": "likely_eb", "score": 0.0003, "period": 14.316191, "depth_ppm": 919.8, "rp_earth": 3.15, "duration_hr": 5.976, "sde": 14.07, "snr": 8.69, "n_transits": 4, "flags": "odd_even", "note": null, "tmag": 11.6216, "teff": 5523.0, "rstar": 0.951182, "ra": 322.4408884656, "dec": -52.9098750206, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3133.48444}, {"id": "TIC336104679.02", "tic": 336104679, "status": "likely_eb", "score": 0.0003, "period": 9.311571, "depth_ppm": 48504.9, "rp_earth": 33.23, "duration_hr": 0.72, "sde": 24.66, "snr": 72.0, "n_transits": 9, "flags": "too_large odd_even v_shaped", "note": null, "tmag": 12.9212, "teff": 5260.0, "rstar": 1.38296, "ra": 314.2921557715, "dec": 72.8853457401, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1744.53817}, {"id": "TIC437489796.02", "tic": 437489796, "status": "likely_eb", "score": 0.0003, "period": 6.951894, "depth_ppm": 397594.2, "rp_earth": 60.78, "duration_hr": 5.976, "sde": 19.05, "snr": 779.49, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 12.9749, "teff": 5234.0, "rstar": 0.883561, "ra": 252.6048299918, "dec": -21.0736413062, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.68348}, {"id": "TIC437523656.01", "tic": 437523656, "status": "likely_eb", "score": 0.0003, "period": 7.216693, "depth_ppm": 376137.6, "rp_earth": 48.09, "duration_hr": 5.976, "sde": 17.09, "snr": 2287.33, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 11.5706, "teff": 4629.0, "rstar": 0.718659, "ra": 252.796487502, "dec": -21.0116472794, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.40446}, {"id": "TIC437490245.02", "tic": 437490245, "status": "likely_eb", "score": 0.0003, "period": 6.771175, "depth_ppm": 487556.0, "rp_earth": 80.87, "duration_hr": 5.976, "sde": 20.13, "snr": 1102.88, "n_transits": 3, "flags": "too_large odd_even", "note": null, "tmag": 12.4938, "teff": 5196.0, "rstar": 1.06154, "ra": 252.6174135709, "dec": -21.2482483603, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3781.28048}, {"id": "TIC468860351.02", "tic": 468860351, "status": "likely_eb", "score": 0.0002, "period": 2.423683, "depth_ppm": 2917.5, "rp_earth": 4.56, "duration_hr": 1.944, "sde": 11.48, "snr": 21.24, "n_transits": 13, "flags": "odd_even secondary", "note": null, "tmag": 11.3452, "teff": 5428.0, "rstar": 0.774483, "ra": 93.6305685776, "dec": 69.9579523682, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2911.07719}, {"id": "TIC437462047.02", "tic": 437462047, "status": "likely_eb", "score": 0.0002, "period": 6.468421, "depth_ppm": 207269.8, "rp_earth": 44.49, "duration_hr": 5.976, "sde": 13.55, "snr": 385.33, "n_transits": 4, "flags": "too_large odd_even v_shaped", "note": null, "tmag": 12.8597, "teff": 5547.0, "rstar": 0.895737, "ra": 252.4966620751, "dec": -21.3711525614, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3781.64948}, {"id": "TIC437490245.01", "tic": 437490245, "status": "likely_eb", "score": 0.0002, "period": 7.106806, "depth_ppm": 397467.4, "rp_earth": 73.01, "duration_hr": 5.976, "sde": 21.23, "snr": 1158.99, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 12.4938, "teff": 5196.0, "rstar": 1.06154, "ra": 252.6174135709, "dec": -21.2482483603, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.59948}, {"id": "TIC437462047.01", "tic": 437462047, "status": "likely_eb", "score": 0.0001, "period": 7.510741, "depth_ppm": 213509.3, "rp_earth": 45.16, "duration_hr": 5.976, "sde": 14.4, "snr": 467.91, "n_transits": 4, "flags": "too_large odd_even", "note": null, "tmag": 12.8597, "teff": 5547.0, "rstar": 0.895737, "ra": 252.4966620751, "dec": -21.3711525614, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3779.44748}, {"id": "TIC373027570.02", "tic": 373027570, "status": "systematic", "score": 0.9167, "period": 12.9969, "depth_ppm": 31949.8, "rp_earth": 26.46, "duration_hr": 0.72, "sde": 41.33, "snr": 27.42, "n_transits": 3, "flags": "too_large single_event v_shaped", "note": null, "tmag": 12.6571, "teff": 5628.0, "rstar": 1.35705, "ra": 66.9891252424, "dec": 11.3544529207, "sectors": "70 71", "plot": null, "date": "2026-10-12", "t0_btjd": 3221.46663}, {"id": "TIC315774126.01", "tic": 315774126, "status": "systematic", "score": 0.481, "period": 13.132019, "depth_ppm": 52701.8, "rp_earth": 20.55, "duration_hr": 0.72, "sde": 32.7, "snr": 78.48, "n_transits": 8, "flags": "common_period", "note": null, "tmag": 12.9767, "teff": 4946.0, "rstar": 0.820589, "ra": 314.5540356291, "dec": 72.7043929997, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1742.34219}, {"id": "TIC336104679.01", "tic": 336104679, "status": "systematic", "score": 0.4431, "period": 13.132019, "depth_ppm": 61508.7, "rp_earth": 37.42, "duration_hr": 0.72, "sde": 34.24, "snr": 96.23, "n_transits": 8, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.9212, "teff": 5260.0, "rstar": 1.38296, "ra": 314.2921557715, "dec": 72.8853457401, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1742.34217}, {"id": "TIC468838038.01", "tic": 468838038, "status": "systematic", "score": 0.0981, "period": 13.32438, "depth_ppm": 7543.5, "rp_earth": 13.45, "duration_hr": 5.976, "sde": 33.23, "snr": 58.74, "n_transits": 3, "flags": "odd_even single_event", "note": null, "tmag": 11.6316, "teff": 6383.0, "rstar": 1.41894, "ra": 92.8981160814, "dec": 70.0882280838, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2911.2512}, {"id": "TIC367098324.01", "tic": 367098324, "status": "systematic", "score": 0.088, "period": 13.132019, "depth_ppm": 47699.6, "rp_earth": 33.04, "duration_hr": 0.72, "sde": 41.91, "snr": 76.31, "n_transits": 8, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.9791, "teff": 5464.0, "rstar": 1.38653, "ra": 315.7057938027, "dec": 72.4343285175, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1742.34223}, {"id": "TIC468833466.01", "tic": 468833466, "status": "systematic", "score": 0.0864, "period": 13.05654, "depth_ppm": 7080.1, "rp_earth": 13.85, "duration_hr": 2.88, "sde": 25.62, "snr": 12.01, "n_transits": 3, "flags": "odd_even single_event", "note": null, "tmag": 12.9397, "teff": 6105.0, "rstar": 1.5087, "ra": 92.6334955426, "dec": 70.1376008171, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2910.63054}, {"id": "TIC139679637.01", "tic": 139679637, "status": "systematic", "score": 0.0669, "period": 12.974223, "depth_ppm": 778958.8, "rp_earth": 109.4, "duration_hr": 5.976, "sde": 31.6, "snr": 3218.44, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.9698, "teff": 5998.0, "rstar": 1.13613, "ra": 322.1725479981, "dec": -53.205676609, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.06409}, {"id": "TIC364254028.01", "tic": 364254028, "status": "systematic", "score": 0.0585, "period": 13.132019, "depth_ppm": 53017.2, "rp_earth": 30.76, "duration_hr": 0.72, "sde": 32.23, "snr": 85.77, "n_transits": 8, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.9005, "teff": 4400.0, "rstar": 1.2244, "ra": 313.812119694, "dec": 73.0204108153, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1742.34215}, {"id": "TIC79491360.02", "tic": 79491360, "status": "systematic", "score": 0.0458, "period": 13.017382, "depth_ppm": 702757.9, "rp_earth": 104.3, "duration_hr": 5.976, "sde": 37.37, "snr": 5688.75, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.3333, "teff": 5797.0, "rstar": 1.1404, "ra": 321.7207183213, "dec": -52.8451068721, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.29444}, {"id": "TIC79448996.02", "tic": 79448996, "status": "systematic", "score": 0.0451, "period": 13.017382, "depth_ppm": 676648.3, "rp_earth": 132.04, "duration_hr": 5.976, "sde": 38.88, "snr": 4481.55, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.7982, "teff": 6266.0, "rstar": 1.47127, "ra": 321.5336369701, "dec": -52.7521511952, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.29445}, {"id": "TIC79492009.02", "tic": 79492009, "status": "systematic", "score": 0.0426, "period": 12.981531, "depth_ppm": 806538.2, "rp_earth": 145.57, "duration_hr": 5.976, "sde": 34.76, "snr": 2441.78, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.943, "teff": 6338.0, "rstar": 1.48572, "ra": 321.7832140515, "dec": -53.0541383944, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.35731}, {"id": "TIC284704329.02", "tic": 284704329, "status": "systematic", "score": 0.041, "period": 12.982485, "depth_ppm": 95199.7, "rp_earth": 46.09, "duration_hr": 0.72, "sde": 60.2, "snr": 61.45, "n_transits": 3, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.9657, "teff": 6025.01, "rstar": 1.36905, "ra": 67.420205372, "dec": 10.665240046, "sectors": "70 71", "plot": null, "date": "2026-10-12", "t0_btjd": 3221.48622}, {"id": "TIC79491360.01", "tic": 79491360, "status": "systematic", "score": 0.039, "period": 12.968268, "depth_ppm": 841387.0, "rp_earth": 114.12, "duration_hr": 5.976, "sde": 30.23, "snr": 8322.17, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.3333, "teff": 5797.0, "rstar": 1.1404, "ra": 321.7207183213, "dec": -52.8451068721, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.07544}, {"id": "TIC79449009.01", "tic": 79449009, "status": "systematic", "score": 0.0387, "period": 12.968268, "depth_ppm": 740700.5, "rp_earth": 108.36, "duration_hr": 5.976, "sde": 30.32, "snr": 9023.87, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.0675, "teff": 5837.0, "rstar": 1.15408, "ra": 321.456179533, "dec": -52.7203605105, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.07546}, {"id": "TIC79448996.01", "tic": 79448996, "status": "systematic", "score": 0.037, "period": 12.968268, "depth_ppm": 742250.5, "rp_earth": 138.29, "duration_hr": 5.976, "sde": 30.44, "snr": 6035.77, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.7982, "teff": 6266.0, "rstar": 1.47127, "ra": 321.5336369701, "dec": -52.7521511952, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.07545}, {"id": "TIC367047857.01", "tic": 367047857, "status": "systematic", "score": 0.0285, "period": 13.132019, "depth_ppm": 41960.3, "rp_earth": 27.99, "duration_hr": 0.72, "sde": 31.83, "snr": 72.44, "n_transits": 8, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.7885, "teff": 5786.0, "rstar": 1.25231, "ra": 316.2670155071, "dec": 72.4620489947, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1742.34224}, {"id": "TIC79514109.01", "tic": 79514109, "status": "systematic", "score": 0.0278, "period": 12.948726, "depth_ppm": 736571.7, "rp_earth": 130.26, "duration_hr": 5.976, "sde": 30.38, "snr": 7130.28, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.3265, "teff": 5455.3, "rstar": 1.39115, "ra": 321.9198135641, "dec": -52.811812004, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.11444}, {"id": "TIC139679648.01", "tic": 139679648, "status": "systematic", "score": 0.0194, "period": 13.031545, "depth_ppm": 818315.8, "rp_earth": 80.86, "duration_hr": 5.976, "sde": 35.08, "snr": 2226.01, "n_transits": 3, "flags": "too_large odd_even single_event common_period", "note": null, "tmag": 12.8919, "teff": 5210.0, "rstar": 0.819268, "ra": 322.2313552545, "dec": -53.1572588618, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3868.94641}, {"id": "TIC79514184.02", "tic": 79514184, "status": "systematic", "score": 0.0149, "period": 13.002609, "depth_ppm": 724732.3, "rp_earth": 78.77, "duration_hr": 5.976, "sde": 39.87, "snr": 2473.55, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.8316, "teff": 5455.0, "rstar": 0.848119, "ra": 322.0283917149, "dec": -53.063334722, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.32142}, {"id": "TIC79514172.02", "tic": 79514172, "status": "systematic", "score": 0.0132, "period": 12.980833, "depth_ppm": 782455.1, "rp_earth": 62.05, "duration_hr": 5.976, "sde": 41.16, "snr": 2829.57, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.5844, "teff": 3899.0, "rstar": 0.642935, "ra": 322.0408263903, "dec": -53.0101220524, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.34243}, {"id": "TIC79448983.01", "tic": 79448983, "status": "systematic", "score": 0.0124, "period": 13.017382, "depth_ppm": 788040.0, "rp_earth": 82.04, "duration_hr": 5.976, "sde": 34.44, "snr": 3780.39, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.4556, "teff": 5515.0, "rstar": 0.847077, "ra": 321.3835575417, "dec": -52.7976162706, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.23146}, {"id": "TIC79514184.01", "tic": 79514184, "status": "systematic", "score": 0.0119, "period": 12.953606, "depth_ppm": 744609.5, "rp_earth": 79.84, "duration_hr": 5.976, "sde": 30.43, "snr": 3159.96, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.8316, "teff": 5455.0, "rstar": 0.848119, "ra": 322.0283917149, "dec": -53.063334722, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.10542}, {"id": "TIC79492009.01", "tic": 79492009, "status": "systematic", "score": 0.0097, "period": 12.961878, "depth_ppm": 817981.2, "rp_earth": 146.6, "duration_hr": 5.976, "sde": 29.6, "snr": 3198.72, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.943, "teff": 6338.0, "rstar": 1.48572, "ra": 321.7832140515, "dec": -53.0541383944, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.08731}, {"id": "TIC79514172.01", "tic": 79514172, "status": "systematic", "score": 0.0096, "period": 12.956338, "depth_ppm": 771974.1, "rp_earth": 61.63, "duration_hr": 5.976, "sde": 30.38, "snr": 3611.51, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.5844, "teff": 3899.0, "rstar": 0.642935, "ra": 322.0408263903, "dec": -53.0101220524, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.09943}, {"id": "TIC79449009.02", "tic": 79449009, "status": "systematic", "score": 0.0091, "period": 13.002609, "depth_ppm": 621029.7, "rp_earth": 99.22, "duration_hr": 5.976, "sde": 37.65, "snr": 6339.15, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.0675, "teff": 5837.0, "rstar": 1.15408, "ra": 321.456179533, "dec": -52.7203605105, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.31546}, {"id": "TIC79514109.02", "tic": 79514109, "status": "systematic", "score": 0.0075, "period": 12.987869, "depth_ppm": 658048.2, "rp_earth": 123.12, "duration_hr": 5.976, "sde": 38.14, "snr": 5187.26, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.3265, "teff": 5455.3, "rstar": 1.39115, "ra": 321.9198135641, "dec": -52.811812004, "sectors": "94 95", "plot": null, "date": "2026-10-12", "t0_btjd": 3869.33044}, {"id": "TIC284676502.02", "tic": 284676502, "status": "systematic", "score": 0.0028, "period": 9.974606, "depth_ppm": 36664.6, "rp_earth": 18.14, "duration_hr": 0.72, "sde": 13.01, "snr": 44.55, "n_transits": 4, "flags": "odd_even single_event", "note": null, "tmag": 12.7816, "teff": 5103.0, "rstar": 0.868489, "ra": 67.2984324367, "dec": 10.9695540334, "sectors": "70 71", "plot": null, "date": "2026-10-12", "t0_btjd": 3217.53402}, {"id": "TIC3808433.01", "tic": 3808433, "status": "systematic", "score": 0.0026, "period": 5.383258, "depth_ppm": 939.6, "rp_earth": 4.32, "duration_hr": 1.944, "sde": 9.72, "snr": 9.58, "n_transits": 4, "flags": "single_event", "note": null, "tmag": 10.7217, "teff": 6127.69, "rstar": 1.2915, "ra": 169.7636187157, "dec": 19.5078250298, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2641.86697}, {"id": "TIC3817809.02", "tic": 3817809, "status": "systematic", "score": 0.0017, "period": 7.43588, "depth_ppm": 469568.4, "rp_earth": 94.47, "duration_hr": 1.944, "sde": 26.42, "snr": 659.43, "n_transits": 3, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.5308, "teff": 6025.69, "rstar": 1.26362, "ra": 170.23421556, "dec": 19.2103789229, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2638.04936}, {"id": "TIC3812706.02", "tic": 3812706, "status": "systematic", "score": 0.0012, "period": 7.237975, "depth_ppm": 437453.2, "rp_earth": 97.69, "duration_hr": 0.72, "sde": 13.4, "snr": 406.86, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.8988, "teff": 5711.82, "rstar": 1.35383, "ra": 169.845729162, "dec": 19.0421472817, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2638.46304}, {"id": "TIC3812637.02", "tic": 3812637, "status": "systematic", "score": 0.0011, "period": 7.152901, "depth_ppm": 156278.4, "rp_earth": 53.69, "duration_hr": 5.976, "sde": 20.02, "snr": 516.8, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.3284, "teff": 6127.89, "rstar": 1.24475, "ra": 169.8589582334, "dec": 19.5359845399, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2638.20997}, {"id": "TIC99817494.01", "tic": 99817494, "status": "systematic", "score": 0.001, "period": 7.798572, "depth_ppm": 196329.7, "rp_earth": 65.88, "duration_hr": 1.224, "sde": 17.8, "snr": 317.95, "n_transits": 3, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.2288, "teff": 6037.0, "rstar": 1.36278, "ra": 163.9952668325, "dec": 60.102414091, "sectors": "75", "plot": null, "date": "2026-10-12", "t0_btjd": 3344.09915}, {"id": "TIC147560958.02", "tic": 147560958, "status": "systematic", "score": 0.0009, "period": 4.739237, "depth_ppm": 127467.7, "rp_earth": 38.2, "duration_hr": 0.72, "sde": 28.56, "snr": 140.66, "n_transits": 4, "flags": "too_large odd_even single_event v_shaped", "note": null, "tmag": 12.7344, "teff": 5377.0, "rstar": 0.980778, "ra": 163.6081460264, "dec": 60.019986313, "sectors": "75", "plot": null, "date": "2026-10-12", "t0_btjd": 3344.10666}, {"id": "TIC437551052.02", "tic": 437551052, "status": "systematic", "score": 0.0009, "period": 7.076856, "depth_ppm": 199316.9, "rp_earth": 41.87, "duration_hr": 0.72, "sde": 21.08, "snr": 904.14, "n_transits": 4, "flags": "too_large odd_even single_event v_shaped common_period", "note": null, "tmag": 10.3163, "teff": 6352.0, "rstar": 0.859708, "ra": 253.0858437807, "dec": -21.5423407364, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.35194}, {"id": "TIC139679692.01", "tic": 139679692, "status": "systematic", "score": 0.0008, "period": 9.269551, "depth_ppm": 1420.8, "rp_earth": 4.58, "duration_hr": 1.224, "sde": 9.46, "snr": 9.45, "n_transits": 3, "flags": "odd_even single_event", "note": null, "tmag": 10.8561, "teff": 5978.4, "rstar": 1.11352, "ra": 322.2703243565, "dec": -52.9809781805, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3133.23544}, {"id": "TIC437551052.01", "tic": 437551052, "status": "systematic", "score": 0.0008, "period": 7.052348, "depth_ppm": 194567.0, "rp_earth": 41.37, "duration_hr": 0.72, "sde": 15.31, "snr": 1206.37, "n_transits": 4, "flags": "too_large odd_even single_event v_shaped common_period", "note": null, "tmag": 10.3163, "teff": 6352.0, "rstar": 0.859708, "ra": 253.0858437807, "dec": -21.5423407364, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.33994}, {"id": "TIC437536636.01", "tic": 437536636, "status": "systematic", "score": 0.0006, "period": 6.879696, "depth_ppm": 140318.1, "rp_earth": 46.36, "duration_hr": 2.88, "sde": 20.5, "snr": 203.84, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.9286, "teff": 4981.0, "rstar": 1.13443, "ra": 252.958701623, "dec": -20.9086772804, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.41195}, {"id": "TIC437461793.01", "tic": 437461793, "status": "systematic", "score": 0.0006, "period": 7.137038, "depth_ppm": 210905.6, "rp_earth": 67.76, "duration_hr": 5.976, "sde": 18.31, "snr": 2088.31, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 10.5592, "teff": 5027.0, "rstar": 1.35248, "ra": 252.4916488473, "dec": -21.4584213034, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.57548}, {"id": "TIC99817494.02", "tic": 99817494, "status": "systematic", "score": 0.0005, "period": 7.743238, "depth_ppm": 90635.3, "rp_earth": 44.76, "duration_hr": 0.72, "sde": 27.41, "snr": 73.57, "n_transits": 3, "flags": "too_large odd_even single_event v_shaped", "note": null, "tmag": 12.2288, "teff": 6037.0, "rstar": 1.36278, "ra": 163.9952668325, "dec": 60.102414091, "sectors": "75", "plot": null, "date": "2026-10-12", "t0_btjd": 3344.18465}, {"id": "TIC220852460.01", "tic": 220852460, "status": "systematic", "score": 0.0005, "period": 7.034225, "depth_ppm": 254361.8, "rp_earth": 80.9, "duration_hr": 5.976, "sde": 18.18, "snr": 623.37, "n_transits": 4, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.6875, "teff": 5588.0, "rstar": 1.47031, "ra": 253.2732092984, "dec": -21.398542229, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3779.91543}, {"id": "TIC3814532.01", "tic": 3814532, "status": "systematic", "score": 0.0004, "period": 6.560623, "depth_ppm": 282098.6, "rp_earth": 86.89, "duration_hr": 4.104, "sde": 10.4, "snr": 3765.72, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 9.8057, "teff": 6698.91, "rstar": 1.49955, "ra": 170.1446291305, "dec": 19.4539411897, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2645.25164}, {"id": "TIC437523728.01", "tic": 437523728, "status": "systematic", "score": 0.0004, "period": 7.180739, "depth_ppm": 235001.7, "rp_earth": 56.0, "duration_hr": 1.944, "sde": 15.96, "snr": 1014.07, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 11.0633, "teff": 5686.0, "rstar": 1.05875, "ra": 252.8398661846, "dec": -20.9829561922, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.19746}, {"id": "TIC220852419.01", "tic": 220852419, "status": "systematic", "score": 0.0004, "period": 7.028549, "depth_ppm": 321495.7, "rp_earth": 45.87, "duration_hr": 2.88, "sde": 25.45, "snr": 2848.07, "n_transits": 4, "flags": "too_large odd_even v_shaped common_period", "note": null, "tmag": 10.584, "teff": 5177.0, "rstar": 0.741441, "ra": 253.3078575183, "dec": -21.5402568386, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.77492}, {"id": "TIC437461793.02", "tic": 437461793, "status": "systematic", "score": 0.0004, "period": 8.091027, "depth_ppm": 196054.4, "rp_earth": 65.33, "duration_hr": 5.976, "sde": 16.03, "snr": 1252.05, "n_transits": 3, "flags": "too_large odd_even single_event", "note": null, "tmag": 10.5592, "teff": 5027.0, "rstar": 1.35248, "ra": 252.4916488473, "dec": -21.4584213034, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.02348}, {"id": "TIC468826918.01", "tic": 468826918, "status": "systematic", "score": 0.0003, "period": 6.700147, "depth_ppm": 2209.5, "rp_earth": 4.0, "duration_hr": 1.944, "sde": 10.73, "snr": 8.29, "n_transits": 4, "flags": "odd_even single_event", "note": null, "tmag": 11.8369, "teff": 5194.0, "rstar": 0.779035, "ra": 91.8252794812, "dec": 70.4003118051, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2916.92604}, {"id": "TIC468833573.02", "tic": 468833573, "status": "systematic", "score": 0.0003, "period": 7.742989, "depth_ppm": 1307.7, "rp_earth": 3.06, "duration_hr": 4.104, "sde": 10.06, "snr": 7.21, "n_transits": 6, "flags": "odd_even single_event", "note": null, "tmag": 12.3179, "teff": 5102.0, "rstar": 0.774512, "ra": 92.588515023, "dec": 69.9183279367, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2915.60239}, {"id": "TIC336104510.02", "tic": 336104510, "status": "systematic", "score": 0.0003, "period": 6.587103, "depth_ppm": 883.8, "rp_earth": 3.34, "duration_hr": 2.88, "sde": 10.07, "snr": 12.62, "n_transits": 9, "flags": "odd_even common_period", "note": null, "tmag": 10.8574, "teff": 6106.0, "rstar": 1.02941, "ra": 314.1627590121, "dec": 72.7427182529, "sectors": "16 17 18 19", "plot": null, "date": "2026-10-12", "t0_btjd": 1744.04234}, {"id": "TIC437489796.01", "tic": 437489796, "status": "systematic", "score": 0.0003, "period": 7.075068, "depth_ppm": 389729.6, "rp_earth": 60.18, "duration_hr": 5.976, "sde": 20.13, "snr": 877.86, "n_transits": 4, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.9749, "teff": 5234.0, "rstar": 0.883561, "ra": 252.6048299918, "dec": -21.0736413062, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.86048}, {"id": "TIC437523656.02", "tic": 437523656, "status": "systematic", "score": 0.0002, "period": 6.895588, "depth_ppm": 540343.0, "rp_earth": 57.63, "duration_hr": 5.976, "sde": 25.37, "snr": 2782.0, "n_transits": 3, "flags": "too_large odd_even common_period", "note": null, "tmag": 11.5706, "teff": 4629.0, "rstar": 0.718659, "ra": 252.796487502, "dec": -21.0116472794, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3781.03446}, {"id": "TIC437490016.01", "tic": 437490016, "status": "systematic", "score": 0.0002, "period": 7.059031, "depth_ppm": 445189.4, "rp_earth": 82.71, "duration_hr": 5.976, "sde": 16.36, "snr": 6500.06, "n_transits": 4, "flags": "too_large odd_even common_period", "note": null, "tmag": 10.0891, "teff": 5020.0, "rstar": 1.13623, "ra": 252.6228944, "dec": -21.1618274255, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.89048}, {"id": "TIC3817869.02", "tic": 3817869, "status": "systematic", "score": 0.0001, "period": 5.334187, "depth_ppm": 1590.1, "rp_earth": 5.14, "duration_hr": 5.976, "sde": 10.64, "snr": 13.58, "n_transits": 4, "flags": "odd_even single_event", "note": null, "tmag": 11.3016, "teff": 6282.64, "rstar": 1.18056, "ra": 170.1974010679, "dec": 19.5440881321, "sectors": "49", "plot": null, "date": "2026-10-12", "t0_btjd": 2642.55303}, {"id": "TIC468838146.01", "tic": 468838146, "status": "systematic", "score": 0.0001, "period": 8.582029, "depth_ppm": 1102.7, "rp_earth": 4.14, "duration_hr": 5.976, "sde": 10.95, "snr": 22.92, "n_transits": 4, "flags": "odd_even single_event", "note": null, "tmag": 9.5324, "teff": 6301.0, "rstar": 1.14247, "ra": 92.8846607225, "dec": 70.273815158, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2916.56772}, {"id": "TIC220852460.02", "tic": 220852460, "status": "systematic", "score": 0.0001, "period": 6.509177, "depth_ppm": 279833.9, "rp_earth": 84.86, "duration_hr": 2.88, "sde": 11.49, "snr": 452.73, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.6875, "teff": 5588.0, "rstar": 1.47031, "ra": 253.2732092984, "dec": -21.398542229, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3781.92093}, {"id": "TIC437538157.01", "tic": 437538157, "status": "systematic", "score": 0.0001, "period": 4.226649, "depth_ppm": 262486.3, "rp_earth": 74.09, "duration_hr": 0.72, "sde": 9.57, "snr": 333.74, "n_transits": 3, "flags": "too_large odd_even single_event", "note": null, "tmag": 12.3443, "teff": 5529.0, "rstar": 1.32549, "ra": 252.8515566821, "dec": -21.4981649538, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3779.37396}, {"id": "TIC437490862.01", "tic": 437490862, "status": "systematic", "score": 0.0001, "period": 7.100433, "depth_ppm": 217813.1, "rp_earth": 63.79, "duration_hr": 0.72, "sde": 21.93, "snr": 344.46, "n_transits": 4, "flags": "too_large odd_even single_event common_period", "note": null, "tmag": 12.1825, "teff": 5950.0, "rstar": 1.25278, "ra": 252.6483113879, "dec": -21.4867746871, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.72997}, {"id": "TIC437583973.01", "tic": 437583973, "status": "systematic", "score": 0.0001, "period": 4.317153, "depth_ppm": 107591.4, "rp_earth": 41.95, "duration_hr": 1.944, "sde": 11.77, "snr": 156.55, "n_transits": 4, "flags": "too_large odd_even single_event", "note": null, "tmag": 11.2062, "teff": 4508.0, "rstar": 1.17232, "ra": 253.1264783805, "dec": -21.5427654109, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3779.17744}, {"id": "TIC437536688.01", "tic": 437536688, "status": "systematic", "score": 0.0, "period": 7.034223, "depth_ppm": 194094.9, "rp_earth": 47.51, "duration_hr": 5.976, "sde": 12.59, "snr": 378.16, "n_transits": 4, "flags": "too_large odd_even common_period", "note": null, "tmag": 12.8659, "teff": 4529.0, "rstar": 0.988463, "ra": 252.9526761853, "dec": -20.9275526944, "sectors": "91", "plot": null, "date": "2026-10-12", "t0_btjd": 3780.18545}, {"id": "TIC468858633.01", "tic": 468858633, "status": "low_score", "score": 0.34, "period": 13.467661, "depth_ppm": 2076.0, "rp_earth": 5.42, "duration_hr": 4.104, "sde": 16.78, "snr": 10.27, "n_transits": 3, "flags": null, "note": null, "tmag": 11.8159, "teff": 5669.0, "rstar": 1.09104, "ra": 93.4271249665, "dec": 70.0064287472, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2911.17619}, {"id": "TIC468831987.02", "tic": 468831987, "status": "low_score", "score": 0.061, "period": 4.968811, "depth_ppm": 689.6, "rp_earth": 4.36, "duration_hr": 5.976, "sde": 13.51, "snr": 13.01, "n_transits": 7, "flags": null, "note": null, "tmag": 10.745, "teff": 6586.0, "rstar": 1.52012, "ra": 92.2059997075, "dec": 70.3881296533, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2914.21369}, {"id": "TIC139721765.01", "tic": 139721765, "status": "low_score", "score": 0.0312, "period": 0.710859, "depth_ppm": 26445.2, "rp_earth": 12.32, "duration_hr": 5.976, "sde": 16.03, "snr": 53.65, "n_transits": 55, "flags": null, "note": null, "tmag": 12.2113, "teff": 4428.0, "rstar": 0.694578, "ra": 322.7045220847, "dec": -53.0712853277, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3127.07642}, {"id": "TIC139721765.02", "tic": 139721765, "status": "low_score", "score": 0.0309, "period": 0.714294, "depth_ppm": 22169.4, "rp_earth": 11.28, "duration_hr": 5.976, "sde": 19.05, "snr": 32.36, "n_transits": 55, "flags": "v_shaped", "note": null, "tmag": 12.2113, "teff": 4428.0, "rstar": 0.694578, "ra": 322.7045220847, "dec": -53.0712853277, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3127.88394}, {"id": "TIC284705414.01", "tic": 284705414, "status": "low_score", "score": 0.0295, "period": 5.350044, "depth_ppm": 392.4, "rp_earth": 1.52, "duration_hr": 2.88, "sde": 9.96, "snr": 7.28, "n_transits": 8, "flags": null, "note": null, "tmag": 10.4853, "teff": 4351.0, "rstar": 0.704369, "ra": 67.5136373771, "dec": 10.9392682975, "sectors": "70 71", "plot": null, "date": "2026-10-12", "t0_btjd": 3213.95998}, {"id": "TIC468837813.02", "tic": 468837813, "status": "low_score", "score": 0.0109, "period": 1.932026, "depth_ppm": 4029.5, "rp_earth": 7.94, "duration_hr": 5.976, "sde": 13.85, "snr": 23.92, "n_transits": 24, "flags": null, "note": null, "tmag": 12.794, "teff": 5425.0, "rstar": 1.14592, "ra": 92.7094680441, "dec": 69.6259217533, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2910.70223}, {"id": "TIC139679696.01", "tic": 139679696, "status": "low_score", "score": 0.0102, "period": 8.030406, "depth_ppm": 2809.3, "rp_earth": 4.51, "duration_hr": 0.72, "sde": 10.35, "snr": 7.39, "n_transits": 4, "flags": null, "note": null, "tmag": 12.1929, "teff": 5208.0, "rstar": 0.779164, "ra": 322.1748760615, "dec": -52.9571773147, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3134.45195}, {"id": "TIC139679696.02", "tic": 139679696, "status": "low_score", "score": 0.0086, "period": 2.880612, "depth_ppm": 558.7, "rp_earth": 2.01, "duration_hr": 5.976, "sde": 10.46, "snr": 7.3, "n_transits": 15, "flags": null, "note": null, "tmag": 12.1929, "teff": 5208.0, "rstar": 0.779164, "ra": 322.1748760615, "dec": -52.9571773147, "sectors": "67 68", "plot": null, "date": "2026-10-12", "t0_btjd": 3127.17545}, {"id": "TIC468833573.01", "tic": 468833573, "status": "low_score", "score": 0.0057, "period": 13.238775, "depth_ppm": 2278.3, "rp_earth": 4.03, "duration_hr": 4.104, "sde": 12.04, "snr": 9.1, "n_transits": 3, "flags": null, "note": null, "tmag": 12.3179, "teff": 5102.0, "rstar": 0.774512, "ra": 92.588515023, "dec": 69.9183279367, "sectors": "59 60", "plot": null, "date": "2026-10-12", "t0_btjd": 2910.66921}]};
-const S=D.stats, R=D.rows;
-const fmt=n=>n==null?"–":Number(n).toLocaleString();
-const kp=[["Stars analyzed",S.stars_analyzed],["TESS sectors",S.sectors_analyzed],["Data points searched",S.light_curve_points],["Signals detected",S.signals],["New candidates",(S.counts.strong_candidate||0)+(S.counts.candidate||0)],["Known planets recovered",(S.counts.known_planet||0)+(S.counts.known_toi||0)]];
-document.getElementById("kpis").innerHTML=kp.map(([l,v])=>`<div class="card"><div class="big">${fmt(v)}</div><div class="lbl">${l}</div></div>`).join("");
-document.getElementById("upd").textContent="Updated "+S.updated+".";
-const pill=s=>`<span class="pill s-${s}">${(s||"").replace(/_/g," ")}</span>`;
-const topC=R.filter(r=>["strong_candidate","candidate"].includes(r.status)&&r.plot).slice(0,12);
-document.getElementById("cands").innerHTML=topC.length?topC.map(r=>`<div class="card cand"><img loading="lazy" src="plots/${r.plot}" alt="Diagnostic plot for ${r.id}" onclick="zoom('plots/${r.plot}')"><div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px"><b class="mono">${r.id}</b>${pill(r.status)}</div><div class="mono" style="color:var(--mute);margin-top:4px">P ${r.period.toFixed(4)} d · ${Math.round(r.depth_ppm)} ppm · ${r.rp_earth.toFixed(1)} R⊕ · score ${r.score.toFixed(2)}</div><div style="margin-top:6px;font-size:13px"><a href="https://exofop.ipac.caltech.edu/tess/target.php?id=${r.tic}" target="_blank" rel="noopener">ExoFOP</a></div></div>`).join(""):`<div class="card sub">No candidates yet. The bot is still screening.</div>`;
-function zoom(s){document.getElementById("mimg").src=s;document.getElementById("modal").style.display="flex"}
-const cols=[["id","ID"],["status","Status"],["score","AI score"],["period","Period (d)"],["depth_ppm","Depth (ppm)"],["rp_earth","Rp (R⊕)"],["snr","SNR"],["n_transits","Transits"],["flags","Flags"],["note","Note"],["tmag","Tmag"]];
-let sortK="score",sortD=-1;
-const st=document.getElementById("fstatus");[...new Set(R.map(r=>r.status))].forEach(s=>st.insertAdjacentHTML("beforeend",`<option>${s}</option>`));
-document.querySelector("#tbl thead").innerHTML="<tr>"+cols.map(([k,l])=>`<th data-k="${k}">${l}</th>`).join("")+"</tr>";
-document.querySelectorAll("#tbl th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortD=k===sortK?-sortD:-1;sortK=k;draw()});
-st.onchange=draw;document.getElementById("fsearch").oninput=draw;
-function cell(r,k){const v=r[k];if(k==="status")return pill(v);if(k==="id")return r.plot?`<a href="#" onclick="zoom('plots/${r.plot}');return false" class="mono">${v}</a>`:`<span class="mono">${v}</span>`;if(typeof v==="number")return k==="period"?v.toFixed(4):k==="score"?v.toFixed(2):Number.isInteger(v)?v:v.toFixed(1);return v??""}
-function draw(){const fs=st.value,q=document.getElementById("fsearch").value.trim();let rows=R.filter(r=>(!fs||r.status===fs)&&(!q||String(r.tic).includes(q)));rows.sort((a,b)=>((a[sortK]??-1e9)>(b[sortK]??-1e9)?1:-1)*sortD);document.querySelector("#tbl tbody").innerHTML=rows.slice(0,500).map(r=>"<tr>"+cols.map(([k])=>`<td>${cell(r,k)}</td>`).join("")+"</tr>").join("")}
-draw();
-const V=S.validation||{},M=S.model||{};const vv=[];
-if(V.recovery_rate!=null)vv.push(["Confirmed planets recovered blind",`${V.known_planets_recovered}/${V.known_planets_tested}`]);
-if(M.roc_auc!=null)vv.push(["Vetter ROC AUC",M.roc_auc]);
-if(M.real_only)vv.push(["Real TOIs: planets kept",Math.round(100*M.real_only["planets_scored_above_0.5"])+"%"],["Real TOIs: false positives rejected",Math.round(100*M.real_only.false_positives_rejected)+"%"]);
-if(M.n_train)vv.push(["Training examples",M.n_train]);
-if(M.source)vv.push(["Trained on",M.source]);
-document.getElementById("val").innerHTML=vv.length?vv.map(([l,v])=>`<div class="card"><div class="big" style="font-size:22px">${typeof v==="number"?fmt(v):v}</div><div class="lbl">${l}</div></div>`).join(""):`<div class="card sub">Validation pending.</div>`;
+const COL={paper:"#eef3ff",line:"#8ea5dc",rule:"#3557a8",deep:"#122b6b",cyan:"#1d4096",hi:"#ffd84a",no:"#ff8f7e",known:"#9fe0ff",sys:"#c9b3ff"};
+const VCOL={strong_candidate:COL.hi,candidate:COL.hi,likely_eb:COL.no,low_score:COL.no,systematic:COL.sys,known_planet:COL.known,known_toi:COL.known,known_eb:COL.known,known_system:COL.known,blend_of_known:COL.known};
+const NAME={strong_candidate:"strong candidate",candidate:"possible planet",likely_eb:"eclipsing stars",low_score:"not planet-like",systematic:"spacecraft glitch",known_planet:"known planet",known_toi:"already a candidate",known_eb:"known binary",known_system:"known system",blend_of_known:"light from a neighbour",no_signal:"no planet",no_tess_data:"no usable data",too_little_data:"too little data",analysis_error:"couldn't process",download_error:"download failed",worker_error:"couldn't process"};
+const nm=s=>NAME[s]||(s||"").replace(/_/g," ");
+const $=id=>document.getElementById(id);
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const bust=u=>u+(u.includes("?")?"&":"?")+"t="+Date.now();
+async function getJSON(u){try{const r=await fetch(bust(u));if(!r.ok)return null;const t=await r.text();return JSON.parse(t.replace(/\bNaN\b|-?Infinity\b/g,"null"))}catch(e){return null}}
+const fmt=(v,d=2)=>v==null||!isFinite(v)?"–":(+v).toFixed(d);
+const n0=v=>(v||0).toLocaleString();
+const params=new URLSearchParams(location.search);
+if(params.get("kiosk"))document.body.classList.add("kiosk");
+function fit(cv){const d=devicePixelRatio||1,r=cv.getBoundingClientRect();const w=Math.max(10,Math.round(r.width*d)),h=Math.max(10,Math.round(r.height*d));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}const x=cv.getContext("2d");x.setTransform(d,0,0,d,0,0);return{x,w:r.width,h:r.height}}
+const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+
+/* what Tess says about a star */
+function verdictLine(s,tic){const T="TIC "+tic;return ({
+  no_signal:`${T}: steady as a rock. No planet I can see.`,
+  systematic:`${T}: that dip shows up in other stars too. It's the spacecraft, not a planet.`,
+  likely_eb:`${T}: two stars eclipsing each other. Not a planet, but still pretty.`,
+  low_score:`${T}: there's a dip, but it doesn't look like a planet to me.`,
+  known_eb:`${T}: a binary astronomers already know about. I found it on my own!`,
+  known_toi:`${T}: already on NASA's list. Nice to agree with them.`,
+  known_planet:`${T}: a known planet. I spotted it without being told.`,
+  known_system:`${T}: this star already has known planets.`,
+  blend_of_known:`${T}: that's light leaking in from a famous neighbour.`,
+  candidate:`${T}: ooh. This one might be real. Flagging it.`,
+  strong_candidate:`${T}: this one passed every test I have!`,
+  no_tess_data:`${T}: TESS never got usable data on this one. Skipping.`,
+})[s]||`${T}: not enough data to judge. Moving on.`}
+const QUIPS=["I have four cameras, just like the real TESS satellite.","An Earth-sized planet dims a sun-like star by less than 0.01%. I look for that.","Most stars have no planet I can detect. That's completely normal.","I never check the same star twice.","I skip the Milky Way's plane. Too many stars blending together.","I wake up every six hours. No coffee required."];
+
+/* ---------------- hero: the sky dome ---------------- */
+let SKY={ra:[],dec:[],s:[],tic:[]},FEED=[],STATUS=null,DATA=null;
+let rot=0,vel=0,drag=null,target=null,scanT=0,queue=[],qi=0,litSet=new Set(),lastPick=0,autoPause=0;
+const BG=[];(function(){let a=7;const r=()=>(a=(a*16807)%2147483647)/2147483647;for(let i=0;i<650;i++)BG.push({ra:r()*360,dec:Math.asin(r()*2-1)*180/Math.PI,m:r()})})();
+function domeGeom(w,h){const R=Math.min(w,h)*(w<520?0.34:0.38);return{cx:w*(w<520?0.5:0.46),cy:h*0.46,R}}
+function proj(ra,dec,G){const a=(ra+rot)*Math.PI/180,r=(90-dec)/180*G.R;return[G.cx+r*Math.cos(a),G.cy+r*Math.sin(a)]}
+function tessEye(){const el=$("tess"),st=$("stage").getBoundingClientRect(),r=el.getBoundingClientRect();return[r.left-st.left+r.width*0.5,r.top-st.top+r.height*0.3]}
+function drawDome(tm){
+  const {x,w,h}=fit($("dome"));x.clearRect(0,0,w,h);const G=domeGeom(w,h);
+  x.strokeStyle=COL.paper;x.lineWidth=1.6;x.beginPath();x.arc(G.cx,G.cy,G.R+16,0,7);x.stroke();
+  x.lineWidth=1;for(let i=0;i<96;i++){const a=(i*3.75+rot)*Math.PI/180,l=i%4===0?9:4;x.beginPath();x.moveTo(G.cx+(G.R+16)*Math.cos(a),G.cy+(G.R+16)*Math.sin(a));x.lineTo(G.cx+(G.R+16-l)*Math.cos(a),G.cy+(G.R+16-l)*Math.sin(a));x.stroke()}
+  x.fillStyle=COL.paper;x.font="500 12px 'Bricolage Grotesque',sans-serif";x.textAlign="center";x.textBaseline="middle";
+  for(let hr=0;hr<24;hr+=2){const a=(hr*15+rot)*Math.PI/180;x.fillText(hr+"h",G.cx+(G.R+30)*Math.cos(a),G.cy+(G.R+30)*Math.sin(a))}
+  x.save();x.beginPath();x.arc(G.cx,G.cy,G.R,0,7);x.fillStyle=COL.deep;x.fill();x.clip();
+  x.strokeStyle=COL.rule;x.setLineDash([2,5]);for(let d=60;d>=-60;d-=30){x.beginPath();x.arc(G.cx,G.cy,(90-d)/180*G.R,0,7);x.stroke()}x.setLineDash([]);
+  for(let ra=0;ra<360;ra+=30){const a=(ra+rot)*Math.PI/180;x.beginPath();x.moveTo(G.cx,G.cy);x.lineTo(G.cx+G.R*Math.cos(a),G.cy+G.R*Math.sin(a));x.stroke()}
+  for(const s of BG){const [px,py]=proj(s.ra,s.dec,G);x.fillStyle=`rgba(238,243,255,${.12+.35*s.m})`;x.fillRect(px,py,s.m>.9?1.8:1.1,s.m>.9?1.8:1.1)}
+  const n=SKY.ra.length;
+  for(let i=0;i<n;i++){const s=SKY.s[i],c=VCOL[s];const [px,py]=proj(SKY.ra[i],SKY.dec[i],G);const lit=litSet.has(SKY.tic[i]);x.fillStyle=c||COL.line;x.globalAlpha=lit?1:(c?.85:.55);const r=c?(s.includes("candidate")?3.4:2.4):1.6;x.beginPath();x.arc(px,py,r,0,7);x.fill();if(s&&s.includes("candidate")){x.globalAlpha=.25;x.beginPath();x.arc(px,py,9,0,7);x.fill()}}
+  x.globalAlpha=1;x.restore();
+  x.strokeStyle=COL.paper;x.lineWidth=1.6;x.beginPath();x.arc(G.cx,G.cy,G.R,0,7);x.stroke();
+  // beam from Tess's cameras to the star she's looking at
+  if(target){const [ex,ey]=tessEye(),[tx,ty]=proj(target.ra,target.dec,G),k=Math.min(1,(tm-scanT)/700),bx=ex+(tx-ex)*ease(k),by=ey+(ty-ey)*ease(k);
+    const ang=Math.atan2(by-ey,bx-ex),len=Math.hypot(bx-ex,by-ey),sp=0.05;
+    const g=x.createLinearGradient(ex,ey,bx,by);g.addColorStop(0,"rgba(255,216,74,.5)");g.addColorStop(1,"rgba(255,216,74,.1)");x.fillStyle=g;
+    x.beginPath();x.moveTo(ex,ey);x.lineTo(ex+len*Math.cos(ang-sp),ey+len*Math.sin(ang-sp));x.lineTo(ex+len*Math.cos(ang+sp),ey+len*Math.sin(ang+sp));x.closePath();x.fill();
+    if(k>=1){const ph=((tm-scanT)%1200)/1200;x.strokeStyle=`rgba(255,216,74,${1-ph})`;x.lineWidth=1.6;x.beginPath();x.arc(tx,ty,5+ph*16,0,7);x.stroke()}
+    const a=Math.atan2(ty-ey,tx-ex)*180/Math.PI+90;$("cams").style.transform=`rotate(${Math.max(-70,Math.min(70,a))}deg)`}
+}
+function say(txt,who="Tess"){$("bubbleTxt").textContent=txt;$("bubbleWho").textContent=who}
+function pointAt(st,who){target=st;scanT=performance.now();$("tess").classList.add("scan");say("Looking at TIC "+st.tic+"…");
+  clearTimeout(pointAt.t);pointAt.t=setTimeout(()=>{$("tess").classList.remove("scan");litSet.add(st.tic);say(verdictLine(st.s,st.tic),who||"Tess")},1300)}
+function buildQueue(){queue=[];for(const e of FEED.slice().reverse())if(e.ra!=null)queue.push({ra:e.ra,dec:e.dec,tic:e.tic,s:e.status});
+  if(queue.length<6){for(let i=SKY.ra.length-1;i>=0&&queue.length<40;i--)queue.push({ra:SKY.ra[i],dec:SKY.dec[i],tic:SKY.tic[i],s:SKY.s[i]})}}
+function nextAuto(tm){if(!queue.length||tm<autoPause)return;if(tm-lastPick>(RM?7000:4200)){lastPick=tm;pointAt(queue[qi%queue.length]);qi++}}
+(function(){const cv=$("dome");let lastX=0,lastT=0,moved=0;
+  cv.addEventListener("pointerdown",e=>{drag={x:e.clientX,rot};moved=0;lastX=e.clientX;lastT=performance.now();cv.setPointerCapture(e.pointerId);cv.classList.add("dragging")});
+  cv.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x;moved=Math.max(moved,Math.abs(dx));rot=drag.rot+dx*0.35;const now=performance.now();vel=(e.clientX-lastX)*0.35/Math.max(1,now-lastT)*16;lastX=e.clientX;lastT=now});
+  cv.addEventListener("pointerup",e=>{cv.classList.remove("dragging");const wasDrag=moved>4;drag=null;if(!wasDrag){vel=0;clickStar(e)}});
+  function clickStar(e){const r=cv.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,G=domeGeom(r.width,r.height);let best=null,bd=14;
+    for(let i=0;i<SKY.ra.length;i++){const [px,py]=proj(SKY.ra[i],SKY.dec[i],G);const d=Math.hypot(px-mx,py-my);if(d<bd){bd=d;best=i}}
+    if(best!=null){autoPause=performance.now()+9000;pointAt({ra:SKY.ra[best],dec:SKY.dec[best],tic:SKY.tic[best],s:SKY.s[best]},"Tess, answering you")}
+    else if(Math.hypot(mx-G.cx,my-G.cy)<G.R){autoPause=performance.now()+5000;say(SKY.ra.length?"I haven't checked that patch yet. Try one of the lit stars.":"I haven't checked any stars yet. Come back after my first run!")}}
+})();
+(function(){let q=0;const t=$("tess");const hi=()=>{t.classList.add("wave");setTimeout(()=>t.classList.remove("wave"),700);autoPause=performance.now()+6000;say(QUIPS[q++%QUIPS.length])};
+  t.addEventListener("click",hi);t.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();hi()}})})();
+
+/* ---------------- live status, diary, numbers ---------------- */
+function ago(iso){if(!iso)return"";const s=(Date.now()-new Date(iso))/1000;if(s<90)return"just now";if(s<5400)return Math.round(s/60)+" minutes ago";if(s<172800)return Math.round(s/3600)+" hours ago";return Math.round(s/86400)+" days ago"}
+async function refresh(){
+  const [st,sky,data]=await Promise.all([getJSON("status.json"),getJSON("sky.json"),getJSON("data.json")]);
+  if(sky)SKY=sky;if(data)DATA=data;STATUS=st;FEED=(st&&st.feed)||[];buildQueue();
+  const running=st&&(st.state==="running"||st.state==="starting");
+  $("pulse").classList.toggle("on",!!running);
+  $("pulseTxt").textContent=!st?"not started yet":running?`Scanning, star ${st.done} of ${st.targets}`:"Resting, back within 6 hours";
+  if(st){
+    $("nowLine").textContent=running?`I'm working through a batch of ${st.targets} stars right now. ${st.done} done so far${st.candidates_this_run?`, and ${st.candidates_this_run} look interesting`:""}.`:`I'm resting between runs. My last batch was ${st.done} stars, and I'll wake up again within six hours.`;
+    $("prog").style.width=(st.targets?100*st.done/st.targets:0)+"%";
+    $("nowMeta").textContent="Last update "+ago(st.updated)+".";
+    if(st.repo&&st.run_id)$("logLink").href=`https://github.com/${st.repo}/actions/runs/${st.run_id}`;
+    if(FEED.length){$("diary").innerHTML=FEED.slice().reverse().slice(0,12).map(e=>{const cls=(e.status||"").includes("candidate")?"hit":["likely_eb","systematic","low_score"].includes(e.status)?"no":"";return `<li class="${cls}"><span class="who">TIC ${e.tic}</span><span class="say">${verdictLine(e.status,e.tic).replace(/^TIC \d+: /,"")}</span></li>`}).join("")}
+  }
+  if(data){const S=data.stats,c=S.counts||{},cand=(c.strong_candidate||0)+(c.candidate||0),known=(c.known_eb||0)+(c.known_toi||0)+(c.known_planet||0);
+    $("numbers").innerHTML=`I've checked <b>${n0(S.stars_analyzed)}</b> stars using <b>${n0(S.sectors_analyzed)}</b> months of TESS data, about <b>${n0(S.light_curve_points)}</b> brightness measurements. Along the way I threw out <b>${n0(c.systematic)}</b> spacecraft glitches and <b>${n0(c.likely_eb)}</b> pairs of eclipsing stars${known?`, and found <b>${n0(known)}</b> objects astronomers had already catalogued`:""}. Possible planets so far: <b>${n0(cand)}</b>.`;
+    $("lede").innerHTML=`Every six hours I wake up, pick a few hundred stars that NASA's TESS satellite has photographed, and check each one for the tiny, regular dip in brightness a passing planet causes. So far I've checked <b>${n0(S.stars_analyzed)}</b> stars.`;
+    const V=S.validation||{};if(V.recovery_rate!=null)$("valText").textContent=`I was tested on ${V.known_planets_tested} stars with confirmed TESS planets, without being told where the planets were. I found ${V.known_planets_recovered} of them on my own (${Math.round(100*V.recovery_rate)}%). The ones I miss are mostly very shallow or have long orbits.`;
+    renderFinds(data.rows||[]);
+  }
+}
+function renderFinds(rows){const seen=new Set(),once=r=>!seen.has(r.tic)&&seen.add(r.tic);
+  const good=rows.filter(r=>["strong_candidate","candidate"].includes(r.status)).filter(once),known=rows.filter(r=>["known_planet","known_toi","known_eb"].includes(r.status)).filter(once);
+  const noteTxt=n=>!n?"":n==="in TESS EB catalog"?"Listed in the TESS eclipsing binary catalog.":n.charAt(0).toUpperCase()+n.slice(1)+".";
+  const card=r=>`<article class="find">${r.plot?`<a href="plots/${r.plot}" target="_blank" rel="noopener"><img loading="lazy" src="plots/${r.plot}" alt="Diagnostic plots for TIC ${r.tic}"></a>`:""}<h3>TIC ${r.tic}</h3><p><span class="chip v-${r.status}">${nm(r.status)}</span> every ${fmt(r.period,3)} days, ${Math.round(r.depth_ppm).toLocaleString()} ppm deep.${r.status.startsWith("known")&&r.note?` ${noteTxt(r.note)}`:""}</p><p style="margin-top:6px"><a href="https://exofop.ipac.caltech.edu/tess/target.php?id=${r.tic}" target="_blank" rel="noopener">Look it up on ExoFOP</a></p></article>`;
+  let h=good.length?`<div class="finds">${good.slice(0,12).map(card).join("")}</div>`:`<div class="empty">Nothing yet, and that's expected. Most stars don't have a planet I can detect, and the ones that do are usually already known. I check a few hundred new stars every six hours and post anything promising here.</div>`;
+  if(known.length)h+=`<h3 style="margin:44px 0 10px">Things I found that astronomers already knew about</h3><p style="color:#d5def7">These are reassuring: I found them blind, without being told they were there.</p><div class="finds">${known.slice(0,6).map(card).join("")}</div>`;
+  $("findsBox").innerHTML=h}
+
+/* ---------------- sky map (Hammer projection) ---------------- */
+const GAL=[];(function(){const aG=192.85948*Math.PI/180,dG=27.12825*Math.PI/180,lN=122.93192*Math.PI/180;for(const bd of [-12,0,12]){const line=[];const b=bd*Math.PI/180;for(let l=0;l<=360;l+=2){const L=l*Math.PI/180;const d=Math.asin(Math.sin(dG)*Math.sin(b)+Math.cos(dG)*Math.cos(b)*Math.cos(lN-L));const a=aG+Math.atan2(Math.cos(b)*Math.sin(lN-L),Math.cos(dG)*Math.sin(b)-Math.sin(dG)*Math.cos(b)*Math.cos(lN-L));line.push([(a*180/Math.PI+360)%360,d*180/Math.PI])}GAL.push({b:bd,line})}})();
+function hammer(ra,dec){const l=-(ra-180)*Math.PI/180,b=dec*Math.PI/180,z=Math.sqrt(1+Math.cos(b)*Math.cos(l/2));return[2*Math.SQRT2*Math.cos(b)*Math.sin(l/2)/z,Math.SQRT2*Math.sin(b)/z]}
+function drawMap(){const {x,w,h}=fit($("skymap"));x.clearRect(0,0,w,h);const S=Math.min(w/(4*Math.SQRT2),h/(2*Math.SQRT2))*.97,cx=w/2,cy=h/2;const P=(ra,dec)=>{const [u,v]=hammer(ra,dec);return[cx+u*S,cy-v*S]};
+  const edge=()=>{x.beginPath();for(let i=0;i<=360;i++){const t=i/360*2*Math.PI;x.lineTo(cx+2*Math.SQRT2*S*Math.cos(t),cy+Math.SQRT2*S*Math.sin(t))}};
+  x.save();edge();x.fillStyle=COL.deep;x.fill();x.clip();x.strokeStyle=COL.rule;x.lineWidth=1;
+  for(let d=-60;d<=60;d+=30){x.beginPath();for(let ra=0;ra<=360;ra+=3){const [px,py]=P(ra===360?359.99:ra,d);ra?x.lineTo(px,py):x.moveTo(px,py)}x.stroke()}
+  for(let ra=0;ra<360;ra+=30){x.beginPath();for(let d=-90;d<=90;d+=3){const [px,py]=P(ra||.001,d);d===-90?x.moveTo(px,py):x.lineTo(px,py)}x.stroke()}
+  for(const G of GAL){x.beginPath();let prev=null;for(const [ra,dec] of G.line){const [px,py]=P(ra,dec);if(prev!=null&&Math.abs(px-prev)>w/3)x.moveTo(px,py);else x.lineTo(px,py);prev=px}x.strokeStyle=G.b===0?"#eef3ff66":"#eef3ff40";x.setLineDash(G.b===0?[]:[4,5]);x.stroke();x.setLineDash([])}
+  const n=SKY.ra.length;for(let pass=0;pass<2;pass++)for(let i=0;i<n;i++){const c=VCOL[SKY.s[i]];if((pass===0)===!!c)continue;const [px,py]=P(SKY.ra[i],SKY.dec[i]);x.fillStyle=c||COL.line;x.beginPath();x.arc(px,py,c?2.6:1.6,0,7);x.fill()}
+  x.restore();x.strokeStyle=COL.paper;x.lineWidth=1.6;edge();x.stroke()}
+
+/* ---------------- replay theatre ---------------- */
+const STEPS=["Pick a star","Download its light","Clean it up","Search for repeats","Stack the dips","Rule out impostors","Decide"];
+const DUR=[3200,3800,4200,5200,4800,0,4200];
+$("steps").innerHTML=STEPS.map((s,i)=>`<li data-i="${i}" tabindex="0"><span>Step ${i+1}</span>${s}</li>`).join("");
+document.querySelectorAll("#steps li").forEach(el=>{const go=()=>goStep(+el.dataset.i);el.onclick=go;el.onkeydown=e=>{if(e.key==="Enter")go()}});
+let LIST=[],idx=0,REC=null,step=0,stepStart=0,playing=true,chkTimer=null;
+const isInt=v=>["strong_candidate","candidate","known_planet","known_toi","likely_eb","known_eb","blend_of_known","systematic"].includes(v);
+async function loadIndex(){const ix=await getJSON("stars/index.json");
+  LIST=ix&&ix.length?ix.slice():[{tic:"demo",verdict:"strong_candidate",demo:true}];
+  const rank=v=>v==="strong_candidate"?0:v==="candidate"?1:/known/.test(v||"")?2:v==="likely_eb"?3:v==="systematic"?4:5;
+  LIST.sort((a,b)=>rank(a.verdict)-rank(b.verdict));
+  if(document.body.classList.contains("kiosk"))LIST=LIST.filter(e=>isInt(e.verdict)||e.demo).concat(LIST.filter(e=>!isInt(e.verdict)).slice(0,4));
+  $("pick").innerHTML=LIST.map((e,i)=>`<option value="${i}">${e.demo?"Practice star (simulated)":"TIC "+e.tic}, ${nm(e.verdict)}</option>`).join("")}
+$("pick").onchange=()=>{idx=+$("pick").value;startStar()};
+$("nextBtn").onclick=()=>{idx=(idx+1)%LIST.length;startStar()};
+$("prevBtn").onclick=()=>{if(step>0)goStep(step-1)};
+$("playBtn").onclick=()=>{playing=!playing;$("playBtn").textContent=playing?"Pause":"Play";stepStart=performance.now()};
+function rr(a,pad=.15){const v=a.filter(z=>z!=null&&isFinite(z)).sort((p,q)=>p-q);if(!v.length)return[0,1];const lo=v[Math.floor(v.length*.005)],hi=v[Math.floor(v.length*.995)];const p=(hi-lo)*pad||1e-4;return[lo-p,hi+p]}
+async function startStar(){const e=LIST[idx];if(!e)return;$("pick").value=idx;
+  REC=await getJSON(e.demo?"stars/demo.json":`stars/${e.tic}.json`);if(!REC){idx=(idx+1)%LIST.length;return setTimeout(startStar,400)}
+  REC._sig=(REC.signals||[]).find(s=>s.status!=="below_threshold")||null;REC._r1=rr(REC.lc.raw.concat(REC.lc.trend));REC._r2=rr(REC.lc.flat,.25);REC._demo=!!e.demo;
+  facts();goStep(0)}
+function goStep(i){step=i;stepStart=performance.now();clearInterval(chkTimer);
+  document.querySelectorAll("#steps li").forEach((el,k)=>{el.classList.toggle("done",k<i);el.classList.toggle("cur",k===i)});
+  if(i<5)$("checks").innerHTML="";caption();if(i===5)runChecks();if(i===6&&!$("checks").children.length)showChecks(true)}
+function facts(){const s=REC.star,g=REC._sig;const rows=[["Star",REC._demo?"practice star":"TIC "+REC.tic],["Brightness",`magnitude ${fmt(s.tmag,1)}`],["Temperature",s.teff?Math.round(s.teff).toLocaleString()+" K":"–"],["Size",s.rstar?fmt(s.rstar,2)+" × the Sun":"–"],["TESS sectors",REC.sectors.join(", ")],["Measurements",REC.n_points.toLocaleString()]];
+  if(g)rows.push(["Signal",`every ${fmt(g.period,3)} days`]);rows.push(["Verdict",`<span class="chip v-${REC.verdict}">${nm(REC.verdict)}</span>`]);
+  $("facts").innerHTML=rows.map(r=>`<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join("")}
+function caption(){const R=REC,g=R._sig,s=R.star,days=Math.round(R.lc.t[R.lc.t.length-1]||0),T=R._demo?"a practice star":"TIC "+R.tic;let t="";
+  switch(step){
+  case 0:t=`<b>I picked ${T}.</b> ${s.teff?`It's a ${s.teff>5200?"sun-like":s.teff>3900?"orange":"red dwarf"} star at ${Math.round(s.teff).toLocaleString()} K. `:""}It passed my filters: the right size, not blended with a neighbour, and never checked before.`;break;
+  case 1:t=`<b>I downloaded ${R.n_points.toLocaleString()} brightness measurements</b> from NASA's archive, about ${days} days of TESS staring at this one star.`;break;
+  case 2:t=`<b>Stars flicker on their own.</b> They spin, have spots, and pulse. I trace that slow wobble (the yellow line) and divide it out, leaving a flat line where a planet's tiny dip can show up.`;break;
+  case 3:t=R.periodogram?`<b>I try every orbit from half a day to 15 days.</b> For each one I ask: is there a dip that repeats on exactly this schedule? ${g?`The tallest spike is at <b>${fmt(R.periodogram.peak_period,3)} days</b>.`:`Nothing rises clearly above the dashed line, so <b>no repeating dip</b>.`}`:"There wasn't enough data to search.";break;
+  case 4:t=g?`<b>I stack all ${g.transits.length} dips on top of each other.</b> The noise averages out and the shape appears: ${Math.round(g.depth_ppm).toLocaleString()} parts per million deep and ${fmt(g.duration_hr,1)} hours long.`:`<b>Nothing to stack.</b> Without a repeating dip, I write this star down as checked and move on.`;break;
+  case 5:t=g?`<b>Most dips aren't planets.</b> They're two stars eclipsing each other, a blended background star, or a glitch in the spacecraft. Each test on the right rules one of those out.`:`<b>No signal strong enough to test.</b>`;break;
+  case 6:t=`<b>${verdictLine(R.verdict,R._demo?"practice":R.tic).replace(/^TIC \S+: /,"")}</b>${g&&g.score!=null?` My AI model gave it ${fmt(g.score,2)} out of 1 for looking like a planet.`:""}`;break}
+  $("cap").innerHTML=t}
+function chkHTML(c,show){return `<li class="${show?"show":""}" title="${c.why}"><span class="ic ${c.pass?"ok":"bad"}">${c.pass?"✓":"✕"}</span><div><b>${c.name}</b><small>${c.value}</small></div></li>`}
+function showChecks(all){const g=REC._sig;if(!g||!g.checks)return;$("checks").innerHTML=g.checks.map(c=>chkHTML(c,all)).join("")}
+function runChecks(){const g=REC._sig;if(!g||!g.checks){setTimeout(()=>{if(step===5&&playing)goStep(6)},2200);return}showChecks(false);const lis=[...$("checks").children];let k=0;
+  chkTimer=setInterval(()=>{if(!playing)return;if(k<lis.length){lis[k++].classList.add("show")}else{clearInterval(chkTimer);setTimeout(()=>{if(step===5&&playing)goStep(6)},1400)}},650)}
+function axes(x,box,xr,yr,o={}){const {xl="",yl="",xlog=false,yf=v=>v.toFixed(3),xf=v=>v.toFixed(0)}=o;
+  const X=v=>box.x+(xlog?(Math.log10(v)-Math.log10(xr[0]))/(Math.log10(xr[1])-Math.log10(xr[0])):(v-xr[0])/(xr[1]-xr[0]))*box.w,Y=v=>box.y+box.h-(v-yr[0])/(yr[1]-yr[0])*box.h;
+  x.strokeStyle=COL.rule;x.lineWidth=1;x.fillStyle=COL.line;x.font="13px 'Bricolage Grotesque',sans-serif";x.textAlign="right";x.textBaseline="middle";
+  for(let i=0;i<=4;i++){const v=yr[0]+(yr[1]-yr[0])*i/4,y=Y(v);x.beginPath();x.moveTo(box.x,y);x.lineTo(box.x+box.w,y);x.stroke();x.fillText(yf(v),box.x-8,y)}
+  x.textAlign="center";x.textBaseline="top";const tk=xlog?[0.5,1,2,3,5,10,15].filter(v=>v>=xr[0]&&v<=xr[1]):Array.from({length:6},(_,i)=>xr[0]+(xr[1]-xr[0])*i/5);
+  for(const v of tk){const xx=X(v);x.beginPath();x.moveTo(xx,box.y);x.lineTo(xx,box.y+box.h);x.stroke();x.fillText(xf(v),xx,box.y+box.h+6)}
+  x.fillStyle=COL.paper;x.font="14px 'Bricolage Grotesque',sans-serif";x.fillText(xl,box.x+box.w/2,box.y+box.h+26);
+  x.save();x.translate(box.x-62,box.y+box.h/2);x.rotate(-Math.PI/2);x.fillText(yl,0,0);x.restore();return{X,Y}}
+function dots(x,A,xs,ys,n,c,r){x.fillStyle=c;for(let i=0;i<n;i++){if(ys[i]==null)continue;x.fillRect(A.X(xs[i])-r/2,A.Y(ys[i])-r/2,r,r)}}
+function line(x,A,xs,ys,n,c,lw){x.strokeStyle=c;x.lineWidth=lw;x.beginPath();let prev=null;for(let i=0;i<n;i++){if(ys[i]==null){prev=null;continue}const px=A.X(xs[i]),py=A.Y(ys[i]);prev!=null&&xs[i]-prev<.5?x.lineTo(px,py):x.moveTo(px,py);prev=xs[i]}x.stroke()}
+function msg(x,w,h,t){x.fillStyle=COL.line;x.font="400 22px Kalam,cursive";x.textAlign="center";x.textBaseline="middle";x.fillText(t,w/2,h/2)}
+const ppm=v=>((v-1)*1e6).toFixed(0);
+function stage(){if(!REC)return;const {x,w,h}=fit($("stagec"));x.fillStyle=COL.deep;x.fillRect(0,0,w,h);
+  const el=performance.now()-stepStart,p=DUR[step]?Math.min(1,el/DUR[step]):1,box={x:78,y:20,w:w-100,h:h-70},L=REC.lc,g=REC._sig,tE=L.t[L.t.length-1];
+  if(step===0){const s=REC.star,cx=w/2,cy=h/2-10;let a=11+(+REC.tic||3)%100000;const r=()=>(a=(a*16807)%2147483647)/2147483647;for(let i=0;i<240;i++){const u=r(),v=r(),m=r();x.fillStyle=`rgba(238,243,255,${.15+.5*m})`;x.fillRect(cx+(u*w-cx)*(1+ease(p)*.5),cy+(v*h-cy)*(1+ease(p)*.5),1.3,1.3)}
+    const c=s.teff>6000?"#dfe9ff":s.teff>5200?"#fff3cf":s.teff>3900?"#ffd59a":"#ffae86",R=8+28*ease(p),gr=x.createRadialGradient(cx,cy,0,cx,cy,R*3);gr.addColorStop(0,c);gr.addColorStop(.3,c+"cc");gr.addColorStop(1,"#0000");x.fillStyle=gr;x.beginPath();x.arc(cx,cy,R*3,0,7);x.fill();
+    const k=1-ease(Math.min(1,p*1.3)),r2=R*1.9+70*k;x.strokeStyle=COL.hi;x.lineWidth=1.6;x.beginPath();x.arc(cx,cy,r2,0,7);x.stroke();
+    x.globalAlpha=ease(Math.max(0,(p-.3)/.7));x.fillStyle=COL.paper;x.font="700 26px 'Bricolage Grotesque',sans-serif";x.textAlign="center";x.textBaseline="alphabetic";x.fillText(REC._demo?"Practice star":"TIC "+REC.tic,cx,cy+R*1.9+52);x.globalAlpha=1}
+  else if(step===1){const A=axes(x,box,[0,tE],REC._r1,{xl:"days since TESS started watching",yl:"brightness"});dots(x,A,L.t,L.raw,Math.floor(L.t.length*ease(p)),COL.line,1.7)}
+  else if(step===2){if(p<.55){const A=axes(x,box,[0,tE],REC._r1,{xl:"days since TESS started watching",yl:"brightness"});dots(x,A,L.t,L.raw,L.t.length,COL.line,1.7);line(x,A,L.t,L.trend,Math.floor(L.t.length*ease(p/.55)),COL.hi,2.2)}
+    else{const q=ease((p-.55)/.45),yr=[REC._r1[0]*(1-q)+REC._r2[0]*q,REC._r1[1]*(1-q)+REC._r2[1]*q],A=axes(x,box,[0,tE],yr,{xl:"days since TESS started watching",yl:"brightness"});dots(x,A,L.t,L.raw.map((v,i)=>v*(1-q)+L.flat[i]*q),L.t.length,COL.line,1.7);x.globalAlpha=1-q;line(x,A,L.t,L.trend,L.t.length,COL.hi,2.2);x.globalAlpha=1}}
+  else if(step===3){const P=REC.periodogram;if(!P)return msg(x,w,h,"Not enough data to search");let lo=Infinity,hi=-Infinity;for(const v of P.sde){if(v<lo)lo=v;if(v>hi)hi=v}const yr=[Math.min(lo,-2),Math.max(hi*1.12,P.threshold*1.4)];
+    const A=axes(x,box,[P.period[0],P.period[P.period.length-1]],yr,{xl:"orbit length tried (days)",yl:"how strongly it repeats",xlog:true,yf:v=>v.toFixed(0),xf:v=>v});
+    x.setLineDash([6,6]);x.strokeStyle=COL.hi+"aa";x.beginPath();x.moveTo(box.x,A.Y(P.threshold));x.lineTo(box.x+box.w,A.Y(P.threshold));x.stroke();x.setLineDash([]);
+    const n=Math.floor(P.period.length*Math.min(1,p/.8));x.strokeStyle=COL.paper;x.lineWidth=1.2;x.beginPath();for(let i=0;i<n;i++){const px=A.X(P.period[i]),py=A.Y(P.sde[i]);i?x.lineTo(px,py):x.moveTo(px,py)}x.stroke();
+    x.fillStyle=COL.line;x.font="14px 'Bricolage Grotesque',sans-serif";x.textAlign="left";x.textBaseline="top";x.fillText(`${Math.round(Math.min(1,p/.8)*(P.n_periods||P.period.length)).toLocaleString()} orbits tried`,box.x+10,box.y+8);
+    if(p>=.8&&g){const px=A.X(P.peak_period),py=A.Y(P.peak_sde);x.fillStyle=COL.hi;x.beginPath();x.arc(px,py,5+6*(1-ease((p-.8)/.2)),0,7);x.fill();x.font="600 15px 'Bricolage Grotesque',sans-serif";x.textAlign=px>w-160?"right":"left";x.textBaseline="bottom";x.fillText(`${fmt(P.peak_period,3)} days`,px+(px>w-160?-12:12),py-6)}}
+  else if(step===4||step===5){if(!g)return msg(x,w,h,step===4?"No repeating dip to stack":"Written down as checked");const F=g.fold;
+    if(step===4&&p<.45){const A=axes(x,box,[0,tE],REC._r2,{xl:"days since TESS started watching",yl:"brightness"});dots(x,A,L.t,L.flat,L.t.length,COL.line,1.7);const lit=Math.floor(g.transits.length*ease(p/.45));g.transits.forEach((tt,i)=>{x.strokeStyle=i<lit?COL.hi:COL.hi+"33";x.lineWidth=i<lit?1.8:1;x.beginPath();x.moveTo(A.X(tt),box.y);x.lineTo(A.X(tt),box.y+box.h);x.stroke()})}
+    else{const q=step===5?1:ease((p-.45)/.55),yr=rr(F.by,1.4),A=axes(x,box,[-F.window_hr,F.window_hr],yr,{xl:"hours from the middle of the dip",yl:"change (ppm)",yf:ppm,xf:v=>v.toFixed(1)});
+      x.fillStyle="#ffd84a14";x.fillRect(A.X(-F.duration_hr/2),box.y,A.X(F.duration_hr/2)-A.X(-F.duration_hr/2),box.h);x.globalAlpha=Math.min(1,q*1.5);dots(x,A,F.x,F.y,F.x.length,COL.line,2);x.globalAlpha=1;
+      const n=Math.floor(F.bx.length*q);x.strokeStyle=COL.hi;x.lineWidth=2.6;x.beginPath();for(let i=0;i<n;i++){const px=A.X(F.bx[i]),py=A.Y(F.by[i]);i?x.lineTo(px,py):x.moveTo(px,py)}x.stroke()}}
+  else if(step===6){const sc=g&&g.score!=null?g.score:null,c=VCOL[REC.verdict]||COL.line,cx=w/2,cy=h*.47,R=Math.min(w,h)*.27;x.lineCap="round";x.lineWidth=14;x.strokeStyle=COL.rule;x.beginPath();x.arc(cx,cy,R,Math.PI*.8,Math.PI*2.2);x.stroke();
+    if(sc!=null){x.strokeStyle=c;x.beginPath();x.arc(cx,cy,R,Math.PI*.8,Math.PI*.8+Math.PI*1.4*sc*ease(p));x.stroke();x.fillStyle=COL.paper;x.font=`700 ${Math.round(R*.44)}px 'Bricolage Grotesque',sans-serif`;x.textAlign="center";x.textBaseline="middle";x.fillText((sc*ease(p)).toFixed(2),cx,cy);x.font="400 18px Kalam,cursive";x.fillStyle=COL.line;x.fillText("how planet-like",cx,cy+R*.38)}
+    else{x.fillStyle=COL.line;x.font="400 24px Kalam,cursive";x.textAlign="center";x.textBaseline="middle";x.fillText("nothing to score",cx,cy)}
+    x.lineCap="butt";x.fillStyle=c;x.font=`700 ${Math.max(18,Math.round(R*.2))}px 'Bricolage Grotesque',sans-serif`;x.textAlign="center";x.textBaseline="alphabetic";x.fillText(nm(REC.verdict),cx,cy+R+40)}
+  if(playing&&DUR[step]&&el>DUR[step]+1700){step<6?goStep(step+1):(idx=(idx+1)%LIST.length,startStar())}}
+
+/* ---------------- loop ---------------- */
+function frame(tm){if(!drag&&Math.abs(vel)>.01){rot+=vel;vel*=.94}else if(!drag&&!RM){rot+=.012}
+  nextAuto(tm);drawDome(tm);stage();requestAnimationFrame(frame)}
+addEventListener("resize",drawMap);
+(async()=>{await refresh();drawMap();await loadIndex();startStar();requestAnimationFrame(frame);
+  setTimeout(()=>{if(!queue.length)say("I haven't checked any stars yet. Come back after my first run!")},1500);
+  setInterval(async()=>{await refresh();drawMap()},90000)})();
 </script>
 </body>
 </html>
