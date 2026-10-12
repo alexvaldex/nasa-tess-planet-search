@@ -1,6 +1,6 @@
 {
- "state": "running",
- "note": "",
+ "state": "idle",
+ "note": "last run cancelled at 246 stars (stuck download); fix deployed",
  "run_started": "2026-10-12T12:21:26+00:00",
  "updated": "2026-10-12T12:38:56+00:00",
  "targets": 300,

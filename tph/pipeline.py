@@ -30,6 +30,10 @@ def analyze(star, lc, known=None, make_plots=True):
     """Run search + vetting on an already-downloaded light curve."""
     now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     t, flat, e, raw, trend = detrend.prepare(lc["t"], lc["f"], lc["e"])
+    if t.size < 500:
+        return {"tic": star["tic"], "date": now, "status": "too_little_data",
+                "sectors": " ".join(map(str, lc["sectors"])), "ra": star.get("ra"),
+                "dec": star.get("dec"), "tmag": star.get("tmag")}, []
     screened = {"tic": star["tic"], "date": now, "sectors": " ".join(map(str, lc["sectors"])),
                 "authors": " ".join(lc["authors"]), "n_points": int(t.size),
                 "ra": star.get("ra"), "dec": star.get("dec"), "tmag": star.get("tmag"),

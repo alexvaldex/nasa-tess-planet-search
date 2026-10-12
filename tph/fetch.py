@@ -79,6 +79,9 @@ def get_lightcurve(tic, max_sectors=config.MAX_SECTORS):
             if not np.isfinite(med) or med <= 0:
                 continue
             f, e = f / med, e / med
+            mad = np.nanmedian(np.abs(f - 1))
+            if not np.isfinite(mad) or mad == 0:
+                continue   # flat-lined or empty flux column
             bad_e = ~np.isfinite(e) | (e <= 0)
             if bad_e.any():
                 e[bad_e] = np.nanstd(f) if np.isfinite(np.nanstd(f)) else 1e-3

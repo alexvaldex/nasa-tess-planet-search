@@ -23,6 +23,13 @@ _KNOWN = None
 def _init_worker(known):
     global _KNOWN
     _KNOWN = known
+    import socket
+    socket.setdefaulttimeout(90)          # never let one slow MAST download hang the bot
+    try:
+        from astropy.utils.data import conf
+        conf.remote_timeout = 90
+    except Exception:
+        pass
 
 
 def _hunt_one(star):
@@ -91,9 +98,11 @@ def cmd_hunt(a):
     budget = a.hours * 3600
     buf_s, buf_c, n_done, n_cands, feed = [], [], 0, 0, []
     last_push = time.time()
-    with ProcessPoolExecutor(a.workers, initializer=_init_worker, initargs=(known,)) as ex:
-        futs = {ex.submit(_hunt_one, s): s for s in targets}
-        for fut in as_completed(futs):
+    from concurrent.futures import TimeoutError as FutTimeout
+    ex = ProcessPoolExecutor(a.workers, initializer=_init_worker, initargs=(known,))
+    futs = {ex.submit(_hunt_one, s): s for s in targets}
+    try:
+        for fut in as_completed(futs, timeout=max(120, budget - (time.time() - start))):
             star = futs[fut]
             try:
                 screened, cands = fut.result()
@@ -124,6 +133,14 @@ def cmd_hunt(a):
                 for f in futs:
                     f.cancel()
                 break
+    except FutTimeout:
+        print("[hunt] time budget reached while waiting on slow downloads")
+    finally:
+        for f in futs:
+            f.cancel()
+        for proc in list(getattr(ex, "_processes", {}).values()):
+            proc.terminate()                 # kill any worker stuck on the network
+        ex.shutdown(wait=False, cancel_futures=True)
     _append(config.SCREENED_CSV, buf_s); _append(config.CANDIDATES_CSV, buf_c)
     _append(config.RESULTS / "runs.csv", [{
         "run_id": os.environ.get("GITHUB_RUN_ID", "local"),

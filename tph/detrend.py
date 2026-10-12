@@ -60,6 +60,8 @@ def clean(t, f, e):
     t, f, e = t[ok], f[ok], e[ok]
     med = np.median(f)
     sig = robust_std(f - med)
+    if not np.isfinite(sig) or sig <= 0:
+        return t, f, e
     keep = (f - med) < 4.0 * sig
     return t[keep], f[keep], e[keep]
 
@@ -82,6 +84,9 @@ def trim_edges(t, f, e, gap_days=0.5, trim_days=0.3):
 def prepare(t, f, e, bin_minutes=config.BIN_MINUTES):
     """Full preprocessing chain used by both the hunter and the simulator."""
     t, f, e = clean(np.asarray(t, float), np.asarray(f, float), np.asarray(e, float))
+    if t.size < 100:
+        z = np.array([])
+        return z, z, z, z, z
     if t.size > 100:
         t, f, e = trim_edges(t, f, e)
     m = np.median(f)
