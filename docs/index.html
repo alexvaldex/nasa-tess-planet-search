@@ -34,7 +34,7 @@ a{color:var(--paper);text-decoration-color:var(--line);text-underline-offset:3px
 a:hover{text-decoration-color:var(--hi)}
 :focus-visible{outline:2px solid var(--hi);outline-offset:3px;border-radius:4px}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;margin:0;letter-spacing:-.02em}
-h2{font-size:clamp(34px,5vw,58px);font-variation-settings:"wdth" 80;max-width:16ch}
+h2{font-size:clamp(34px,5vw,58px);font-variation-settings:"wdth" 94,"opsz" 36;max-width:16ch}
 h3{font-size:24px;font-weight:600;letter-spacing:-.01em}
 p{margin:0 0 1em;max-width:60ch}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
@@ -43,7 +43,7 @@ main{overflow-x:clip}
 /* top bar */
 .top{position:sticky;top:0;z-index:20;background:#1d4096ee;backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
 .top .wrap{display:flex;align-items:center;gap:28px;height:62px}
-.mark{font:800 26px/1 var(--display);font-variation-settings:"wdth" 75;text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark{font:800 26px/1 var(--display);font-variation-settings:"wdth" 88;text-decoration:none;display:flex;align-items:center;gap:10px}
 .mark svg{width:30px;height:30px}
 .nav{display:flex;gap:22px;font:500 16px var(--display)}
 .nav a{text-decoration:none;opacity:.85}.nav a:hover{opacity:1}
@@ -55,7 +55,7 @@ main{overflow-x:clip}
 
 /* hero */
 .hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center;padding:64px 0 40px}
-.hero h1{font-size:clamp(44px,5.6vw,82px);font-variation-settings:"wdth" 76;font-weight:750;max-width:12ch}
+.hero h1{font-size:clamp(44px,5.6vw,82px);font-variation-settings:"wdth" 90,"opsz" 60;font-weight:700;max-width:12ch;letter-spacing:-.02em}
 .hero .lede{font-size:22px;margin-top:26px;max-width:34ch}
 .hero .lede b{font-weight:600;color:#fff}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
@@ -160,12 +160,39 @@ details p{margin-top:12px;color:#d5def7}
 footer{padding:40px 0 70px;border-top:1px solid var(--rule);font:400 15px var(--display);color:var(--line)}
 footer p{max-width:90ch}
 
+
+/* lookup */
+.lookup{font:400 15px var(--display);text-align:right;margin-top:10px}
+.lookup label{display:block;color:var(--line);margin-bottom:6px}
+.lookup div{display:flex;gap:8px;justify-content:flex-end}
+.lookup input{width:150px;font:500 16px var(--display);background:var(--deep);color:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:8px 14px}
+.lookup .btn{padding:8px 14px;font-size:15px}
+/* growth chart */
+.growth{margin:26px 0 10px;max-width:420px}
+#growth{width:100%;height:120px;display:block}
+/* game */
+.game{display:grid;grid-template-columns:minmax(260px,4fr) minmax(0,8fr);gap:40px;margin-top:34px;align-items:start}
+.gctl{display:flex;flex-direction:column;gap:22px}
+.field{border:0;padding:0;margin:0}
+.field label,.field legend{font:600 17px var(--display);display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;padding:0}
+.field output{font-weight:400;color:var(--hi)}
+.opt{font:400 16px var(--display)!important;display:flex!important;justify-content:flex-start!important;align-items:center;gap:10px;margin:6px 0!important;cursor:pointer}
+input[type=range]{width:100%;accent-color:var(--hi)}
+input[type=radio]{accent-color:var(--hi);width:18px;height:18px}
+.gbtns{display:flex;gap:10px;flex-wrap:wrap}
+.score{font:400 18px var(--hand);color:var(--hi);margin:0}
+#glc,#gpg{width:100%;display:block;background:var(--deep);border:1.5px solid var(--paper);border-radius:14px}
+#glc{aspect-ratio:16/6}
+#gpg{aspect-ratio:16/5;margin-top:14px}
+.gsay{font:400 21px/1.35 var(--hand);margin-top:16px;max-width:52ch}
+
 /* booth mode: just Tess and the replay, big */
 body.kiosk .top,body.kiosk .block:not(#decide),body.kiosk footer,body.kiosk .controls,body.kiosk .actions,body.kiosk .hint{display:none}
 body.kiosk #decide{border:0;padding-top:20px}
 
 @media (max-width:980px){
-  .hero,.split,.theatre,.about{grid-template-columns:1fr}
+  .hero,.split,.theatre,.about,.game{grid-template-columns:1fr}
+  .lookup{text-align:left}.lookup div{justify-content:flex-start}
   .hero{padding-top:36px}
   .nav{display:none}
   .steps{grid-template-columns:repeat(4,1fr)}
@@ -195,6 +222,7 @@ body.kiosk #decide{border:0;padding-top:20px}
     <nav class="nav" aria-label="Sections">
       <a href="#now">Right now</a>
       <a href="#decide">How she decides</a>
+      <a href="#game">Hide a planet</a>
       <a href="#sky">Where she's looked</a>
       <a href="#finds">Finds</a>
       <a href="#about">Who built her</a>
@@ -215,6 +243,7 @@ body.kiosk #decide{border:0;padding-top:20px}
         <a class="btn" href="#sky">See where I've looked</a>
       </div>
     </div>
+    <div class="right">
     <div class="stage" id="stage">
       <canvas id="dome" aria-label="Sky dome showing stars Tess has checked. Drag to rotate, click a star to ask about it." role="img"></canvas>
       <div class="bubble" id="bubble" aria-live="polite"><small id="bubbleWho">Tess</small><span id="bubbleTxt">Warming up my cameras…</span></div>
@@ -242,6 +271,11 @@ body.kiosk #decide{border:0;padding-top:20px}
       </svg>
       <p class="hint">Drag the sky to turn it. Click a lit star to ask me about it.</p>
     </div>
+      <form class="lookup" id="lookup" autocomplete="off">
+        <label for="ticIn">Ask about a star by its TIC number</label>
+        <div><input id="ticIn" inputmode="numeric" pattern="[0-9]*" placeholder="e.g. 139700621"><button class="btn" type="submit">Ask Tess</button></div>
+      </form>
+    </div>
   </section>
 </div>
 
@@ -253,6 +287,7 @@ body.kiosk #decide{border:0;padding-top:20px}
       <p id="nowLine" style="margin-top:22px">Checking whether I'm awake…</p>
       <div class="progress" aria-hidden="true"><b id="prog"></b></div>
       <p class="meta" id="nowMeta"></p>
+      <figure class="growth"><canvas id="growth" role="img" aria-label="Stars checked over time"></canvas><figcaption class="meta" id="growthCap"></figcaption></figure>
       <p class="meta"><a id="logLink" href="https://github.com/alexvaldex/nasa-tess-planet-search/actions" target="_blank" rel="noopener">Read my raw log on GitHub</a></p>
     </div>
     <div>
@@ -281,6 +316,37 @@ body.kiosk #decide{border:0;padding-top:20px}
       <div>
         <dl class="facts" id="facts"></dl>
         <ul class="checks" id="checks"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="block" id="game">
+  <div class="wrap">
+    <span class="kicker">Your turn</span>
+    <h2 style="max-width:18ch">Hide a planet and see if I can find it</h2>
+    <p style="margin-top:20px;color:#d5def7">Pick a planet and a star. I'll fake a month of TESS data with your planet hidden in the noise, then search it the same way I search real stars. Small planets around noisy stars are hard. Try to beat me.</p>
+    <div class="game">
+      <form class="gctl" id="gform">
+        <div class="field"><label for="gSize">Planet size <output id="oSize"></output></label><input type="range" id="gSize" min="0" max="100" value="60"></div>
+        <div class="field"><label for="gPer">Orbit length <output id="oPer"></output></label><input type="range" id="gPer" min="0.7" max="12" step="0.01" value="3.8"></div>
+        <fieldset class="field"><legend>The star</legend>
+          <label class="opt"><input type="radio" name="gNoise" value="400"> Bright and calm</label>
+          <label class="opt"><input type="radio" name="gNoise" value="1200" checked> Typical</label>
+          <label class="opt"><input type="radio" name="gNoise" value="3000"> Faint and jittery</label>
+        </fieldset>
+        <fieldset class="field"><legend>How long TESS watched</legend>
+          <label class="opt"><input type="radio" name="gSec" value="1" checked> One month</label>
+          <label class="opt"><input type="radio" name="gSec" value="2"> Two months</label>
+        </fieldset>
+        <div class="gbtns"><button class="btn fill" type="submit" id="gGo">Hide it, then find it</button><button class="btn" type="button" id="gRand">Surprise me</button></div>
+        <p class="score" id="gScore">You've hidden 0 planets. I've found 0.</p>
+      </form>
+      <div>
+        <canvas id="glc" role="img" aria-label="Simulated light curve with your hidden planet"></canvas>
+        <canvas id="gpg" role="img" aria-label="Tess's search through possible orbit lengths"></canvas>
+        <p class="gsay" id="gSay" aria-live="polite">Set up a planet on the left and press the yellow button.</p>
       </div>
     </div>
   </div>
@@ -560,13 +626,82 @@ function stage(){if(!REC)return;const {x,w,h}=fit($("stagec"));x.fillStyle=COL.d
     x.lineCap="butt";x.fillStyle=c;x.font=`700 ${Math.max(18,Math.round(R*.2))}px 'Bricolage Grotesque',sans-serif`;x.textAlign="center";x.textBaseline="alphabetic";x.fillText(nm(REC.verdict),cx,cy+R+40)}
   if(playing&&DUR[step]&&el>DUR[step]+1700){step<6?goStep(step+1):(idx=(idx+1)%LIST.length,startStar())}}
 
+/* ---------------- star lookup ---------------- */
+$("lookup").addEventListener("submit",e=>{e.preventDefault();const v=$("ticIn").value.replace(/\D/g,"");if(!v)return;const i=SKY.tic.indexOf(+v);
+  autoPause=performance.now()+10000;
+  if(i>=0){pointAt({ra:SKY.ra[i],dec:SKY.dec[i],tic:SKY.tic[i],s:SKY.s[i]},"Tess, answering you");rot=-(SKY.ra[i])+90}
+  else say(`I haven't checked TIC ${v} yet. I pick stars at random, so it might come up in a future run.`,"Tess, answering you")});
+
+/* ---------------- growth chart ---------------- */
+function drawGrowth(){const runs=(DATA&&DATA.stats&&DATA.stats.runs)||[];const {x,w,h}=fit($("growth"));x.clearRect(0,0,w,h);
+  const total=(DATA&&DATA.stats&&DATA.stats.stars_queried)||0;
+  if(runs.length<2){$("growthCap").textContent=runs.length?`${runs.length} full run logged so far. This chart fills in as I keep working.`:"";
+    x.strokeStyle=COL.rule;x.setLineDash([3,4]);x.beginPath();x.moveTo(0,h-10);x.lineTo(w,h-10);x.stroke();x.setLineDash([]);return}
+  const pts=[];let cum=Math.max(0,total-runs.reduce((a,r)=>a+(+r.stars||0),0));for(const r of runs){cum+=+r.stars||0;pts.push([new Date(r.started_utc.replace(" ","T")+"Z").getTime(),cum])}
+  const t0=pts[0][0],t1=pts[pts.length-1][0]||t0+1,ymax=pts[pts.length-1][1]*1.1;const X=t=>8+(t-t0)/(t1-t0||1)*(w-16),Y=v=>h-14-(v/ymax)*(h-30);
+  x.strokeStyle=COL.hi;x.lineWidth=2.2;x.beginPath();pts.forEach(([t,v],i)=>{i?(x.lineTo(X(t),Y(pts[i-1][1])),x.lineTo(X(t),Y(v))):x.moveTo(X(t),Y(v))});x.stroke();
+  x.fillStyle=COL.hi;pts.forEach(([t,v])=>{x.beginPath();x.arc(X(t),Y(v),3,0,7);x.fill()});
+  $("growthCap").textContent=`${n0(cum)} stars over ${runs.length} runs.`}
+
+/* ---------------- hide-a-planet game ---------------- */
+const G={hidden:0,found:0,busy:false,lc:null,pg:null,anim:0,truth:null,result:null};
+const sizeR=v=>Math.round(10*Math.pow(10,-0.3+v/100*1.5))/10;   // 0.5 to 15.8 Earth radii
+const sizeName=r=>r<1.3?"about Earth's size":r<2.2?"a super-Earth":r<5?"a mini-Neptune":r<8?"Neptune-sized":r<13?"Saturn-sized":"Jupiter-sized";
+function gLabels(){const r=sizeR(+$("gSize").value);$("oSize").textContent=`${r} × Earth, ${sizeName(r)}`;$("oPer").textContent=`${(+$("gPer").value).toFixed(1)} days`}
+["gSize","gPer"].forEach(id=>$(id).addEventListener("input",gLabels));gLabels();
+function gauss(){let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+function makeLC(rp,P,noise,nsec){const t=[],f=[];const depth=Math.pow(rp/109.1,2),aRs=215*Math.pow(P/365.25,2/3),dur=P/Math.PI*Math.asin(Math.min(1,1/aRs));const t0=Math.random()*P,ing=dur*Math.min(.45,rp/109.1*aRs/2+.08);
+  for(let s=0;s<nsec;s++)for(let tt=s*27.4;tt<s*27.4+27.4;tt+=10/1440){if(Math.abs(tt-(s*27.4+13.7))<.5)continue;const ph=((tt-t0)%P+P*1.5)%P-P/2,a=Math.abs(ph);let d=0;if(a<dur/2){d=a<dur/2-ing?depth:depth*(dur/2-a)/ing}t.push(tt);f.push(1-d+gauss()*noise*1e-6)}
+  return{t,f,depth,dur,t0}}
+function bls(t,f,noise){const n=t.length,base=t[n-1]-t[0],pmin=.5,pmax=Math.min(15,base/2.5);const durs=[.04,.06,.09,.13,.18,.24],np=7000;
+  const y=new Float64Array(n);for(let i=0;i<n;i++)y[i]=1-f[i];const per=new Float64Array(np),pw=new Float64Array(np),best=[];
+  for(let k=0;k<np;k++){const fr=1/pmax+(1/pmin-1/pmax)*k/(np-1),P=1/fr;per[k]=P;const bw=.02,nb=Math.max(20,Math.ceil(P/bw)),sum=new Float64Array(nb),cnt=new Float64Array(nb);
+    for(let i=0;i<n;i++){const b=Math.floor((t[i]%P)/P*nb);sum[b]+=y[i];cnt[b]++}
+    let bp=0,bb=0,bd=0;for(const d of durs){const kw=Math.max(1,Math.round(d/P*nb));if(kw>=nb/2)continue;let s=0,c=0;for(let j=0;j<kw;j++){s+=sum[j];c+=cnt[j]}
+      for(let j=0;j<nb;j++){if(c>3){const snr=s/Math.sqrt(c);if(snr>bp){bp=snr;bb=j;bd=d}}s+=sum[(j+kw)%nb]-sum[j];c+=cnt[(j+kw)%nb]-cnt[j]}}
+    pw[k]=bp/(noise*1e-6);best.push(bd)}
+  // significance relative to the noise floor of the periodogram
+  const srt=Array.from(pw).sort((a,b)=>a-b),med=srt[np>>1],mad=srt.map(v=>Math.abs(v-med)).sort((a,b)=>a-b)[np>>1]*1.4826||1;
+  let im=0;for(let k=1;k<np;k++)if(pw[k]>pw[im])im=k;const sde=(pw[im]-med)/mad;
+  const z=Array.from(pw,v=>(v-med)/mad).reverse();return{per:Array.from(per).reverse(),z,P:per[im],snr:pw[im],sde}}
+function gDraw(){const {x,w,h}=fit($("glc"));x.fillStyle=COL.deep;x.fillRect(0,0,w,h);if(!G.lc){msg(x,w,h,"Your star's light will appear here");return}
+  const L=G.lc,tE=L.t[L.t.length-1],ys=L.f;let lo=Infinity,hi=-Infinity;for(const v of ys){if(v<lo)lo=v;if(v>hi)hi=v}const pad=(hi-lo)*.08;
+  const X=v=>12+v/tE*(w-24),Y=v=>10+(hi+pad-v)/(hi-lo+2*pad)*(h-20);x.fillStyle=COL.line;for(let i=0;i<L.t.length;i++)x.fillRect(X(L.t[i])-.8,Y(ys[i])-.8,1.6,1.6);
+  if(G.result&&G.result.done){x.strokeStyle=G.result.hit?COL.hi:COL.no;x.globalAlpha=.7;for(let tt=G.truth.t0;tt<tE;tt+=G.truth.P){x.beginPath();x.moveTo(X(tt),8);x.lineTo(X(tt),16);x.stroke()}x.globalAlpha=1}
+  const {x:x2,w:w2,h:h2}=fit($("gpg"));x2.fillStyle=COL.deep;x2.fillRect(0,0,w2,h2);
+  if(!G.pg){msg(x2,w2,h2,"My search will appear here");return}
+  const R=G.pg,k=Math.floor(R.per.length*Math.min(1,(performance.now()-G.anim)/2600));const zs=R.z;let zmax=-Infinity,zmin=Infinity;for(const v of zs){if(v>zmax)zmax=v;if(v<zmin)zmin=v}zmax=Math.max(zmax*1.1,14);
+  const Xp=P=>14+(Math.log(P)-Math.log(R.per[0]))/(Math.log(R.per[R.per.length-1])-Math.log(R.per[0]))*(w2-28),Yp=v=>h2-18-(v-zmin)/(zmax-zmin)*(h2-32);
+  x2.setLineDash([5,5]);x2.strokeStyle=COL.hi+"99";x2.beginPath();x2.moveTo(14,Yp(9));x2.lineTo(w2-14,Yp(9));x2.stroke();x2.setLineDash([]);
+  x2.strokeStyle=COL.paper;x2.lineWidth=1;x2.beginPath();for(let i=0;i<k;i++){const px=Xp(R.per[i]),py=Yp(zs[i]);i?x2.lineTo(px,py):x2.moveTo(px,py)}x2.stroke();
+  x2.fillStyle=COL.line;x2.font="13px 'Bricolage Grotesque',sans-serif";x2.textAlign="left";x2.textBaseline="top";x2.fillText(`orbits tried: ${k.toLocaleString()}`,18,8);
+  x2.textAlign="center";x2.textBaseline="bottom";for(const P of [0.5,1,2,5,10,15])if(P>=R.per[0]&&P<=R.per[R.per.length-1])x2.fillText(P+" d",Xp(P),h2-2);
+  if(k>=R.per.length){const tx=Xp(G.truth.P);x2.strokeStyle=COL.no;x2.setLineDash([2,3]);x2.beginPath();x2.moveTo(tx,14);x2.lineTo(tx,h2-18);x2.stroke();x2.setLineDash([]);
+    const px=Xp(R.P),py=Yp(R.sde);x2.fillStyle=COL.hi;x2.beginPath();x2.arc(px,py,5,0,7);x2.fill();
+    if(!G.result.done)finishGame()}}
+function finishGame(){const R=G.pg,T=G.truth;const ratio=R.P/T.P,match=[1,2,.5].find(m=>Math.abs(ratio/m-1)<.015),det=R.sde>=9;
+  G.result={done:true,hit:det&&match===1};G.hidden++;if(G.result.hit)G.found++;G.busy=false;$("gGo").disabled=false;
+  const pd=`${(+T.P).toFixed(2)}-day`;let msgTxt;
+  if(det&&match===1)msgTxt=`Found it! A dip every ${R.P.toFixed(2)} days. You hid a ${pd} planet. ${T.rp>8?"Honestly, that one was easy.":T.rp<1.6?"That was a tiny one, I'm proud of this.":"Nice try though."}`;
+  else if(det&&match)msgTxt=`Close: I found a dip every ${R.P.toFixed(2)} days, which is ${match===2?"double":"half"} your ${pd} orbit. I'd count that as a find after a closer look.`;
+  else if(det)msgTxt=`I got fooled. The noise made a fake signal at ${R.P.toFixed(2)} days and your ${pd} planet stayed hidden. That's why I run so many checks on real stars.`;
+  else msgTxt=`You win. Your planet's dips were ${Math.round(T.depth*1e6)} ppm deep, buried in noise this big. Nothing cleared my bar, so on a real star I'd have missed it.`;
+  $("gSay").textContent=msgTxt;$("gScore").textContent=`You've hidden ${G.hidden} planet${G.hidden===1?"":"s"}. I've found ${G.found}.`;
+  $("tess").classList.add("wave");setTimeout(()=>$("tess").classList.remove("wave"),700)}
+function runGame(){if(G.busy)return;G.busy=true;$("gGo").disabled=true;const rp=sizeR(+$("gSize").value),P=+$("gPer").value,noise=+document.querySelector("input[name=gNoise]:checked").value,ns=+document.querySelector("input[name=gSec]:checked").value;
+  $("gSay").textContent="Okay, I'm not looking… hiding your planet in the starlight.";G.pg=null;G.result=null;
+  setTimeout(()=>{const L=makeLC(rp,P,noise,ns);G.lc=L;G.truth={P,rp,depth:L.depth,t0:L.t0};$("gSay").textContent="Here's the light curve. Can you see your planet? Now I'm searching every orbit from half a day up…";
+    setTimeout(()=>{G.pg=bls(L.t,L.f,noise);G.result={done:false};G.anim=performance.now()},60)},500)}
+$("gform").addEventListener("submit",e=>{e.preventDefault();runGame()});
+$("gRand").onclick=()=>{$("gSize").value=Math.floor(Math.random()*100);$("gPer").value=(0.8+Math.random()*10).toFixed(2);const n=document.querySelectorAll("input[name=gNoise]");n[Math.floor(Math.random()*3)].checked=true;gLabels();runGame()};
+
 /* ---------------- loop ---------------- */
 function frame(tm){if(!drag&&Math.abs(vel)>.01){rot+=vel;vel*=.94}else if(!drag&&!RM){rot+=.012}
-  nextAuto(tm);drawDome(tm);stage();requestAnimationFrame(frame)}
-addEventListener("resize",drawMap);
-(async()=>{await refresh();drawMap();await loadIndex();startStar();requestAnimationFrame(frame);
+  nextAuto(tm);drawDome(tm);stage();gDraw();requestAnimationFrame(frame)}
+addEventListener("resize",()=>{drawMap();drawGrowth()});
+(async()=>{await refresh();drawMap();drawGrowth();await loadIndex();startStar();requestAnimationFrame(frame);
   setTimeout(()=>{if(!queue.length)say("I haven't checked any stars yet. Come back after my first run!")},1500);
-  setInterval(async()=>{await refresh();drawMap()},90000)})();
+  setInterval(async()=>{await refresh();drawMap();drawGrowth()},90000)})();
 </script>
 </body>
 </html>

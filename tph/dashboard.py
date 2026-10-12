@@ -23,7 +23,10 @@ def stats():
     counts = c.status.value_counts().to_dict() if len(c) else {}
     val = json.loads(config.VALIDATION_JSON.read_text()) if config.VALIDATION_JSON.exists() else {}
     met = json.loads((config.MODELS / "metrics.json").read_text()) if (config.MODELS / "metrics.json").exists() else {}
+    runs = _load(config.RESULTS / "runs.csv")
+    runs_list = runs[["started_utc", "stars", "new_candidates"]].to_dict("records") if len(runs) else []
     return {
+        "runs": runs_list,
         "updated": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "stars_queried": int(len(s)), "stars_analyzed": int(len(analyzed)),
         "sectors_analyzed": n_sectors,

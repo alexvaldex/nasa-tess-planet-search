@@ -19,7 +19,7 @@ Every 6 hours a GitHub Actions bot:
 
 ## The website
 
-`docs/index.html` is Tess's public site (GitHub Pages). Tess, a line-drawn version of the TESS satellite, sweeps a sky dome pointing at every real star the bot has checked and says its verdict; visitors can drag the sky and click any star to ask about it. Below that: a live diary of the current run, an animated replay of how each star is judged, an all-sky coverage map, finds, and an FAQ. `docs/results.html` is the full table of every signal. The bot regenerates `data.json`, `sky.json`, `status.json` and `stars/*.json`; the page itself is hand-built and never overwritten.
+`docs/index.html` is Tess's public site (GitHub Pages). Tess, a line-drawn version of the TESS satellite, sweeps a sky dome pointing at every real star the bot has checked and says its verdict; visitors can drag the sky and click any star to ask about it. Visitors can also look up any star by TIC number, and play **Hide a planet**: pick a planet size, orbit and star, and Tess fakes TESS data with it hidden in the noise, then hunts for it with an in-browser Box Least Squares search (a hands-on feel for why small planets are hard to find). Below that: a live diary of the current run with a growth chart, an animated replay of how each star is judged, an all-sky coverage map, finds, and an FAQ. `docs/results.html` is the full table of every signal. The bot regenerates `data.json`, `sky.json`, `status.json` and `stars/*.json`; the page itself is hand-built and never overwritten.
 
 The replay section works as Mission Control:
 
