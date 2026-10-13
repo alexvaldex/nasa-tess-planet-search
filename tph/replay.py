@@ -79,8 +79,9 @@ def check_record(sig, feats, extras, flags, score, status, note, known):
         ("Odd = even depths", f"difference {feats['odd_even_sigma']:.1f}σ (fail above 3σ)",
          feats["odd_even_sigma"] <= 3,
          "Two stars eclipsing each other often make alternating deep/shallow dips."),
-        ("No secondary eclipse", f"dip at half-phase {feats['secondary_snr']:.1f}σ (fail above 3σ)",
-         feats["secondary_snr"] <= 3,
+        ("No second eclipse", f"halfway: {feats['secondary_snr']:.1f}σ; anywhere else: "
+                              f"{extras.get('secondary_any_snr', float('nan')):.1f}σ",
+         "secondary" not in flags if flags else (feats["secondary_snr"] <= 3),
          "Planets are dark; a second dip halfway through the orbit means a glowing companion star."),
         ("Flat-bottomed shape", f"shape index {feats['shape']:.2f} (V-shaped below 0.35)",
          feats["shape"] >= 0.35,

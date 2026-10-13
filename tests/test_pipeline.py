@@ -88,3 +88,22 @@ def test_centroid_shift_detected():
     assert vet.centroid_sigma(still, s) < 4
     feats, _ = vet.compute_features(tt, ff, ee, s)
     assert np.isfinite(feats["depth_consistency"]) and 10 ** feats["depth_consistency"] < 3
+
+
+def test_secondary_anywhere_in_orbit():
+    """Eccentric binary: second equal dip at phase 0.62 must be caught; a planet must not trip it."""
+    rng = np.random.default_rng(5)
+    t = simulate.time_grid(rng, n_sectors=2)
+    f = 1 + rng.normal(0, 8e-4, t.size)
+    P, t0 = 9.3, t.min() + 1.1
+    for off in (0.0, 0.62):
+        f *= 1 - simulate.eclipse_signal(t, P, t0 + off * P, 0.12, 20.0, 0.2)
+    tt, ff, ee, _, _ = detrend.prepare(t, f, np.full_like(t, 8e-4))
+    s = search.bls_search(tt, ff, ee)
+    feats, extras = vet.compute_features(tt, ff, ee, s)
+    assert "secondary" in vet.rule_flags(feats, extras)
+    t2, f2, e2 = _planet_lc(seed=4)
+    t2, f2, e2, _, _ = detrend.prepare(t2, f2, e2)
+    s2 = search.bls_search(t2, f2, e2)
+    feats2, extras2 = vet.compute_features(t2, f2, e2, s2)
+    assert "secondary" not in vet.rule_flags(feats2, extras2)

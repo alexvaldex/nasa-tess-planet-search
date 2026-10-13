@@ -135,7 +135,9 @@ def build(tic):
             (OUT / f"TIC{tic}_allsectors.json").write_text(json.dumps(ms, separators=(",", ":")))
             print(f"  all sectors: P={ms['refined_period']:.5f} d, depth={ms['depth_ppm']:.0f} ppm, "
                   f"SNR={ms['snr']:.1f}, {ms['n_transits_with_data']} transits over {ms['baseline_days']:.0f} d, "
-                  f"secondary {ms['secondary_depth_ppm']} ppm ({ms['secondary_snr']} sigma), odd/even {ms['odd_even_sigma']} sigma")
+                  f"secondary {ms['secondary_depth_ppm']} ppm ({ms['secondary_snr']} sigma), "
+                  f"strongest other dip {ms['any_secondary_depth_ppm']} ppm ({ms['any_secondary_snr']} sigma) at phase {ms['any_secondary_phase']}, "
+                  f"odd/even {ms['odd_even_sigma']} sigma")
             for tr in ms["transits"]:
                 print("   ", tr)
     lc = _safe(lambda: full_lightcurve(tic, rec["candidate"]["sectors"].split() if rec["candidate"] else []))
@@ -234,14 +236,18 @@ def multi_sector(tic, period, duration_hr):
             per_tr.append({"time_btjd": round(float(tt), 4), "sector": int(np.median(sec[m])),
                            "depth_ppm": round(float(dep * 1e6), 1), "snr": round(float(dep / err), 2) if err > 0 else None})
     depth, depth_err = st["depth"]
-    from .vet import phase_depth
+    from .vet import phase_depth, max_secondary
     sec_dep, sec_snr = phase_depth(t, f, P, t0, d, offset=0.5)
+    any_dep, any_snr, any_phase = max_secondary(t, f, P, t0, d)
     odd, odd_s = phase_depth(t, f, 2 * P, t0, d, 0.0)
     even, even_s = phase_depth(t, f, 2 * P, t0 + P, d, 0.0)
     oe_sigma = (abs(odd - even) / np.hypot(odd / odd_s, even / even_s)
                 if all(np.isfinite([odd, even, odd_s, even_s])) and odd_s and even_s else np.nan)
     years = sorted({int(2014 + (x + 2457000 - 2456658.5) / 365.25) for x in (t.min(), t.max())})
-    return {"secondary_depth_ppm": sec_dep * 1e6 if np.isfinite(sec_dep) else None,
+    return {"any_secondary_depth_ppm": any_dep * 1e6 if np.isfinite(any_dep) else None,
+            "any_secondary_snr": any_snr if np.isfinite(any_snr) else None,
+            "any_secondary_phase": any_phase if np.isfinite(any_phase) else None,
+            "secondary_depth_ppm": sec_dep * 1e6 if np.isfinite(sec_dep) else None,
             "secondary_snr": sec_snr if np.isfinite(sec_snr) else None,
             "odd_depth_ppm": odd * 1e6 if np.isfinite(odd) else None,
             "even_depth_ppm": even * 1e6 if np.isfinite(even) else None,

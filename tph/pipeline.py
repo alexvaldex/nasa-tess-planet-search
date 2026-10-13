@@ -87,6 +87,14 @@ def analyze(star, lc, known=None, make_plots=True):
                 traceback.print_exc()
         cands.append(row)
         checks.append(replay.check_record(sig, feats, extras, flags, score, status, note, known))
+    # Two separate dips repeating on the same period = primary + secondary eclipse.
+    for a in cands:
+        for b in cands:
+            if a is not b and abs(a["period"] / b["period"] - 1) < 0.002:
+                if "same_period_pair" not in a["flags"]:
+                    a["flags"] = (a["flags"] + " same_period_pair").strip()
+                if a["status"] in ("strong_candidate", "candidate", "low_score"):
+                    a["status"] = "likely_eb"
     screened["n_signals"] = len(cands)
     if cands:
         from .postprocess import ORDER as order

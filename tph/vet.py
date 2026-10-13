@@ -131,6 +131,30 @@ def phase_depth(t, f, period, t0, duration, offset=0.0):
     return float(dep), float(dep / err) if err > 0 else np.nan
 
 
+def max_secondary(t, f, period, t0, duration, nphase=200):
+    """Look for a second dip *anywhere* in the orbit, not just halfway round. Eccentric
+    eclipsing binaries put their second eclipse at other phases (0.62 for TIC 267889592)."""
+    ph = ((t - t0) / period) % 1.0
+    w = max(duration / period, 1.0 / nphase)
+    away = np.minimum(ph, 1 - ph) > 1.5 * w                    # skip the primary dip
+    if away.sum() < 50:
+        return np.nan, np.nan, np.nan
+    tt, ff = ph[away], f[away]
+    base = np.median(ff)
+    noise = 1.4826 * np.median(np.abs(ff - base)) * 1.2533
+    best = (0.0, 0.0, np.nan)
+    for c in np.linspace(0, 1, nphase, endpoint=False):
+        d = np.abs(((tt - c + 0.5) % 1.0) - 0.5)
+        inn = d < w / 2
+        if inn.sum() < 5:
+            continue
+        dep = base - np.median(ff[inn])
+        snr = dep / (noise / np.sqrt(inn.sum())) if noise > 0 else 0.0
+        if snr > best[1]:
+            best = (float(dep), float(snr), float(c))
+    return best
+
+
 def _sigma(v):
     val, err = v
     return float(val / err) if err > 0 and np.isfinite(err) else 0.0
@@ -197,7 +221,10 @@ def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0, lc=None):
         "depth_consistency": depth_consistency(t, f, e, sig),
         "centroid_sigma": centroid_sigma(lc, sig),
     }
-    extras = {"rp_earth": float(rp), "n_transits": n_tr, "depth_ppm": max(robust_depth, 0) * 1e6,
+    sec_any_depth, sec_any_snr, sec_any_phase = max_secondary(t, f, P, t0, dur)
+    extras = {"secondary_any_snr": sec_any_snr, "secondary_any_phase": sec_any_phase,
+              "secondary_any_ratio": float(sec_any_depth / max(robust_depth, 1e-7)) if np.isfinite(sec_any_depth) else np.nan,
+              "rp_earth": float(rp), "n_transits": n_tr, "depth_ppm": max(robust_depth, 0) * 1e6,
               "box_depth_ppm": depth * 1e6, "duration_hr": dur * 24,
               "outlier_ratio": float(depth / max(robust_depth, sig.depth_err, 1e-7)),
               "oot_ratio": oot_variability(t, f, P, t0, dur), "dur_ratio": float(dur_ratio)}
@@ -213,6 +240,9 @@ def rule_flags(feats, extras):
         flags.append("odd_even")
     if feats["secondary_snr"] > 3:
         flags.append("secondary")
+    elif (np.isfinite(extras.get("secondary_any_snr", np.nan)) and extras["secondary_any_snr"] > 6
+          and extras.get("secondary_any_ratio", 0) > 0.1):
+        flags.append("secondary")          # eccentric binary: second eclipse away from phase 0.5
     if extras["n_transits"] < config.MIN_TRANSITS:
         flags.append("few_transits")
     if feats["single_dominance"] > 0.6:
