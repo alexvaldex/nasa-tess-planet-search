@@ -1,4 +1,3 @@
-Warning: 28% (949/3399) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
 [report] TIC 237124354
     sector 14: 869 points from TESS-SPOC
     sector 25: 1025 points from TESS-SPOC
@@ -9,22 +8,22 @@ Warning: 28% (949/3399) of the cadences will be ignored due to the quality mask 
     sector 54: 2323 points from TESS-SPOC
     sector 55: 3578 points from TESS-SPOC
     sector 74: 8828 points from TESS-SPOC
-    sector 75 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0075-0000000237124354_tess_v02_llc/hlsp_qlp_tess_ffi_s0075-0000000237124354_tess_v02_llc.fits of type QLP .
+    sector 75 (QLP): download failed: Error in reading Data product /tmp/tmpjqgm308x/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0075-0000000237124354_tess_v02_llc/hlsp_qlp_tess_ffi_s0075-0000000237124354_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 75: 11678 points from QLP
-    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000237124354_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000237124354_tess_v02_llc.fits of type QLP .
+    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmpjqgm308x/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000237124354_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000237124354_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 79: 11440 points from QLP
-    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000237124354_tess_v01_llc.fits of type QLP .
+    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmpjqgm308x/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000237124354_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 80: 11119 points from QLP
-    sector 81 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0081-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0081-0000000237124354_tess_v01_llc.fits of type QLP .
+    sector 81 (QLP): download failed: Error in reading Data product /tmp/tmpjqgm308x/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0081-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0081-0000000237124354_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 81: 11063 points from QLP
-    sector 82 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0082-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0082-0000000237124354_tess_v01_llc.fits of type QLP .
+    sector 82 (QLP): download failed: Error in reading Data product /tmp/tmpjqgm308x/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0082-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0082-0000000237124354_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 82: 10766 points from QLP
-  all sectors: P=15.02633 d, depth=410 ppm, SNR=6.6, 22 transits over 1875 d, secondary -11.524197509604761 ppm (-0.14587215886792254 sigma), odd/even 0.4062684918624026 sigma
+  all sectors: P=15.02633 d, depth=410 ppm, SNR=6.6, 22 transits over 1875 d, secondary -11.524197509604761 ppm (-0.14587215886792254 sigma), strongest other dip 269.433101023675 ppm (3.3686979930318808 sigma) at phase 0.5750000000000001, odd/even 0.4062684918624026 sigma
     {'time_btjd': 1686.2772, 'sector': 14, 'depth_ppm': 509.7, 'snr': 1.5}
     {'time_btjd': 1701.3035, 'sector': 14, 'depth_ppm': -380.0, 'snr': -1.25}
     {'time_btjd': 1986.8037, 'sector': 25, 'depth_ppm': 218.5, 'snr': 0.62}
@@ -255,14 +254,15 @@ This file may be corrupt due to an interrupted download. Please remove it from y
   },
   {
    "mission": "TESS Sector 55",
-   "au
+   "auWarning: 28% (949/3399) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+
 [report] TIC 230202008
     sector 25: 1157 points from TESS-SPOC
     sector 51: 1524 points from TESS-SPOC
     sector 52: 2187 points from TESS-SPOC
     sector 78: 3754 points from TESS-SPOC
     sector 79: 7271 points from TESS-SPOC
-  all sectors: P=8.02155 d, depth=446 ppm, SNR=7.9, 9 transits over 1495 d, secondary 22.959163315183773 ppm (0.3068308339475653 sigma), odd/even 0.07465793207332536 sigma
+  all sectors: P=8.02155 d, depth=446 ppm, SNR=7.9, 9 transits over 1495 d, secondary 22.959163315183773 ppm (0.3068308339475653 sigma), strongest other dip 249.17098456411767 ppm (3.628981576077465 sigma) at phase 0.56, odd/even 0.07465793207332536 sigma
     {'time_btjd': 1989.0055, 'sector': 25, 'depth_ppm': 1333.2, 'snr': 5.94}
     {'time_btjd': 2005.0486, 'sector': 25, 'depth_ppm': -156.7, 'snr': -0.95}
     {'time_btjd': 2702.923, 'sector': 51, 'depth_ppm': 128.2, 'snr': 1.0}
@@ -486,22 +486,22 @@ This file may be corrupt due to an interrupted download. Please remove it from y
     sector 33: 3485 points from QLP
     sector 34: 3474 points from QLP
     sector 35: 2812 points from QLP
-    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000344023003_tess_v01_llc.fits of type QLP .
+    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpvn7xgkys/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000344023003_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 61: 10654 points from QLP
-    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000344023003_tess_v01_llc.fits of type QLP .
+    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpvn7xgkys/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000344023003_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 62: 10811 points from QLP
-    sector 87 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0087-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0087-0000000344023003_tess_v01_llc.fits of type QLP .
+    sector 87 (QLP): download failed: Error in reading Data product /tmp/tmpvn7xgkys/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0087-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0087-0000000344023003_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 87: 11338 points from QLP
-    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000344023003_tess_v01_llc.fits of type QLP .
+    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpvn7xgkys/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000344023003_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 88: 11718 points from QLP
-    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000344023003_tess_v01_llc.fits of type QLP .
+    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpvn7xgkys/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000344023003_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 89: 11411 points from QLP
-  all sectors: P=0.63365 d, depth=11933 ppm, SNR=187.6, 396 transits over 2278 d, secondary 4692.30878177973 ppm (96.3176892719993 sigma), odd/even 0.22776514902442604 sigma
+  all sectors: P=0.63365 d, depth=11933 ppm, SNR=187.6, 396 transits over 2278 d, secondary 4692.30878177973 ppm (96.3176892719993 sigma), strongest other dip 4040.966589366701 ppm (66.82163268572283 sigma) at phase 0.5, odd/even 0.22776514902442604 sigma
     {'time_btjd': 1468.8662, 'sector': 6, 'depth_ppm': 11647.5, 'snr': 9.98}
     {'time_btjd': 1469.4998, 'sector': 6, 'depth_ppm': 11984.9, 'snr': 12.14}
     {'time_btjd': 1470.1335, 'sector': 6, 'depth_ppm': 13081.7, 'snr': 16.54}
@@ -1125,19 +1125,19 @@ This file may be corrupt due to an interrupted download. Please remove it from y
     sector 9: 1148 points from QLP
     sector 34: 3474 points from QLP
     sector 35: 2815 points from QLP
-    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpc9fbwmfk/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 61: 10654 points from QLP
-    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpc9fbwmfk/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 62: 10811 points from QLP
-    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpc9fbwmfk/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 88: 11718 points from QLP
-    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpc9fbwmfk/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 89: 11411 points from QLP
-  all sectors: P=19.05417 d, depth=14740 ppm, SNR=82.8, 13 transits over 2255 d, secondary 26.80377860508898 ppm (0.11028220073884762 sigma), odd/even 0.22729746578744486 sigma
+  all sectors: P=19.05417 d, depth=14740 ppm, SNR=82.8, 13 transits over 2255 d, secondary 26.80377860508898 ppm (0.11028220073884762 sigma), strongest other dip 13074.04586186256 ppm (52.649665956272685 sigma) at phase 0.615, odd/even 0.22729746578744486 sigma
     {'time_btjd': 1506.7677, 'sector': 7, 'depth_ppm': 15124.1, 'snr': 31.21}
     {'time_btjd': 1525.8219, 'sector': 8, 'depth_ppm': 16584.8, 'snr': 25.13}
     {'time_btjd': 1544.8761, 'sector': 9, 'depth_ppm': 15749.6, 'snr': 21.39}
@@ -1371,22 +1371,22 @@ This file may be corrupt due to an interrupted download. Please remove it from y
     sector 34: 3474 points from QLP
     sector 35: 2814 points from QLP
     sector 36: 3467 points from QLP
-    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267830603_tess_v01_llc.fits of type QLP .
+    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmphc0s4_zf/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267830603_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 61: 10654 points from QLP
-    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267830603_tess_v01_llc.fits of type QLP .
+    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmphc0s4_zf/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267830603_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 62: 10811 points from QLP
-    sector 87 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0087-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0087-0000000267830603_tess_v01_llc.fits of type QLP .
+    sector 87 (QLP): download failed: Error in reading Data product /tmp/tmphc0s4_zf/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0087-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0087-0000000267830603_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 87: 11338 points from QLP
-    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267830603_tess_v01_llc.fits of type QLP .
+    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmphc0s4_zf/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267830603_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 88: 11718 points from QLP
-    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267830603_tess_v01_llc.fits of type QLP .
+    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmphc0s4_zf/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267830603_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 89: 11411 points from QLP
-  all sectors: P=1.27960 d, depth=6940 ppm, SNR=52.6, 145 transits over 2255 d, secondary 3265.978186713814 ppm (19.883364531896756 sigma), odd/even 0.5343447758535023 sigma
+  all sectors: P=1.27960 d, depth=6940 ppm, SNR=52.6, 145 transits over 2255 d, secondary 3265.978186713814 ppm (19.883364531896756 sigma), strongest other dip 3330.580444519282 ppm (20.239171550106448 sigma) at phase 0.5, odd/even 0.5343447758535023 sigma
     {'time_btjd': 2229.6293, 'sector': 34, 'depth_ppm': 8108.8, 'snr': 3.19}
     {'time_btjd': 2230.9089, 'sector': 34, 'depth_ppm': 5028.6, 'snr': 3.65}
     {'time_btjd': 2232.1885, 'sector': 34, 'depth_ppm': 8967.8, 'snr': 6.57}
@@ -1751,13 +1751,13 @@ This file may be corrupt due to an interrupted download. Please remove it from y
   {
    "mission": "TESS Secto
 [report] TIC 415954197
-    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmpfp_khw6u/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc.fits of type QLP .
+    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmp71yjguyu/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 56: 11766 points from QLP
-    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmpfp_khw6u/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc.fits of type QLP .
+    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmp71yjguyu/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 83: 10492 points from QLP
-  all sectors: P=7.13991 d, depth=28806 ppm, SNR=94.4, 7 transits over 759 d, secondary 12147.443197203733 ppm (32.73537723661116 sigma), odd/even 0.9170115967151978 sigma
+  all sectors: P=7.13991 d, depth=28806 ppm, SNR=94.4, 7 transits over 759 d, secondary 12147.443197203733 ppm (32.73537723661116 sigma), strongest other dip 11644.81749852042 ppm (31.59388779457988 sigma) at phase 0.5, odd/even 0.9170115967151978 sigma
     {'time_btjd': 2831.1905, 'sector': 56, 'depth_ppm': 30284.1, 'snr': 47.84}
     {'time_btjd': 2838.3304, 'sector': 56, 'depth_ppm': 28233.1, 'snr': 37.68}
     {'time_btjd': 2845.4703, 'sector': 56, 'depth_ppm': 33364.5, 'snr': 49.06}
@@ -1902,19 +1902,19 @@ This file may be corrupt due to an interrupted download. Please remove it from y
     sector 52: 2187 points from TESS-SPOC
     sector 53: 3454 points from TESS-SPOC
     sector 54: 3571 points from QLP
-    sector 74 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0074-0000000193886519_tess_v02_llc/hlsp_qlp_tess_ffi_s0074-0000000193886519_tess_v02_llc.fits of type QLP .
+    sector 74 (QLP): download failed: Error in reading Data product /tmp/tmpby2dq2de/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0074-0000000193886519_tess_v02_llc/hlsp_qlp_tess_ffi_s0074-0000000193886519_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 74: 11268 points from QLP
-    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000193886519_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000193886519_tess_v02_llc.fits of type QLP .
+    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmpby2dq2de/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000193886519_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000193886519_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 79: 11440 points from QLP
-    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000193886519_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000193886519_tess_v01_llc.fits of type QLP .
+    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmpby2dq2de/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000193886519_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000193886519_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 80: 11120 points from QLP
-    sector 81 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0081-0000000193886519_tess_v01_llc/hlsp_qlp_tess_ffi_s0081-0000000193886519_tess_v01_llc.fits of type QLP .
+    sector 81 (QLP): download failed: Error in reading Data product /tmp/tmpby2dq2de/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0081-0000000193886519_tess_v01_llc/hlsp_qlp_tess_ffi_s0081-0000000193886519_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 81: 11063 points from QLP
-  all sectors: P=15.56796 d, depth=1222 ppm, SNR=6.2, 16 transits over 1849 d, secondary 98.82352430534702 ppm (0.363733054406598 sigma), odd/even 0.6483988411689082 sigma
+  all sectors: P=15.56796 d, depth=1222 ppm, SNR=6.2, 16 transits over 1849 d, secondary 98.82352430534702 ppm (0.363733054406598 sigma), strongest other dip 654.33864408182 ppm (2.5774097087043715 sigma) at phase 0.865, odd/even 0.6483988411689082 sigma
     {'time_btjd': 1699.0304, 'sector': 14, 'depth_ppm': 1484.0, 'snr': 2.32}
     {'time_btjd': 1994.8217, 'sector': 25, 'depth_ppm': 1856.7, 'snr': 3.13}
     {'time_btjd': 2399.5887, 'sector': 40, 'depth_ppm': 1601.8, 'snr': 1.9}
@@ -2158,7 +2158,7 @@ This file may be corrupt due to an interrupted download. Please remove it from y
     sector 21: 1217 points from TESS-SPOC
     sector 48: 2992 points from TESS-SPOC
     sector 75: 6590 points from TESS-SPOC
-  all sectors: P=4.70423 d, depth=651 ppm, SNR=6.5, 15 transits over 1496 d, secondary 118.19536754598126 ppm (0.8121627633426104 sigma), odd/even 1.0779505769737912 sigma
+  all sectors: P=4.70423 d, depth=651 ppm, SNR=6.5, 15 transits over 1496 d, secondary 118.19536754598126 ppm (0.8121627633426104 sigma), strongest other dip 396.0035171771681 ppm (2.8346460338851394 sigma) at phase 0.795, odd/even 1.0779505769737912 sigma
     {'time_btjd': 1873.0762, 'sector': 21, 'depth_ppm': 50.2, 'snr': 0.08}
     {'time_btjd': 1877.7804, 'sector': 21, 'depth_ppm': 1046.5, 'snr': 1.91}
     {'time_btjd': 1882.4847, 'sector': 21, 'depth_ppm': 778.5, 'snr': 2.14}
@@ -2357,58 +2357,58 @@ This file may be corrupt due to an interrupted download. Please remove it from y
     sector 52: 3343 points from QLP
     sector 53: 3454 points from QLP
     sector 55: 3771 points from QLP
-    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 56: 11766 points from QLP
-    sector 57 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0057-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0057-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 57 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0057-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0057-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 57: 10791 points from QLP
-    sector 58 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0058-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0058-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 58 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0058-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0058-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 58: 11692 points from QLP
-    sector 59 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0059-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0059-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 59 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0059-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0059-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 59: 11127 points from QLP
-    sector 60 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0060-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0060-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 60 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0060-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0060-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 60: 8550 points from QLP
-    sector 73 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0073-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0073-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 73 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0073-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0073-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 73: 10340 points from QLP
-    sector 75 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0075-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0075-0000000233729835_tess_v02_llc.fits of type QLP .
+    sector 75 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0075-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0075-0000000233729835_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 75: 11678 points from QLP
-    sector 76 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0076-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0076-0000000233729835_tess_v02_llc.fits of type QLP .
+    sector 76 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0076-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0076-0000000233729835_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 76: 11413 points from QLP
-    sector 77 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0077-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0077-0000000233729835_tess_v02_llc.fits of type QLP .
+    sector 77 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0077-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0077-0000000233729835_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 77: 7682 points from QLP
-    sector 78 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0078-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0078-0000000233729835_tess_v02_llc.fits of type QLP .
+    sector 78 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0078-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0078-0000000233729835_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 78: 6388 points from QLP
-    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000233729835_tess_v02_llc.fits of type QLP .
+    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000233729835_tess_v02_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 79: 11440 points from QLP
-    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 80: 11120 points from QLP
-    sector 82 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0082-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0082-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 82 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0082-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0082-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 82: 10646 points from QLP
-    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 83: 10492 points from QLP
-    sector 84 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0084-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0084-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 84 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0084-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0084-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 84: 10831 points from QLP
-    sector 85 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0085-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0085-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 85 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0085-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0085-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 85: 10729 points from QLP
-    sector 86 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0086-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0086-0000000233729835_tess_v01_llc.fits of type QLP .
+    sector 86 (QLP): download failed: Error in reading Data product /tmp/tmpxpupfu6z/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0086-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0086-0000000233729835_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 86: 11195 points from QLP
-  all sectors: P=4.17298 d, depth=635 ppm, SNR=9.8, 216 transits over 1979 d, secondary -138.1568182143855 ppm (-1.6266017995001743 sigma), odd/even 0.9626992959448475 sigma
+  all sectors: P=4.17298 d, depth=635 ppm, SNR=9.8, 216 transits over 1979 d, secondary -138.1568182143855 ppm (-1.6266017995001743 sigma), strongest other dip 236.24067174621288 ppm (2.69914616292186 sigma) at phase 0.42, odd/even 0.9626992959448475 sigma
     {'time_btjd': 1685.1596, 'sector': 14, 'depth_ppm': 688.2, 'snr': 0.35}
     {'time_btjd': 1689.3325, 'sector': 14, 'depth_ppm': 1444.9, 'snr': 1.6}
     {'time_btjd': 1693.5055, 'sector': 14, 'depth_ppm': 1611.2, 'snr': 0.94}
@@ -2851,7 +2851,7 @@ This file may be corrupt due to an interrupted download. Please remove it from y
    "exptime":
 [report] TIC 374022531
     sector 16: 1118 points from QLP
-  all sectors: P=1.70771 d, depth=11698 ppm, SNR=26.5, 5 transits over 24 d, secondary -602.2104812662965 ppm (-1.2533382192533167 sigma), odd/even 3.750277190115364 sigma
+  all sectors: P=1.70771 d, depth=11698 ppm, SNR=26.5, 5 transits over 24 d, secondary -602.2104812662965 ppm (-1.2533382192533167 sigma), strongest other dip 1408.3437416004817 ppm (2.5689214229552815 sigma) at phase 0.445, odd/even 3.750277190115364 sigma
     {'time_btjd': 1752.6215, 'sector': 16, 'depth_ppm': 14196.4, 'snr': 27.74}
     {'time_btjd': 1756.0369, 'sector': 16, 'depth_ppm': 9152.2, 'snr': 23.77}
     {'time_btjd': 1757.7446, 'sector': 16, 'depth_ppm': 13511.8, 'snr': 9.66}
@@ -3015,7 +3015,7 @@ This file may be corrupt due to an interrupted download. Please remove it from y
     sector 57: 10788 points from TESS-SPOC
     sector 83: 10462 points from TESS-SPOC
     sector 84: 8187 points from TESS-SPOC
-  all sectors: P=0.83073 d, depth=296 ppm, SNR=13.0, 119 transits over 1871 d, secondary -28.054201352878394 ppm (-1.0170782235130207 sigma), odd/even 1.238592341397693 sigma
+  all sectors: P=0.83073 d, depth=296 ppm, SNR=13.0, 119 transits over 1871 d, secondary -28.054201352878394 ppm (-1.0170782235130207 sigma), strongest other dip 64.89718138236178 ppm (2.302703071730583 sigma) at phase 0.15, odd/even 1.238592341397693 sigma
     {'time_btjd': 1739.0954, 'sector': 16, 'depth_ppm': -113.5, 'snr': -0.31}
     {'time_btjd': 1744.0798, 'sector': 16, 'depth_ppm': 254.1, 'snr': 3.88}
     {'time_btjd': 1744.9105, 'sector': 16, 'depth_ppm': -122.6, 'snr': -0.57}
