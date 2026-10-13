@@ -127,6 +127,14 @@ def build(tic):
     rec["tess_coverage"] = _safe(lambda: tess_coverage(tic), [])
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f"TIC{tic}.json").write_text(json.dumps(rec, indent=1, default=str))
+    if rec["candidate"]:
+        ms = _safe(lambda: multi_sector(tic, rec["candidate"]["period"], rec["candidate"]["duration_hr"]))
+        if ms:
+            (OUT / f"TIC{tic}_allsectors.json").write_text(json.dumps(ms, separators=(",", ":")))
+            print(f"  all sectors: P={ms['refined_period']:.5f} d, depth={ms['depth_ppm']:.0f} ppm, "
+                  f"SNR={ms['snr']:.1f}, {ms['n_transits_with_data']} transits over {ms['baseline_days']:.0f} d")
+            for tr in ms["transits"]:
+                print("   ", tr)
     lc = _safe(lambda: full_lightcurve(tic, rec["candidate"]["sectors"].split() if rec["candidate"] else []))
     if lc:
         (OUT / f"TIC{tic}_lightcurve.json").write_text(json.dumps(lc, separators=(",", ":")))
@@ -145,3 +153,79 @@ def neighbours(ra, dec, radius_arcsec=63):
         out.append({"ID": int(r["ID"]), "Tmag": _clean(r["Tmag"]), "dstArcSec": _clean(r.get("dstArcSec")),
                     "Teff": _clean(r.get("Teff")), "d": _clean(r.get("d"))})
     return out
+
+
+def all_sectors(tic):
+    """Download every TESS sector of this star (one light curve per sector)."""
+    import re, shutil, tempfile
+    import lightkurve as lk
+    sr = lk.search_lightcurve(f"TIC {tic}", mission="TESS")
+    tab = sr.table
+    pref = {a: i for i, a in enumerate(config.AUTHOR_PREFERENCE)}
+    best = {}
+    for i in range(len(tab)):
+        a = str(tab["author"][i])
+        if a not in pref:
+            continue
+        m = re.search(r"Sector\s+(\d+)", str(tab["mission"][i]))
+        sec = int(m.group(1)) if m else -1
+        if sec >= 0 and (sec not in best or pref[a] < best[sec][0]):
+            best[sec] = (pref[a], i)
+    tmp = tempfile.mkdtemp()
+    out = []
+    try:
+        for sec in sorted(best):
+            i = best[sec][1]
+            try:
+                kw = {"flux_column": "kspsap_flux"} if str(tab["author"][i]) == "QLP" else {}
+                lc = sr[i].download(download_dir=tmp, quality_bitmask="default", **kw).remove_nans()
+            except Exception as exc:
+                print(f"    sector {sec}: {exc}")
+                continue
+            t = np.asarray(lc.time.value, float); f = np.asarray(lc.flux.value, float)
+            med = np.nanmedian(f)
+            if len(t) < 100 or not np.isfinite(med) or med <= 0:
+                continue
+            out.append({"sector": sec, "author": str(tab["author"][i]), "t": t, "f": f / med})
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+    return out
+
+
+def multi_sector(tic, period, duration_hr):
+    """Refit the signal using every sector TESS ever took of this star. If the same dip
+    shows up at the predicted times years later, the period is real."""
+    from astropy.timeseries import BoxLeastSquares
+    from . import detrend
+    secs = all_sectors(tic)
+    T, F, E, S = [], [], [], []
+    for s in secs:
+        t, f, e, _, _ = detrend.prepare(s["t"], s["f"], np.full_like(s["f"], np.nanstd(s["f"])), bin_minutes=10.0)
+        if t.size < 200:
+            continue
+        T.append(t); F.append(f); E.append(e); S.append(np.full_like(t, s["sector"]))
+    if not T:
+        return None
+    t, f, e, sec = map(np.concatenate, (T, F, E, S))
+    dur = duration_hr / 24
+    model = BoxLeastSquares(t, f, dy=e)
+    periods = np.linspace(period * 0.997, period * 1.003, 30000)
+    res = model.power(periods, [dur * 0.75, dur, dur * 1.25], objective="snr")
+    i = int(np.argmax(res.power))
+    P, t0, d = float(res.period[i]), float(res.transit_time[i]), float(res.duration[i])
+    st = model.compute_stats(P, d, t0)
+    per_tr = []
+    for tt in st["transit_times"]:
+        m = np.abs(t - tt) < d / 2
+        near = (np.abs(t - tt) > d) & (np.abs(t - tt) < 3 * d)
+        if m.sum() >= 3 and near.sum() >= 6:
+            dep = np.median(f[near]) - np.median(f[m])
+            err = 1.4826 * np.median(np.abs(f[near] - np.median(f[near]))) / np.sqrt(m.sum())
+            per_tr.append({"time_btjd": round(float(tt), 4), "sector": int(np.median(sec[m])),
+                           "depth_ppm": round(float(dep * 1e6), 1), "snr": round(float(dep / err), 2) if err > 0 else None})
+    depth, depth_err = st["depth"]
+    return {"refined_period": P, "t0_btjd": t0, "duration_hr": d * 24, "depth_ppm": depth * 1e6,
+            "depth_err_ppm": depth_err * 1e6, "snr": float(depth / depth_err) if depth_err > 0 else None,
+            "sectors": sorted({int(x) for x in sec}), "baseline_days": float(t.max() - t.min()),
+            "n_transits_with_data": len(per_tr), "transits": per_tr,
+            "lc": {"t": t.round(4).tolist(), "f": f.round(6).tolist(), "sector": sec.astype(int).tolist()}}
