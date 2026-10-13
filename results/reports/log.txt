@@ -1,0 +1,390 @@
+[report] TIC 267889592
+    sector 7: 1086 points from QLP
+    sector 8: 963 points from QLP
+    sector 9: 1148 points from QLP
+    sector 34: 3474 points from QLP
+    sector 35: 2815 points from QLP
+    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 61: 10654 points from QLP
+    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 62: 10811 points from QLP
+    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 88: 11718 points from QLP
+    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 89: 11411 points from QLP
+  all sectors: P=19.05417 d, depth=14740 ppm, SNR=82.8, 13 transits over 2255 d
+    {'time_btjd': 1506.7677, 'sector': 7, 'depth_ppm': 15124.1, 'snr': 31.21}
+    {'time_btjd': 1525.8219, 'sector': 8, 'depth_ppm': 16584.8, 'snr': 25.13}
+    {'time_btjd': 1544.8761, 'sector': 9, 'depth_ppm': 15749.6, 'snr': 21.39}
+    {'time_btjd': 1563.9302, 'sector': 9, 'depth_ppm': 16209.4, 'snr': 31.89}
+    {'time_btjd': 2230.8262, 'sector': 34, 'depth_ppm': 16273.9, 'snr': 29.31}
+    {'time_btjd': 2249.8804, 'sector': 34, 'depth_ppm': 13069.2, 'snr': 24.1}
+    {'time_btjd': 2268.9346, 'sector': 35, 'depth_ppm': 3354.1, 'snr': 1.04}
+    {'time_btjd': 2973.9389, 'sector': 61, 'depth_ppm': 15646.6, 'snr': 25.36}
+    {'time_btjd': 2992.9931, 'sector': 62, 'depth_ppm': 17085.6, 'snr': 32.9}
+    {'time_btjd': 3012.0472, 'sector': 62, 'depth_ppm': 18100.9, 'snr': 29.92}
+    {'time_btjd': 3697.9974, 'sector': 88, 'depth_ppm': 15568.7, 'snr': 32.0}
+    {'time_btjd': 3717.0516, 'sector': 88, 'depth_ppm': 16218.9, 'snr': 23.59}
+    {'time_btjd': 3736.1057, 'sector': 89, 'depth_ppm': 15553.5, 'snr': 27.01}
+{
+ "tic": 267889592,
+ "tic_catalog": {
+  "ID": "267889592",
+  "ra": 115.253778172234,
+  "dec": -51.175548000736,
+  "pmRA": -11.3539,
+  "pmDEC": 9.16663,
+  "plx": 3.4976,
+  "e_plx": 0.0106942,
+  "d": 283.563,
+  "e_d": 0.866,
+  "Tmag": 12.7692,
+  "Vmag": 13.566,
+  "Jmag": 11.891,
+  "Teff": 5166.0,
+  "e_Teff": 133.254,
+  "logg": 4.62794,
+  "rad": 0.749591,
+  "e_rad": 0.0454674,
+  "mass": 0.87,
+  "e_mass": 0.105658,
+  "lum": 0.360546649,
+  "rho": 2.0656,
+  "contratio": 0.0576797277,
+  "GAIA": "5493043445356438144",
+  "TWOMASS": "07410090-5110320",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.0875573,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 348,
+  "gallong": 263.87866962655,
+  "gallat": -13.6200812883198,
+  "eclong": 141.819133198856,
+  "eclat": -70.1070501159211
+ },
+ "gaia_dr3": {
+  "Source": 5493043445356438144,
+  "Plx": 3.522,
+  "e_Plx": 0.010300000198185444,
+  "RUWE": 1.136,
+  "Gmag": 13.349846,
+  "BP-RP": 1.136427,
+  "RV": 58.56,
+  "e_RV": 1.809999942779541,
+  "Teff": 4911.1,
+  "Dist": 281.1454,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Carina",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [
+  {
+   "_r": 5.67,
+   "recno": 1775993,
+   "OID": 3530166,
+   "Name": "Gaia DR3 5493043445356438400",
+   "V": 0,
+   "RAJ2000": 115.25541687011719,
+   "DEJ2000": -51.17675018310547,
+   "Type": "E",
+   "l_max": "",
+   "max": 16.3,
+   "u_max": "",
+   "n_max": "G",
+   "f_min": "",
+   "l_min": "",
+   "min": 16.58,
+   "u_min": "",
+   "n_min": "G",
+   "Epoch": "--",
+   "u_Epoch": "",
+   "l_Period": "",
+   "Period": 0.30793,
+   "u_Period": "",
+   "Sp": "F",
+   "n_OID": ""
+  }
+ ],
+ "simbad_10arcsec": [
+  {
+   "main_id": "Gaia DR3 5493043445356438400",
+   "ra": 115.25542154451001,
+   "dec": -51.1767458270336,
+   "coo_err_maj": 0.029200000688433647,
+   "coo_err_min": 0.03269999846816063,
+   "coo_err_angle": 90,
+   "coo_wavelength": "O",
+   "coo_bibcode": "2020yCat.1350....0G",
+   "otype": "EB*",
+   "ids": "Gaia DR3 5493043445356438400"
+  }
+ ],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 267889592,
+   "Tmag": 12.7692,
+   "dstArcSec": 0.0,
+   "Teff": 5166.0,
+   "d": 283.563
+  },
+  {
+   "ID": 267889596,
+   "Tmag": 15.8805,
+   "dstArcSec": 5.688445346463897,
+   "Teff": 6624.0,
+   "d": 4521.08
+  },
+  {
+   "ID": 267889588,
+   "Tmag": 16.2741,
+   "dstArcSec": 37.67689041522648,
+   "Teff": 4646.0,
+   "d": 1111.85
+  },
+  {
+   "ID": 267889606,
+   "Tmag": 16.7366,
+   "dstArcSec": 36.16882409661423,
+   "Teff": 6377.0,
+   "d": 3826.02
+  },
+  {
+   "ID": 267889616,
+   "Tmag": 17.0295,
+   "dstArcSec": 44.92429146978731,
+   "Teff": 4920.0,
+   "d": 1777.39
+  },
+  {
+   "ID": 267889571,
+   "Tmag": 17.1094,
+   "dstArcSec": 45.30952301729272,
+   "Teff": 3498.0,
+   "d": 986.148
+  },
+  {
+   "ID": 267889577,
+   "Tmag": 17.3254,
+   "dstArcSec": 42.62546239022305,
+   "Teff": 5251.0,
+   "d": 1805.3
+  },
+  {
+   "ID": 267896802,
+   "Tmag": 17.4582,
+   "dstArcSec": 34.49194643418932,
+   "Teff": 5847.0,
+   "d": 3736.61
+  },
+  {
+   "ID": 766862837,
+   "Tmag": 17.7002,
+   "dstArcSec": 58.16997782682575,
+   "Teff": 5879.0,
+   "d": 3097.14
+  },
+  {
+   "ID": 267889615,
+   "Tmag": 17.7078,
+   "dstArcSec": 59.73537482989936,
+   "Teff": 4820.0,
+   "d": 2240.53
+  },
+  {
+   "ID": 267896811,
+   "Tmag": 17.7641,
+   "dstArcSec": 43.756470748064814,
+   "Teff": 4484.0,
+   "d": 2604.98
+  },
+  {
+   "ID": 267896780,
+   "Tmag": 17.9918,
+   "dstArcSec": 52.049741055561974,
+   "Teff": 4557.0,
+   "d": 2021.1
+  },
+  {
+   "ID": 267889610,
+   "Tmag": 18.1214,
+   "dstArcSec": 27.724915824184457,
+   "Teff": 4111.0,
+   "d": 1330.67
+  },
+  {
+   "ID": 267889618,
+   "Tmag": 18.4039,
+   "dstArcSec": 42.3174433004463,
+   "Teff": 4009.0,
+   "d": 1355.41
+  },
+  {
+   "ID": 766867936,
+   "Tmag": 18.5351,
+   "dstArcSec": 50.349403317894115,
+   "Teff": null,
+   "d": 2583.27
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 07",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Secto
+[report] TIC 415954197
+    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmpwgb16ssy/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 56: 11766 points from QLP
+    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmpwgb16ssy/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 83: 10492 points from QLP
+  all sectors: P=7.13991 d, depth=28806 ppm, SNR=94.4, 7 transits over 759 d
+    {'time_btjd': 2831.1905, 'sector': 56, 'depth_ppm': 30284.1, 'snr': 47.84}
+    {'time_btjd': 2838.3304, 'sector': 56, 'depth_ppm': 28233.1, 'snr': 37.68}
+    {'time_btjd': 2845.4703, 'sector': 56, 'depth_ppm': 33364.5, 'snr': 49.06}
+    {'time_btjd': 2852.6102, 'sector': 56, 'depth_ppm': 33862.0, 'snr': 59.4}
+    {'time_btjd': 3566.6012, 'sector': 83, 'depth_ppm': 31303.3, 'snr': 40.12}
+    {'time_btjd': 3573.7411, 'sector': 83, 'depth_ppm': 32450.6, 'snr': 51.59}
+    {'time_btjd': 3580.881, 'sector': 83, 'depth_ppm': 32575.9, 'snr': 38.56}
+{
+ "tic": 415954197,
+ "tic_catalog": {
+  "ID": "415954197",
+  "ra": 342.363134984879,
+  "dec": 11.0966060378215,
+  "pmRA": -20.2167,
+  "pmDEC": -17.1933,
+  "plx": 1.72366,
+  "e_plx": 0.0399271,
+  "d": 570.805,
+  "e_d": 13.112,
+  "Tmag": 12.7747,
+  "Vmag": 13.512,
+  "Jmag": 12.082,
+  "Teff": 5429.0,
+  "e_Teff": 126.043,
+  "logg": 4.18488,
+  "rad": 1.30453,
+  "e_rad": 0.0736558,
+  "mass": 0.95,
+  "e_mass": 0.110502,
+  "lum": 1.33193588,
+  "rho": 0.427917,
+  "contratio": 0.03889859,
+  "GAIA": "2718329812895666816",
+  "TWOMASS": "22492716+1105476",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.0381873,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 55,
+  "gallong": 81.1253252740846,
+  "gallat": -41.6647429935674,
+  "eclong": 348.149656330809,
+  "eclat": 17.148454623968
+ },
+ "gaia_dr3": {
+  "Source": 2718329812895666816,
+  "Plx": 1.8018,
+  "e_Plx": 0.01640000008046627,
+  "RUWE": 1.052,
+  "Gmag": 13.277535,
+  "BP-RP": 0.971979,
+  "RV": 3.01,
+  "e_RV": 2.3499999046325684,
+  "Teff": 5659.1,
+  "Dist": 540.6069,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Pegasus",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 415954195,
+   "Tmag": 11.5112,
+   "dstArcSec": 55.611228753195334,
+   "Teff": 5114.0,
+   "d": 1630.21
+  },
+  {
+   "ID": 415954197,
+   "Tmag": 12.7747,
+   "dstArcSec": 0.0,
+   "Teff": 5429.0,
+   "d": 570.805
+  },
+  {
+   "ID": 257205004,
+   "Tmag": 17.2644,
+   "dstArcSec": 32.63149934063684,
+   "Teff": 3556.0,
+   "d": 839.141
+  },
+  {
+   "ID": 257205006,
+   "Tmag": 17.807,
+   "dstArcSec": 42.70002276211679,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 2053091940,
+   "Tmag": 18.5562,
+   "dstArcSec": 50.06358727364251,
+   "Teff": 4386.0,
+   "d": 1798.69
+  },
+  {
+   "ID": 2053091935,
+   "Tmag": 18.7673,
+   "dstArcSec": 42.576699831753494,
+   "Teff": 4534.0,
+   "d": 1265.33
+  },
+  {
+   "ID": 2053091934,
+   "Tmag": 19.8419,
+   "dstArcSec": 27.246872855066464,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 2053091941,
+   "Tmag": 20.397,
+   "dstArcSec": 37.56232181042708,
+   "Teff": null,
+   "d": null
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 56",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 83",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  }
+ ]
+}
