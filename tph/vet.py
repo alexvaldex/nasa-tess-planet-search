@@ -115,6 +115,22 @@ def expected_duration(period, rstar=1.0, mstar=1.0):
     return period / np.pi * np.arcsin(x)
 
 
+def phase_depth(t, f, period, t0, duration, offset=0.0):
+    """Depth (and significance) of the dip at a given orbital phase, measured directly:
+    median flux just outside the window minus median flux inside, error from scatter.
+    offset=0.5 tests for a secondary eclipse, the classic eclipsing-binary giveaway."""
+    ph = (((t - t0) / period - offset + 0.5) % 1.0) - 0.5
+    dt = np.abs(ph * period)
+    inn = dt < duration / 2
+    out = (dt > duration) & (dt < 3 * duration)
+    if inn.sum() < 5 or out.sum() < 10:
+        return np.nan, np.nan
+    ref = np.median(f[out])
+    dep = ref - np.median(f[inn])
+    err = 1.4826 * np.median(np.abs(f[out] - ref)) / np.sqrt(inn.sum()) * 1.2533   # error of a median
+    return float(dep), float(dep / err) if err > 0 else np.nan
+
+
 def _sigma(v):
     val, err = v
     return float(val / err) if err > 0 and np.isfinite(err) else 0.0
@@ -129,7 +145,11 @@ def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0, lc=None):
     d_even, e_even = st["depth_even"]
     oe = abs(d_odd - d_even) / np.sqrt(e_odd ** 2 + e_even ** 2) if (e_odd > 0 and e_even > 0) else 0.0
 
-    sec = _sigma(st["depth_phased"])     # dip at phase 0.5 -> secondary eclipse
+    # Secondary eclipse: measured directly (astropy's depth_phased can come back with a zero
+    # error, which silently hid a real 1.2% secondary in testing).
+    _, sec = phase_depth(t, f, P, t0, dur, offset=0.5)
+    if not np.isfinite(sec):
+        sec = _sigma(st["depth_phased"])
     half = _sigma(st["depth_half"])      # dip at half period -> period may be wrong
 
     # Transit shape: planets are flat-bottomed (U), grazing binaries are V-shaped.
