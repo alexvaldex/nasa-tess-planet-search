@@ -1,0 +1,448 @@
+{
+ "tic": 233729835,
+ "candidate": {
+  "id": "TIC233729835.01",
+  "tic": 233729835,
+  "signal": 1,
+  "date": "2026-10-13",
+  "status": "candidate",
+  "score": 0.9143,
+  "period": 4.177251,
+  "t0_btjd": 1931.86358,
+  "duration_hr": 1.944,
+  "depth_ppm": 1062.3,
+  "rp_earth": 3.88,
+  "sde": 9.63,
+  "snr": 7.04,
+  "n_transits": 23,
+  "flags": null,
+  "note": null,
+  "tmag": 12.6776,
+  "teff": 5777.0,
+  "rstar": 1.09044,
+  "ra": 277.0771138472,
+  "dec": 60.141534913,
+  "sectors": "23 24 25 26",
+  "plot": "TIC233729835.01.png",
+  "f_log_sde": 0.9838,
+  "f_log_snr": 0.8474,
+  "f_log_depth_ppm": 3.079,
+  "f_log_dur_ratio": -0.2098,
+  "f_log_q": -1.7124,
+  "f_odd_even_sigma": 0.1995,
+  "f_secondary_snr": -0.049,
+  "f_half_period_snr": 4.8327,
+  "f_shape": 1.3915,
+  "f_log_n_transits": 1.3617,
+  "f_single_dominance": 0.1666,
+  "f_log_rp": 0.5885,
+  "f_harmonic_dll": -0.2493,
+  "f_depth_consistency": 0.1331,
+  "f_centroid_sigma": null
+ },
+ "tic_catalog": {
+  "ID": "233729835",
+  "ra": 277.077113847227,
+  "dec": 60.1415349130408,
+  "pmRA": 2.77435,
+  "pmDEC": 20.9197,
+  "plx": 1.91689,
+  "e_plx": 0.0161285,
+  "d": 513.943,
+  "e_d": 4.2925,
+  "Tmag": 12.6776,
+  "Vmag": 13.315,
+  "Jmag": 12.04,
+  "Teff": 5777.0,
+  "e_Teff": 125.69,
+  "logg": 4.37989,
+  "rad": 1.09044,
+  "e_rad": 0.0518015,
+  "mass": 1.04,
+  "e_mass": 0.12814,
+  "lum": 1.19319487,
+  "rho": 0.802089,
+  "contratio": 0.00717946934,
+  "GAIA": "2157920349809807360",
+  "TWOMASS": "18281851+6008295",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.031619,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 99,
+  "gallong": 89.4538108127899,
+  "gallat": 26.1100559299285,
+  "eclong": 299.521427872126,
+  "eclat": 82.8490978031021
+ },
+ "gaia_dr3": {
+  "Source": 2157920349809807360,
+  "Plx": 1.9239,
+  "e_Plx": 0.010099999606609344,
+  "RUWE": 0.965,
+  "Gmag": 13.116577,
+  "BP-RP": 0.849235,
+  "RV": -13.45,
+  "e_RV": 3.0399999618530273,
+  "Teff": 5718.9,
+  "Dist": 508.8183,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Draco",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 233729835,
+   "Tmag": 12.6776,
+   "dstArcSec": 0.0,
+   "Teff": 5777.0,
+   "d": 513.943
+  },
+  {
+   "ID": 233729836,
+   "Tmag": 15.8194,
+   "dstArcSec": 50.09355644371284,
+   "Teff": 5585.0,
+   "d": 1718.84
+  },
+  {
+   "ID": 233729840,
+   "Tmag": 16.3691,
+   "dstArcSec": 52.0875565638214,
+   "Teff": 3576.0,
+   "d": 484.151
+  },
+  {
+   "ID": 233729830,
+   "Tmag": 16.7494,
+   "dstArcSec": 41.16176667248942,
+   "Teff": 4706.0,
+   "d": 985.308
+  },
+  {
+   "ID": 233729838,
+   "Tmag": 17.1929,
+   "dstArcSec": 51.90414553536002,
+   "Teff": 3983.0,
+   "d": 866.491
+  },
+  {
+   "ID": 233729831,
+   "Tmag": 18.6316,
+   "dstArcSec": 48.00935349327982,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 1551462749,
+   "Tmag": 19.5898,
+   "dstArcSec": 13.200603027976568,
+   "Teff": null,
+   "d": 1243.73
+  },
+  {
+   "ID": 1551462751,
+   "Tmag": 19.7737,
+   "dstArcSec": 48.872191569554104,
+   "Teff": null,
+   "d": 1769.21
+  },
+  {
+   "ID": 1551462747,
+   "Tmag": 20.1223,
+   "dstArcSec": 54.49884852636755,
+   "Teff": null,
+   "d": 1835.91
+  },
+  {
+   "ID": 1551462748,
+   "Tmag": 20.2456,
+   "dstArcSec": 29.0676363400325,
+   "Teff": null,
+   "d": 1350.43
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 14",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 15",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 16",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 17",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 18",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 19",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 20",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 21",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 22",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 23",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 24",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 25",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 26",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 40",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 41",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 47",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 56",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 57",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 58",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 59",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 60",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 48",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 49",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 50",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 51",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 52",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 53",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 55",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 73",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2023
+  },
+  {
+   "mission": "TESS Sector 75",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 76",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 77",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 78",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 79",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 80",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 82",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 83",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 84",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 85",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 86",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 14",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 14",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 15",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 15",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 26",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 26",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2020
+  }
+ ]
+}

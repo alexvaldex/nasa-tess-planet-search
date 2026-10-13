@@ -1,0 +1,199 @@
+{
+ "tic": 289728440,
+ "candidate": {
+  "id": "TIC289728440.01",
+  "tic": 289728440,
+  "signal": 1,
+  "date": "2026-10-13",
+  "status": "candidate",
+  "score": 0.8544,
+  "period": 4.706873,
+  "t0_btjd": 3340.78898,
+  "duration_hr": 2.88,
+  "depth_ppm": 1225.7,
+  "rp_earth": 2.98,
+  "sde": 14.2,
+  "snr": 7.9,
+  "n_transits": 4,
+  "flags": null,
+  "note": null,
+  "tmag": 12.1783,
+  "teff": 5212.0,
+  "rstar": 0.779623,
+  "ra": 159.5406606266,
+  "dec": 55.5445899029,
+  "sectors": "75",
+  "plot": "TIC289728440.01.png",
+  "f_log_sde": 1.1522,
+  "f_log_snr": 0.8978,
+  "f_log_depth_ppm": 3.1719,
+  "f_log_dur_ratio": 0.0671,
+  "f_log_q": -1.5936,
+  "f_odd_even_sigma": 0.579,
+  "f_secondary_snr": -0.5694,
+  "f_half_period_snr": 5.4509,
+  "f_shape": 0.9699,
+  "f_log_n_transits": 0.6021,
+  "f_single_dominance": 0.427,
+  "f_log_rp": 0.4739,
+  "f_harmonic_dll": -0.2747,
+  "f_depth_consistency": 0.0414,
+  "f_centroid_sigma": 0.1584
+ },
+ "tic_catalog": {
+  "ID": "289728440",
+  "ra": 159.540660626583,
+  "dec": 55.544589902919,
+  "pmRA": -32.8856,
+  "pmDEC": -33.0525,
+  "plx": 4.05356,
+  "e_plx": 0.0367758,
+  "d": 244.971,
+  "e_d": 2.2235,
+  "Tmag": 12.1783,
+  "Vmag": 12.918,
+  "Jmag": 11.404,
+  "Teff": 5212.0,
+  "e_Teff": 122.171,
+  "logg": 4.60369,
+  "rad": 0.779623,
+  "e_rad": 0.045113,
+  "mass": 0.89,
+  "e_mass": 0.104407,
+  "lum": 0.404093057,
+  "rho": 1.87818,
+  "contratio": 0.0191163067,
+  "GAIA": "853585859152162176",
+  "TWOMASS": "10380976+5532405",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.0151949,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 40,
+  "gallong": 153.879834893354,
+  "gallat": 52.8205955610001,
+  "eclong": 136.137630584189,
+  "eclat": 42.6767490324389
+ },
+ "gaia_dr3": {},
+ "constellation": "Ursa Major",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 289728440,
+   "Tmag": 12.1783,
+   "dstArcSec": 0.0,
+   "Teff": 5212.0,
+   "d": 244.971
+  },
+  {
+   "ID": 289728439,
+   "Tmag": 15.0008,
+   "dstArcSec": 45.608686440815426,
+   "Teff": 4280.0,
+   "d": 552.479
+  },
+  {
+   "ID": 289727869,
+   "Tmag": 15.7014,
+   "dstArcSec": 47.21868435842234,
+   "Teff": 3319.0,
+   "d": 255.871
+  },
+  {
+   "ID": 289728438,
+   "Tmag": 16.9523,
+   "dstArcSec": 48.91895779692635,
+   "Teff": 4267.0,
+   "d": 1601.37
+  },
+  {
+   "ID": 840999368,
+   "Tmag": 19.6844,
+   "dstArcSec": 48.47227242421842,
+   "Teff": 3966.0,
+   "d": 1118.18
+  },
+  {
+   "ID": 840999339,
+   "Tmag": 19.8278,
+   "dstArcSec": 58.711514356116645,
+   "Teff": null,
+   "d": 1094.49
+  },
+  {
+   "ID": 840999366,
+   "Tmag": 20.0748,
+   "dstArcSec": 30.910290509607822,
+   "Teff": null,
+   "d": 457.271
+  },
+  {
+   "ID": 840999338,
+   "Tmag": 20.1067,
+   "dstArcSec": 41.284530143866945,
+   "Teff": null,
+   "d": 1290.86
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 21",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 48",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 75",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 21",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 48",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 75",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 21",
+   "author": "TARS",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 48",
+   "author": "TARS",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 75",
+   "author": "TARS",
+   "exptime": 200.0,
+   "year": 2024
+  }
+ ]
+}

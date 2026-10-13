@@ -1,0 +1,192 @@
+{
+ "tic": 374022531,
+ "candidate": {
+  "id": "TIC374022531.01",
+  "tic": 374022531,
+  "signal": 1,
+  "date": "2026-10-13",
+  "status": "candidate",
+  "score": 0.7469,
+  "period": 1.707934,
+  "t0_btjd": 1740.66657,
+  "duration_hr": 1.224,
+  "depth_ppm": 11970.2,
+  "rp_earth": 11.68,
+  "sde": 20.6,
+  "snr": 26.45,
+  "n_transits": 13,
+  "flags": null,
+  "note": null,
+  "tmag": 12.8874,
+  "teff": 5371.0,
+  "rstar": 0.978534,
+  "ra": 346.2252735189,
+  "dec": 41.3080542449,
+  "sectors": "16",
+  "plot": "TIC374022531.01.png",
+  "f_log_sde": 1.3138,
+  "f_log_snr": 1.4224,
+  "f_log_depth_ppm": 4.0548,
+  "f_log_dur_ratio": -0.2443,
+  "f_log_q": -1.5249,
+  "f_odd_even_sigma": 1.9792,
+  "f_secondary_snr": -0.2071,
+  "f_half_period_snr": 18.2486,
+  "f_shape": 0.5459,
+  "f_log_n_transits": 1.1139,
+  "f_single_dominance": 0.1457,
+  "f_log_rp": 1.0675,
+  "f_harmonic_dll": -0.2801,
+  "f_depth_consistency": 0.3631,
+  "f_centroid_sigma": null
+ },
+ "tic_catalog": {
+  "ID": "374022531",
+  "ra": 346.22527351893,
+  "dec": 41.308054244933,
+  "pmRA": 11.7096,
+  "pmDEC": 2.52248,
+  "plx": null,
+  "e_plx": null,
+  "d": 435.195,
+  "e_d": null,
+  "Tmag": 12.8874,
+  "Vmag": 13.634,
+  "Jmag": 12.202,
+  "Teff": 5371.0,
+  "e_Teff": null,
+  "logg": null,
+  "rad": 0.978534,
+  "e_rad": null,
+  "mass": null,
+  "e_mass": null,
+  "lum": null,
+  "rho": null,
+  "contratio": 0.0262987372,
+  "GAIA": "1930284201202746496",
+  "TWOMASS": "23045407+4118289",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": null,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 179,
+  "gallong": 102.284824722952,
+  "gallat": -17.2532086399998,
+  "eclong": 7.68730529811897,
+  "eclat": 42.5926882440326
+ },
+ "gaia_dr3": {
+  "Source": 1930284201202746496,
+  "Plx": 4.2459,
+  "e_Plx": 0.26159998774528503,
+  "RUWE": 22.55,
+  "Gmag": 13.467232,
+  "BP-RP": 0.946657,
+  "RV": -62.74,
+  "e_RV": 6.199999809265137,
+  "Teff": 5779.9,
+  "Dist": 361.7643,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Andromeda",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 374022531,
+   "Tmag": 12.8874,
+   "dstArcSec": 0.0,
+   "Teff": 5371.0,
+   "d": 435.195
+  },
+  {
+   "ID": 374022539,
+   "Tmag": 14.4198,
+   "dstArcSec": 50.664102523671566,
+   "Teff": 5464.0,
+   "d": 1195.03
+  },
+  {
+   "ID": 374022528,
+   "Tmag": 16.408,
+   "dstArcSec": 22.806970952108824,
+   "Teff": 4882.0,
+   "d": 1402.04
+  },
+  {
+   "ID": 374022532,
+   "Tmag": 17.1793,
+   "dstArcSec": 6.247749834822901,
+   "Teff": 4231.0,
+   "d": 1191.0
+  },
+  {
+   "ID": 2041443742,
+   "Tmag": 17.8426,
+   "dstArcSec": 32.76279958183086,
+   "Teff": 5694.0,
+   "d": 2778.48
+  },
+  {
+   "ID": 2041443741,
+   "Tmag": 18.6004,
+   "dstArcSec": 46.500352797109535,
+   "Teff": 3404.0,
+   "d": 396.364
+  },
+  {
+   "ID": 374022523,
+   "Tmag": 18.6004,
+   "dstArcSec": 45.46248824340877,
+   "Teff": 3404.0,
+   "d": 396.364
+  },
+  {
+   "ID": 2041443743,
+   "Tmag": 18.6046,
+   "dstArcSec": 43.97667877118752,
+   "Teff": 3413.0,
+   "d": 370.481
+  },
+  {
+   "ID": 2041443626,
+   "Tmag": 18.9971,
+   "dstArcSec": 55.49977847265831,
+   "Teff": 4791.0,
+   "d": 2412.77
+  },
+  {
+   "ID": 2041443633,
+   "Tmag": 19.0652,
+   "dstArcSec": 61.76769663712163,
+   "Teff": 4931.0,
+   "d": 1846.4
+  },
+  {
+   "ID": 2041443631,
+   "Tmag": 19.6542,
+   "dstArcSec": 57.88748298449798,
+   "Teff": null,
+   "d": 1531.54
+  },
+  {
+   "ID": 2041443744,
+   "Tmag": 20.6514,
+   "dstArcSec": 26.834069559215898,
+   "Teff": null,
+   "d": null
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 16",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  }
+ ]
+}

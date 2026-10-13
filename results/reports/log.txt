@@ -1,22 +1,1143 @@
+Warning: 28% (949/3399) of the cadences will be ignored due to the quality mask (quality_bitmask=17087).
+[report] TIC 237124354
+    sector 14: 869 points from TESS-SPOC
+    sector 25: 1025 points from TESS-SPOC
+    sector 26: 1136 points from TESS-SPOC
+    sector 41: 3658 points from TESS-SPOC
+    sector 52: 2226 points from TESS-SPOC
+    sector 53: 3454 points from TESS-SPOC
+    sector 54: 2323 points from TESS-SPOC
+    sector 55: 3578 points from TESS-SPOC
+    sector 74: 8828 points from TESS-SPOC
+    sector 75 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0075-0000000237124354_tess_v02_llc/hlsp_qlp_tess_ffi_s0075-0000000237124354_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 75: 11678 points from QLP
+    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000237124354_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000237124354_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 79: 11440 points from QLP
+    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000237124354_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 80: 11119 points from QLP
+    sector 81 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0081-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0081-0000000237124354_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 81: 11063 points from QLP
+    sector 82 (QLP): download failed: Error in reading Data product /tmp/tmp6sujifd6/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0082-0000000237124354_tess_v01_llc/hlsp_qlp_tess_ffi_s0082-0000000237124354_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 82: 10766 points from QLP
+  all sectors: P=15.02633 d, depth=410 ppm, SNR=6.6, 22 transits over 1875 d, secondary -11.524197509604761 ppm (-0.14587215886792254 sigma), odd/even 0.4062684918624026 sigma
+    {'time_btjd': 1686.2772, 'sector': 14, 'depth_ppm': 509.7, 'snr': 1.5}
+    {'time_btjd': 1701.3035, 'sector': 14, 'depth_ppm': -380.0, 'snr': -1.25}
+    {'time_btjd': 1986.8037, 'sector': 25, 'depth_ppm': 218.5, 'snr': 0.62}
+    {'time_btjd': 2001.83, 'sector': 25, 'depth_ppm': -694.1, 'snr': -2.03}
+    {'time_btjd': 2016.8564, 'sector': 26, 'depth_ppm': 304.0, 'snr': 1.04}
+    {'time_btjd': 2031.8827, 'sector': 26, 'depth_ppm': 612.3, 'snr': 1.91}
+    {'time_btjd': 2422.5672, 'sector': 41, 'depth_ppm': -279.5, 'snr': -0.98}
+    {'time_btjd': 2437.5935, 'sector': 41, 'depth_ppm': 702.4, 'snr': 3.17}
+    {'time_btjd': 2738.12, 'sector': 52, 'depth_ppm': -762.2, 'snr': -3.32}
+    {'time_btjd': 2753.1463, 'sector': 53, 'depth_ppm': 317.3, 'snr': 1.32}
+    {'time_btjd': 2768.1727, 'sector': 53, 'depth_ppm': -109.3, 'snr': -0.49}
+    {'time_btjd': 2798.2253, 'sector': 55, 'depth_ppm': 799.7, 'snr': 2.89}
+    {'time_btjd': 2813.2517, 'sector': 55, 'depth_ppm': 421.9, 'snr': 1.76}
+    {'time_btjd': 3324.1467, 'sector': 74, 'depth_ppm': -243.1, 'snr': -0.86}
+    {'time_btjd': 3339.1731, 'sector': 74, 'depth_ppm': -625.0, 'snr': -2.37}
+    {'time_btjd': 3354.1994, 'sector': 75, 'depth_ppm': 80.3, 'snr': 0.22}
+    {'time_btjd': 3459.3837, 'sector': 79, 'depth_ppm': 3751.9, 'snr': 5.77}
+    {'time_btjd': 3474.41, 'sector': 79, 'depth_ppm': 4368.7, 'snr': 9.03}
+    {'time_btjd': 3489.4363, 'sector': 80, 'depth_ppm': 1839.2, 'snr': 5.16}
+    {'time_btjd': 3504.4627, 'sector': 80, 'depth_ppm': 1145.4, 'snr': 1.93}
+    {'time_btjd': 3534.5153, 'sector': 82, 'depth_ppm': 436.5, 'snr': 2.0}
+    {'time_btjd': 3549.5416, 'sector': 82, 'depth_ppm': 864.4, 'snr': 3.45}
+{
+ "tic": 237124354,
+ "tic_catalog": {
+  "ID": "237124354",
+  "ra": 277.377690792695,
+  "dec": 50.1799466871036,
+  "pmRA": 2.93554,
+  "pmDEC": 4.63774,
+  "plx": 1.84623,
+  "e_plx": 0.0191127,
+  "d": 533.334,
+  "e_d": 5.478,
+  "Tmag": 11.9045,
+  "Vmag": 12.409,
+  "Jmag": 11.396,
+  "Teff": 6422.0,
+  "e_Teff": 128.43,
+  "logg": 4.28166,
+  "rad": 1.35988,
+  "e_rad": 0.0629648,
+  "mass": 1.29,
+  "e_mass": 0.2047,
+  "lum": 2.83384156,
+  "rho": 0.512968,
+  "contratio": 0.0220860653,
+  "GAIA": "2121032662411728384",
+  "TWOMASS": "18293065+5010478",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.0356774,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 149,
+  "gallong": 78.7391274162009,
+  "gallat": 23.8703013089766,
+  "eclong": 286.525386477492,
+  "eclat": 73.1961020674061
+ },
+ "gaia_dr3": {
+  "Source": 2121032662411728384,
+  "Plx": 1.8844,
+  "e_Plx": 0.009800000116229057,
+  "RUWE": 1.089,
+  "Gmag": 12.253395,
+  "BP-RP": 0.665618,
+  "RV": -41.22,
+  "e_RV": 0.7599999904632568,
+  "Teff": 6275.2,
+  "Dist": 526.194,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Draco",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [
+  {
+   "main_id": "TYC 3534-1087-1",
+   "ra": 277.37769030539,
+   "dec": 50.17994622483,
+   "coo_err_maj": 0.00860000029206276,
+   "coo_err_min": 0.010099999606609344,
+   "coo_err_angle": 90,
+   "coo_wavelength": "O",
+   "coo_bibcode": "2020yCat.1350....0G",
+   "otype": "*",
+   "ids": "TIC 237124354|Gaia DR3 2121032662411728384|TYC 3534-1087-1|2MASS J18293065+5010478|Gaia DR1 2121032662411728384|Gaia DR2 2121032662411728384"
+  }
+ ],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 237124354,
+   "Tmag": 11.9045,
+   "dstArcSec": 0.0,
+   "Teff": 6422.0,
+   "d": 533.334
+  },
+  {
+   "ID": 237124351,
+   "Tmag": 13.1984,
+   "dstArcSec": 59.25111064038503,
+   "Teff": 5114.0,
+   "d": 1133.5
+  },
+  {
+   "ID": 237124356,
+   "Tmag": 17.154,
+   "dstArcSec": 44.102724954640905,
+   "Teff": 5015.0,
+   "d": 2080.97
+  },
+  {
+   "ID": 237124353,
+   "Tmag": 17.5761,
+   "dstArcSec": 29.25857994502057,
+   "Teff": 4237.0,
+   "d": 1045.57
+  },
+  {
+   "ID": 1550977598,
+   "Tmag": 17.695,
+   "dstArcSec": 54.18930871642211,
+   "Teff": 5811.0,
+   "d": 3382.87
+  },
+  {
+   "ID": 237124361,
+   "Tmag": 17.699,
+   "dstArcSec": 39.28591239384779,
+   "Teff": 3548.0,
+   "d": 772.362
+  },
+  {
+   "ID": 1550982355,
+   "Tmag": 17.9747,
+   "dstArcSec": 45.110565167894315,
+   "Teff": null,
+   "d": 575.566
+  },
+  {
+   "ID": 1550977601,
+   "Tmag": 18.1904,
+   "dstArcSec": 57.25730822582414,
+   "Teff": 5550.0,
+   "d": 3132.6
+  },
+  {
+   "ID": 1550982220,
+   "Tmag": 18.578,
+   "dstArcSec": 41.3565682209374,
+   "Teff": 4015.0,
+   "d": 1325.41
+  },
+  {
+   "ID": 237124345,
+   "Tmag": 18.6898,
+   "dstArcSec": 53.581264174490414,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 237124357,
+   "Tmag": 18.751,
+   "dstArcSec": 10.042829403785568,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 512691558,
+   "Tmag": 20.0327,
+   "dstArcSec": 53.818582966244136,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 1550977463,
+   "Tmag": 20.0752,
+   "dstArcSec": 40.4539623955803,
+   "Teff": null,
+   "d": null
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 14",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 25",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 26",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 41",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 52",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 53",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 54",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 55",
+   "au
+[report] TIC 230202008
+    sector 25: 1157 points from TESS-SPOC
+    sector 51: 1524 points from TESS-SPOC
+    sector 52: 2187 points from TESS-SPOC
+    sector 78: 3754 points from TESS-SPOC
+    sector 79: 7271 points from TESS-SPOC
+  all sectors: P=8.02155 d, depth=446 ppm, SNR=7.9, 9 transits over 1495 d, secondary 22.959163315183773 ppm (0.3068308339475653 sigma), odd/even 0.07465793207332536 sigma
+    {'time_btjd': 1989.0055, 'sector': 25, 'depth_ppm': 1333.2, 'snr': 5.94}
+    {'time_btjd': 2005.0486, 'sector': 25, 'depth_ppm': -156.7, 'snr': -0.95}
+    {'time_btjd': 2702.923, 'sector': 51, 'depth_ppm': 128.2, 'snr': 1.0}
+    {'time_btjd': 2718.9661, 'sector': 52, 'depth_ppm': 1016.3, 'snr': 4.07}
+    {'time_btjd': 2726.9876, 'sector': 52, 'depth_ppm': 103.7, 'snr': 0.62}
+    {'time_btjd': 3440.9051, 'sector': 78, 'depth_ppm': 635.7, 'snr': 4.0}
+    {'time_btjd': 3448.9267, 'sector': 78, 'depth_ppm': 1003.0, 'snr': 5.22}
+    {'time_btjd': 3464.9698, 'sector': 79, 'depth_ppm': 387.8, 'snr': 2.43}
+    {'time_btjd': 3472.9913, 'sector': 79, 'depth_ppm': 616.7, 'snr': 2.54}
+{
+ "tic": 230202008,
+ "tic_catalog": {
+  "ID": "230202008",
+  "ra": 245.181681820952,
+  "dec": 22.236308088388,
+  "pmRA": -9.7821,
+  "pmDEC": -21.4433,
+  "plx": 3.62038,
+  "e_plx": 0.0264231,
+  "d": 274.042,
+  "e_d": 1.9995,
+  "Tmag": 10.8934,
+  "Vmag": 11.574,
+  "Jmag": 10.228,
+  "Teff": 5719.12,
+  "e_Teff": 117.312,
+  "logg": 4.13315,
+  "rad": 1.43469,
+  "e_rad": 0.0693467,
+  "mass": 1.02,
+  "e_mass": 0.129955,
+  "lum": 1.98392439,
+  "rho": 0.345406,
+  "contratio": 0.0006164529,
+  "GAIA": "1298568351037167488",
+  "TWOMASS": "16204361+2214107",
+  "lumclass": "DWARF",
+  "MH": -0.133695,
+  "ebv": 0.0810394,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 81,
+  "gallong": 39.0724452305991,
+  "gallat": 42.538108677479,
+  "eclong": 237.938360551363,
+  "eclat": 42.9523515632858
+ },
+ "gaia_dr3": {
+  "Source": 1298568351037167488,
+  "Plx": 3.5894,
+  "e_Plx": 0.020899999886751175,
+  "RUWE": 1.278,
+  "Gmag": 11.347878,
+  "BP-RP": 0.859457,
+  "RV": -56.75,
+  "e_RV": 0.30000001192092896,
+  "Teff": "--",
+  "Dist": "--",
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Hercules",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [
+  {
+   "main_id": "TYC 1517-818-1",
+   "ra": 245.18168126794,
+   "dec": 22.236307842000002,
+   "coo_err_maj": 0.012000000104308128,
+   "coo_err_min": 0.015399999916553497,
+   "coo_err_angle": 90,
+   "coo_wavelength": "O",
+   "coo_bibcode": "2020yCat.1350....0G",
+   "otype": "*",
+   "ids": "TIC 230202008|AP J16204361+2214107|Gaia DR3 1298568351037167488|TYC 1517-818-1|2MASS J16204361+2214107|Gaia DR1 1298568346740027136|Gaia DR2 1298568351037167488"
+  }
+ ],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 230202008,
+   "Tmag": 10.8934,
+   "dstArcSec": 0.0,
+   "Teff": 5719.12,
+   "d": 274.042
+  },
+  {
+   "ID": 1200265649,
+   "Tmag": 18.3939,
+   "dstArcSec": 52.43608673360895,
+   "Teff": 3990.0,
+   "d": 2240.01
+  },
+  {
+   "ID": 1200264976,
+   "Tmag": 18.8796,
+   "dstArcSec": 59.38573299976559,
+   "Teff": null,
+   "d": 1609.91
+  },
+  {
+   "ID": 1200265628,
+   "Tmag": 20.119,
+   "dstArcSec": 10.82830706230341,
+   "Teff": null,
+   "d": 1753.47
+  },
+  {
+   "ID": 1200265651,
+   "Tmag": 20.7213,
+   "dstArcSec": 34.59161992319647,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 1200265650,
+   "Tmag": 20.7242,
+   "dstArcSec": 10.780687630510023,
+   "Teff": null,
+   "d": null
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 25",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 51",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 52",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 78",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 79",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 25",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 51",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 52",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 78",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 79",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 25",
+   "author": "TARS",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 51",
+   "author": "TARS",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 52",
+   "author": "TARS",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 78",
+   "author": "TARS",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 79",
+   "author": "TARS",
+   "exptime": 200.0,
+   "year": 2024
+  }
+ ]
+}
+[report] TIC 344023003
+    sector 6: 986 points from QLP
+    sector 7: 1086 points from QLP
+    sector 8: 963 points from QLP
+    sector 33: 3485 points from QLP
+    sector 34: 3474 points from QLP
+    sector 35: 2812 points from QLP
+    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000344023003_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 61: 10654 points from QLP
+    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000344023003_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 62: 10811 points from QLP
+    sector 87 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0087-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0087-0000000344023003_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 87: 11338 points from QLP
+    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000344023003_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 88: 11718 points from QLP
+    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpkft0_giz/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000344023003_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000344023003_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 89: 11411 points from QLP
+  all sectors: P=0.63365 d, depth=11933 ppm, SNR=187.6, 396 transits over 2278 d, secondary 4692.30878177973 ppm (96.3176892719993 sigma), odd/even 0.22776514902442604 sigma
+    {'time_btjd': 1468.8662, 'sector': 6, 'depth_ppm': 11647.5, 'snr': 9.98}
+    {'time_btjd': 1469.4998, 'sector': 6, 'depth_ppm': 11984.9, 'snr': 12.14}
+    {'time_btjd': 1470.1335, 'sector': 6, 'depth_ppm': 13081.7, 'snr': 16.54}
+    {'time_btjd': 1470.7671, 'sector': 6, 'depth_ppm': 11838.3, 'snr': 16.72}
+    {'time_btjd': 1471.4008, 'sector': 6, 'depth_ppm': 11762.3, 'snr': 18.17}
+    {'time_btjd': 1472.0344, 'sector': 6, 'depth_ppm': 13330.2, 'snr': 15.97}
+    {'time_btjd': 1472.6681, 'sector': 6, 'depth_ppm': 11912.2, 'snr': 19.52}
+    {'time_btjd': 1473.3017, 'sector': 6, 'depth_ppm': 13326.8, 'snr': 17.62}
+    {'time_btjd': 1473.9354, 'sector': 6, 'depth_ppm': 12146.4, 'snr': 15.89}
+    {'time_btjd': 1474.569, 'sector': 6, 'depth_ppm': 12218.9, 'snr': 10.07}
+    {'time_btjd': 1475.2027, 'sector': 6, 'depth_ppm': 12247.1, 'snr': 15.15}
+    {'time_btjd': 1475.8363, 'sector': 6, 'depth_ppm': 11757.2, 'snr': 15.59}
+    {'time_btjd': 1476.47, 'sector': 6, 'depth_ppm': 11276.3, 'snr': 24.75}
+    {'time_btjd': 1479.0046, 'sector': 6, 'depth_ppm': 12835.6, 'snr': 22.18}
+    {'time_btjd': 1479.6382, 'sector': 6, 'depth_ppm': 11001.9, 'snr': 11.66}
+    {'time_btjd': 1480.2719, 'sector': 6, 'depth_ppm': 11721.7, 'snr': 8.17}
+    {'time_btjd': 1480.9055, 'sector': 6, 'depth_ppm': 10495.4, 'snr': 10.42}
+    {'time_btjd': 1481.5392, 'sector': 6, 'depth_ppm': 12081.7, 'snr': 17.65}
+    {'time_btjd': 1482.1728, 'sector': 6, 'depth_ppm': 12506.3, 'snr': 17.01}
+    {'time_btjd': 1482.8065, 'sector': 6, 'depth_ppm': 13913.0, 'snr': 19.85}
+    {'time_btjd': 1483.4401, 'sector': 6, 'depth_ppm': 11731.5, 'snr': 20.42}
+    {'time_btjd': 1484.0738, 'sector': 6, 'depth_ppm': 12619.4, 'snr': 29.12}
+    {'time_btjd': 1484.7074, 'sector': 6, 'depth_ppm': 13602.8, 'snr': 14.23}
+    {'time_btjd': 1485.3411, 'sector': 6, 'depth_ppm': 13771.4, 'snr': 17.79}
+    {'time_btjd': 1485.9747, 'sector': 6, 'depth_ppm': 11634.3, 'snr': 19.43}
+    {'time_btjd': 1486.6084, 'sector': 6, 'depth_ppm': 11362.6, 'snr': 11.88}
+    {'time_btjd': 1487.242, 'sector': 6, 'depth_ppm': 10662.9, 'snr': 11.53}
+    {'time_btjd': 1487.8757, 'sector': 6, 'depth_ppm': 12833.7, 'snr': 10.97}
+    {'time_btjd': 1488.5093, 'sector': 6, 'depth_ppm': 10615.9, 'snr': 16.23}
+    {'time_btjd': 1489.143, 'sector': 6, 'depth_ppm': 13151.1, 'snr': 12.69}
+    {'time_btjd': 1492.3112, 'sector': 7, 'depth_ppm': 13366.6, 'snr': 18.7}
+    {'time_btjd': 1492.9449, 'sector': 7, 'depth_ppm': 15528.7, 'snr': 31.33}
+    {'time_btjd': 1493.5785, 'sector': 7, 'depth_ppm': 14686.4, 'snr': 12.86}
+    {'time_btjd': 1494.2122, 'sector': 7, 'depth_ppm': 13556.0, 'snr': 18.88}
+    {'time_btjd': 1494.8458, 'sector': 7, 'depth_ppm': 14544.3, 'snr': 17.89}
+    {'time_btjd': 1495.4795, 'sector': 7, 'depth_ppm': 13459.3, 'snr': 16.81}
+    {'time_btjd': 1496.1131, 'sector': 7, 'depth_ppm': 11093.2, 'snr': 10.49}
+    {'time_btjd': 1496.7468, 'sector': 7, 'depth_ppm': 14995.7, 'snr': 20.22}
+    {'time_btjd': 1497.3804, 'sector': 7, 'depth_ppm': 14859.7, 'snr': 15.38}
+    {'time_btjd': 1498.0141, 'sector': 7, 'depth_ppm': 14797.3, 'snr': 18.12}
+    {'time_btjd': 1498.6477, 'sector': 7, 'depth_ppm': 13695.9, 'snr': 26.22}
+    {'time_btjd': 1499.2814, 'sector': 7, 'depth_ppm': 13715.1, 'snr': 29.47}
+    {'time_btjd': 1499.915, 'sector': 7, 'depth_ppm': 15128.4, 'snr': 14.31}
+    {'time_btjd': 1500.5487, 'sector': 7, 'depth_ppm': 13447.1, 'snr': 18.81}
+    {'time_btjd': 1501.1823, 'sector': 7, 'depth_ppm': 16223.6, 'snr': 26.85}
+    {'time_btjd': 1501.816, 'sector': 7, 'depth_ppm': 12278.5, 'snr': 14.97}
+    {'time_btjd': 1502.4496, 'sector': 7, 'depth_ppm': 13648.7, 'snr': 14.61}
+    {'time_btjd': 1505.6179, 'sector': 7, 'depth_ppm': 14526.4, 'snr': 19.92}
+    {'time_btjd': 1506.2515, 'sector': 7, 'depth_ppm': 14070.8, 'snr': 23.86}
+    {'time_btjd': 1506.8852, 'sector': 7, 'depth_ppm': 14522.4, 'snr': 26.79}
+    {'time_btjd': 1507.5188, 'sector': 7, 'depth_ppm': 12303.6, 'snr': 15.5}
+    {'time_btjd': 1508.1525, 'sector': 7, 'depth_ppm': 13208.8, 'snr': 14.53}
+    {'time_btjd': 1508.7861, 'sector': 7, 'depth_ppm': 12607.6, 'snr': 17.84}
+    {'time_btjd': 1509.4198, 'sector': 7, 'depth_ppm': 13801.4, 'snr': 24.73}
+    {'time_btjd': 1510.0534, 'sector': 7, 'depth_ppm': 15380.5, 'snr': 21.36}
+    {'time_btjd': 1510.6871, 'sector': 7, 'depth_ppm': 14655.0, 'snr': 16.34}
+    {'time_btjd': 1511.3207, 'sector': 7, 'depth_ppm': 14219.8, 'snr': 17.35}
+    {'time_btjd': 1511.9544, 'sector': 7, 'depth_ppm': 14107.0, 'snr': 22.59}
+    {'time_btjd': 1512.588, 'sector': 7, 'depth_ppm': 13723.5, 'snr': 18.87}
+    {'time_btjd': 1513.2217, 'sector': 7, 'depth_ppm': 13652.6, 'snr': 27.22}
+    {'time_btjd': 1513.8553, 'sector': 7, 'depth_ppm': 15002.3, 'snr': 18.63}
+    {'time_btjd': 1514.489, 'sector': 7, 'depth_ppm': 13865.1, 'snr': 15.35}
+    {'time_btjd': 1515.1226, 'sector': 7, 'depth_ppm': 15241.2, 'snr': 18.84}
+    {'time_btjd': 1518.2909, 'sector': 8, 'depth_ppm': 14905.0, 'snr': 15.62}
+    {'time_btjd': 1518.9245, 'sector': 8, 'depth_ppm': 14317.6, 'snr': 12.13}
+    {'time_btjd': 1519.5582, 'sector': 8, 'depth_ppm': 14672.6, 'snr': 18.53}
+    {'time_btjd': 1520.1918, 'sector': 8, 'depth_ppm': 13344.2, 'snr': 12.39}
+    {'time_btjd': 1520.8255, 'sector': 8, 'depth_ppm': 13474.9, 'snr': 26.56}
+    {'time_btjd': 1521.4591, 'sector': 8, 'depth_ppm': 13573.6, 'snr': 23.59}
+    {'time_btjd': 1522.0928, 'sector': 8, 'depth_ppm': 13753.4, 'snr': 13.99}
+    {'time_btjd': 1522.7264, 'sector': 8, 'depth_ppm': 15772.9, 'snr': 39.29}
+    {'time_btjd': 1523.3601, 'sector': 8, 'depth_ppm': 14559.9, 'snr': 23.42}
+    {'time_btjd': 1523.9937, 'sector': 8, 'depth_ppm': 14268.8, 'snr': 78.56}
+    {'time_btjd': 1524.6274, 'sector': 8, 'depth_ppm': 13556.5, 'snr': 26.74}
+    {'time_btjd': 1525.261, 'sector': 8, 'depth_ppm': 13285.2, 'snr': 19.61}
+    {'time_btjd': 1525.8947, 'sector': 8, 'depth_ppm': 12785.1, 'snr': 14.57}
+    {'time_btjd': 1526.5283, 'sector': 8, 'depth_ppm': 13780.1, 'snr': 23.32}
+    {'time_btjd': 1527.162, 'sector': 8, 'depth_ppm': 13631.9, 'snr': 22.52}
+    {'time_btjd': 1527.7956, 'sector': 8, 'depth_ppm': 12651.2, 'snr': 21.78}
+    {'time_btjd': 1528.4293, 'sector': 8, 'depth_ppm': 12986.3, 'snr': 15.05}
+    {'time_btjd': 1530.9639, 'sector': 8, 'depth_ppm': 10254.5, 'snr': 6.16}
+    {'time_btjd': 1537.3004, 'sector': 8, 'depth_ppm': 14353.1, 'snr': 20.4}
+    {'time_btjd': 1537.934, 'sector': 8, 'depth_ppm': 13743.6, 'snr': 62.85}
+    {'time_btjd': 1538.5677, 'sector': 8, 'depth_ppm': 12840.9, 'snr': 14.81}
+    {'time_btjd': 1539.2013, 'sector': 8, 'depth_ppm': 13675.2, 'snr': 21.55}
+    {'time_btjd': 1539.835, 'sector': 8, 'depth_ppm': 12099.0, 'snr': 20.66}
+    {'time_btjd': 1540.4686, 'sector': 8, 'depth_ppm': 13359.8, 'snr': 18.07}
+    {'time_btjd': 1541.1023, 'sector': 8, 'depth_ppm': 12370.6, 'snr': 19.38}
+    {'time_btjd': 2202.6331, 'sector': 33, 'depth_ppm': 11154.3, 'snr': 14.08}
+    {'time_btjd': 2203.2668, 'sector': 33, 'depth_ppm': 15435.2, 'snr': 21.55}
+    {'time_btjd': 2203.9004, 'sector': 33, 'depth_ppm': 15074.3, 'snr': 25.55}
+    {'time_btjd': 2204.5341, 'sector': 33, 'depth_ppm': 12287.8, 'snr': 20.83}
+    {'time_btjd': 2205.1677, 'sector': 33, 'depth_ppm': 13292.1, 'snr': 17.69}
+    {'time_btjd': 2205.8014, 'sector': 33, 'depth_ppm': 13588.0, 'snr': 22.16}
+    {'time_btjd': 2206.435, 'sector': 33, 'depth_ppm': 13715.7, 'snr': 22.72}
+    {'time_btjd': 2207.0687, 'sector': 33, 'depth_ppm': 12585.6, 'snr': 19.32}
+    {'time_btjd': 2207.7023, 'sector': 33, 'depth_ppm': 14619.6, 'snr': 27.62}
+    {'time_btjd': 2208.336, 'sector': 33, 'depth_ppm': 14798.2, 'snr': 23.47}
+    {'time_btjd': 2208.9696, 'sector': 33, 'depth_ppm': 15359.9, 'snr': 21.75}
+    {'time_btjd': 2209.6033, 'sector': 33, 'depth_ppm': 12884.7, 'snr': 19.18}
+    {'time_btjd': 2210.2369, 'sector': 33, 'depth_ppm': 12835.2, 'snr': 18.59}
+    {'time_btjd': 2210.8706, 'sector': 33, 'depth_ppm': 13169.2, 'snr': 17.85}
+    {'time_btjd': 2211.5043, 'sector': 33, 'depth_ppm': 13199.5, 'snr': 17.65}
+    {'time_btjd': 2212.1379, 'sector': 33, 'depth_ppm': 11679.3, 'snr': 27.42}
+    {'time_btjd': 2212.7716, 'sector': 33, 'depth_ppm': 13173.0, 'snr': 26.57}
+    {'time_btjd': 2213.4052, 'sector': 33, 'depth_ppm': 11708.4, 'snr': 15.39}
+    {'time_btjd': 2215.9398, 'sector': 33, 'depth_ppm': 12246.0, 'snr': 12.65}
+    {'time_btjd': 2216.5735, 'sector': 33, 'depth_ppm': 12987.5, 'snr': 18.17}
+    {'time_btjd': 2217.2071, 'sector': 33, 'depth_ppm': 14021.3, 'snr': 18.6}
+    {'time_btjd': 2217.8408, 'sector': 33, 'depth_ppm': 13942.2, 'snr': 23.0}
+    {'time_btjd': 2218.4744, 'sector': 33, 'depth_ppm': 12272.3, 'snr': 16.47}
+    {'time_btjd': 2219.1081, 'sector': 33, 'depth_ppm': 13605.6, 'snr': 16.2}
+    {'time_btjd': 2219.7417, 'sector': 33, 'depth_ppm': 13838.3, 'snr': 27.68}
+    {'time_btjd': 2220.3754, 'sector': 33, 'depth_ppm': 13551.5, 'snr': 19.0}
+    {'time_btjd': 2221.009, 'sector': 33, 'depth_ppm': 12127.8, 'snr': 15.39}
+    {'time_btjd': 2221.6427, 'sector': 33, 'depth_ppm': 14096.5, 'snr': 20.72}
+    {'time_btjd': 2222.2763, 'sector': 33, 'depth_ppm': 14681.7, 'snr': 29.58}
+    {'time_btjd': 2222.91, 'sector': 33, 'depth_ppm': 12744.6, 'snr': 16.97}
+    {'time_btjd': 2223.5436, 'sector': 33, 'depth_ppm': 12690.8, 'snr': 16.22}
+    {'time_btjd': 2224.1773, 'sector': 33, 'depth_ppm': 11012.5, 'snr': 20.66}
+    {'time_btjd': 2224.8109, 'sector': 33, 'depth_ppm': 11592.4, 'snr': 15.23}
+    {'time_btjd': 2225.4446, 'sector': 33, 'depth_ppm': 15000.3, 'snr': 16.74}
+    {'time_btjd': 2226.0782, 'sector': 33, 'depth_ppm': 13202.3, 'snr': 20.26}
+    {'time_btjd': 2226.7119, 'sector': 33, 'depth_ppm': 13597.8, 'snr': 22.04}
+    {'time_btjd': 2229.2465, 'sector': 34, 'depth_ppm': 15400.3, 'snr': 22.18}
+    {'time_btjd': 2229.8801, 'sector': 34, 'depth_ppm': 12393.9, 'snr': 12.68}
+    {'time_btjd': 2230.5138, 'sector': 34, 'depth_ppm': 14042.5, 'snr': 17.73}
+    {'time_btjd': 2231.1474, 'sector': 34, 'depth_ppm': 15419.5, 'snr': 17.05}
+    {'time_btjd': 2231.7811, 'sector': 34, 'depth_ppm': 13393.4, 'snr': 20.36}
+    {'time_btjd': 2232.4147, 'sector': 34, 'depth_ppm': 13664.1, 'snr': 25.08}
+    {'time_btjd': 2233.0484, 'sector': 34, 'depth_ppm': 15760.8, 'snr': 22.5}
+    {'time_btjd': 2233.682, 'sector': 34, 'depth_ppm': 13367.4, 'snr': 23.64}
+    {'time_btjd': 2234.3157, 'sector': 34, 'depth_ppm': 14988.8, 'snr': 23.72}
+    {'time_btjd': 2234.9493, 'sector': 34, 'depth_ppm': 15036.8, 'snr': 30.58}
+    {'time_btjd': 2235.583, 'sector': 34, 'depth_ppm': 15386.6, 'snr': 25.38}
+    {'time_btjd': 2236.2166, 'sector': 34, 'depth_ppm': 15780.8, 'snr': 17.63}
+    {'time_btjd': 2236.8503, 'sector': 34, 'depth_ppm': 15070.4, 'snr': 36.65}
+    {'time_btjd': 2237.4839, 'sector': 34, 'depth_ppm': 15467.3, 'snr': 21.68}
+    {'time_btjd': 2238.1176, 'sector': 34, 'depth_ppm': 14858.5, 'snr': 16.57}
+    {'time_btjd': 2238.7512, 'sector': 34, 'depth_ppm': 14018.9, 'snr': 13.39}
+    {'time_btjd': 2239.3849, 'sector': 34, 'depth_ppm': 14014.8, 'snr': 24.45}
+    {'time_btjd': 2240.0185, 'sector': 34, 'depth_ppm': 12889.4, 'snr': 17.33}
+    {'time_btjd': 2242.5531, 'sector': 34, 'depth_ppm': 14063.0, 'snr': 18.7}
+    {'time_btjd': 2243.1868, 'sector': 34, 'depth_ppm': 13015.6, 'snr': 13.71}
+    {'time_btjd': 2243.8204, 'sector': 34, 'depth_ppm': 14131.3, 'snr': 18.32}
+    {'time_btjd': 2244.4541, 'sector': 34, 'depth_ppm': 13324.4, 'snr': 25.22}
+    {'time_btjd': 2245.0877, 'sector': 34, 'depth_ppm': 15762.2, 'snr': 21.34}
+    {'time_btjd': 2245.7214, 'sector': 34, 'depth_ppm': 13701.0, 'snr': 19.29}
+    {'time_btjd': 2246.355, 'sector': 34, 'depth_ppm': 15385.5, 'snr': 18.08}
+    {'time_btjd': 2246.9887, 'sector': 34, 'depth_ppm': 15059.9, 'snr': 14.78}
+    {'time_btjd': 2247.6223, 'sector': 34, 'depth_ppm': 14460.6, 'snr': 21.89}
+    {'time_btjd': 2248.256, 'sector': 34, 'depth_ppm': 14074.8, 'snr': 16.41}
+    {'time_btjd': 2248.8896, 'sector': 34, 'depth_ppm': 13005.7, 'snr': 15.06}
+    {'time_btjd': 2249.5233, 'sector': 34, 'depth_ppm': 14705.5, 'snr': 23.38}
+    {'time_btjd': 2250.1569, 'sector': 34, 'depth_ppm': 19355.8, 'snr': 19.85}
+    {'time_btjd': 2250.7906, 'sector': 34, 'depth_ppm': 16395.2, 'snr': 29.74}
+    {'time_btjd': 2251.4242, 'sector': 34, 'depth_ppm': 12246.5, 'snr': 15.84}
+    {'time_btjd': 2252.0579, 'sector': 34, 'depth_ppm': 13943.0, 'snr': 34.94}
+    {'time_btjd': 2252.6915, 'sector': 34, 'depth_ppm': 13839.9, 'snr': 25.62}
+    {'time_btjd': 2253.3252, 'sector': 34, 'depth_ppm': 12975.7, 'snr': 20.88}
+    {'time_btjd': 2255.8598, 'sector': 35, 'depth_ppm': 9952.0, 'snr': 10.09}
+    {'time_btjd': 2256.4934, 'sector': 35, 'depth_ppm': 15449.8, 'snr': 25.83}
+    {'time_btjd': 2257.1271, 'sector': 35, 'depth_ppm': 13086.1, 'snr': 14.19}
+    {'time_btjd': 2257.7607, 'sector': 35, 'depth_ppm': 11692.4, 'snr': 19.8}
+    {'time_btjd': 2258.3944, 'sector': 35, 'depth_ppm': 11778.1, 'snr': 11.73}
+    {'time_btjd': 2259.028, 'sector': 35, 'depth_ppm': 11616.7, 'snr': 12.73}
+    {'time_btjd': 2259.6617, 'sector': 35, 'depth_ppm': 12095.4, 'snr': 12.51}
+    {'time_btjd': 2260.2953, 'sector': 35, 'depth_ppm': 14640.5, 'snr': 17.84}
+    {'time_btjd': 2260.929, 'sector': 35, 'depth_ppm': 11106.9, 'snr': 7.98}
+    {'time_btjd': 2261.5626, 'sector': 35, 'depth_ppm': 12781.0, 'snr': 12.12}
+    {'time_btjd': 2262.1963, 'sector': 35, 'depth_ppm': 13115.5, 'snr': 9.59}
+    {'time_btjd': 2262.8299, 'sector': 35, 'depth_ppm': 11799.0, 'snr': 12.24}
+    {'time_btjd': 2263.4636, 'sector': 35, 'depth_ppm': 14067.7, 'snr': 10.76}
+    {'time_btjd': 2264.0972, 'sector': 35, 'depth_ppm': 14961.7, 'snr': 20.04}
+    {'time_btjd': 2264.7309, 'sector': 35, 'depth_ppm': 9901.3, 'snr': 15.17}
+    {'time_btjd': 2265.3645, 'sector': 35, 'depth_ppm': 13439.1, 'snr': 15.14}
+    {'time_btjd': 2265.9982, 'sector': 35, 'depth_ppm': 12246.3, 'snr': 12.76}
+    {'time_btjd': 2266.6318, 'sector': 35, 'depth_ppm': 17240.4, 'snr': 10.22}
+    {'time_btjd': 2269.1664, 'sector': 35, 'depth_ppm': 11000.2, 'snr': 2.29}
+    {'time_btjd': 2269.8001, 'sector': 35, 'depth_ppm': 17680.2, 'snr': 4.09}
+    {'time_btjd': 2270.4337, 'sector': 35, 'depth_ppm': 33717.2, 'snr': 8.09}
+    {'time_btjd': 2271.0674, 'sector': 35, 'depth_ppm': 8232.8, 'snr': 1.79}
+    {'time_btjd': 2271.701, 'sector': 35, 'depth_ppm': 22537.9, 'snr': 4.34}
+    {'time_btjd': 2272.3347, 'sector': 35, 'depth_ppm': 11768.2, 'snr': 12.73}
+    {'time_btjd': 2272.9683, 'sector': 35, 'depth_ppm': 12611.2, 'snr': 17.74}
+    {'time_btjd': 2273.602, 'sector': 35, 'depth_ppm': 12632.1, 'snr': 19.73}
+    {'time_btjd': 2274.2356, 'sector': 35, 'depth_ppm': 11719.8, 'snr': 19.41}
+    {'time_btjd': 2274.8693, 'sector': 35, 'depth_ppm': 11731.9, 'snr': 24.69}
+    {'time_btjd': 2275.5029, 'sector': 35, 'depth_ppm': 13271.6, 'snr': 16.63}
+    {'time_btjd': 2276.1366, 'sector': 35, 'depth_ppm': 13060.5, 'snr': 16.07}
+    {'time_btjd': 2276.7702, 'sector': 35, 'depth_ppm': 10253.3, 'snr': 11.39}
+    {'time_btjd': 2277.4039, 'sector': 35, 'depth_ppm': 13206.0, 'snr': 22.0}
+    {'time_btjd': 2278.0375, 'sector': 35, 'depth_ppm': 11853.2, 'snr': 12.67}
+    {'time_btjd': 2278.6712, 'sector': 35, 'depth_ppm': 13943.0, 'snr': 16.19}
+    {'time_btjd': 2279.3048, 'sector': 35, 'depth_ppm': 11556.1, 'snr': 15.53}
+    {'time_btjd': 2963.6471, 'sector': 61, 'depth_ppm': 10030.7, 'snr': 7.8}
+    {'time_btjd': 2964.2807, 'sector': 61, 'depth_ppm': 16003.8, 'snr': 17.52}
+    {'time_btjd': 2964.9144, 'sector': 61, 'depth_ppm': 14732.4, 'snr': 23.43}
+    {'time_btjd': 2965.548, 'sector': 61, 'depth_ppm': 14534.5, 'snr': 31.64}
+    {'time_btjd': 2966.1817, 'sector': 61, 'depth_ppm': 13980.7, 'snr': 15.64}
+    {'time_btjd': 2966.8153, 'sector': 61, 'depth_ppm': 15228.0, 'snr': 23.89}
+    {'time_btjd': 2967.449, 'sector': 61, 'depth_ppm': 14492.1, 'snr': 31.6}
+    {'time_btjd': 2968.0826, 'sector': 61, 'depth_ppm': 13738.4, 'snr': 17.97}
+    {'time_btjd': 2968.7163, 'sector': 61, 'depth_ppm': 16376.3, 'snr': 28.9}
+    {'time_btjd': 2969.3499, 'sector': 61, 'depth_ppm': 14353.9, 'snr': 9.71}
+    {'time_btjd': 2969.9836, 'sector': 61, 'depth_ppm': 15096.7, 'snr': 19.9}
+    {'time_btjd': 2970.6172, 'sector': 61, 'depth_ppm': 14486.5, 'snr': 21.01}
+    {'time_btjd': 2971.2509, 'sector': 61, 'depth_ppm': 15805.4, 'snr': 17.09}
+    {'time_btjd': 2971.8845, 'sector': 61, 'depth_ppm': 15499.3, 'snr': 19.1}
+    {'time_btjd': 2972.5182, 'sector': 61, 'depth_ppm': 15366.6, 'snr': 19.48}
+    {'time_btjd': 2973.1518, 'sector': 61, 'depth_ppm': 14199.0, 'snr': 18.99}
+    {'time_btjd': 2973.7855, 'sector': 61, 'depth_ppm': 13795.2, 'snr': 15.6}
+    {'time_btjd': 2974.4191, 'sector': 61, 'depth_ppm': 15032.5, 'snr': 24.91}
+    {'time_btjd': 2975.0528, 'sector': 61, 'depth_ppm': 14363.3, 'snr': 15.25}
+    {'time_btjd': 2975.6864, 'sector': 61, 'depth_ppm': 17135.3, 'snr': 14.09}
+    {'time_btjd': 2976.3201, 'sector': 61, 'depth_ppm': 12906.8, 'snr': 7.8}
+    {'time_btjd': 2976.9537, 'sector': 61, 'depth_ppm': 13360.4, 'snr': 18.14}
+    {'time_btjd': 2977.5874, 'sector': 61, 'depth_ppm': 14210.4, 'snr': 22.39}
+    {'time_btjd': 2978.221, 'sector': 61, 'depth_ppm': 14550.9, 'snr': 27.04}
+    {'time_btjd': 2978.8547, 'sector': 61, 'depth_ppm': 14581.9, 'snr': 21.89}
+    {'time_btjd': 2979.4883, 'sector': 61, 'depth_ppm': 15592.3, 'snr': 19.65}
+    {'time_btjd': 2980.122, 'sector': 61, 'depth_ppm': 15702.3, 'snr': 21.59}
+    {'time_btjd': 2980.7557, 'sector': 61, 'depth_ppm': 13838.5, 'snr': 20.77}
+    {'time_btjd': 2981.3893, 'sector': 61, 'depth_ppm': 12678.2, 'snr': 15.2}
+    {'time_btjd': 2982.023, 'sector': 61, 'depth_ppm': 14986.8, 'snr': 20.22}
+    {'time_btjd': 2982.6566, 'sector': 61, 'depth_ppm': 16670.3, 'snr': 23.32}
+    {'time_btjd': 2983.2903, 'sector': 61, 'depth_ppm': 15368.7, 'snr': 21.99}
+    {'time_btjd': 2983.9239, 'sector': 61, 'depth_ppm': 12949.4, 'snr': 23.25}
+    {'time_btjd': 2984.5576, 'sector': 61, 'depth_ppm': 13320.2, 'snr': 20.43}
+    {'time_btjd': 2985.1912, 'sector': 61, 'depth_ppm': 16088.5, 'snr': 19.19}
+    {'time_btjd': 2985.8249, 'sector': 61, 'depth_ppm': 13353.4, 'snr': 17.42}
+    {'time_btjd': 2986.4585, 'sector': 61, 'depth_ppm': 13808.6, 'snr': 21.14}
+    {'time_btjd': 2987.0922, 'sector': 61, 'depth_ppm': 14118.9, 'snr': 14.1}
+    {'time_btjd': 2987.7258, 'sector': 61, 'depth_ppm': 15408.5, 'snr': 26.07}
+    {'time_btjd': 2988.9931, 'sector': 62, 'depth_ppm': 12652.6, 'snr': 14.99}
+    {'time_btjd': 2989.6268, 'sector': 62, 'depth_ppm': 12937.2, 'snr': 13.73}
+    {'time_btjd': 2990.2604, 'sector': 62, 'depth_ppm': 11026.5, 'snr': 15.05}
+    {'time_btjd': 2990.8941, 'sector': 62, 'depth_ppm': 12624.3, 'snr': 22.0}
+    {'time_btjd': 2991.5277, 'sector': 62, 'depth_ppm': 11138.3, 'snr': 10.6}
+    {'time_btjd': 2992.1614, 'sector': 62, 'depth_ppm': 12336.4, 'snr': 18.94}
+    {'time_btjd': 2992.795, 'sector': 62, 'depth_ppm': 12125.3, 'snr': 14.61}
+    {'time_btjd': 2993.4287, 'sector': 62, 'depth_ppm': 10722.2, 'snr': 16.34}
+    {'time_btjd': 2994.0623, 'sector': 62, 'depth_ppm': 12645.9, 'snr': 13.97}
+    {'time_btjd': 2994.696, 'sector': 62, 'depth_ppm': 12103.9, 'snr': 16.46}
+    {'time_btjd': 2995.3296, 'sector': 62, 'depth_ppm': 12075.1, 'snr': 17.68}
+    {'time_btjd': 2995.9633, 'sector': 62, 'depth_ppm': 12864.6, 'snr': 21.74}
+    {'time_btjd': 2996.5969, 'sector': 62, 'depth_ppm': 12881.7, 'snr': 16.82}
+    {'time_btjd': 2997.2306, 'sector': 62, 'depth_ppm': 13743.3, 'snr': 15.19}
+    {'time_btjd': 2997.8642, 'sector': 62, 'depth_ppm': 11290.1, 'snr': 12.44}
+    {'time_btjd': 2998.4979, 'sector': 62, 'depth_ppm': 13283.0, 'snr': 17.69}
+    {'time_btjd': 2999.1315, 'sector': 62, 'depth_ppm': 13578.3, 'snr': 23.3}
+    {'time_btjd': 2999.7652, 'sector': 62, 'depth_ppm': 13442.2, 'snr': 22.62}
+    {'time_btjd': 3000.3988, 'sector': 62, 'depth_ppm': 11361.0, 'snr': 14.87}
+    {'time_btjd': 3001.6661, 'sector': 62, 'depth_ppm': 10285.4, 'snr': 8.66}
+    {'time_btjd': 3002.2998, 'sector': 62, 'depth_ppm': 10208.3, 'snr': 17.87}
+    {'time_btjd': 3002.9334, 'sector': 62, 'depth_ppm': 10435.0, 'snr': 13.75}
+    {'time_btjd': 3003.5671, 'sector': 62, 'depth_ppm': 13054.9, 'snr': 17.86}
+    {'time_btjd': 3004.2007, 'sector': 62, 'depth_ppm': 12305.5, 'snr': 25.12}
+    {'time_btjd': 3004.8344, 'sector': 62, 'depth_ppm': 8534.9, 'snr': 14.68}
+    {'time_btjd': 3005.468, 'sector': 62, 'depth_ppm': 11591.3, 'snr': 18.1}
+    {'time_btjd': 3006.1017, 'sector': 62, 'depth_ppm': 12509.3, 'snr': 19.39}
+    {'time_btjd': 3006.7353, 'sector': 62, 'depth_ppm': 13487.8, 'snr': 18.89}
+    {'time_btjd': 3007.369, 'sector': 62, 'depth_ppm': 11438.2, 'snr': 15.4}
+    {'time_btjd': 3008.0026, 'sector': 62, 'depth_ppm': 12259.7, 'snr': 17.43}
+    {'time_btjd': 3008.6363, 'sector': 62, 'depth_ppm': 12212.4, 'snr': 19.2}
+    {'time_btjd': 3009.2699, 'sector': 62, 'depth_ppm': 13540.5, 'snr': 15.28}
+    {'time_btjd': 3009.9036, 'sector': 62, 'depth_ppm': 12291.5, 'snr': 18.49}
+    {'time_btjd': 3010.5372, 'sector': 62, 'depth_ppm': 12780.7, 'snr': 17.33}
+    {'time_btjd': 3011.1709, 'sector': 62, 'depth_ppm': 12066.5, 'snr': 18.78}
+    {'time_btjd': 3011.8045, 'sector': 62, 'depth_ppm': 12796.5, 'snr': 21.38}
+    {'time_btjd': 3012.4382, 'sector': 62, 'depth_ppm': 10138.0, 'snr': 13.87}
+    {'time_btjd': 3013.0718, 'sector': 62, 'depth_ppm': 10334.4, 'snr': 13.53}
+    {'time_btjd': 3013.7055, 'sector': 62, 'depth_ppm': 11454.2, 'snr': 16.76}
+    {'time_btjd': 3663.8306, 'sector': 87, 'depth_ppm': 1684.2, 'snr': 0.88}
+    {'time_btjd': 3664.4643, 'sector': 87, 'depth_ppm': 11602.8, 'snr': 8.85}
+    {'time_btjd': 3665.0979, 'sector': 87, 'depth_ppm': 14610.4, 'snr': 13.64}
+    {'time_btjd': 3665.7316, 'sector': 87, 'depth_ppm': 12280.9, 'snr': 13.93}
+    {'time_btjd': 3666.3652, 'sector': 87, 'depth_ppm': 10915.0, 'snr': 24.56}
+    {'time_btjd': 3666.9989, 'sector': 87, 'depth_ppm': 8339.9, 'snr': 14.71}
+    {'time_btjd': 3667.6325, 'sector': 87, 'depth_ppm': 8646.2, 'snr': 16.25}
+    {'time_btjd': 3668.2662, 'sector': 87, 'depth_ppm': 10538.0, 'snr': 13.16}
+    {'time_btjd': 3668.8998, 'sector': 87, 'depth_ppm': 9693.4, 'snr': 18.36}
+    {'time_btjd': 3669.5335, 'sector': 87, 'depth_ppm': 7251.6, 'snr': 7.78}
+    {'time_btjd': 3670.1671, 'sector': 87, 'depth_ppm': 9803.9, 'snr': 17.99}
+    {'time_btjd': 3670.8008, 'sector': 87, 'depth_ppm': 11263.6, 'snr': 18.32}
+    {'time_btjd': 3671.4344, 'sector': 87, 'depth_ppm': 9561.6, 'snr': 16.27}
+    {'time_btjd': 3672.0681, 'sector': 87, 'depth_ppm': 10219.8, 'snr': 17.54}
+    {'time_btjd': 3672.7017, 'sector': 87, 'depth_ppm': 10647.0, 'snr': 16.44}
+    {'time_btjd': 3673.3354, 'sector': 87, 'depth_ppm': 11215.4, 'snr': 20.61}
+    {'time_btjd': 3673.969, 'sector': 87, 'depth_ppm': 11239.7, 'snr': 16.22}
+    {'time_btjd': 3674.6027, 'sector': 87, 'depth_ppm': 9820.4, 'snr': 15.82}
+    {'time_btjd': 3675.2363, 'sector': 87, 'depth_ppm': 11562.0, 'snr': 21.03}
+    {'time_btjd': 3675.87, 'sector': 87, 'depth_ppm': 11469.5, 'snr': 16.04}
+    {'time_btjd': 3677.1373, 'sector': 87, 'depth_ppm': 9442.6, 'snr': 5.56}
+    {'time_btjd': 3677.7709, 'sector': 87, 'depth_ppm': 11939.6, 'snr': 5.33}
+    {'time_btjd': 3678.4046, 'sector': 87, 'depth_ppm': 8103.8, 'snr': 6.36}
+    {'time_btjd': 3679.0382, 'sector': 87, 'depth_ppm': 9843.5, 'snr': 10.34}
+    {'time_btjd': 3679.6719, 'sector': 87, 'depth_ppm': 9582.8, 'snr': 13.29}
+    {'time_btjd': 3680.3055, 'sector': 87, 'depth_ppm': 10068.6, 'snr': 11.78}
+    {'time_btjd': 3680.9392, 'sector': 87, 'depth_ppm': 10006.3, 'snr': 20.8}
+    {'time_btjd': 3681.5728, 'sector': 87, 'depth_ppm': 10184.1, 'snr': 21.81}
+    {'time_btjd': 3682.2065, 'sector': 87, 'depth_ppm': 10089.5, 'snr': 14.18}
+    {'time_btjd': 3682.8401, 'sector': 87, 'depth_ppm': 11386.8, 'snr': 24.25}
+    {'time_btjd': 3683.4738, 'sector': 87, 'depth_ppm': 10630.2, 'snr': 9.68}
+    {'time_btjd': 3684.1074, 'sector': 87, 'depth_ppm': 9711.8, 'snr': 16.59}
+    {'time_btjd': 3684.7411, 'sector': 87, 'depth_ppm': 10461.3, 'snr': 16.94}
+    {'time_btjd': 3685.3747, 'sector': 87, 'depth_ppm': 11389.0, 'snr': 25.22}
+    {'time_btjd': 3686.0084, 'sector': 87, 'depth_ppm': 12123.6, 'snr': 15.51}
+    {'time_btjd': 3686.642, 'sector': 87, 'depth_ppm': 9830.1, 'snr': 18.54}
+    {'time_btjd': 3687.2757, 'sector': 87, 'depth_ppm': 11540.5, 'snr': 18.95}
+    {'time_btjd': 3687.9093, 'sector': 87, 'depth_ppm': 9847.1, 'snr': 12.76}
+    {'time_btjd': 3688.543, 'sector': 87, 'depth_ppm': 11977.1, 'snr': 21.3}
+    {'time_btjd': 3689.1766, 'sector': 87, 'depth_ppm': 9986.8, 'snr': 14.22}
+    {'time_btjd': 3690.4439, 'sector': 88, 'depth_ppm': 13862.5, 'snr': 10.6}
+    {'time_btjd': 3691.0776, 'sector': 88, 'depth_ppm': 13706.0, 'snr': 13.05}
+    {'time_btjd': 3691.7112, 'sector': 88, 'depth_ppm': 17034.7, 'snr': 21.9}
+    {'time_btjd': 3692.3449, 'sector': 88, 'depth_ppm': 13414.2, 'snr': 13.69}
+    {'time_btjd': 3692.9785, 'sector': 88, 'depth_ppm': 12422.1, 'snr': 14.15}
+    {'time_btjd': 3693.6122, 'sector': 88, 'depth_ppm': 13855.9, 'snr': 14.3}
+    {'time_btjd': 3694.2458, 'sector': 88, 'depth_ppm': 14461.4, 'snr': 16.09}
+    {'time_btjd': 3694.8795, 'sector': 88, 'depth_ppm': 14007.3, 'snr': 28.61}
+    {'time_btjd': 3695.5131, 'sector': 88, 'depth_ppm': 12047.9, 'snr': 17.58}
+    {'time_btjd': 3696.1468, 'sector': 88, 'depth_ppm': 15249.1, 'snr': 17.32}
+    {'time_btjd': 3696.7804, 'sector': 88, 'depth_ppm': 15536.7, 'snr': 20.29}
+    {'time_btjd': 3697.4141, 'sector': 88, 'depth_ppm': 14443.5, 'snr': 20.08}
+    {'time_btjd': 3698.0477, 'sector': 88, 'depth_ppm': 15469.3, 'snr': 20.87}
+    {'time_btjd': 3698.6814, 'sector': 88, 'depth_ppm': 16422.6, 'snr': 17.26}
+    {'time_btjd': 3699.315, 'sector': 88, 'depth_ppm': 14575.9, 'snr': 19.08}
+    {'time_btjd': 3699.9487, 'sector': 88, 'depth_ppm': 15617.0, 'snr': 33.63}
+    {'time_btjd': 3700.5823, 'sector': 88, 'depth_ppm': 13697.2, 'snr': 19.88}
+    {'time_btjd': 3701.216, 'sector': 88, 'depth_ppm': 14034.6, 'snr': 26.94}
+    {'time_btjd': 3701.8496, 'sector': 88, 'depth_ppm': 14713.3, 'snr': 18.63}
+    {'time_btjd': 3702.4833, 'sector': 88, 'depth_ppm': 12029.2, 'snr': 18.29}
+    {'time_btjd': 3703.1169, 'sector': 88, 'depth_ppm': 15666.2, 'snr': 29.69}
+    {'time_btjd': 3703.7506, 'sector': 88, 'depth_ppm': 15366.7, 'snr': 21.73}
+    {'time_btjd': 3704.3842, 'sector': 88, 'depth_ppm': 13322.2, 'snr': 16.3}
+    {'time_btjd': 3705.0179, 'sector': 88, 'depth_ppm': 13699.3, 'snr': 17.78}
+    {'time_btjd': 3705.6515, 'sector': 88, 'depth_ppm': 12924.1, 'snr': 17.03}
+    {'time_btjd': 3706.2852, 'sector': 88, 'depth_ppm': 12023.6, 'snr': 20.35}
+    {'time_btjd': 3706.9188, 'sector': 88, 'depth_ppm': 13507.6, 'snr': 18.54}
+    {'time_btjd': 3707.5525, 'sector': 88, 'depth_ppm': 14836.6, 'snr': 18.37}
+    {'time_btjd': 3708.1861, 'sector': 88, 'depth_ppm': 14429.4, 'snr': 21.91}
+    {'time_btjd': 3708.8198, 'sector': 88, 'depth_ppm': 14076.9, 'snr': 22.62}
+    {'time_btjd': 3709.4534, 'sector': 88, 'depth_ppm': 14412.6, 'snr': 15.75}
+    {'time_btjd': 3710.0871, 'sector': 88, 'depth_ppm': 13551.4, 'snr': 19.68}
+    {'time_btjd': 3710.7207, 'sector': 88, 'depth_ppm': 14447.2, 'snr': 25.77}
+    {'time_btjd': 3711.3544, 'sector': 88, 'depth_ppm': 15721.8, 'snr': 14.4}
+    {'time_btjd': 3711.988, 'sector': 88, 'depth_ppm': 16332.1, 'snr': 24.26}
+    {'time_btjd': 3712.6217, 'sector': 88, 'depth_ppm': 14517.6, 'snr': 21.57}
+    {'time_btjd': 3713.2553, 'sector': 88, 'depth_ppm': 13866.5, 'snr': 20.56}
+    {'time_btjd': 3713.889, 'sector': 88, 'depth_ppm': 13690.3, 'snr': 25.21}
+    {'time_btjd': 3714.5226, 'sector': 88, 'depth_ppm': 12444.7, 'snr': 16.13}
+    {'time_btjd': 3715.1563, 'sector': 88, 'depth_ppm': 14556.4, 'snr': 17.06}
+    {'time_btjd': 3715.7899, 'sector': 88, 'depth_ppm': 15427.7, 'snr': 18.27}
+    {'time_btjd': 3716.4236, 'sector': 88, 'depth_ppm': 16152.1, 'snr': 23.74}
+    {'time_btjd': 3717.0572, 'sector': 88, 'depth_ppm': 16337.0, 'snr': 25.4}
+    {'time_btjd': 3718.9582, 'sector': 89, 'depth_ppm': 15720.0, 'snr': 22.09}
+    {'time_btjd': 3719.5918, 'sector': 89, 'depth_ppm': 16619.2, 'snr': 24.31}
+    {'time_btjd': 3720.2255, 'sector': 89, 'depth_ppm': 15982.3, 'snr': 26.39}
+    {'time_btjd': 3720.8591, 'sector': 89, 'depth_ppm': 16430.5, 'snr': 26.77}
+    {'time_btjd': 3721.4928, 'sector': 89, 'depth_ppm': 16564.4, 'snr': 25.26}
+    {'time_btjd': 3722.1264, 'sector': 89, 'depth_ppm': 15711.7, 'snr': 22.87}
+    {'time_btjd': 3722.7601, 'sector': 89, 'depth_ppm': 14790.7, 'snr': 21.36}
+    {'time_btjd': 3723.3937, 'sector': 89, 'depth_ppm': 16070.8, 'snr': 16.5}
+    {'time_btjd': 3724.0274, 'sector': 89, 'depth_ppm': 15209.2, 'snr': 23.78}
+    {'time_btjd': 3724.661, 'sector': 89, 'depth_ppm': 16120.5, 'snr': 22.17}
+    {'time_btjd': 3725.2947, 'sector': 89, 'depth_ppm': 14804.9, 'snr': 17.47}
+    {'time_btjd': 3725.9283, 'sector': 89, 'depth_ppm': 13190.9, 'snr': 22.28}
+    {'time_btjd': 3726.562, 'sector': 89, 'depth_ppm': 14510.8, 'snr': 25.7}
+    {'time_btjd': 3727.1956, 'sector': 89, 'depth_ppm': 16088.8, 'snr': 24.74}
+    {'time_btjd': 3727.8293, 'sector': 89, 'depth_ppm': 14671.6, 'snr': 18.11}
+    {'time_btjd': 3728.4629, 'sector': 89, 'depth_ppm': 15362.9, 'snr': 15.15}
+    {'time_btjd': 3729.0966, 'sector': 89, 'depth_ppm': 14017.6, 'snr': 19.67}
+    {'time_btjd': 3729.7302, 'sector': 89, 'depth_ppm': 15184.1, 'snr': 17.41}
+    {'time_btjd': 3730.3639, 'sector': 89, 'depth_ppm': 16421.6, 'snr': 17.83}
+    {'time_btjd': 3730.9975, 'sector': 89, 'depth_ppm': 15333.3, 'snr': 23.03}
+    {'time_btjd': 3731.6312, 'sector': 89, 'depth_ppm': 15763.5, 'snr': 18.15}
+    {'time_btjd': 3732.2648, 'sector': 89, 'depth_ppm': 16027.3, 'snr': 23.38}
+    {'time_btjd': 3732.8985, 'sector': 89, 'depth_ppm': 16323.4, 'snr': 17.09}
+    {'time_btjd': 3733.5321, 'sector': 89, 'depth_ppm': 16396.5, 'snr': 18.81}
+    {'time_btjd': 3734.1658, 'sector': 89, 'depth_ppm': 16680.8, 'snr': 26.75}
+    {'time_btjd': 3734.7994, 'sector': 89, 'depth_ppm': 14102.8, 'snr': 23.75}
+    {'time_btjd': 3735.4331, 'sector': 89, 'depth_ppm': 15962.1, 'snr': 21.23}
+    {'time_btjd': 3736.0667, 'sector': 89, 'depth_ppm': 16446.1, 'snr': 29.83}
+    {'time_btjd': 3736.7004, 'sector': 89, 'depth_ppm': 16942.2, 'snr': 30.88}
+    {'time_btjd': 3737.334, 'sector': 89, 'depth_ppm': 15404.8, 'snr': 17.1}
+    {'time_btjd': 3740.5023, 'sector': 89, 'depth_ppm': 17490.5, 'snr': 18.51}
+    {'time_btjd': 3741.1359, 'sector': 89, 'depth_ppm': 18262.1, 'snr': 25.11}
+    {'time_btjd': 3741.7696, 'sector': 89, 'depth_ppm': 14873.7, 'snr': 22.59}
+    {'time_btjd': 3742.4032, 'sector': 89, 'depth_ppm': 15454.2, 'snr': 15.55}
+    {'time_btjd': 3743.0369, 'sector': 89, 'depth_ppm': 15875.4, 'snr': 16.57}
+    {'time_btjd': 3743.6705, 'sector': 89, 'depth_ppm': 14023.8, 'snr': 22.43}
+    {'time_btjd': 3744.3042, 'sector': 89, 'depth_ppm': 14108.2, 'snr': 19.34}
+    {'time_btjd': 3744.9378, 'sector': 89, 'depth_ppm': 17399.0, 'snr': 40.74}
+    {'time_btjd': 3745.5715, 'sector': 89, 'depth_ppm': 15980.4, 'snr': 23.04}
+    {'time_btjd': 3746.2051, 'sector': 89, 'depth_ppm': 14219.0, 'snr': 20.66}
+{
+ "tic": 344023003,
+ "tic_catalog": {
+  "ID": "344023003",
+  "ra": 107.762338373448,
+  "dec": -48.2496269593285,
+  "pmRA": 0.123465,
+  "pmDEC": 8.68218,
+  "plx": 1.52362,
+  "e_plx": 0.0252426,
+  "d": 644.267,
+  "e_d": 10.5595,
+  "Tmag": 12.4594,
+  "Vmag": 13.004,
+  "Jmag": 11.912,
+  "Teff": 6467.0,
+  "e_Teff": 130.615,
+  "logg": 4.33131,
+  "rad": 1.29917,
+  "e_rad": 0.0615327,
+  "mass": 1.32,
+  "e_mass": 0.202042,
+  "lum": 2.65974665,
+  "rho": 0.601967,
+  "contratio": 0.08680061,
+  "GAIA": "5508695199535968256",
+  "TWOMASS": "07110295-4814585",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.069585,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 224,
+  "gallong": 259.052770835611,
+  "gallat": -16.8302933769813,
+  "eclong": 125.475409691874,
+  "eclat": -69.5107906308486
+ },
+ "gaia_dr3": {
+  "Source": 5508695199535968256,
+  "Plx": 1.5827,
+  "e_Plx": 0.014800000004470348,
+  "RUWE": 1.399,
+  "Gmag": 12.82567,
+  "BP-RP": 0.700753,
+  "RV": 34.84,
+  "e_RV": 1.899999976158142,
+  "Teff": 6331.2,
+  "Dist": 630.5117,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Puppis",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [
+  {
+   "_r": 39.18,
+   "recno": 1538625,
+   "OID": 718014,
+   "Name": "ASASSN-V J071100.96-481425.0",
+   "V": 0,
+   "RAJ2000": 107.75399017333984,
+   "DEJ2000": -48.24028015136719,
+   "Type": "EA",
+   "l_max": "",
+   "max": 14.98,
+   "u_max": "",
+   "n_max": "V",
+   "f_min": "",
+   "l_min": "",
+   "min": 15.2,
+   "u_min": "",
+   "n_min": "V",
+   "Epoch": 2458385.843,
+   "u_Epoch": "",
+   "l_Period": "",
+   "Period": 0.63365,
+   "u_Period": "",
+   "Sp": "",
+   "n_OID": ""
+  }
+ ],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 344023003,
+   "Tmag": 12.4594,
+   "dstArcSec": 0.0,
+   "Teff": 6467.0,
+   "d": 644.267
+  },
+  {
+   "ID": 344022999,
+   "Tmag": 14.5835,
+   "dstArcSec": 28.788616668199687,
+   "Teff": 3948.0,
+   "d": 399.919
+  },
+  {
+   "ID": 344022997,
+   "Tmag": 14.7533,
+   "dstArcSec": 39.16303528056569,
+   "Teff": 6771.0,
+   "d": 2060.0
+  },
+  {
+   "ID": 344023008,
+   "Tmag": 16.823,
+   "dstArcSec": 44.78669442928461,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 767637716,
+   "Tmag": 17.4123,
+   "dstArcSec": 38.24757297639939,
+   "Teff": null,
+   "d": 3020.12
+  },
+  {
+   "ID": 767637705,
+   "Tmag": 17.5689,
+   "dstArcSec": 62.314904838988014,
+   "Teff": 5383.0,
+   "d": 3246.06
+  },
+  {
+   "ID": 767637703,
+   "Tmag": 17.5701,
+   "dstArcSec": 24.305789354286517,
+   "Teff": 5276.0,
+   "d": 2199.88
+  },
+  {
+   "ID": 767637714,
+   "Tmag": 17.7047,
+   "dstArcSec": 56.52561160893871,
+   "Teff": 5267.0,
+   "d": 2007.85
+  },
+  {
+   "ID": 344023015,
+   "Tmag": 17.9912,
+   "dstArcSec": 62.04105961242827,
+   "Teff": 3977.0,
+   "d": 1261.04
+  },
+  {
+   "ID": 767637697,
+   "Tmag": 19.3121,
+   "dstArcSec": 37.874388044521545,
+   "Teff": 4257.0,
+   "d": 1325.45
+  },
+  {
+   "ID": 767637706,
+   "Tmag": 19.3674,
+   "dstArcSec": 48.477086252343064,
+   "Teff": 5194.0,
+   "d": 2608.11
+  },
+  {
+   "ID": 767637704,
+   "Tmag": 19.3973,
+   "dstArcSec": 29.83132596604433,
+   "Teff": 3882.0,
+   "d": 1760.21
+  },
+  {
+   "ID": 767637702,
+   "Tmag": 19.6872,
+   "dstArcSec": 51.19362116361433,
+   "Teff": null,
+   "d": 1261.58
+  },
+  {
+   "ID": 767637712,
+   "Tmag": 19.6989,
+   "dstArcSec": 62.805650545521566,
+   "Teff": null,
+   "d": 1810.9
+  },
+  {
+   "ID": 767637715,
+   "Tmag": 19.797,
+   "dstArcSec": 60.23124376346375,
+   "Teff": null,
+   "d": 2232.18
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 06",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2018
+  },
+  {
+   "mission": "TESS Sector 07",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 08",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 33",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 34",
+   "author": "QLP",
+   "exptime": 600.0,
+ 
 [report] TIC 267889592
     sector 7: 1086 points from QLP
     sector 8: 963 points from QLP
     sector 9: 1148 points from QLP
     sector 34: 3474 points from QLP
     sector 35: 2815 points from QLP
-    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 61: 10654 points from QLP
-    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 62: 10811 points from QLP
-    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 88: 11718 points from QLP
-    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmptyjal4_n/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc.fits of type QLP .
+    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpczex4_g8/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267889592_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 89: 11411 points from QLP
-  all sectors: P=19.05417 d, depth=14740 ppm, SNR=82.8, 13 transits over 2255 d
+  all sectors: P=19.05417 d, depth=14740 ppm, SNR=82.8, 13 transits over 2255 d, secondary 26.80377860508898 ppm (0.11028220073884762 sigma), odd/even 0.22729746578744486 sigma
     {'time_btjd': 1506.7677, 'sector': 7, 'depth_ppm': 15124.1, 'snr': 31.21}
     {'time_btjd': 1525.8219, 'sector': 8, 'depth_ppm': 16584.8, 'snr': 25.13}
     {'time_btjd': 1544.8761, 'sector': 9, 'depth_ppm': 15749.6, 'snr': 21.39}
@@ -243,14 +1364,400 @@ This file may be corrupt due to an interrupted download. Please remove it from y
   },
   {
    "mission": "TESS Secto
+[report] TIC 267830603
+    sector 7: 1086 points from QLP
+    sector 8: 963 points from QLP
+    sector 9: 1148 points from QLP
+    sector 34: 3474 points from QLP
+    sector 35: 2814 points from QLP
+    sector 36: 3467 points from QLP
+    sector 61 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0061-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0061-0000000267830603_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 61: 10654 points from QLP
+    sector 62 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0062-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0062-0000000267830603_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 62: 10811 points from QLP
+    sector 87 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0087-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0087-0000000267830603_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 87: 11338 points from QLP
+    sector 88 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0088-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0088-0000000267830603_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 88: 11718 points from QLP
+    sector 89 (QLP): download failed: Error in reading Data product /tmp/tmpvyhdocml/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0089-0000000267830603_tess_v01_llc/hlsp_qlp_tess_ffi_s0089-0000000267830603_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 89: 11411 points from QLP
+  all sectors: P=1.27960 d, depth=6940 ppm, SNR=52.6, 145 transits over 2255 d, secondary 3265.978186713814 ppm (19.883364531896756 sigma), odd/even 0.5343447758535023 sigma
+    {'time_btjd': 2229.6293, 'sector': 34, 'depth_ppm': 8108.8, 'snr': 3.19}
+    {'time_btjd': 2230.9089, 'sector': 34, 'depth_ppm': 5028.6, 'snr': 3.65}
+    {'time_btjd': 2232.1885, 'sector': 34, 'depth_ppm': 8967.8, 'snr': 6.57}
+    {'time_btjd': 2233.4681, 'sector': 34, 'depth_ppm': 9374.8, 'snr': 7.36}
+    {'time_btjd': 2234.7477, 'sector': 34, 'depth_ppm': 6163.8, 'snr': 3.03}
+    {'time_btjd': 2236.0273, 'sector': 34, 'depth_ppm': 8149.9, 'snr': 7.65}
+    {'time_btjd': 2237.3069, 'sector': 34, 'depth_ppm': 3819.3, 'snr': 2.25}
+    {'time_btjd': 2238.5865, 'sector': 34, 'depth_ppm': 4589.7, 'snr': 3.9}
+    {'time_btjd': 2239.8661, 'sector': 34, 'depth_ppm': 8309.2, 'snr': 7.65}
+    {'time_btjd': 2242.4253, 'sector': 34, 'depth_ppm': 11199.6, 'snr': 3.67}
+    {'time_btjd': 2243.7049, 'sector': 34, 'depth_ppm': 4741.0, 'snr': 2.47}
+    {'time_btjd': 2244.9845, 'sector': 34, 'depth_ppm': 7492.1, 'snr': 4.29}
+    {'time_btjd': 2246.2641, 'sector': 34, 'depth_ppm': 7119.5, 'snr': 6.14}
+    {'time_btjd': 2247.5437, 'sector': 34, 'depth_ppm': 11239.1, 'snr': 7.55}
+    {'time_btjd': 2248.8233, 'sector': 34, 'depth_ppm': 7458.1, 'snr': 3.47}
+    {'time_btjd': 2250.1029, 'sector': 34, 'depth_ppm': 8155.2, 'snr': 5.38}
+    {'time_btjd': 2251.3825, 'sector': 34, 'depth_ppm': 11247.6, 'snr': 7.5}
+    {'time_btjd': 2252.6621, 'sector': 34, 'depth_ppm': 9059.2, 'snr': 4.11}
+    {'time_btjd': 2256.5009, 'sector': 35, 'depth_ppm': 5799.2, 'snr': 2.87}
+    {'time_btjd': 2257.7806, 'sector': 35, 'depth_ppm': 9691.3, 'snr': 4.82}
+    {'time_btjd': 2259.0602, 'sector': 35, 'depth_ppm': 4859.3, 'snr': 2.92}
+    {'time_btjd': 2260.3398, 'sector': 35, 'depth_ppm': 8308.7, 'snr': 2.68}
+    {'time_btjd': 2261.6194, 'sector': 35, 'depth_ppm': 7058.6, 'snr': 1.93}
+    {'time_btjd': 2262.899, 'sector': 35, 'depth_ppm': 8845.0, 'snr': 3.0}
+    {'time_btjd': 2264.1786, 'sector': 35, 'depth_ppm': 6475.1, 'snr': 3.01}
+    {'time_btjd': 2265.4582, 'sector': 35, 'depth_ppm': 9742.5, 'snr': 3.3}
+    {'time_btjd': 2266.7378, 'sector': 35, 'depth_ppm': -2730.5, 'snr': -0.97}
+    {'time_btjd': 2269.297, 'sector': 35, 'depth_ppm': 17141.3, 'snr': 9.13}
+    {'time_btjd': 2271.8562, 'sector': 35, 'depth_ppm': 11669.1, 'snr': 2.93}
+    {'time_btjd': 2273.1358, 'sector': 35, 'depth_ppm': 4819.0, 'snr': 2.81}
+    {'time_btjd': 2274.4154, 'sector': 35, 'depth_ppm': 7223.9, 'snr': 4.15}
+    {'time_btjd': 2275.695, 'sector': 35, 'depth_ppm': 6770.0, 'snr': 2.72}
+    {'time_btjd': 2276.9746, 'sector': 35, 'depth_ppm': 5791.9, 'snr': 4.02}
+    {'time_btjd': 2278.2542, 'sector': 35, 'depth_ppm': 11283.9, 'snr': 11.6}
+    {'time_btjd': 2279.5338, 'sector': 35, 'depth_ppm': 7430.0, 'snr': 3.87}
+    {'time_btjd': 2282.093, 'sector': 36, 'depth_ppm': 7062.2, 'snr': 3.09}
+    {'time_btjd': 2283.3726, 'sector': 36, 'depth_ppm': 5588.0, 'snr': 4.19}
+    {'time_btjd': 2284.6522, 'sector': 36, 'depth_ppm': 5081.0, 'snr': 3.42}
+    {'time_btjd': 2285.9318, 'sector': 36, 'depth_ppm': 4945.2, 'snr': 2.6}
+    {'time_btjd': 2287.2115, 'sector': 36, 'depth_ppm': 9538.8, 'snr': 8.85}
+    {'time_btjd': 2288.4911, 'sector': 36, 'depth_ppm': 5801.8, 'snr': 5.8}
+    {'time_btjd': 2289.7707, 'sector': 36, 'depth_ppm': 8673.8, 'snr': 7.08}
+    {'time_btjd': 2291.0503, 'sector': 36, 'depth_ppm': 9111.9, 'snr': 6.72}
+    {'time_btjd': 2292.3299, 'sector': 36, 'depth_ppm': 7192.7, 'snr': 2.89}
+    {'time_btjd': 2294.8891, 'sector': 36, 'depth_ppm': 2769.2, 'snr': 1.38}
+    {'time_btjd': 2296.1687, 'sector': 36, 'depth_ppm': 6343.5, 'snr': 3.27}
+    {'time_btjd': 2297.4483, 'sector': 36, 'depth_ppm': 4463.4, 'snr': 3.34}
+    {'time_btjd': 2298.7279, 'sector': 36, 'depth_ppm': 7116.4, 'snr': 4.53}
+    {'time_btjd': 2300.0075, 'sector': 36, 'depth_ppm': 4385.9, 'snr': 3.03}
+    {'time_btjd': 2301.2871, 'sector': 36, 'depth_ppm': 1765.4, 'snr': 1.35}
+    {'time_btjd': 2302.5667, 'sector': 36, 'depth_ppm': 3224.2, 'snr': 3.48}
+    {'time_btjd': 2303.8463, 'sector': 36, 'depth_ppm': 6428.5, 'snr': 4.08}
+    {'time_btjd': 2305.1259, 'sector': 36, 'depth_ppm': 8770.7, 'snr': 3.29}
+    {'time_btjd': 2964.1221, 'sector': 61, 'depth_ppm': 6510.6, 'snr': 3.03}
+    {'time_btjd': 2965.4017, 'sector': 61, 'depth_ppm': 6998.2, 'snr': 5.2}
+    {'time_btjd': 2966.6813, 'sector': 61, 'depth_ppm': 4801.0, 'snr': 3.4}
+    {'time_btjd': 2967.9609, 'sector': 61, 'depth_ppm': 8217.4, 'snr': 5.03}
+    {'time_btjd': 2969.2405, 'sector': 61, 'depth_ppm': 7482.1, 'snr': 3.06}
+    {'time_btjd': 2970.5201, 'sector': 61, 'depth_ppm': 8426.9, 'snr': 4.19}
+    {'time_btjd': 2971.7997, 'sector': 61, 'depth_ppm': 10548.0, 'snr': 4.45}
+    {'time_btjd': 2973.0793, 'sector': 61, 'depth_ppm': 8250.2, 'snr': 5.24}
+    {'time_btjd': 2974.3589, 'sector': 61, 'depth_ppm': 12654.1, 'snr': 6.8}
+    {'time_btjd': 2975.6385, 'sector': 61, 'depth_ppm': 7347.4, 'snr': 4.53}
+    {'time_btjd': 2976.9181, 'sector': 61, 'depth_ppm': 10081.7, 'snr': 7.72}
+    {'time_btjd': 2978.1977, 'sector': 61, 'depth_ppm': 8907.2, 'snr': 5.67}
+    {'time_btjd': 2979.4773, 'sector': 61, 'depth_ppm': 10173.1, 'snr': 5.27}
+    {'time_btjd': 2980.7569, 'sector': 61, 'depth_ppm': 10312.3, 'snr': 20.21}
+    {'time_btjd': 2982.0365, 'sector': 61, 'depth_ppm': 6269.2, 'snr': 6.93}
+    {'time_btjd': 2983.3161, 'sector': 61, 'depth_ppm': 6094.8, 'snr': 3.37}
+    {'time_btjd': 2984.5957, 'sector': 61, 'depth_ppm': 9163.5, 'snr': 6.93}
+    {'time_btjd': 2985.8753, 'sector': 61, 'depth_ppm': 5591.1, 'snr': 4.33}
+    {'time_btjd': 2987.1549, 'sector': 61, 'depth_ppm': 9629.7, 'snr': 7.15}
+    {'time_btjd': 2989.7142, 'sector': 62, 'depth_ppm': 9807.6, 'snr': 8.17}
+    {'time_btjd': 2990.9938, 'sector': 62, 'depth_ppm': 7607.1, 'snr': 4.16}
+    {'time_btjd': 2992.2734, 'sector': 62, 'depth_ppm': 6790.6, 'snr': 5.0}
+    {'time_btjd': 2993.553, 'sector': 62, 'depth_ppm': 6427.5, 'snr': 5.03}
+    {'time_btjd': 2994.8326, 'sector': 62, 'depth_ppm': 9420.2, 'snr': 5.31}
+    {'time_btjd': 2996.1122, 'sector': 62, 'depth_ppm': 7427.8, 'snr': 5.52}
+    {'time_btjd': 2997.3918, 'sector': 62, 'depth_ppm': 6966.8, 'snr': 4.31}
+    {'time_btjd': 2998.6714, 'sector': 62, 'depth_ppm': 7893.4, 'snr': 3.66}
+    {'time_btjd': 2999.951, 'sector': 62, 'depth_ppm': 5359.1, 'snr': 2.12}
+    {'time_btjd': 3001.2306, 'sector': 62, 'depth_ppm': 8624.7, 'snr': 4.58}
+    {'time_btjd': 3002.5102, 'sector': 62, 'depth_ppm': 5414.7, 'snr': 2.63}
+    {'time_btjd': 3003.7898, 'sector': 62, 'depth_ppm': 7728.3, 'snr': 4.53}
+    {'time_btjd': 3005.0694, 'sector': 62, 'depth_ppm': 4805.5, 'snr': 4.12}
+    {'time_btjd': 3006.349, 'sector': 62, 'depth_ppm': 6018.2, 'snr': 3.72}
+    {'time_btjd': 3008.9082, 'sector': 62, 'depth_ppm': 7326.4, 'snr': 2.54}
+    {'time_btjd': 3010.1878, 'sector': 62, 'depth_ppm': 6486.9, 'snr': 3.34}
+    {'time_btjd': 3011.4674, 'sector': 62, 'depth_ppm': 10124.5, 'snr': 6.02}
+    {'time_btjd': 3012.747, 'sector': 62, 'depth_ppm': 6490.9, 'snr': 3.79}
+    {'time_btjd': 3666.6248, 'sector': 87, 'depth_ppm': 5982.9, 'snr': 4.41}
+    {'time_btjd': 3667.9044, 'sector': 87, 'depth_ppm': 7428.0, 'snr': 5.47}
+    {'time_btjd': 3669.184, 'sector': 87, 'depth_ppm': 11636.3, 'snr': 9.3}
+    {'time_btjd': 3670.4636, 'sector': 87, 'depth_ppm': 6894.8, 'snr': 3.67}
+    {'time_btjd': 3671.7432, 'sector': 87, 'depth_ppm': 9046.6, 'snr': 5.96}
+    {'time_btjd': 3673.0228, 'sector': 87, 'depth_ppm': 6973.1, 'snr': 9.88}
+    {'time_btjd': 3674.3024, 'sector': 87, 'depth_ppm': 11854.4, 'snr': 7.42}
+    {'time_btjd': 3675.582, 'sector': 87, 'depth_ppm': 4831.0, 'snr': 4.39}
+    {'time_btjd': 3680.7004, 'sector': 87, 'depth_ppm': 8176.4, 'snr': 3.43}
+    {'time_btjd': 3681.98, 'sector': 87, 'depth_ppm': 6956.9, 'snr': 5.79}
+    {'time_btjd': 3683.2596, 'sector': 87, 'depth_ppm': 10481.4, 'snr': 9.11}
+    {'time_btjd': 3684.5392, 'sector': 87, 'depth_ppm': 10374.3, 'snr': 9.39}
+    {'time_btjd': 3685.8188, 'sector': 87, 'depth_ppm': 7414.3, 'snr': 5.42}
+    {'time_btjd': 3687.0984, 'sector': 87, 'depth_ppm': 2812.1, 'snr': 3.17}
+    {'time_btjd': 3688.3781, 'sector': 87, 'depth_ppm': 7968.7, 'snr': 3.98}
+    {'time_btjd': 3690.9373, 'sector': 88, 'depth_ppm': 6536.8, 'snr': 4.19}
+    {'time_btjd': 3692.2169, 'sector': 88, 'depth_ppm': 7434.3, 'snr': 6.23}
+    {'time_btjd': 3693.4965, 'sector': 88, 'depth_ppm': 10072.4, 'snr': 4.43}
+    {'time_btjd': 3694.7761, 'sector': 88, 'depth_ppm': 6215.5, 'snr': 2.04}
+    {'time_btjd': 3696.0557, 'sector': 88, 'depth_ppm': 4825.6, 'snr': 3.1}
+    {'time_btjd': 3697.3353, 'sector': 88, 'depth_ppm': 10737.2, 'snr': 8.69}
+    {'time_btjd': 3698.6149, 'sector': 88, 'depth_ppm': 10929.9, 'snr': 6.94}
+    {'time_btjd': 3699.8945, 'sector': 88, 'depth_ppm': 5866.6, 'snr': 3.23}
+    {'time_btjd': 3701.1741, 'sector': 88, 'depth_ppm': 6505.3, 'snr': 7.51}
+    {'time_btjd': 3702.4537, 'sector': 88, 'depth_ppm': 5828.1, 'snr': 3.37}
+    {'time_btjd': 3703.7333, 'sector': 88, 'depth_ppm': 9116.2, 'snr': 3.77}
+    {'time_btjd': 3705.0129, 'sector': 88, 'depth_ppm': 7985.9, 'snr': 3.83}
+    {'time_btjd': 3706.2925, 'sector': 88, 'depth_ppm': 8514.9, 'snr': 6.18}
+    {'time_btjd': 3707.5721, 'sector': 88, 'depth_ppm': 10742.2, 'snr': 7.2}
+    {'time_btjd': 3708.8517, 'sector': 88, 'depth_ppm': 7729.8, 'snr': 6.43}
+    {'time_btjd': 3710.1313, 'sector': 88, 'depth_ppm': 7596.3, 'snr': 5.15}
+    {'time_btjd': 3712.6905, 'sector': 88, 'depth_ppm': 4866.8, 'snr': 3.61}
+    {'time_btjd': 3713.9701, 'sector': 88, 'depth_ppm': 9603.5, 'snr': 5.09}
+    {'time_btjd': 3715.2497, 'sector': 88, 'depth_ppm': 8289.4, 'snr': 6.33}
+    {'time_btjd': 3716.5293, 'sector': 88, 'depth_ppm': 6838.7, 'snr': 3.66}
+    {'time_btjd': 3719.0886, 'sector': 89, 'depth_ppm': 8915.3, 'snr': 5.05}
+    {'time_btjd': 3720.3682, 'sector': 89, 'depth_ppm': 9520.7, 'snr': 7.43}
+    {'time_btjd': 3721.6478, 'sector': 89, 'depth_ppm': 8711.8, 'snr': 4.11}
+    {'time_btjd': 3722.9274, 'sector': 89, 'depth_ppm': 6400.2, 'snr': 8.89}
+    {'time_btjd': 3724.207, 'sector': 89, 'depth_ppm': 1841.2, 'snr': 1.16}
+    {'time_btjd': 3725.4866, 'sector': 89, 'depth_ppm': 4223.1, 'snr': 3.06}
+    {'time_btjd': 3726.7662, 'sector': 89, 'depth_ppm': 3406.2, 'snr': 3.46}
+    {'time_btjd': 3728.0458, 'sector': 89, 'depth_ppm': 7536.4, 'snr': 8.48}
+    {'time_btjd': 3729.3254, 'sector': 89, 'depth_ppm': 5624.8, 'snr': 6.32}
+    {'time_btjd': 3730.605, 'sector': 89, 'depth_ppm': 8184.1, 'snr': 8.03}
+    {'time_btjd': 3731.8846, 'sector': 89, 'depth_ppm': 7441.0, 'snr': 3.24}
+    {'time_btjd': 3733.1642, 'sector': 89, 'depth_ppm': 6725.9, 'snr': 2.32}
+    {'time_btjd': 3734.4438, 'sector': 89, 'depth_ppm': 8738.5, 'snr': 6.33}
+    {'time_btjd': 3735.7234, 'sector': 89, 'depth_ppm': 6349.7, 'snr': 2.72}
+    {'time_btjd': 3737.003, 'sector': 89, 'depth_ppm': 7853.0, 'snr': 5.46}
+    {'time_btjd': 3740.8418, 'sector': 89, 'depth_ppm': 7582.6, 'snr': 3.35}
+    {'time_btjd': 3742.1214, 'sector': 89, 'depth_ppm': 9279.0, 'snr': 10.12}
+    {'time_btjd': 3743.401, 'sector': 89, 'depth_ppm': 7260.8, 'snr': 3.8}
+    {'time_btjd': 3744.6806, 'sector': 89, 'depth_ppm': 9983.0, 'snr': 10.29}
+    {'time_btjd': 3745.9602, 'sector': 89, 'depth_ppm': 5591.4, 'snr': 3.91}
+{
+ "tic": 267830603,
+ "tic_catalog": {
+  "ID": "267830603",
+  "ra": 115.043182764342,
+  "dec": -51.50603334156,
+  "pmRA": -9.8053,
+  "pmDEC": 13.2164,
+  "plx": 2.70804,
+  "e_plx": 0.0156625,
+  "d": 365.377,
+  "e_d": 2.107,
+  "Tmag": 12.8669,
+  "Vmag": 13.552,
+  "Jmag": 12.085,
+  "Teff": 5543.0,
+  "e_Teff": 131.343,
+  "logg": 4.59682,
+  "rad": 0.824592,
+  "e_rad": 0.0435678,
+  "mass": 0.98,
+  "e_mass": 0.128909,
+  "lum": 0.578299344,
+  "rho": 1.74787,
+  "contratio": 0.118862405,
+  "GAIA": "5493013105707711232",
+  "TWOMASS": "07401036-5130216",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.110469,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 312,
+  "gallong": 264.122930343479,
+  "gallat": -13.8851021015727,
+  "eclong": 141.972517060987,
+  "eclat": -70.4589729478169
+ },
+ "gaia_dr3": {
+  "Source": 5493013105707711232,
+  "Plx": 2.7165,
+  "e_Plx": 0.01119999960064888,
+  "RUWE": 1.02,
+  "Gmag": 13.393251,
+  "BP-RP": 1.026951,
+  "RV": 11.44,
+  "e_RV": 2.2799999713897705,
+  "Teff": 5546.5,
+  "Dist": 358.1243,
+  "NSS": 0,
+  "VarFlag": "VARIABLE"
+ },
+ "constellation": "Carina",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [
+  {
+   "_r": 0.29,
+   "recno": 6822244,
+   "Source": 5493013105707711232,
+   "SolID": 375316653866487564,
+   "Classifier": "nTransits:5+",
+   "Class": "SOLAR_LIKE",
+   "ClassSc": 0.5162326,
+   "RA_ICRS": 115.04311273236,
+   "DE_ICRS": -51.50597459619
+  }
+ ],
+ "vsx_variables_60arcsec": [
+  {
+   "_r": 0.03,
+   "recno": 1769054,
+   "OID": 3524553,
+   "Name": "Gaia DR3 5493013105707711232",
+   "V": 0,
+   "RAJ2000": 115.04318237304688,
+   "DEJ2000": -51.50603103637695,
+   "Type": "ROT",
+   "l_max": "",
+   "max": 13.38,
+   "u_max": "",
+   "n_max": "G",
+   "f_min": "",
+   "l_min": "",
+   "min": 13.43,
+   "u_min": "",
+   "n_min": "G",
+   "Epoch": "--",
+   "u_Epoch": "",
+   "l_Period": "",
+   "Period": "--",
+   "u_Period": "",
+   "Sp": "K",
+   "n_OID": ""
+  }
+ ],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 267830603,
+   "Tmag": 12.8669,
+   "dstArcSec": 0.0,
+   "Teff": 5543.0,
+   "d": 365.377
+  },
+  {
+   "ID": 267830595,
+   "Tmag": 13.5368,
+   "dstArcSec": 28.62316622905874,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 267830608,
+   "Tmag": 14.523,
+   "dstArcSec": 62.16596456652963,
+   "Teff": 6210.0,
+   "d": 1344.61
+  },
+  {
+   "ID": 267830629,
+   "Tmag": 16.9731,
+   "dstArcSec": 60.36485663104906,
+   "Teff": 4794.0,
+   "d": 1900.04
+  },
+  {
+   "ID": 267830594,
+   "Tmag": 17.0125,
+   "dstArcSec": 22.22816624873871,
+   "Teff": 5439.0,
+   "d": 2218.97
+  },
+  {
+   "ID": 267830590,
+   "Tmag": 17.0887,
+   "dstArcSec": 27.276409218411892,
+   "Teff": 6221.0,
+   "d": 3370.5
+  },
+  {
+   "ID": 267830635,
+   "Tmag": 18.0712,
+   "dstArcSec": 55.21904729827605,
+   "Teff": 4040.0,
+   "d": 1889.83
+  },
+  {
+   "ID": 267830602,
+   "Tmag": 18.0761,
+   "dstArcSec": 59.567517575918785,
+   "Teff": 3943.0,
+   "d": 1526.2
+  },
+  {
+   "ID": 267830577,
+   "Tmag": 18.1878,
+   "dstArcSec": 59.01443738075665,
+   "Teff": 4405.0,
+   "d": 2110.31
+  },
+  {
+   "ID": 267830612,
+   "Tmag": 18.2741,
+   "dstArcSec": 47.24529600926425,
+   "Teff": 3797.0,
+   "d": 1506.49
+  },
+  {
+   "ID": 766859494,
+   "Tmag": 18.6772,
+   "dstArcSec": 10.257717747854128,
+   "Teff": 5332.0,
+   "d": 2177.85
+  },
+  {
+   "ID": 766859415,
+   "Tmag": 18.7108,
+   "dstArcSec": 54.91764125725234,
+   "Teff": null,
+   "d": 2034.76
+  },
+  {
+   "ID": 766859418,
+   "Tmag": 18.7548,
+   "dstArcSec": 56.62139118915961,
+   "Teff": null,
+   "d": 1711.24
+  },
+  {
+   "ID": 766859497,
+   "Tmag": 18.8361,
+   "dstArcSec": 62.732789797391895,
+   "Teff": 5316.0,
+   "d": 2803.85
+  },
+  {
+   "ID": 766859495,
+   "Tmag": 18.9035,
+   "dstArcSec": 19.628326731759653,
+   "Teff": 4706.0,
+   "d": 2459.46
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 07",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 08",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Secto
 [report] TIC 415954197
-    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmpwgb16ssy/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc.fits of type QLP .
+    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmpfp_khw6u/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000415954197_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 56: 11766 points from QLP
-    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmpwgb16ssy/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc.fits of type QLP .
+    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmpfp_khw6u/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000415954197_tess_v01_llc.fits of type QLP .
 This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
     sector 83: 10492 points from QLP
-  all sectors: P=7.13991 d, depth=28806 ppm, SNR=94.4, 7 transits over 759 d
+  all sectors: P=7.13991 d, depth=28806 ppm, SNR=94.4, 7 transits over 759 d, secondary 12147.443197203733 ppm (32.73537723661116 sigma), odd/even 0.9170115967151978 sigma
     {'time_btjd': 2831.1905, 'sector': 56, 'depth_ppm': 30284.1, 'snr': 47.84}
     {'time_btjd': 2838.3304, 'sector': 56, 'depth_ppm': 28233.1, 'snr': 37.68}
     {'time_btjd': 2845.4703, 'sector': 56, 'depth_ppm': 33364.5, 'snr': 49.06}
@@ -388,3 +1895,1451 @@ This file may be corrupt due to an interrupted download. Please remove it from y
   }
  ]
 }
+[report] TIC 193886519
+    sector 14: 869 points from TESS-SPOC
+    sector 25: 1095 points from TESS-SPOC
+    sector 40: 3917 points from QLP
+    sector 52: 2187 points from TESS-SPOC
+    sector 53: 3454 points from TESS-SPOC
+    sector 54: 3571 points from QLP
+    sector 74 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0074-0000000193886519_tess_v02_llc/hlsp_qlp_tess_ffi_s0074-0000000193886519_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 74: 11268 points from QLP
+    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000193886519_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000193886519_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 79: 11440 points from QLP
+    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000193886519_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000193886519_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 80: 11120 points from QLP
+    sector 81 (QLP): download failed: Error in reading Data product /tmp/tmp7it9tljl/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0081-0000000193886519_tess_v01_llc/hlsp_qlp_tess_ffi_s0081-0000000193886519_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 81: 11063 points from QLP
+  all sectors: P=15.56796 d, depth=1222 ppm, SNR=6.2, 16 transits over 1849 d, secondary 98.82352430534702 ppm (0.363733054406598 sigma), odd/even 0.6483988411689082 sigma
+    {'time_btjd': 1699.0304, 'sector': 14, 'depth_ppm': 1484.0, 'snr': 2.32}
+    {'time_btjd': 1994.8217, 'sector': 25, 'depth_ppm': 1856.7, 'snr': 3.13}
+    {'time_btjd': 2399.5887, 'sector': 40, 'depth_ppm': 1601.8, 'snr': 1.9}
+    {'time_btjd': 2415.1567, 'sector': 40, 'depth_ppm': 1702.4, 'snr': 1.85}
+    {'time_btjd': 2726.5159, 'sector': 52, 'depth_ppm': 495.1, 'snr': 0.99}
+    {'time_btjd': 2742.0839, 'sector': 52, 'depth_ppm': 1043.4, 'snr': 2.91}
+    {'time_btjd': 2757.6518, 'sector': 53, 'depth_ppm': 786.0, 'snr': 1.82}
+    {'time_btjd': 2773.2198, 'sector': 54, 'depth_ppm': -1160.5, 'snr': -0.98}
+    {'time_btjd': 2788.7878, 'sector': 54, 'depth_ppm': -248.0, 'snr': -0.36}
+    {'time_btjd': 3318.0985, 'sector': 74, 'depth_ppm': 823.9, 'snr': 0.93}
+    {'time_btjd': 3333.6664, 'sector': 74, 'depth_ppm': 187.3, 'snr': 0.2}
+    {'time_btjd': 3458.2101, 'sector': 79, 'depth_ppm': 5605.7, 'snr': 3.61}
+    {'time_btjd': 3473.7781, 'sector': 79, 'depth_ppm': 7689.6, 'snr': 4.65}
+    {'time_btjd': 3489.3461, 'sector': 80, 'depth_ppm': 1404.6, 'snr': 1.29}
+    {'time_btjd': 3504.914, 'sector': 80, 'depth_ppm': -547.3, 'snr': -0.56}
+    {'time_btjd': 3520.482, 'sector': 81, 'depth_ppm': 1670.3, 'snr': 2.82}
+{
+ "tic": 193886519,
+ "tic_catalog": {
+  "ID": "193886519",
+  "ra": 270.666600799906,
+  "dec": 46.7052792403173,
+  "pmRA": 12.5507,
+  "pmDEC": -21.8196,
+  "plx": 1.71238,
+  "e_plx": 0.0151079,
+  "d": 574.303,
+  "e_d": 5.0205,
+  "Tmag": 12.5408,
+  "Vmag": 13.175,
+  "Jmag": 11.9,
+  "Teff": 5652.0,
+  "e_Teff": 124.77,
+  "logg": 4.18142,
+  "rad": 1.34376,
+  "e_rad": 0.0665176,
+  "mass": 1.0,
+  "e_mass": 0.126984,
+  "lum": 1.66014826,
+  "rho": 0.41213,
+  "contratio": 0.0283682924,
+  "GAIA": "2116517694006734208",
+  "TWOMASS": "18023998+4642189",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.0274124,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 120,
+  "gallong": 73.8859504575305,
+  "gallat": 27.4375145756799,
+  "eclong": 271.345779227781,
+  "eclat": 70.1414464421429
+ },
+ "gaia_dr3": {
+  "Source": 2116517694006734208,
+  "Plx": 1.7163,
+  "e_Plx": 0.01140000019222498,
+  "RUWE": 1.03,
+  "Gmag": 12.995726,
+  "BP-RP": 0.875097,
+  "RV": -15.03,
+  "e_RV": 1.159999966621399,
+  "Teff": 5654.5,
+  "Dist": 569.7735,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Hercules",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 193886519,
+   "Tmag": 12.5408,
+   "dstArcSec": 0.0,
+   "Teff": 5652.0,
+   "d": 574.303
+  },
+  {
+   "ID": 193886524,
+   "Tmag": 15.6521,
+   "dstArcSec": 61.41483269727202,
+   "Teff": 4655.0,
+   "d": 886.081
+  },
+  {
+   "ID": 193886523,
+   "Tmag": 17.0354,
+   "dstArcSec": 19.739277297557905,
+   "Teff": 3485.0,
+   "d": 423.865
+  },
+  {
+   "ID": 193947025,
+   "Tmag": 17.1952,
+   "dstArcSec": 45.292462060058746,
+   "Teff": 4891.0,
+   "d": 1826.46
+  },
+  {
+   "ID": 193886516,
+   "Tmag": 17.9968,
+   "dstArcSec": 42.69427547013468,
+   "Teff": 3615.0,
+   "d": 734.858
+  },
+  {
+   "ID": 193947024,
+   "Tmag": 18.0829,
+   "dstArcSec": 39.054358393034896,
+   "Teff": 3920.0,
+   "d": 1432.69
+  },
+  {
+   "ID": 1550815061,
+   "Tmag": 19.292,
+   "dstArcSec": 27.174593410954525,
+   "Teff": 4078.0,
+   "d": 1589.06
+  },
+  {
+   "ID": 1550815058,
+   "Tmag": 19.4709,
+   "dstArcSec": 47.42715357171921,
+   "Teff": null,
+   "d": 1552.89
+  },
+  {
+   "ID": 1550815060,
+   "Tmag": 19.934,
+   "dstArcSec": 58.5782542537227,
+   "Teff": null,
+   "d": 1961.74
+  },
+  {
+   "ID": 1550815062,
+   "Tmag": 20.4622,
+   "dstArcSec": 48.132170570331766,
+   "Teff": null,
+   "d": null
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 14",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 25",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 52",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 53",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 14",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 25",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 40",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 52",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 53",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 54",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 74",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 79",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 80",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 81",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 14",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 14",
+   "autho
+[report] TIC 289728440
+    sector 21: 1217 points from TESS-SPOC
+    sector 48: 2992 points from TESS-SPOC
+    sector 75: 6590 points from TESS-SPOC
+  all sectors: P=4.70423 d, depth=651 ppm, SNR=6.5, 15 transits over 1496 d, secondary 118.19536754598126 ppm (0.8121627633426104 sigma), odd/even 1.0779505769737912 sigma
+    {'time_btjd': 1873.0762, 'sector': 21, 'depth_ppm': 50.2, 'snr': 0.08}
+    {'time_btjd': 1877.7804, 'sector': 21, 'depth_ppm': 1046.5, 'snr': 1.91}
+    {'time_btjd': 1882.4847, 'sector': 21, 'depth_ppm': 778.5, 'snr': 2.14}
+    {'time_btjd': 1887.1889, 'sector': 21, 'depth_ppm': 867.7, 'snr': 2.37}
+    {'time_btjd': 1891.8931, 'sector': 21, 'depth_ppm': -818.1, 'snr': -1.73}
+    {'time_btjd': 1896.5974, 'sector': 21, 'depth_ppm': -375.7, 'snr': -1.31}
+    {'time_btjd': 2611.6409, 'sector': 48, 'depth_ppm': 1614.4, 'snr': 3.66}
+    {'time_btjd': 2616.3451, 'sector': 48, 'depth_ppm': 164.1, 'snr': 0.47}
+    {'time_btjd': 2621.0494, 'sector': 48, 'depth_ppm': -754.9, 'snr': -2.0}
+    {'time_btjd': 2630.4578, 'sector': 48, 'depth_ppm': -418.5, 'snr': -0.88}
+    {'time_btjd': 2635.1621, 'sector': 48, 'depth_ppm': 752.0, 'snr': 2.02}
+    {'time_btjd': 3340.7971, 'sector': 75, 'depth_ppm': 1589.4, 'snr': 4.55}
+    {'time_btjd': 3350.2056, 'sector': 75, 'depth_ppm': 587.5, 'snr': 2.07}
+    {'time_btjd': 3354.9098, 'sector': 75, 'depth_ppm': 1479.8, 'snr': 5.88}
+    {'time_btjd': 3364.3183, 'sector': 75, 'depth_ppm': 1074.2, 'snr': 2.82}
+{
+ "tic": 289728440,
+ "tic_catalog": {
+  "ID": "289728440",
+  "ra": 159.540660626583,
+  "dec": 55.544589902919,
+  "pmRA": -32.8856,
+  "pmDEC": -33.0525,
+  "plx": 4.05356,
+  "e_plx": 0.0367758,
+  "d": 244.971,
+  "e_d": 2.2235,
+  "Tmag": 12.1783,
+  "Vmag": 12.918,
+  "Jmag": 11.404,
+  "Teff": 5212.0,
+  "e_Teff": 122.171,
+  "logg": 4.60369,
+  "rad": 0.779623,
+  "e_rad": 0.045113,
+  "mass": 0.89,
+  "e_mass": 0.104407,
+  "lum": 0.404093057,
+  "rho": 1.87818,
+  "contratio": 0.0191163067,
+  "GAIA": "853585859152162176",
+  "TWOMASS": "10380976+5532405",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.0151949,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 40,
+  "gallong": 153.879834893354,
+  "gallat": 52.8205955610001,
+  "eclong": 136.137630584189,
+  "eclat": 42.6767490324389
+ },
+ "gaia_dr3": {},
+ "constellation": "Ursa Major",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 289728440,
+   "Tmag": 12.1783,
+   "dstArcSec": 0.0,
+   "Teff": 5212.0,
+   "d": 244.971
+  },
+  {
+   "ID": 289728439,
+   "Tmag": 15.0008,
+   "dstArcSec": 45.608686440815426,
+   "Teff": 4280.0,
+   "d": 552.479
+  },
+  {
+   "ID": 289727869,
+   "Tmag": 15.7014,
+   "dstArcSec": 47.21868435842234,
+   "Teff": 3319.0,
+   "d": 255.871
+  },
+  {
+   "ID": 289728438,
+   "Tmag": 16.9523,
+   "dstArcSec": 48.91895779692635,
+   "Teff": 4267.0,
+   "d": 1601.37
+  },
+  {
+   "ID": 840999368,
+   "Tmag": 19.6844,
+   "dstArcSec": 48.47227242421842,
+   "Teff": 3966.0,
+   "d": 1118.18
+  },
+  {
+   "ID": 840999339,
+   "Tmag": 19.8278,
+   "dstArcSec": 58.711514356116645,
+   "Teff": null,
+   "d": 1094.49
+  },
+  {
+   "ID": 840999366,
+   "Tmag": 20.0748,
+   "dstArcSec": 30.910290509607822,
+   "Teff": null,
+   "d": 457.271
+  },
+  {
+   "ID": 840999338,
+   "Tmag": 20.1067,
+   "dstArcSec": 41.284530143866945,
+   "Teff": null,
+   "d": 1290.86
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 21",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 48",
+   "author": "TESS-SPOC",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 75",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 21",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 48",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 75",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 21",
+   "author": "TARS",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 48",
+   "author": "TARS",
+   "exptime": 600.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 75",
+   "author": "TARS",
+   "exptime": 200.0,
+   "year": 2024
+  }
+ ]
+}
+[report] TIC 233729835
+    sector 14: 1237 points from QLP
+    sector 15: 1190 points from QLP
+    sector 16: 1118 points from QLP
+    sector 17: 1125 points from QLP
+    sector 18: 1103 points from QLP
+    sector 19: 1150 points from QLP
+    sector 20: 1183 points from QLP
+    sector 21: 1262 points from QLP
+    sector 22: 1246 points from QLP
+    sector 23: 1235 points from QLP
+    sector 24: 1224 points from QLP
+    sector 25: 1167 points from QLP
+    sector 26: 1146 points from QLP
+    sector 40: 3917 points from QLP
+    sector 41: 3658 points from QLP
+    sector 47: 3766 points from QLP
+    sector 48: 3780 points from QLP
+    sector 49: 3549 points from QLP
+    sector 50: 3396 points from QLP
+    sector 51: 3234 points from QLP
+    sector 52: 3343 points from QLP
+    sector 53: 3454 points from QLP
+    sector 55: 3771 points from QLP
+    sector 56 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0056-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0056-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 56: 11766 points from QLP
+    sector 57 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0057-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0057-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 57: 10791 points from QLP
+    sector 58 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0058-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0058-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 58: 11692 points from QLP
+    sector 59 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0059-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0059-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 59: 11127 points from QLP
+    sector 60 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0060-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0060-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 60: 8550 points from QLP
+    sector 73 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0073-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0073-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 73: 10340 points from QLP
+    sector 75 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0075-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0075-0000000233729835_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 75: 11678 points from QLP
+    sector 76 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0076-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0076-0000000233729835_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 76: 11413 points from QLP
+    sector 77 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0077-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0077-0000000233729835_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 77: 7682 points from QLP
+    sector 78 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0078-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0078-0000000233729835_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 78: 6388 points from QLP
+    sector 79 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0079-0000000233729835_tess_v02_llc/hlsp_qlp_tess_ffi_s0079-0000000233729835_tess_v02_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 79: 11440 points from QLP
+    sector 80 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0080-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0080-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 80: 11120 points from QLP
+    sector 82 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0082-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0082-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 82: 10646 points from QLP
+    sector 83 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0083-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0083-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 83: 10492 points from QLP
+    sector 84 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0084-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0084-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 84: 10831 points from QLP
+    sector 85 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0085-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0085-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 85: 10729 points from QLP
+    sector 86 (QLP): download failed: Error in reading Data product /tmp/tmp2ijt1a86/mastDownload/HLSP/hlsp_qlp_tess_ffi_s0086-0000000233729835_tess_v01_llc/hlsp_qlp_tess_ffi_s0086-0000000233729835_tess_v01_llc.fits of type QLP .
+This file may be corrupt due to an interrupted download. Please remove it from your disk and try again.
+    sector 86: 11195 points from QLP
+  all sectors: P=4.17298 d, depth=635 ppm, SNR=9.8, 216 transits over 1979 d, secondary -138.1568182143855 ppm (-1.6266017995001743 sigma), odd/even 0.9626992959448475 sigma
+    {'time_btjd': 1685.1596, 'sector': 14, 'depth_ppm': 688.2, 'snr': 0.35}
+    {'time_btjd': 1689.3325, 'sector': 14, 'depth_ppm': 1444.9, 'snr': 1.6}
+    {'time_btjd': 1693.5055, 'sector': 14, 'depth_ppm': 1611.2, 'snr': 0.94}
+    {'time_btjd': 1701.8515, 'sector': 14, 'depth_ppm': 528.2, 'snr': 0.85}
+    {'time_btjd': 1706.0244, 'sector': 14, 'depth_ppm': 650.8, 'snr': 0.18}
+    {'time_btjd': 1714.3704, 'sector': 15, 'depth_ppm': 51.4, 'snr': 0.09}
+    {'time_btjd': 1718.5434, 'sector': 15, 'depth_ppm': 1240.4, 'snr': 2.18}
+    {'time_btjd': 1722.7164, 'sector': 15, 'depth_ppm': 9433.3, 'snr': 5.01}
+    {'time_btjd': 1726.8893, 'sector': 15, 'depth_ppm': 887.2, 'snr': 2.93}
+    {'time_btjd': 1735.2353, 'sector': 15, 'depth_ppm': 592.1, 'snr': 0.23}
+    {'time_btjd': 1739.4083, 'sector': 16, 'depth_ppm': 531.7, 'snr': 0.63}
+    {'time_btjd': 1743.5812, 'sector': 16, 'depth_ppm': 975.6, 'snr': 1.7}
+    {'time_btjd': 1747.7542, 'sector': 16, 'depth_ppm': -68.9, 'snr': -0.1}
+    {'time_btjd': 1756.1002, 'sector': 16, 'depth_ppm': 325.5, 'snr': 0.65}
+    {'time_btjd': 1760.2731, 'sector': 16, 'depth_ppm': 2102.3, 'snr': 5.9}
+    {'time_btjd': 1781.138, 'sector': 17, 'depth_ppm': 347.7, 'snr': 0.37}
+    {'time_btjd': 1785.311, 'sector': 17, 'depth_ppm': -236.3, 'snr': -0.21}
+    {'time_btjd': 1793.657, 'sector': 18, 'depth_ppm': 1948.7, 'snr': 2.46}
+    {'time_btjd': 1797.8299, 'sector': 18, 'depth_ppm': 439.1, 'snr': 0.65}
+    {'time_btjd': 1806.1759, 'sector': 18, 'depth_ppm': 245.9, 'snr': 0.31}
+    {'time_btjd': 1810.3489, 'sector': 18, 'depth_ppm': 546.5, 'snr': 1.34}
+    {'time_btjd': 1814.5219, 'sector': 18, 'depth_ppm': 4471.4, 'snr': 1.24}
+    {'time_btjd': 1818.6948, 'sector': 19, 'depth_ppm': 962.3, 'snr': 1.66}
+    {'time_btjd': 1822.8678, 'sector': 19, 'depth_ppm': -871.7, 'snr': -1.13}
+    {'time_btjd': 1831.2138, 'sector': 19, 'depth_ppm': 228.5, 'snr': 0.61}
+    {'time_btjd': 1835.3867, 'sector': 19, 'depth_ppm': 157.2, 'snr': 0.22}
+    {'time_btjd': 1839.5597, 'sector': 19, 'depth_ppm': -158.3, 'snr': -0.21}
+    {'time_btjd': 1843.7327, 'sector': 20, 'depth_ppm': 294.1, 'snr': 0.3}
+    {'time_btjd': 1852.0786, 'sector': 20, 'depth_ppm': -979.4, 'snr': -1.53}
+    {'time_btjd': 1860.4246, 'sector': 20, 'depth_ppm': -142.4, 'snr': -0.21}
+    {'time_btjd': 1864.5976, 'sector': 20, 'depth_ppm': -1824.8, 'snr': -1.52}
+    {'time_btjd': 1872.9435, 'sector': 21, 'depth_ppm': 2045.4, 'snr': 3.28}
+    {'time_btjd': 1877.1165, 'sector': 21, 'depth_ppm': 2080.0, 'snr': 1.47}
+    {'time_btjd': 1881.2895, 'sector': 21, 'depth_ppm': 1052.2, 'snr': 0.83}
+    {'time_btjd': 1885.4625, 'sector': 21, 'depth_ppm': 7.5, 'snr': 0.01}
+    {'time_btjd': 1889.6354, 'sector': 21, 'depth_ppm': -2318.6, 'snr': -4.81}
+    {'time_btjd': 1893.8084, 'sector': 21, 'depth_ppm': 738.1, 'snr': 1.21}
+    {'time_btjd': 1902.1544, 'sector': 22, 'depth_ppm': 1580.0, 'snr': 2.7}
+    {'time_btjd': 1906.3273, 'sector': 22, 'depth_ppm': -186.7, 'snr': -0.24}
+    {'time_btjd': 1914.6733, 'sector': 22, 'depth_ppm': 3080.9, 'snr': 3.48}
+    {'time_btjd': 1918.8463, 'sector': 22, 'depth_ppm': 794.7, 'snr': 2.04}
+    {'time_btjd': 1923.0193, 'sector': 22, 'depth_ppm': -640.6, 'snr': -1.7}
+    {'time_btjd': 1931.3652, 'sector': 23, 'depth_ppm': 774.2, 'snr': 1.18}
+    {'time_btjd': 1935.5382, 'sector': 23, 'depth_ppm': -2612.9, 'snr': -3.04}
+    {'time_btjd': 1939.7112, 'sector': 23, 'depth_ppm': 1151.9, 'snr': 3.43}
+    {'time_btjd': 1943.8841, 'sector': 23, 'depth_ppm': 687.7, 'snr': 1.02}
+    {'time_btjd': 1948.0571, 'sector': 23, 'depth_ppm': 490.7, 'snr': 0.53}
+    {'time_btjd': 1956.4031, 'sector': 24, 'depth_ppm': 677.2, 'snr': 0.89}
+    {'time_btjd': 1960.5761, 'sector': 24, 'depth_ppm': 11.4, 'snr': 0.01}
+    {'time_btjd': 1964.749, 'sector': 24, 'depth_ppm': -1344.2, 'snr': -1.94}
+    {'time_btjd': 1973.095, 'sector': 24, 'depth_ppm': 3.7, 'snr': 0.01}
+    {'time_btjd': 1977.268, 'sector': 24, 'depth_ppm': -96.1, 'snr': -0.2}
+    {'time_btjd': 1981.4409, 'sector': 24, 'depth_ppm': -641.6, 'snr': -1.28}
+    {'time_btjd': 1985.6139, 'sector': 25, 'depth_ppm': 1397.4, 'snr': 1.59}
+    {'time_btjd': 1989.7869, 'sector': 25, 'depth_ppm': 542.1, 'snr': 0.45}
+    {'time_btjd': 1998.1328, 'sector': 25, 'depth_ppm': 991.1, 'snr': 0.68}
+    {'time_btjd': 2002.3058, 'sector': 25, 'depth_ppm': -1659.4, 'snr': -1.24}
+    {'time_btjd': 2006.4788, 'sector': 25, 'depth_ppm': -1074.8, 'snr': -2.42}
+    {'time_btjd': 2010.6518, 'sector': 26, 'depth_ppm': 642.6, 'snr': 0.49}
+    {'time_btjd': 2014.8248, 'sector': 26, 'depth_ppm': -2573.5, 'snr': -2.47}
+    {'time_btjd': 2018.9977, 'sector': 26, 'depth_ppm': 2284.6, 'snr': 1.81}
+    {'time_btjd': 2027.3437, 'sector': 26, 'depth_ppm': -157.4, 'snr': -0.19}
+    {'time_btjd': 2394.5657, 'sector': 40, 'depth_ppm': 1026.7, 'snr': 0.44}
+    {'time_btjd': 2398.7386, 'sector': 40, 'depth_ppm': -4544.6, 'snr': -2.25}
+    {'time_btjd': 2402.9116, 'sector': 40, 'depth_ppm': -2136.8, 'snr': -1.63}
+    {'time_btjd': 2407.0846, 'sector': 40, 'depth_ppm': -3684.3, 'snr': -1.22}
+    {'time_btjd': 2411.2576, 'sector': 40, 'depth_ppm': -6762.9, 'snr': -2.75}
+    {'time_btjd': 2415.4306, 'sector': 40, 'depth_ppm': -2538.4, 'snr': -1.33}
+    {'time_btjd': 2423.7765, 'sector': 41, 'depth_ppm': -1266.5, 'snr': -0.99}
+    {'time_btjd': 2427.9495, 'sector': 41, 'depth_ppm': -2091.6, 'snr': -1.42}
+    {'time_btjd': 2432.1225, 'sector': 41, 'depth_ppm': -417.5, 'snr': -0.49}
+    {'time_btjd': 2436.2954, 'sector': 41, 'depth_ppm': -1005.4, 'snr': -1.5}
+    {'time_btjd': 2440.4684, 'sector': 41, 'depth_ppm': 1374.2, 'snr': 1.19}
+    {'time_btjd': 2444.6414, 'sector': 41, 'depth_ppm': 389.8, 'snr': 0.48}
+    {'time_btjd': 2582.3496, 'sector': 47, 'depth_ppm': 140.0, 'snr': 0.12}
+    {'time_btjd': 2586.5226, 'sector': 47, 'depth_ppm': -899.3, 'snr': -0.72}
+    {'time_btjd': 2590.6956, 'sector': 47, 'depth_ppm': 1426.6, 'snr': 1.62}
+    {'time_btjd': 2594.8686, 'sector': 47, 'depth_ppm': -4221.9, 'snr': -2.44}
+    {'time_btjd': 2599.0415, 'sector': 47, 'depth_ppm': 1151.3, 'snr': 1.03}
+    {'time_btjd': 2603.2145, 'sector': 47, 'depth_ppm': -527.9, 'snr': -0.64}
+    {'time_btjd': 2611.5605, 'sector': 48, 'depth_ppm': -74.0, 'snr': -0.07}
+    {'time_btjd': 2615.7335, 'sector': 48, 'depth_ppm': -2392.1, 'snr': -2.21}
+    {'time_btjd': 2619.9064, 'sector': 48, 'depth_ppm': 2087.7, 'snr': 3.23}
+    {'time_btjd': 2624.0794, 'sector': 48, 'depth_ppm': 5680.2, 'snr': 2.69}
+    {'time_btjd': 2628.2524, 'sector': 48, 'depth_ppm': 103.4, 'snr': 0.12}
+    {'time_btjd': 2632.4254, 'sector': 48, 'depth_ppm': 589.1, 'snr': 0.57}
+    {'time_btjd': 2640.7713, 'sector': 49, 'depth_ppm': 3128.3, 'snr': 2.98}
+    {'time_btjd': 2644.9443, 'sector': 49, 'depth_ppm': 941.4, 'snr': 1.06}
+    {'time_btjd': 2649.1173, 'sector': 49, 'depth_ppm': -279.6, 'snr': -0.38}
+    {'time_btjd': 2653.2903, 'sector': 49, 'depth_ppm': 3900.7, 'snr': 2.76}
+    {'time_btjd': 2657.4632, 'sector': 49, 'depth_ppm': -183.8, 'snr': -0.17}
+    {'time_btjd': 2661.6362, 'sector': 49, 'depth_ppm': -52.2, 'snr': -0.06}
+    {'time_btjd': 2665.8092, 'sector': 50, 'depth_ppm': 3458.1, 'snr': 0.85}
+    {'time_btjd': 2669.9822, 'sector': 50, 'depth_ppm': -1283.6, 'snr': -1.06}
+    {'time_btjd': 2674.1551, 'sector': 50, 'depth_ppm': 2443.0, 'snr': 2.73}
+    {'time_btjd': 2682.5011, 'sector': 50, 'depth_ppm': 3539.3, 'snr': 2.35}
+    {'time_btjd': 2686.6741, 'sector': 50, 'depth_ppm': 1247.2, 'snr': 1.14}
+    {'time_btjd': 2690.847, 'sector': 50, 'depth_ppm': 1676.0, 'snr': 1.76}
+    {'time_btjd': 2695.02, 'sector': 51, 'depth_ppm': -701.5, 'snr': -0.52}
+    {'time_btjd': 2699.193, 'sector': 51, 'depth_ppm': 2320.9, 'snr': 1.66}
+    {'time_btjd': 2703.366, 'sector': 51, 'depth_ppm': 131.2, 'snr': 0.15}
+    {'time_btjd': 2707.539, 'sector': 51, 'depth_ppm': 35.3, 'snr': 0.02}
+    {'time_btjd': 2711.7119, 'sector': 51, 'depth_ppm': 810.0, 'snr': 1.01}
+    {'time_btjd': 2715.8849, 'sector': 51, 'depth_ppm': -550.7, 'snr': -0.4}
+    {'time_btjd': 2720.0579, 'sector': 52, 'depth_ppm': 1362.2, 'snr': 1.1}
+    {'time_btjd': 2724.2309, 'sector': 52, 'depth_ppm': 2127.0, 'snr': 2.7}
+    {'time_btjd': 2728.4038, 'sector': 52, 'depth_ppm': 947.0, 'snr': 0.99}
+    {'time_btjd': 2732.5768, 'sector': 52, 'depth_ppm': -3341.0, 'snr': -2.61}
+    {'time_btjd': 2736.7498, 'sector': 52, 'depth_ppm': 77.1, 'snr': 0.11}
+    {'time_btjd': 2740.9228, 'sector': 52, 'depth_ppm': -1076.3, 'snr': -1.99}
+    {'time_btjd': 2745.0957, 'sector': 53, 'depth_ppm': 5211.2, 'snr': 2.51}
+    {'time_btjd': 2749.2687, 'sector': 53, 'depth_ppm': -4864.5, 'snr': -2.93}
+    {'time_btjd': 2753.4417, 'sector': 53, 'depth_ppm': 2129.7, 'snr': 1.59}
+    {'time_btjd': 2757.6147, 'sector': 53, 'depth_ppm': -2516.2, 'snr': -1.48}
+    {'time_btjd': 2761.7877, 'sector': 53, 'depth_ppm': 5480.2, 'snr': 2.23}
+    {'time_btjd': 2765.9606, 'sector': 53, 'depth_ppm': -214.2, 'snr': -0.15}
+    {'time_btjd': 2799.3445, 'sector': 55, 'depth_ppm': -876.4, 'snr': -0.99}
+    {'time_btjd': 2803.5174, 'sector': 55, 'depth_ppm': 992.2, 'snr': 1.04}
+    {'time_btjd': 2807.6904, 'sector': 55, 'depth_ppm': 1358.3, 'snr': 1.09}
+    {'time_btjd': 2811.8634, 'sector': 55, 'depth_ppm': -461.4, 'snr': -0.6}
+    {'time_btjd': 2816.0364, 'sector': 55, 'depth_ppm': 3074.7, 'snr': 3.68}
+    {'time_btjd': 2820.2093, 'sector': 55, 'depth_ppm': 2293.0, 'snr': 2.34}
+    {'time_btjd': 2828.5553, 'sector': 56, 'depth_ppm': 1511.0, 'snr': 1.88}
+    {'time_btjd': 2832.7283, 'sector': 56, 'depth_ppm': 1588.9, 'snr': 2.13}
+    {'time_btjd': 2836.9012, 'sector': 56, 'depth_ppm': -4023.0, 'snr': -4.06}
+    {'time_btjd': 2841.0742, 'sector': 56, 'depth_ppm': -455.7, 'snr': -0.58}
+    {'time_btjd': 2845.2472, 'sector': 56, 'depth_ppm': 139.8, 'snr': 0.14}
+    {'time_btjd': 2849.4202, 'sector': 56, 'depth_ppm': -1221.0, 'snr': -1.93}
+    {'time_btjd': 2857.7661, 'sector': 57, 'depth_ppm': -47.1, 'snr': -0.06}
+    {'time_btjd': 2861.9391, 'sector': 57, 'depth_ppm': 711.2, 'snr': 1.1}
+    {'time_btjd': 2870.2851, 'sector': 57, 'depth_ppm': -842.5, 'snr': -1.3}
+    {'time_btjd': 2874.458, 'sector': 57, 'depth_ppm': -1498.0, 'snr': -1.74}
+    {'time_btjd': 2878.631, 'sector': 57, 'depth_ppm': -827.3, 'snr': -0.94}
+    {'time_btjd': 2882.804, 'sector': 58, 'depth_ppm': 4579.0, 'snr': 2.49}
+    {'time_btjd': 2886.977, 'sector': 58, 'depth_ppm': -484.1, 'snr': -0.49}
+    {'time_btjd': 2891.1499, 'sector': 58, 'depth_ppm': -1040.7, 'snr': -1.57}
+    {'time_btjd': 2895.3229, 'sector': 58, 'depth_ppm': 1376.0, 'snr': 2.36}
+    {'time_btjd': 2899.4959, 'sector': 58, 'depth_ppm': -247.8, 'snr': -0.34}
+    {'time_btjd': 2903.6689, 'sector': 58, 'depth_ppm': -150.9, 'snr': -0.17}
+    {'time_btjd': 2907.8419, 'sector': 58, 'depth_ppm': 1434.5, 'snr': 2.19}
+    {'time_btjd': 2912.0148, 'sector': 59, 'depth_ppm': -5175.6, 'snr': -4.3}
+    {'time_btjd': 2916.1878, 'sector': 59, 'depth_ppm': 682.3, 'snr': 0.73}
+    {'time_btjd': 2920.3608, 'sector': 59, 'depth_ppm': 175.3, 'snr': 0.21}
+    {'time_btjd': 2924.5338, 'sector': 59, 'depth_ppm': 6121.6, 'snr': 3.23}
+    {'time_btjd': 2928.7067, 'sector': 59, 'depth_ppm': -191.3, 'snr': -0.29}
+    {'time_btjd': 2932.8797, 'sector': 59, 'depth_ppm': 1166.9, 'snr': 1.59}
+    {'time_btjd': 2941.2257, 'sector': 60, 'depth_ppm': 1738.3, 'snr': 1.69}
+    {'time_btjd': 2945.3986, 'sector': 60, 'depth_ppm': -365.6, 'snr': -0.42}
+    {'time_btjd': 2949.5716, 'sector': 60, 'depth_ppm': -1388.0, 'snr': -1.31}
+    {'time_btjd': 2957.9176, 'sector': 60, 'depth_ppm': 479.0, 'snr': 0.75}
+    {'time_btjd': 2962.0906, 'sector': 60, 'depth_ppm': 253.6, 'snr': 0.3}
+    {'time_btjd': 3287.5828, 'sector': 73, 'depth_ppm': 1949.6, 'snr': 0.87}
+    {'time_btjd': 3291.7557, 'sector': 73, 'depth_ppm': 355.8, 'snr': 0.47}
+    {'time_btjd': 3295.9287, 'sector': 73, 'depth_ppm': 408.9, 'snr': 0.56}
+    {'time_btjd': 3300.1017, 'sector': 73, 'depth_ppm': 7011.3, 'snr': 2.56}
+    {'time_btjd': 3308.4477, 'sector': 73, 'depth_ppm': 1996.8, 'snr': 2.7}
+    {'time_btjd': 3341.8315, 'sector': 75, 'depth_ppm': -1007.9, 'snr': -0.57}
+    {'time_btjd': 3346.0045, 'sector': 75, 'depth_ppm': 196.3, 'snr': 0.17}
+    {'time_btjd': 3350.1774, 'sector': 75, 'depth_ppm': -443.0, 'snr': -0.4}
+    {'time_btjd': 3354.3504, 'sector': 75, 'depth_ppm': -1016.2, 'snr': -1.55}
+    {'time_btjd': 3358.5234, 'sector': 75, 'depth_ppm': -850.1, 'snr': -0.45}
+    {'time_btjd': 3362.6964, 'sector': 75, 'depth_ppm': -720.0, 'snr': -0.64}
+    {'time_btjd': 3366.8693, 'sector': 75, 'depth_ppm': -3019.2, 'snr': -2.7}
+    {'time_btjd': 3371.0423, 'sector': 76, 'depth_ppm': -2909.4, 'snr': -2.04}
+    {'time_btjd': 3375.2153, 'sector': 76, 'depth_ppm': -1600.7, 'snr': -1.79}
+    {'time_btjd': 3379.3883, 'sector': 76, 'depth_ppm': 1378.6, 'snr': 1.3}
+    {'time_btjd': 3383.5612, 'sector': 76, 'depth_ppm': 2959.9, 'snr': 4.07}
+    {'time_btjd': 3387.7342, 'sector': 76, 'depth_ppm': 1580.7, 'snr': 1.36}
+    {'time_btjd': 3391.9072, 'sector': 76, 'depth_ppm': -517.1, 'snr': -0.65}
+    {'time_btjd': 3396.0802, 'sector': 77, 'depth_ppm': 246.3, 'snr': 0.39}
+    {'time_btjd': 3400.2532, 'sector': 77, 'depth_ppm': 1959.5, 'snr': 1.74}
+    {'time_btjd': 3404.4261, 'sector': 77, 'depth_ppm': 942.5, 'snr': 0.88}
+    {'time_btjd': 3421.118, 'sector': 77, 'depth_ppm': -1295.8, 'snr': -1.83}
+    {'time_btjd': 3441.9829, 'sector': 78, 'depth_ppm': 346.4, 'snr': 0.26}
+    {'time_btjd': 3446.1559, 'sector': 78, 'depth_ppm': 212.0, 'snr': 0.21}
+    {'time_btjd': 3454.5019, 'sector': 79, 'depth_ppm': 1376.0, 'snr': 2.54}
+    {'time_btjd': 3458.6748, 'sector': 79, 'depth_ppm': -898.2, 'snr': -0.74}
+    {'time_btjd': 3462.8478, 'sector': 79, 'depth_ppm': -468.2, 'snr': -0.39}
+    {'time_btjd': 3467.0208, 'sector': 79, 'depth_ppm': -416.8, 'snr': -0.66}
+    {'time_btjd': 3471.1938, 'sector': 79, 'depth_ppm': -121.3, 'snr': -0.11}
+    {'time_btjd': 3475.3667, 'sector': 79, 'depth_ppm': 559.5, 'snr': 0.44}
+    {'time_btjd': 3483.7127, 'sector': 80, 'depth_ppm': 1042.1, 'snr': 1.55}
+    {'time_btjd': 3487.8857, 'sector': 80, 'depth_ppm': 1626.2, 'snr': 1.55}
+    {'time_btjd': 3492.0587, 'sector': 80, 'depth_ppm': 2318.5, 'snr': 2.19}
+    {'time_btjd': 3496.2316, 'sector': 80, 'depth_ppm': 835.0, 'snr': 1.29}
+    {'time_btjd': 3500.4046, 'sector': 80, 'depth_ppm': 193.7, 'snr': 0.13}
+    {'time_btjd': 3504.5776, 'sector': 80, 'depth_ppm': -1319.0, 'snr': -0.59}
+    {'time_btjd': 3533.7884, 'sector': 82, 'depth_ppm': 1708.7, 'snr': 3.37}
+    {'time_btjd': 3537.9614, 'sector': 82, 'depth_ppm': 744.5, 'snr': 0.69}
+    {'time_btjd': 3542.1344, 'sector': 82, 'depth_ppm': 1690.8, 'snr': 1.6}
+    {'time_btjd': 3546.3074, 'sector': 82, 'depth_ppm': -1239.6, 'snr': -1.44}
+    {'time_btjd': 3550.4803, 'sector': 82, 'depth_ppm': -1013.5, 'snr': -0.93}
+    {'time_btjd': 3554.6533, 'sector': 82, 'depth_ppm': 0.8, 'snr': 0.0}
+    {'time_btjd': 3562.9993, 'sector': 83, 'depth_ppm': -174.5, 'snr': -0.31}
+    {'time_btjd': 3567.1722, 'sector': 83, 'depth_ppm': -522.1, 'snr': -0.67}
+    {'time_btjd': 3571.3452, 'sector': 83, 'depth_ppm': 1051.2, 'snr': 1.38}
+    {'time_btjd': 3575.5182, 'sector': 83, 'depth_ppm': 1262.8, 'snr': 1.15}
+    {'time_btjd': 3579.6912, 'sector': 83, 'depth_ppm': 1347.6, 'snr': 1.8}
+    {'time_btjd': 3583.8641, 'sector': 83, 'depth_ppm': -520.6, 'snr': -0.66}
+    {'time_btjd': 3588.0371, 'sector': 84, 'depth_ppm': 1928.3, 'snr': 1.2}
+    {'time_btjd': 3592.2101, 'sector': 84, 'depth_ppm': 130.4, 'snr': 0.16}
+    {'time_btjd': 3596.3831, 'sector': 84, 'depth_ppm': 53049.8, 'snr': 50.84}
+    {'time_btjd': 3600.5561, 'sector': 84, 'depth_ppm': 321.5, 'snr': 0.2}
+    {'time_btjd': 3604.729, 'sector': 84, 'depth_ppm': 1394.0, 'snr': 1.65}
+    {'time_btjd': 3608.902, 'sector': 84, 'depth_ppm': -1733.2, 'snr': -1.46}
+    {'time_btjd': 3613.075, 'sector': 85, 'depth_ppm': -1305.1, 'snr': -0.61}
+    {'time_btjd': 3617.248, 'sector': 85, 'depth_ppm': 1882.9, 'snr': 1.77}
+    {'time_btjd': 3621.4209, 'sector': 85, 'depth_ppm': 332.1, 'snr': 0.59}
+    {'time_btjd': 3625.5939, 'sector': 85, 'depth_ppm': 5165.5, 'snr': 2.41}
+    {'time_btjd': 3633.9399, 'sector': 85, 'depth_ppm': -1707.7, 'snr': -1.46}
+    {'time_btjd': 3638.1128, 'sector': 86, 'depth_ppm': -2924.2, 'snr': -1.2}
+    {'time_btjd': 3642.2858, 'sector': 86, 'depth_ppm': 2046.6, 'snr': 1.74}
+    {'time_btjd': 3646.4588, 'sector': 86, 'depth_ppm': -1279.7, 'snr': -1.37}
+    {'time_btjd': 3650.6318, 'sector': 86, 'depth_ppm': -3380.6, 'snr': -2.74}
+    {'time_btjd': 3654.8048, 'sector': 86, 'depth_ppm': 388.9, 'snr': 0.25}
+    {'time_btjd': 3658.9777, 'sector': 86, 'depth_ppm': 144.9, 'snr': 0.23}
+{
+ "tic": 233729835,
+ "tic_catalog": {
+  "ID": "233729835",
+  "ra": 277.077113847227,
+  "dec": 60.1415349130408,
+  "pmRA": 2.77435,
+  "pmDEC": 20.9197,
+  "plx": 1.91689,
+  "e_plx": 0.0161285,
+  "d": 513.943,
+  "e_d": 4.2925,
+  "Tmag": 12.6776,
+  "Vmag": 13.315,
+  "Jmag": 12.04,
+  "Teff": 5777.0,
+  "e_Teff": 125.69,
+  "logg": 4.37989,
+  "rad": 1.09044,
+  "e_rad": 0.0518015,
+  "mass": 1.04,
+  "e_mass": 0.12814,
+  "lum": 1.19319487,
+  "rho": 0.802089,
+  "contratio": 0.00717946934,
+  "GAIA": "2157920349809807360",
+  "TWOMASS": "18281851+6008295",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.031619,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 99,
+  "gallong": 89.4538108127899,
+  "gallat": 26.1100559299285,
+  "eclong": 299.521427872126,
+  "eclat": 82.8490978031021
+ },
+ "gaia_dr3": {
+  "Source": 2157920349809807360,
+  "Plx": 1.9239,
+  "e_Plx": 0.010099999606609344,
+  "RUWE": 0.965,
+  "Gmag": 13.116577,
+  "BP-RP": 0.849235,
+  "RV": -13.45,
+  "e_RV": 3.0399999618530273,
+  "Teff": 5718.9,
+  "Dist": 508.8183,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Draco",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 233729835,
+   "Tmag": 12.6776,
+   "dstArcSec": 0.0,
+   "Teff": 5777.0,
+   "d": 513.943
+  },
+  {
+   "ID": 233729836,
+   "Tmag": 15.8194,
+   "dstArcSec": 50.09355644371284,
+   "Teff": 5585.0,
+   "d": 1718.84
+  },
+  {
+   "ID": 233729840,
+   "Tmag": 16.3691,
+   "dstArcSec": 52.0875565638214,
+   "Teff": 3576.0,
+   "d": 484.151
+  },
+  {
+   "ID": 233729830,
+   "Tmag": 16.7494,
+   "dstArcSec": 41.16176667248942,
+   "Teff": 4706.0,
+   "d": 985.308
+  },
+  {
+   "ID": 233729838,
+   "Tmag": 17.1929,
+   "dstArcSec": 51.90414553536002,
+   "Teff": 3983.0,
+   "d": 866.491
+  },
+  {
+   "ID": 233729831,
+   "Tmag": 18.6316,
+   "dstArcSec": 48.00935349327982,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 1551462749,
+   "Tmag": 19.5898,
+   "dstArcSec": 13.200603027976568,
+   "Teff": null,
+   "d": 1243.73
+  },
+  {
+   "ID": 1551462751,
+   "Tmag": 19.7737,
+   "dstArcSec": 48.872191569554104,
+   "Teff": null,
+   "d": 1769.21
+  },
+  {
+   "ID": 1551462747,
+   "Tmag": 20.1223,
+   "dstArcSec": 54.49884852636755,
+   "Teff": null,
+   "d": 1835.91
+  },
+  {
+   "ID": 1551462748,
+   "Tmag": 20.2456,
+   "dstArcSec": 29.0676363400325,
+   "Teff": null,
+   "d": 1350.43
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 14",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 15",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 16",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 17",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 18",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 19",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 20",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 21",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 22",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 23",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 24",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 25",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 26",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 40",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 41",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 47",
+   "author": "QLP",
+   "exptime":
+[report] TIC 374022531
+    sector 16: 1118 points from QLP
+  all sectors: P=1.70771 d, depth=11698 ppm, SNR=26.5, 5 transits over 24 d, secondary -602.2104812662965 ppm (-1.2533382192533167 sigma), odd/even 3.750277190115364 sigma
+    {'time_btjd': 1752.6215, 'sector': 16, 'depth_ppm': 14196.4, 'snr': 27.74}
+    {'time_btjd': 1756.0369, 'sector': 16, 'depth_ppm': 9152.2, 'snr': 23.77}
+    {'time_btjd': 1757.7446, 'sector': 16, 'depth_ppm': 13511.8, 'snr': 9.66}
+    {'time_btjd': 1759.4523, 'sector': 16, 'depth_ppm': 7908.3, 'snr': 7.0}
+    {'time_btjd': 1762.8678, 'sector': 16, 'depth_ppm': 13114.0, 'snr': 3.31}
+{
+ "tic": 374022531,
+ "tic_catalog": {
+  "ID": "374022531",
+  "ra": 346.22527351893,
+  "dec": 41.308054244933,
+  "pmRA": 11.7096,
+  "pmDEC": 2.52248,
+  "plx": null,
+  "e_plx": null,
+  "d": 435.195,
+  "e_d": null,
+  "Tmag": 12.8874,
+  "Vmag": 13.634,
+  "Jmag": 12.202,
+  "Teff": 5371.0,
+  "e_Teff": null,
+  "logg": null,
+  "rad": 0.978534,
+  "e_rad": null,
+  "mass": null,
+  "e_mass": null,
+  "lum": null,
+  "rho": null,
+  "contratio": 0.0262987372,
+  "GAIA": "1930284201202746496",
+  "TWOMASS": "23045407+4118289",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": null,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 179,
+  "gallong": 102.284824722952,
+  "gallat": -17.2532086399998,
+  "eclong": 7.68730529811897,
+  "eclat": 42.5926882440326
+ },
+ "gaia_dr3": {
+  "Source": 1930284201202746496,
+  "Plx": 4.2459,
+  "e_Plx": 0.26159998774528503,
+  "RUWE": 22.55,
+  "Gmag": 13.467232,
+  "BP-RP": 0.946657,
+  "RV": -62.74,
+  "e_RV": 6.199999809265137,
+  "Teff": 5779.9,
+  "Dist": 361.7643,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Andromeda",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 374022531,
+   "Tmag": 12.8874,
+   "dstArcSec": 0.0,
+   "Teff": 5371.0,
+   "d": 435.195
+  },
+  {
+   "ID": 374022539,
+   "Tmag": 14.4198,
+   "dstArcSec": 50.664102523671566,
+   "Teff": 5464.0,
+   "d": 1195.03
+  },
+  {
+   "ID": 374022528,
+   "Tmag": 16.408,
+   "dstArcSec": 22.806970952108824,
+   "Teff": 4882.0,
+   "d": 1402.04
+  },
+  {
+   "ID": 374022532,
+   "Tmag": 17.1793,
+   "dstArcSec": 6.247749834822901,
+   "Teff": 4231.0,
+   "d": 1191.0
+  },
+  {
+   "ID": 2041443742,
+   "Tmag": 17.8426,
+   "dstArcSec": 32.76279958183086,
+   "Teff": 5694.0,
+   "d": 2778.48
+  },
+  {
+   "ID": 2041443741,
+   "Tmag": 18.6004,
+   "dstArcSec": 46.500352797109535,
+   "Teff": 3404.0,
+   "d": 396.364
+  },
+  {
+   "ID": 374022523,
+   "Tmag": 18.6004,
+   "dstArcSec": 45.46248824340877,
+   "Teff": 3404.0,
+   "d": 396.364
+  },
+  {
+   "ID": 2041443743,
+   "Tmag": 18.6046,
+   "dstArcSec": 43.97667877118752,
+   "Teff": 3413.0,
+   "d": 370.481
+  },
+  {
+   "ID": 2041443626,
+   "Tmag": 18.9971,
+   "dstArcSec": 55.49977847265831,
+   "Teff": 4791.0,
+   "d": 2412.77
+  },
+  {
+   "ID": 2041443633,
+   "Tmag": 19.0652,
+   "dstArcSec": 61.76769663712163,
+   "Teff": 4931.0,
+   "d": 1846.4
+  },
+  {
+   "ID": 2041443631,
+   "Tmag": 19.6542,
+   "dstArcSec": 57.88748298449798,
+   "Teff": null,
+   "d": 1531.54
+  },
+  {
+   "ID": 2041443744,
+   "Tmag": 20.6514,
+   "dstArcSec": 26.834069559215898,
+   "Teff": null,
+   "d": null
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 16",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  }
+ ]
+}
+[report] TIC 374098817
+    sector 16: 921 points from TESS-SPOC
+    sector 56: 11764 points from TESS-SPOC
+    sector 57: 10788 points from TESS-SPOC
+    sector 83: 10462 points from TESS-SPOC
+    sector 84: 8187 points from TESS-SPOC
+  all sectors: P=0.83073 d, depth=296 ppm, SNR=13.0, 119 transits over 1871 d, secondary -28.054201352878394 ppm (-1.0170782235130207 sigma), odd/even 1.238592341397693 sigma
+    {'time_btjd': 1739.0954, 'sector': 16, 'depth_ppm': -113.5, 'snr': -0.31}
+    {'time_btjd': 1744.0798, 'sector': 16, 'depth_ppm': 254.1, 'snr': 3.88}
+    {'time_btjd': 1744.9105, 'sector': 16, 'depth_ppm': -122.6, 'snr': -0.57}
+    {'time_btjd': 1745.7413, 'sector': 16, 'depth_ppm': 914.9, 'snr': 3.0}
+    {'time_btjd': 1752.3871, 'sector': 16, 'depth_ppm': -6.1, 'snr': -0.02}
+    {'time_btjd': 1757.3714, 'sector': 16, 'depth_ppm': 369.3, 'snr': 1.5}
+    {'time_btjd': 1758.2022, 'sector': 16, 'depth_ppm': 922.7, 'snr': 2.83}
+    {'time_btjd': 1759.0329, 'sector': 16, 'depth_ppm': 649.7, 'snr': 3.94}
+    {'time_btjd': 2825.6868, 'sector': 56, 'depth_ppm': 322.9, 'snr': 1.7}
+    {'time_btjd': 2826.5175, 'sector': 56, 'depth_ppm': 555.1, 'snr': 2.68}
+    {'time_btjd': 2827.3483, 'sector': 56, 'depth_ppm': -25.4, 'snr': -0.17}
+    {'time_btjd': 2828.179, 'sector': 56, 'depth_ppm': 257.1, 'snr': 0.82}
+    {'time_btjd': 2829.0097, 'sector': 56, 'depth_ppm': -46.0, 'snr': -0.2}
+    {'time_btjd': 2829.8404, 'sector': 56, 'depth_ppm': 261.5, 'snr': 1.43}
+    {'time_btjd': 2830.6712, 'sector': 56, 'depth_ppm': -67.0, 'snr': -0.29}
+    {'time_btjd': 2831.5019, 'sector': 56, 'depth_ppm': 280.9, 'snr': 0.99}
+    {'time_btjd': 2832.3326, 'sector': 56, 'depth_ppm': 258.5, 'snr': 1.13}
+    {'time_btjd': 2833.1634, 'sector': 56, 'depth_ppm': 887.0, 'snr': 3.1}
+    {'time_btjd': 2833.9941, 'sector': 56, 'depth_ppm': 440.9, 'snr': 1.93}
+    {'time_btjd': 2834.8248, 'sector': 56, 'depth_ppm': 453.0, 'snr': 2.38}
+    {'time_btjd': 2835.6555, 'sector': 56, 'depth_ppm': 408.1, 'snr': 1.4}
+    {'time_btjd': 2836.4863, 'sector': 56, 'depth_ppm': 605.9, 'snr': 2.09}
+    {'time_btjd': 2837.317, 'sector': 56, 'depth_ppm': 233.5, 'snr': 0.88}
+    {'time_btjd': 2838.1477, 'sector': 56, 'depth_ppm': 346.1, 'snr': 1.0}
+    {'time_btjd': 2838.9784, 'sector': 56, 'depth_ppm': 591.9, 'snr': 3.49}
+    {'time_btjd': 2839.8092, 'sector': 56, 'depth_ppm': 481.5, 'snr': 1.44}
+    {'time_btjd': 2840.6399, 'sector': 56, 'depth_ppm': 45.4, 'snr': 0.18}
+    {'time_btjd': 2841.4706, 'sector': 56, 'depth_ppm': 123.3, 'snr': 0.57}
+    {'time_btjd': 2842.3014, 'sector': 56, 'depth_ppm': -29.8, 'snr': -0.14}
+    {'time_btjd': 2843.1321, 'sector': 56, 'depth_ppm': 515.2, 'snr': 1.81}
+    {'time_btjd': 2843.9628, 'sector': 56, 'depth_ppm': 166.6, 'snr': 0.73}
+    {'time_btjd': 2844.7935, 'sector': 56, 'depth_ppm': 518.1, 'snr': 1.82}
+    {'time_btjd': 2845.6243, 'sector': 56, 'depth_ppm': -112.2, 'snr': -0.4}
+    {'time_btjd': 2846.455, 'sector': 56, 'depth_ppm': 527.6, 'snr': 3.06}
+    {'time_btjd': 2847.2857, 'sector': 56, 'depth_ppm': 167.7, 'snr': 0.53}
+    {'time_btjd': 2848.1164, 'sector': 56, 'depth_ppm': 164.3, 'snr': 0.8}
+    {'time_btjd': 2848.9472, 'sector': 56, 'depth_ppm': 382.0, 'snr': 1.91}
+    {'time_btjd': 2849.7779, 'sector': 56, 'depth_ppm': 391.5, 'snr': 2.47}
+    {'time_btjd': 2850.6086, 'sector': 56, 'depth_ppm': 806.4, 'snr': 2.83}
+    {'time_btjd': 2851.4394, 'sector': 56, 'depth_ppm': -248.6, 'snr': -0.76}
+    {'time_btjd': 2852.2701, 'sector': 56, 'depth_ppm': 593.7, 'snr': 1.51}
+    {'time_btjd': 2853.9315, 'sector': 57, 'depth_ppm': 13.6, 'snr': 0.05}
+    {'time_btjd': 2854.7623, 'sector': 57, 'depth_ppm': 303.8, 'snr': 1.5}
+    {'time_btjd': 2855.593, 'sector': 57, 'depth_ppm': 67.8, 'snr': 0.24}
+    {'time_btjd': 2856.4237, 'sector': 57, 'depth_ppm': 156.6, 'snr': 0.92}
+    {'time_btjd': 2857.2544, 'sector': 57, 'depth_ppm': 502.4, 'snr': 2.03}
+    {'time_btjd': 2858.0852, 'sector': 57, 'depth_ppm': 941.8, 'snr': 3.48}
+    {'time_btjd': 2858.9159, 'sector': 57, 'depth_ppm': -147.5, 'snr': -0.47}
+    {'time_btjd': 2859.7466, 'sector': 57, 'depth_ppm': -704.5, 'snr': -3.08}
+    {'time_btjd': 2860.5774, 'sector': 57, 'depth_ppm': 1107.5, 'snr': 3.12}
+    {'time_btjd': 2861.4081, 'sector': 57, 'depth_ppm': 559.2, 'snr': 3.32}
+    {'time_btjd': 2862.2388, 'sector': 57, 'depth_ppm': 943.6, 'snr': 4.17}
+    {'time_btjd': 2867.2232, 'sector': 57, 'depth_ppm': 74.8, 'snr': 0.25}
+    {'time_btjd': 2868.0539, 'sector': 57, 'depth_ppm': 26.1, 'snr': 0.09}
+    {'time_btjd': 2868.8846, 'sector': 57, 'depth_ppm': 186.0, 'snr': 0.6}
+    {'time_btjd': 2869.7154, 'sector': 57, 'depth_ppm': 315.0, 'snr': 1.4}
+    {'time_btjd': 2870.5461, 'sector': 57, 'depth_ppm': 463.9, 'snr': 2.26}
+    {'time_btjd': 2871.3768, 'sector': 57, 'depth_ppm': -36.2, 'snr': -0.22}
+    {'time_btjd': 2872.2075, 'sector': 57, 'depth_ppm': 166.2, 'snr': 0.82}
+    {'time_btjd': 2873.0383, 'sector': 57, 'depth_ppm': 424.3, 'snr': 2.07}
+    {'time_btjd': 2873.869, 'sector': 57, 'depth_ppm': 464.8, 'snr': 1.33}
+    {'time_btjd': 2875.5304, 'sector': 57, 'depth_ppm': 42.0, 'snr': 0.17}
+    {'time_btjd': 2876.3612, 'sector': 57, 'depth_ppm': 553.4, 'snr': 1.3}
+    {'time_btjd': 2877.1919, 'sector': 57, 'depth_ppm': 484.3, 'snr': 1.56}
+    {'time_btjd': 2878.0226, 'sector': 57, 'depth_ppm': -202.3, 'snr': -1.26}
+    {'time_btjd': 2878.8534, 'sector': 57, 'depth_ppm': 299.2, 'snr': 1.26}
+    {'time_btjd': 2879.6841, 'sector': 57, 'depth_ppm': 355.2, 'snr': 1.79}
+    {'time_btjd': 2880.5148, 'sector': 57, 'depth_ppm': 68.9, 'snr': 0.37}
+    {'time_btjd': 2881.3455, 'sector': 57, 'depth_ppm': 1019.9, 'snr': 5.52}
+    {'time_btjd': 3560.0498, 'sector': 83, 'depth_ppm': 403.4, 'snr': 1.12}
+    {'time_btjd': 3560.8805, 'sector': 83, 'depth_ppm': 721.4, 'snr': 2.65}
+    {'time_btjd': 3561.7112, 'sector': 83, 'depth_ppm': 336.0, 'snr': 1.33}
+    {'time_btjd': 3562.542, 'sector': 83, 'depth_ppm': 256.9, 'snr': 1.49}
+    {'time_btjd': 3563.3727, 'sector': 83, 'depth_ppm': 820.0, 'snr': 2.6}
+    {'time_btjd': 3564.2034, 'sector': 83, 'depth_ppm': 298.5, 'snr': 1.16}
+    {'time_btjd': 3565.0341, 'sector': 83, 'depth_ppm': -630.2, 'snr': -0.93}
+    {'time_btjd': 3565.8649, 'sector': 83, 'depth_ppm': 501.6, 'snr': 2.18}
+    {'time_btjd': 3566.6956, 'sector': 83, 'depth_ppm': 372.5, 'snr': 1.55}
+    {'time_btjd': 3567.5263, 'sector': 83, 'depth_ppm': 413.5, 'snr': 2.69}
+    {'time_btjd': 3568.357, 'sector': 83, 'depth_ppm': 468.7, 'snr': 2.51}
+    {'time_btjd': 3569.1878, 'sector': 83, 'depth_ppm': 137.3, 'snr': 0.48}
+    {'time_btjd': 3570.0185, 'sector': 83, 'depth_ppm': 172.9, 'snr': 1.15}
+    {'time_btjd': 3570.8492, 'sector': 83, 'depth_ppm': -305.8, 'snr': -1.71}
+    {'time_btjd': 3571.68, 'sector': 83, 'depth_ppm': -357.8, 'snr': -0.85}
+    {'time_btjd': 3572.5107, 'sector': 83, 'depth_ppm': 556.1, 'snr': 2.33}
+    {'time_btjd': 3573.3414, 'sector': 83, 'depth_ppm': -182.3, 'snr': -0.84}
+    {'time_btjd': 3574.1721, 'sector': 83, 'depth_ppm': -49.6, 'snr': -0.22}
+    {'time_btjd': 3575.0029, 'sector': 83, 'depth_ppm': -193.6, 'snr': -0.69}
+    {'time_btjd': 3575.8336, 'sector': 83, 'depth_ppm': 880.7, 'snr': 3.56}
+    {'time_btjd': 3576.6643, 'sector': 83, 'depth_ppm': 586.3, 'snr': 2.96}
+    {'time_btjd': 3577.495, 'sector': 83, 'depth_ppm': 426.5, 'snr': 1.94}
+    {'time_btjd': 3578.3258, 'sector': 83, 'depth_ppm': 298.6, 'snr': 1.59}
+    {'time_btjd': 3579.1565, 'sector': 83, 'depth_ppm': 334.8, 'snr': 1.32}
+    {'time_btjd': 3579.9872, 'sector': 83, 'depth_ppm': 886.6, 'snr': 3.87}
+    {'time_btjd': 3580.818, 'sector': 83, 'depth_ppm': 513.1, 'snr': 5.13}
+    {'time_btjd': 3581.6487, 'sector': 83, 'depth_ppm': 232.9, 'snr': 0.93}
+    {'time_btjd': 3582.4794, 'sector': 83, 'depth_ppm': 400.5, 'snr': 1.95}
+    {'time_btjd': 3583.3101, 'sector': 83, 'depth_ppm': -3.4, 'snr': -0.02}
+    {'time_btjd': 3584.9716, 'sector': 84, 'depth_ppm': 389.9, 'snr': 4.15}
+    {'time_btjd': 3588.2945, 'sector': 84, 'depth_ppm': -148.4, 'snr': -0.58}
+    {'time_btjd': 3589.1252, 'sector': 84, 'depth_ppm': 287.0, 'snr': 1.11}
+    {'time_btjd': 3589.956, 'sector': 84, 'depth_ppm': 575.8, 'snr': 1.37}
+    {'time_btjd': 3590.7867, 'sector': 84, 'depth_ppm': 480.0, 'snr': 1.5}
+    {'time_btjd': 3591.6174, 'sector': 84, 'depth_ppm': 533.0, 'snr': 1.91}
+    {'time_btjd': 3592.4481, 'sector': 84, 'depth_ppm': -307.7, 'snr': -1.24}
+    {'time_btjd': 3593.2789, 'sector': 84, 'depth_ppm': 551.8, 'snr': 1.44}
+    {'time_btjd': 3594.1096, 'sector': 84, 'depth_ppm': 177.4, 'snr': 0.75}
+    {'time_btjd': 3594.9403, 'sector': 84, 'depth_ppm': 411.4, 'snr': 1.34}
+    {'time_btjd': 3595.7711, 'sector': 84, 'depth_ppm': 45.0, 'snr': 0.1}
+    {'time_btjd': 3596.6018, 'sector': 84, 'depth_ppm': 411.4, 'snr': 1.71}
+    {'time_btjd': 3602.4169, 'sector': 84, 'depth_ppm': 1105.7, 'snr': 3.83}
+    {'time_btjd': 3603.2476, 'sector': 84, 'depth_ppm': 876.9, 'snr': 2.67}
+    {'time_btjd': 3604.9091, 'sector': 84, 'depth_ppm': 564.2, 'snr': 2.02}
+    {'time_btjd': 3605.7398, 'sector': 84, 'depth_ppm': 287.1, 'snr': 1.05}
+    {'time_btjd': 3606.5705, 'sector': 84, 'depth_ppm': 197.8, 'snr': 0.8}
+    {'time_btjd': 3607.4012, 'sector': 84, 'depth_ppm': 562.7, 'snr': 1.83}
+    {'time_btjd': 3608.232, 'sector': 84, 'depth_ppm': 255.4, 'snr': 1.04}
+    {'time_btjd': 3609.0627, 'sector': 84, 'depth_ppm': 19.1, 'snr': 0.07}
+    {'time_btjd': 3609.8934, 'sector': 84, 'depth_ppm': 69.2, 'snr': 0.34}
+{
+ "tic": 374098817,
+ "tic_catalog": {
+  "ID": "374098817",
+  "ra": 347.054951907576,
+  "dec": 40.7822744627378,
+  "pmRA": -6.64164,
+  "pmDEC": -14.481,
+  "plx": 2.92776,
+  "e_plx": 0.0304309,
+  "d": 338.26,
+  "e_d": 3.5085,
+  "Tmag": 10.6869,
+  "Vmag": 11.06,
+  "Jmag": 10.184,
+  "Teff": 6496.0,
+  "e_Teff": 126.947,
+  "logg": 4.21555,
+  "rad": 1.48999,
+  "e_rad": 0.063799,
+  "mass": 1.33,
+  "e_mass": 0.22336,
+  "lum": 3.56159329,
+  "rho": 0.402072,
+  "contratio": 0.0572536066,
+  "GAIA": "1930428340301354496",
+  "TWOMASS": "23081318+4046562",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.0399844,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 187,
+  "gallong": 102.655299902601,
+  "gallat": -17.9903031138506,
+  "eclong": 8.03672642020006,
+  "eclat": 41.8174535586907
+ },
+ "gaia_dr3": {
+  "Source": 1930428340301354496,
+  "Plx": 2.9562,
+  "e_Plx": 0.017000000923871994,
+  "RUWE": 1.03,
+  "Gmag": 11.033686,
+  "BP-RP": 0.651457,
+  "RV": -2.08,
+  "e_RV": 0.47999998927116394,
+  "Teff": 6522.6,
+  "Dist": 336.4186,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Andromeda",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [],
+ "simbad_10arcsec": [
+  {
+   "main_id": "TYC 3220-1261-1",
+   "ra": 347.05495204792993,
+   "dec": 40.7822745955,
+   "coo_err_maj": 0.011099999770522118,
+   "coo_err_min": 0.013000000268220901,
+   "coo_err_angle": 90,
+   "coo_wavelength": "O",
+   "coo_bibcode": "2020yCat.1350....0G",
+   "otype": "*",
+   "ids": "TIC 374098817|Gaia DR3 1930428340301354496|GSC 03220-01261|TYC 3220-1261-1|2MASS J23081318+4046562|Gaia DR1 1930428336006478848|Gaia DR2 1930428340301354496"
+  }
+ ],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 374098817,
+   "Tmag": 10.6869,
+   "dstArcSec": 0.0,
+   "Teff": 6496.0,
+   "d": 338.26
+  },
+  {
+   "ID": 374098814,
+   "Tmag": 13.7267,
+   "dstArcSec": 20.700722969236367,
+   "Teff": 5922.0,
+   "d": 1279.88
+  },
+  {
+   "ID": 374098825,
+   "Tmag": 16.6638,
+   "dstArcSec": 28.65410472887213,
+   "Teff": 5529.0,
+   "d": 1879.18
+  },
+  {
+   "ID": 374098805,
+   "Tmag": 17.4864,
+   "dstArcSec": 55.32416876602696,
+   "Teff": 4886.0,
+   "d": 1912.25
+  },
+  {
+   "ID": 374098818,
+   "Tmag": 17.67,
+   "dstArcSec": 30.50298086909014,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 374098822,
+   "Tmag": 17.7728,
+   "dstArcSec": 9.648074916400903,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 2041453956,
+   "Tmag": 18.4988,
+   "dstArcSec": 33.39657279113912,
+   "Teff": 4792.0,
+   "d": 2711.81
+  },
+  {
+   "ID": 374098823,
+   "Tmag": 18.659,
+   "dstArcSec": 18.49010711722142,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 2041454007,
+   "Tmag": 19.0283,
+   "dstArcSec": 45.215809330628545,
+   "Teff": null,
+   "d": 637.419
+  },
+  {
+   "ID": 2041453957,
+   "Tmag": 19.7013,
+   "dstArcSec": 11.83663634887673,
+   "Teff": null,
+   "d": 2114.44
+  },
+  {
+   "ID": 2041454009,
+   "Tmag": 19.8244,
+   "dstArcSec": 44.89743168095833,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 2041453952,
+   "Tmag": 20.0102,
+   "dstArcSec": 44.98421654823883,
+   "Teff": null,
+   "d": 1359.03
+  },
+  {
+   "ID": 2041454010,
+   "Tmag": 20.3012,
+   "dstArcSec": 23.010101462197788,
+   "Teff": null,
+   "d": 1630.37
+  },
+  {
+   "ID": 2041454008,
+   "Tmag": 20.6801,
+   "dstArcSec": 62.975613191351655,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 2041454012,
+   "Tmag": 20.6921,
+   "dstArcSec": 16.982376232793616,
+   "Teff": null,
+   "d": null
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 16",
+   "author": "TESS-SPOC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 56",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 57",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2022
+  },
+  {
+   "mission": "TESS Sector 83",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 84",
+   "author": "TESS-SPOC",
+   "exptime": 200.0,
+   "year": 2024
+  

@@ -1,0 +1,366 @@
+{
+ "tic": 344023003,
+ "candidate": {
+  "id": "TIC344023003.02",
+  "tic": 344023003,
+  "signal": 2,
+  "date": "2026-10-13",
+  "status": "candidate",
+  "score": 0.7724,
+  "period": 0.633655,
+  "t0_btjd": 3663.51462,
+  "duration_hr": 1.944,
+  "depth_ppm": 3479.9,
+  "rp_earth": 8.36,
+  "sde": 21.91,
+  "snr": 40.31,
+  "n_transits": 127,
+  "flags": null,
+  "note": null,
+  "tmag": 12.4594,
+  "teff": 6467.0,
+  "rstar": 1.29917,
+  "ra": 107.7623383734,
+  "dec": -48.2496269593,
+  "sectors": "87 88 89",
+  "plot": "TIC344023003.02.png",
+  "f_log_sde": 1.3406,
+  "f_log_snr": 1.6054,
+  "f_log_depth_ppm": 3.6318,
+  "f_log_dur_ratio": 0.0112,
+  "f_log_q": -0.8934,
+  "f_odd_even_sigma": 0.7907,
+  "f_secondary_snr": 0.0,
+  "f_half_period_snr": 30.0,
+  "f_shape": 0.5892,
+  "f_log_n_transits": 2.1038,
+  "f_single_dominance": 0.0185,
+  "f_log_rp": 0.9223,
+  "f_harmonic_dll": -0.236,
+  "f_depth_consistency": 0.0089,
+  "f_centroid_sigma": null
+ },
+ "tic_catalog": {
+  "ID": "344023003",
+  "ra": 107.762338373448,
+  "dec": -48.2496269593285,
+  "pmRA": 0.123465,
+  "pmDEC": 8.68218,
+  "plx": 1.52362,
+  "e_plx": 0.0252426,
+  "d": 644.267,
+  "e_d": 10.5595,
+  "Tmag": 12.4594,
+  "Vmag": 13.004,
+  "Jmag": 11.912,
+  "Teff": 6467.0,
+  "e_Teff": 130.615,
+  "logg": 4.33131,
+  "rad": 1.29917,
+  "e_rad": 0.0615327,
+  "mass": 1.32,
+  "e_mass": 0.202042,
+  "lum": 2.65974665,
+  "rho": 0.601967,
+  "contratio": 0.08680061,
+  "GAIA": "5508695199535968256",
+  "TWOMASS": "07110295-4814585",
+  "lumclass": "DWARF",
+  "MH": null,
+  "ebv": 0.069585,
+  "objType": "STAR",
+  "disposition": null,
+  "numcont": 224,
+  "gallong": 259.052770835611,
+  "gallat": -16.8302933769813,
+  "eclong": 125.475409691874,
+  "eclat": -69.5107906308486
+ },
+ "gaia_dr3": {
+  "Source": 5508695199535968256,
+  "Plx": 1.5827,
+  "e_Plx": 0.014800000004470348,
+  "RUWE": 1.399,
+  "Gmag": 12.82567,
+  "BP-RP": 0.700753,
+  "RV": 34.84,
+  "e_RV": 1.899999976158142,
+  "Teff": 6331.2,
+  "Dist": 630.5117,
+  "NSS": 0,
+  "VarFlag": "NOT_AVAILABLE"
+ },
+ "constellation": "Puppis",
+ "gaia_eclipsing_binaries_5arcsec": [],
+ "gaia_variables_5arcsec": [],
+ "vsx_variables_60arcsec": [
+  {
+   "_r": 39.18,
+   "recno": 1538625,
+   "OID": 718014,
+   "Name": "ASASSN-V J071100.96-481425.0",
+   "V": 0,
+   "RAJ2000": 107.75399017333984,
+   "DEJ2000": -48.24028015136719,
+   "Type": "EA",
+   "l_max": "",
+   "max": 14.98,
+   "u_max": "",
+   "n_max": "V",
+   "f_min": "",
+   "l_min": "",
+   "min": 15.2,
+   "u_min": "",
+   "n_min": "V",
+   "Epoch": 2458385.843,
+   "u_Epoch": "",
+   "l_Period": "",
+   "Period": 0.63365,
+   "u_Period": "",
+   "Sp": "",
+   "n_OID": ""
+  }
+ ],
+ "simbad_10arcsec": [],
+ "neighbours_tic_63arcsec": [
+  {
+   "ID": 344023003,
+   "Tmag": 12.4594,
+   "dstArcSec": 0.0,
+   "Teff": 6467.0,
+   "d": 644.267
+  },
+  {
+   "ID": 344022999,
+   "Tmag": 14.5835,
+   "dstArcSec": 28.788616668199687,
+   "Teff": 3948.0,
+   "d": 399.919
+  },
+  {
+   "ID": 344022997,
+   "Tmag": 14.7533,
+   "dstArcSec": 39.16303528056569,
+   "Teff": 6771.0,
+   "d": 2060.0
+  },
+  {
+   "ID": 344023008,
+   "Tmag": 16.823,
+   "dstArcSec": 44.78669442928461,
+   "Teff": null,
+   "d": null
+  },
+  {
+   "ID": 767637716,
+   "Tmag": 17.4123,
+   "dstArcSec": 38.24757297639939,
+   "Teff": null,
+   "d": 3020.12
+  },
+  {
+   "ID": 767637705,
+   "Tmag": 17.5689,
+   "dstArcSec": 62.314904838988014,
+   "Teff": 5383.0,
+   "d": 3246.06
+  },
+  {
+   "ID": 767637703,
+   "Tmag": 17.5701,
+   "dstArcSec": 24.305789354286517,
+   "Teff": 5276.0,
+   "d": 2199.88
+  },
+  {
+   "ID": 767637714,
+   "Tmag": 17.7047,
+   "dstArcSec": 56.52561160893871,
+   "Teff": 5267.0,
+   "d": 2007.85
+  },
+  {
+   "ID": 344023015,
+   "Tmag": 17.9912,
+   "dstArcSec": 62.04105961242827,
+   "Teff": 3977.0,
+   "d": 1261.04
+  },
+  {
+   "ID": 767637697,
+   "Tmag": 19.3121,
+   "dstArcSec": 37.874388044521545,
+   "Teff": 4257.0,
+   "d": 1325.45
+  },
+  {
+   "ID": 767637706,
+   "Tmag": 19.3674,
+   "dstArcSec": 48.477086252343064,
+   "Teff": 5194.0,
+   "d": 2608.11
+  },
+  {
+   "ID": 767637704,
+   "Tmag": 19.3973,
+   "dstArcSec": 29.83132596604433,
+   "Teff": 3882.0,
+   "d": 1760.21
+  },
+  {
+   "ID": 767637702,
+   "Tmag": 19.6872,
+   "dstArcSec": 51.19362116361433,
+   "Teff": null,
+   "d": 1261.58
+  },
+  {
+   "ID": 767637712,
+   "Tmag": 19.6989,
+   "dstArcSec": 62.805650545521566,
+   "Teff": null,
+   "d": 1810.9
+  },
+  {
+   "ID": 767637715,
+   "Tmag": 19.797,
+   "dstArcSec": 60.23124376346375,
+   "Teff": null,
+   "d": 2232.18
+  }
+ ],
+ "tess_coverage": [
+  {
+   "mission": "TESS Sector 06",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2018
+  },
+  {
+   "mission": "TESS Sector 07",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 08",
+   "author": "QLP",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 33",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2020
+  },
+  {
+   "mission": "TESS Sector 34",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 35",
+   "author": "QLP",
+   "exptime": 600.0,
+   "year": 2021
+  },
+  {
+   "mission": "TESS Sector 61",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2023
+  },
+  {
+   "mission": "TESS Sector 62",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2023
+  },
+  {
+   "mission": "TESS Sector 87",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2024
+  },
+  {
+   "mission": "TESS Sector 88",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2025
+  },
+  {
+   "mission": "TESS Sector 89",
+   "author": "QLP",
+   "exptime": 200.0,
+   "year": 2025
+  },
+  {
+   "mission": "TESS Sector 06",
+   "author": "GSFC-ELEANOR-LITE",
+   "exptime": 1800.0,
+   "year": 2018
+  },
+  {
+   "mission": "TESS Sector 07",
+   "author": "GSFC-ELEANOR-LITE",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 08",
+   "author": "GSFC-ELEANOR-LITE",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 06",
+   "author": "T16",
+   "exptime": 1800.0,
+   "year": 2018
+  },
+  {
+   "mission": "TESS Sector 07",
+   "author": "T16",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 08",
+   "author": "T16",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 06",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2018
+  },
+  {
+   "mission": "TESS Sector 06",
+   "author": "TASOC",
+   "exptime": 1800.0,
+   "year": 2018
+  },
+  {
+   "mission": "TESS Sector 06",
+   "author": "TGLC",
+   "exptime": 1800.0,
+   "year": 2018
+  },
+  {
+   "mission": "TESS Sector 07",
+   "author": "TGLC",
+   "exptime": 1800.0,
+   "year": 2019
+  },
+  {
+   "mission": "TESS Sector 08",
+   "author": "TGLC",
+   "exptime": 1800.0,
+   "year": 2019
+  }
+ ]
+}
