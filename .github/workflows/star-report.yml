@@ -1,0 +1,33 @@
+name: Candidate deep dive
+
+# Pulls everything known about candidate stars (distance, Gaia DR3, variable-star
+# catalogs, SIMBAD, neighbours, every TESS sector) for writing candidate reports.
+on:
+  workflow_dispatch:
+    inputs:
+      tics:
+        description: "TIC IDs, space separated"
+        default: "267889592 415954197"
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m tph report ${{ github.event.inputs.tics || '267889592 415954197' }}
+      - name: Commit
+        run: |
+          git config user.name "tess-hunter-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/reports || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "bot: candidate deep-dive data"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && break; sleep 10; done

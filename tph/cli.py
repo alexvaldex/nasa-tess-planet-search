@@ -310,6 +310,12 @@ def cmd_verify(a):
     build()
 
 
+def cmd_report(a):
+    from .report import build
+    for t in a.tics:
+        build(int(t))
+
+
 def cmd_revet(a):
     from . import postprocess
     from .dashboard import build
@@ -367,6 +373,7 @@ def main():
     p = sub.add_parser("dashboard"); p.set_defaults(fn=cmd_dashboard)
     p = sub.add_parser("revet"); p.set_defaults(fn=cmd_revet)
     p = sub.add_parser("verify"); p.set_defaults(fn=cmd_verify)
+    p = sub.add_parser("report"); p.add_argument("tics", nargs="+"); p.set_defaults(fn=cmd_report)
     p = sub.add_parser("demo"); p.add_argument("--seed", type=int)
     p.add_argument("--rp", type=float, default=2.5); p.add_argument("--period", type=float, default=4.37)
     p.set_defaults(fn=cmd_demo)
