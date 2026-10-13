@@ -74,6 +74,40 @@ def centroid_sigma(lc, sig):
     return float(min(np.hypot(mx / ex, my / ey), 50.0))
 
 
+def wave_ratio(series, depth):
+    """Peak-to-peak swing of a binned out-of-transit series relative to the dip depth,
+    counted only if the swing is *smooth* (neighbouring bins agree, lag-1 autocorrelation
+    above 0.5). Random noise gives a big spread but no smoothness, so it doesn't count."""
+    v = np.asarray(series, float)
+    v = v[np.isfinite(v)]
+    if v.size < 6 or depth <= 0:
+        return np.nan
+    d = v - v.mean()
+    den = np.sum(d * d)
+    ac = np.sum(d[1:] * d[:-1]) / den if den > 0 else 0.0
+    if ac < 0.5:
+        return 0.0
+    return float((np.percentile(v, 95) - np.percentile(v, 5)) / depth)
+
+
+def oot_variability(t, f, period, t0, duration, nbins=40):
+    """How much does the star's brightness swing *outside* the transit, relative to the
+    dip itself? Planets: the folded light curve is flat apart from the dip (~0).
+    Pulsating or spotted stars and contact binaries: a smooth wave as large as the 'dip'."""
+    ph = ((t - t0) / period) % 1.0                    # transit at 0 and 1, so out-of-transit is contiguous
+    half_w = max(duration / period, 1.0 / nbins)
+    edges = np.linspace(0, 1, nbins + 1)
+    idx = np.clip(np.digitize(ph, edges) - 1, 0, nbins - 1)
+    centers = 0.5 * (edges[:-1] + edges[1:])
+    med = np.array([np.median(f[idx == i]) if (idx == i).sum() >= 3 else np.nan for i in range(nbins)])
+    out = (centers > 1.5 * half_w) & (centers < 1 - 1.5 * half_w)
+    dist = np.minimum(ph, 1 - ph)
+    inn = dist < 0.5 * duration / period
+    if np.sum(np.isfinite(med[out])) < 6 or inn.sum() < 3:
+        return np.nan
+    return wave_ratio(med[out], 1 - np.median(f[inn]))
+
+
 def expected_duration(period, rstar=1.0, mstar=1.0):
     """Central-transit duration (days) for a circular orbit around the given star."""
     a_au = (mstar * (period / 365.25) ** 2) ** (1.0 / 3.0)
@@ -145,7 +179,8 @@ def compute_features(t, f, e, sig, rstar=1.0, mstar=1.0, lc=None):
     }
     extras = {"rp_earth": float(rp), "n_transits": n_tr, "depth_ppm": max(robust_depth, 0) * 1e6,
               "box_depth_ppm": depth * 1e6, "duration_hr": dur * 24,
-              "outlier_ratio": float(depth / max(robust_depth, sig.depth_err, 1e-7))}
+              "outlier_ratio": float(depth / max(robust_depth, sig.depth_err, 1e-7)),
+              "oot_ratio": oot_variability(t, f, P, t0, dur), "dur_ratio": float(dur_ratio)}
     return feats, extras
 
 
@@ -168,6 +203,11 @@ def rule_flags(feats, extras):
         flags.append("outlier_driven")
     if np.isfinite(feats.get("centroid_sigma", np.nan)) and feats["centroid_sigma"] > 4:
         flags.append("centroid_shift")
+    oot = extras.get("oot_ratio", np.nan)
+    if (np.isfinite(oot) and oot > 0.5) or feats["secondary_snr"] < -4:
+        flags.append("variable_star")       # smooth brightness wave, not a transit
+    if extras.get("dur_ratio", 1.0) < 0.33:
+        flags.append("too_short")           # far shorter than this star allows: grazing binary or noise
     return flags
 
 

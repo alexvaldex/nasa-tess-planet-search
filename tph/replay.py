@@ -95,11 +95,16 @@ def check_record(sig, feats, extras, flags, score, status, note, known):
           else f"dip-to-dip variation {10 ** feats['depth_consistency']:.1f}x the noise (fail above 3x)"),
          not (np.isfinite(feats.get("depth_consistency", np.nan)) and 10 ** feats["depth_consistency"] > 3),
          "A planet blocks the same amount of light on every orbit."),
+        ("Not a pulsating star",
+         ("not enough phase coverage" if not np.isfinite(extras.get("oot_ratio", np.nan))
+          else f"brightness swing outside the dip is {100 * extras['oot_ratio']:.0f}% of the dip (fail above 50%)"),
+         not (np.isfinite(extras.get("oot_ratio", np.nan)) and extras["oot_ratio"] > 0.5) and feats["secondary_snr"] >= -4,
+         "Pulsating and spotted stars make smooth waves that can look like dips."),
         ("Planet-sized", f"{extras['rp_earth']:.1f} Earth radii (max {config.MAX_PLANET_RADIUS_EARTH:g})",
          extras["rp_earth"] <= config.MAX_PLANET_RADIUS_EARTH,
          "Anything much bigger than Jupiter is a star, not a planet."),
         ("Duration fits the star", f"{dr:.2f}x the expected transit length",
-         0.25 <= dr <= 3.0,
+         0.33 <= dr <= 3.0,
          "Kepler's laws predict how long a transit should last for this star and period."),
     ]
     if known is not None:

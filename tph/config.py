@@ -39,5 +39,6 @@ MIN_TRANSITS = 3
 
 # --- Ranking ----------------------------------------------------------------
 STRONG_SCORE = 0.8
+STRONG_SNR = 10.0               # weaker signals stay 'candidate' however planet-like they look
 CANDIDATE_SCORE = 0.5
 MAX_PLANET_RADIUS_EARTH = 25.0   # bigger than ~2.2 Jupiter radii is almost surely a star

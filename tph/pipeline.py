@@ -7,16 +7,21 @@ import numpy as np
 from . import config, detrend, model, plots, replay, search, vet
 
 
-def classify(score, flags, known_status):
+def classify(score, flags, known_status, snr=None, dur_ratio=None):
     if known_status != "new":
         return known_status
-    if {"single_event", "common_period", "outlier_driven"} & set(flags):
+    fl = set(flags)
+    if {"single_event", "common_period", "outlier_driven"} & fl:
         return "systematic"          # instrument artefact, not astrophysical
-    if {"too_large", "secondary", "odd_even", "centroid_shift"} & set(flags):
+    if "variable_star" in fl:
+        return "variable_star"       # pulsating / spotted star or contact binary
+    if {"too_large", "secondary", "odd_even", "centroid_shift"} & fl:
         return "likely_eb"
     if not np.isfinite(score):
         return "candidate"
-    if score >= config.STRONG_SCORE and not flags:
+    strong_ok = ((snr is None or snr >= config.STRONG_SNR) and not fl
+                 and (dur_ratio is None or dur_ratio >= 0.5))
+    if score >= config.STRONG_SCORE and strong_ok:
         return "strong_candidate"
     if score >= config.CANDIDATE_SCORE:
         return "candidate"
@@ -59,7 +64,7 @@ def analyze(star, lc, known=None, make_plots=True):
         if known is not None:
             known_status, note = known.classify(star["tic"], star.get("ra", np.nan),
                                                 star.get("dec", np.nan), sig.period)
-        status = classify(score, flags, known_status)
+        status = classify(score, flags, known_status, sig.snr, extras.get("dur_ratio"))
         cid = f"TIC{star['tic']}.{k + 1:02d}"
         row = {"id": cid, "tic": star["tic"], "signal": k + 1, "date": now, "status": status,
                "score": round(score, 4), "period": round(sig.period, 6), "t0_btjd": round(sig.t0, 5),

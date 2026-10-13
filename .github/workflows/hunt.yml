@@ -36,6 +36,9 @@ jobs:
         run: pip install -r requirements.txt
       - name: Screen stars
         run: python -m tph hunt --n "${{ github.event.inputs.n || '800' }}" --hours "${{ github.event.inputs.hours || '5' }}"
+      - name: Double-check candidates against fresh catalogs
+        if: always()
+        run: python -m tph verify || true
       - name: Commit results
         if: always()
         run: |

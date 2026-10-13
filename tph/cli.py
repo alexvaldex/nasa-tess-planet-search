@@ -95,6 +95,8 @@ def cmd_hunt(a):
     rng = np.random.default_rng(a.seed if a.seed is not None else int(time.time()))
     _write_status("starting", start, 0, 0, [], 0, "loading catalogs and choosing stars")
     known = KnownObjects()
+    if len(known.tois) < 1000:
+        raise SystemExit("TOI catalog failed to download; not hunting, since every find would look new")
     from . import model
     m = model.load()   # rebuild once here (if needed) so workers just read the file
     print(f"[hunt] vetter: {m['metrics'].get('source') if m else 'none'}")
@@ -279,6 +281,43 @@ def cmd_train_real(a):
     build()
 
 
+def cmd_verify(a):
+    """Re-check every current candidate against freshly downloaded public catalogs."""
+    import datetime as dt
+    from .catalogs import KnownObjects
+    from . import catalogs
+    for f in ("tois.csv", "tois_nea.csv", "confirmed.csv", "ctois.csv"):
+        (catalogs.DATA / f).unlink(missing_ok=True)          # force a fresh download
+    known = KnownObjects()
+    if len(known.tois) < 1000 or len(known.confirmed) < 100:
+        raise SystemExit(f"catalog download looks broken ({len(known.tois)} TOIs, "
+                         f"{len(known.confirmed)} planets); refusing to mark anything as new")
+    c = pd.read_csv(config.CANDIDATES_CSV)
+    report = []
+    for i, r in c[c.status.isin(["strong_candidate", "candidate"])].iterrows():
+        st, note = known.classify(int(r.tic), r.ra, r.dec, r.period)
+        report.append({"id": r["id"], "tic": int(r.tic), "period": r.period, "catalog_status": st, "note": note})
+        if st != "new":
+            c.at[i, "status"], c.at[i, "note"] = st, note
+    c.to_csv(config.CANDIDATES_CSV, index=False)
+    out = {"checked_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+           "catalogs": {"tois": len(known.tois), "ctois": len(known.ctois),
+                        "confirmed_planets": len(known.confirmed), "tess_ebs": len(known.ebs)},
+           "candidates": report}
+    (config.RESULTS / "verify.json").write_text(json.dumps(out, indent=2))
+    print(json.dumps(out, indent=2))
+    from .dashboard import build
+    build()
+
+
+def cmd_revet(a):
+    from . import postprocess
+    from .dashboard import build
+    for k, v in postprocess.revet_from_replays().items():
+        print(f"  {k}: {v[0]} -> {v[1]} (swing ratio {v[2]})")
+    build()
+
+
 def cmd_dashboard(a):
     from .dashboard import build
     build()
@@ -326,6 +365,8 @@ def main():
     p.add_argument("--hours", type=float, default=4.5)
     p.add_argument("--workers", type=int, default=w); p.set_defaults(fn=cmd_train_real)
     p = sub.add_parser("dashboard"); p.set_defaults(fn=cmd_dashboard)
+    p = sub.add_parser("revet"); p.set_defaults(fn=cmd_revet)
+    p = sub.add_parser("verify"); p.set_defaults(fn=cmd_verify)
     p = sub.add_parser("demo"); p.add_argument("--seed", type=int)
     p.add_argument("--rp", type=float, default=2.5); p.add_argument("--period", type=float, default=4.37)
     p.set_defaults(fn=cmd_demo)
