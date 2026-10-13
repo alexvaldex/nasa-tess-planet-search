@@ -17,25 +17,33 @@ Figures as of October 13, 2026. The live site always has the current numbers.
 
 | | |
 |---|---|
-| Stars screened | **4,643** |
-| Brightness measurements searched | **23.1 million** |
+| Stars screened | **5,000+** |
+| Brightness measurements searched | **25+ million** |
 | Confirmed TESS planets found blind (validation) | **241 of 281 (86%)** |
 | Proven false positives rejected (validation) | **70%**, while keeping 78% of real planets |
-| Strong candidates not in any public catalog | **2** |
+| Open planet candidates | **3** (all small, still being checked) |
+| Look-alikes exposed by the deep dive | **5 eclipsing binaries**, including the two strongest early "candidates" |
 | Running cost | **$0** |
 
-## Strong candidates
+## What the first 5,000 stars turned up
 
-Both pass every vetting test, have signal-to-noise above 10, and were checked on October 13, 2026 against 8,151 TESS Objects of Interest, 5,138 Community TOIs, 6,138 confirmed planets and 4,578 known TESS eclipsing binaries. Neither appears in any of them.
+Tess's first two "strong candidates" were not planets. A deep dive that pulls every sector TESS ever took of a star (up to six years of data) showed that both are **eclipsing binaries**: pairs of stars that take turns blocking each other.
 
-| Star | Orbit | Depth | Size (est.) | Transits | SNR | TESS sectors |
-|---|---|---|---|---|---|---|
-| [TIC 267889592](https://exofop.ipac.caltech.edu/tess/target.php?id=267889592) | 19.043 d | 1.54% | ~10 R⊕ | 4 | 50 | 7, 8, 9 |
-| [TIC 415954197](https://exofop.ipac.caltech.edu/tess/target.php?id=415954197) | 7.140 d | 0.94% | ~14 R⊕ | 3 | 21 | 83 |
+| Star | What Tess first saw | What the full data showed |
+|---|---|---|
+| TIC 267889592 (Carina, ~925 ly) | A clean 1.5% dip every 19.054 days, 13 times over six years | A *second*, equally deep eclipse at phase 0.62: two similar stars on an oval orbit |
+| TIC 415954197 (Pegasus, ~1,800 ly) | A 1.2% dip every 7.140 days | A 3.2% eclipse exactly half an orbit away, also seen in 2022 data |
 
-**These are candidates, not planets.** Both are Jupiter-sized, and objects that large can also be brown dwarfs or low-mass stars. Confirming either needs ground-based photometry (to rule out a nearby eclipsing binary), spectroscopy (for mass) and high-resolution imaging. The diagnostic sheets are in [`docs/plots/`](docs/plots/).
+Each one exposed a hole in Tess's vetting, and both holes are now fixed:
 
-![TIC 267889592 diagnostic](docs/plots/TIC267889592.01.png)
+- The secondary-eclipse test relied on a library value that came back with a zero error, which silently hid a 54-sigma second eclipse. Tess now measures it directly.
+- The test only looked halfway round the orbit, so eccentric binaries slipped past. Tess now searches the whole orbit (zero of 16 simulated planets wrongly flagged).
+
+As far as Tess can tell, neither binary is listed in VSX, the Gaia DR3 eclipsing-binary catalog, SIMBAD or the TESS eclipsing-binary catalog. The evidence is in [`results/reports/`](results/reports/) and [`results/followup.json`](results/followup.json).
+
+**Still open:** TIC 374098817 (a possible 2.8 Earth-radius planet on a 20-hour orbit, holding up across three observing seasons), TIC 233729835 and TIC 230202008. All three are faint signals and need more data before anyone calls them planets.
+
+![TIC 267889592 full orbit](docs/media/eb_orbit.png)
 
 ## How it works
 
@@ -44,7 +52,7 @@ flowchart LR
   A[Pick stars<br/>TESS Input Catalog] --> B[Download light curves<br/>NASA MAST]
   B --> C[Clean<br/>flares, gaps, stellar variability]
   C --> D[Search<br/>Box Least Squares, 0.5 to 30 days]
-  D --> E[Vet<br/>13 red-flag tests]
+  D --> E[Vet<br/>14 red-flag tests]
   E --> F[Score<br/>gradient-boosted model]
   F --> G[Cross-match<br/>TOIs, CTOIs, planets, binaries]
   G --> H[Publish<br/>website + repo]
@@ -68,7 +76,8 @@ flowchart LR
 | Single-event dominance | One glitch or momentum dump faking a periodic signal |
 | Robust in-transit depth | A handful of bad points creating the dip |
 | Odd vs. even depth | Eclipsing binaries found at half their period |
-| Secondary eclipse | A glowing companion star |
+| Second eclipse anywhere in the orbit | A glowing companion star, including on oval orbits |
+| Every TESS sector (deep dive) | Signals that fade, shift or reveal a second eclipse with more data |
 | Transit shape | V-shaped grazing binaries |
 | Implied size | Anything far bigger than Jupiter |
 | Duration vs. stellar density | Signals too short or long for the star |
@@ -106,6 +115,8 @@ pip install -r requirements.txt
 python -m tph demo                 # offline: hide a planet in simulated data and find it
 python -m tph hunt --n 50          # screen 50 real TESS stars
 python -m tph verify               # re-check candidates against fresh catalogs
+python -m tph report 374098817     # deep dive: every TESS sector, distance, catalogs
+python -m tph followup             # apply deep-dive verdicts
 python -m tph train-real --n 100   # validate on known planets and retrain the model
 python -m tph dashboard            # rebuild the website data
 pytest -q                          # offline test suite
@@ -117,6 +128,7 @@ pytest -q                          # offline test suite
 |---|---|---|
 | Hunt for planets | every 6 hours, and each run queues the next | Screens up to 800 new stars, verifies candidates, commits results |
 | Verify candidates | manual, and after every hunt | Re-checks candidates against freshly downloaded catalogs |
+| Candidate deep dive | manual | Every TESS sector, Gaia, variable-star catalogs and neighbours for chosen stars |
 | Retrain everything | manual | Regenerates simulations, validates on real TESS objects, retrains the model |
 | Tests | every push | Offline test suite |
 

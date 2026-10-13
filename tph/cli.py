@@ -316,6 +316,66 @@ def cmd_report(a):
         build(int(t))
 
 
+def cmd_followup(a):
+    """Apply deep-dive results (every TESS sector, whole-orbit eclipse search) to candidates."""
+    from .postprocess import ORDER
+    rep = config.RESULTS / "reports"
+    c = pd.read_csv(config.CANDIDATES_CSV)
+    c["flags"] = c["flags"].fillna("").astype(str)
+    summary = []
+    for i, r in c[c.status.isin(["strong_candidate", "candidate"])].iterrows():
+        p = rep / f"TIC{int(r.tic)}_allsectors.json"
+        if not p.exists():
+            continue
+        d = json.loads(p.read_text())
+        sec_half = d.get("secondary_snr") or 0
+        sec_any, ratio = d.get("any_secondary_snr") or 0, (d.get("any_secondary_depth_ppm") or 0) / max(d["depth_ppm"], 1)
+        oe = d.get("odd_even_sigma") or 0
+        good = [x for x in d["transits"] if x.get("snr") and x["snr"] > 3]
+        years = sorted({x["time_btjd"] // 365.25 for x in good})
+        verdict, why = "candidate", []
+        if sec_half > 3 or (sec_any > 6 and ratio > 0.1):
+            verdict = "likely_eb"
+            why.append(f"second eclipse at phase {d.get('any_secondary_phase') or 0.5:.2f} "
+                       f"({max(d.get('any_secondary_depth_ppm') or 0, d.get('secondary_depth_ppm') or 0):.0f} ppm)")
+        if oe > 3:
+            verdict = "likely_eb"; why.append(f"alternate dips differ in depth ({oe:.1f} sigma)")
+        if verdict == "candidate" and d.get("snr", 0) < 7:
+            verdict = "low_score"; why.append("signal fades when all sectors are combined")
+        note = "; ".join(why) if why else f"holds up across {len(years)} observing season(s)"
+        summary.append({"id": r["id"], "tic": int(r.tic), "old": r.status, "new": verdict if verdict != "candidate" else r.status,
+                        "note": note, "sectors": d["sectors"], "refined_period": d["refined_period"],
+                        "depth_ppm": d["depth_ppm"], "snr": d.get("snr"), "transits_seen": len(good)})
+        if verdict != "candidate":
+            c.at[i, "status"] = verdict
+            c.at[i, "flags"] = (r["flags"] + " deep_dive").strip()
+            c.at[i, "note"] = "Deep dive: " + note
+        else:
+            c.at[i, "note"] = "Deep dive: " + note
+    c.to_csv(config.CANDIDATES_CSV, index=False)
+    rank = {k: j for j, k in enumerate(ORDER)}
+    s = pd.read_csv(config.SCREENED_CSV)
+    tics = [x["tic"] for x in summary]
+    best = c[c.tic.isin(tics)].groupby("tic").status.agg(lambda v: min(v, key=lambda z: rank.get(z, 99)))
+    m = s.tic.isin(best.index); s.loc[m, "status"] = s.loc[m, "tic"].map(best); s.to_csv(config.SCREENED_CSV, index=False)
+    from .replay import STARS_DIR
+    for x in summary:
+        sp = STARS_DIR / f"{x['tic']}.json"
+        if sp.exists() and x["new"] != x["old"]:
+            dd = json.loads(sp.read_text()); dd["verdict"] = best.get(x["tic"], dd["verdict"])
+            for sig in dd.get("signals", []):
+                if abs(sig["period"] - c[c["id"] == x["id"]].period.iloc[0]) < 1e-4:
+                    sig["status"] = x["new"]
+                    sig["checks"].append({"name": "Holds up in every TESS sector", "pass": False, "value": x["note"],
+                                          "why": "Re-tested with all the data TESS ever took of this star."})
+            sp.write_text(json.dumps(dd, separators=(",", ":")))
+    (config.RESULTS / "followup.json").write_text(json.dumps(summary, indent=1))
+    for x in summary:
+        print(f"  {x['id']}: {x['old']} -> {x['new']}  ({x['note']})")
+    from .dashboard import build
+    build()
+
+
 def cmd_revet(a):
     from . import postprocess
     from .dashboard import build
@@ -372,6 +432,7 @@ def main():
     p.add_argument("--workers", type=int, default=w); p.set_defaults(fn=cmd_train_real)
     p = sub.add_parser("dashboard"); p.set_defaults(fn=cmd_dashboard)
     p = sub.add_parser("revet"); p.set_defaults(fn=cmd_revet)
+    p = sub.add_parser("followup"); p.set_defaults(fn=cmd_followup)
     p = sub.add_parser("verify"); p.set_defaults(fn=cmd_verify)
     p = sub.add_parser("report"); p.add_argument("tics", nargs="+"); p.set_defaults(fn=cmd_report)
     p = sub.add_parser("demo"); p.add_argument("--seed", type=int)
