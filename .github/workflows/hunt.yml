@@ -57,5 +57,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          waiting=$(gh run list -R "$GITHUB_REPOSITORY" --limit 20 --json status --jq '[.[]|select(.status=="queued" or .status=="pending" or .status=="waiting" or .status=="requested")]|length')
+          waiting=$(gh run list -R "$GITHUB_REPOSITORY" --limit 20 --json status,workflowName --jq '[.[]|select(.workflowName!="pages build and deployment" and .workflowName!="Tests")|select(.status=="queued" or .status=="pending" or .status=="waiting" or .status=="requested")]|length')
           if [ "$waiting" = "0" ]; then gh workflow run hunt.yml -R "$GITHUB_REPOSITORY" --ref main && echo "next run queued"; else echo "another run is waiting; skipping"; fi

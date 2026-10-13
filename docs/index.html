@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tess, a planet-hunting bot</title>
 <meta name="description" content="Tess is an autonomous bot that searches NASA TESS satellite data for exoplanets nobody has spotted yet. Built by Alejandro Valdez at UCF.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tess, a bot hunting for planets in NASA's starlight">
+<meta property="og:description" content="An autonomous AI pipeline that screens thousands of NASA TESS stars a day for undiscovered exoplanets. Watch it work, or hide a planet and see if it finds it.">
+<meta property="og:image" content="https://alexvaldex.github.io/nasa-tess-planet-search/media/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://alexvaldex.github.io/nasa-tess-planet-search/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' rx='7' fill='%231d4096'/%3E%3Ccircle cx='11' cy='11' r='3' fill='%23ffd84a'/%3E%3Ccircle cx='19' cy='11' r='3' fill='%23ffd84a'/%3E%3Ccircle cx='11' cy='19' r='3' fill='%23ffd84a'/%3E%3Ccircle cx='19' cy='19' r='3' fill='%23ffd84a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
@@ -530,7 +539,11 @@ function renderFinds(rows){const seen=new Set(),once=r=>!seen.has(r.tic)&&seen.a
   const good=rows.filter(r=>["strong_candidate","candidate"].includes(r.status)).filter(once),known=rows.filter(r=>["known_planet","known_toi","known_eb"].includes(r.status)).filter(once);
   const noteTxt=n=>!n?"":n==="in TESS EB catalog"?"Listed in the TESS eclipsing binary catalog.":n.charAt(0).toUpperCase()+n.slice(1)+".";
   const card=r=>`<article class="find">${r.plot?`<a href="plots/${r.plot}" target="_blank" rel="noopener"><img loading="lazy" src="plots/${r.plot}" alt="Diagnostic plots for TIC ${r.tic}"></a>`:""}<h3>TIC ${r.tic}</h3><p><span class="chip v-${r.status}">${nm(r.status)}</span> every ${fmt(r.period,3)} days, ${Math.round(r.depth_ppm).toLocaleString()} ppm deep.${r.status.startsWith("known")&&r.note?` ${noteTxt(r.note)}`:""}</p><p style="margin-top:6px"><a href="https://exofop.ipac.caltech.edu/tess/target.php?id=${r.tic}" target="_blank" rel="noopener">Look it up on ExoFOP</a></p></article>`;
-  let h=good.length?`<div class="finds">${good.slice(0,12).map(card).join("")}</div>`:`<div class="empty">Nothing yet, and that's expected. Most stars don't have a planet I can detect, and the ones that do are usually already known. I check a few hundred new stars every six hours and post anything promising here.</div>`;
+  const VF=(DATA&&DATA.stats&&DATA.stats.verify)||{},C=VF.catalogs;
+  const strongN=good.filter(r=>r.status==="strong_candidate").length,big=good.filter(r=>r.status==="strong_candidate"&&r.rp_earth>8).length;
+  const intro=good.length?`<p style="color:#d5def7;max-width:62ch">${C?`Every star below was checked on ${new Date(VF.checked_utc).toLocaleDateString(undefined,{month:"long",day:"numeric"})} against ${n0(C.tois)} NASA candidates, ${n0(C.ctois)} community candidates, ${n0(C.confirmed_planets)} confirmed planets and ${n0(C.tess_ebs)} known eclipsing binaries, and isn't on any of those lists. `:""}${big?`My strongest finds are Jupiter-sized. Objects that big can also turn out to be brown dwarfs or small stars, so they need follow-up from real telescopes before anyone calls them planets.`:"They still need follow-up from real telescopes before anyone calls them planets."}</p>`:"";
+  good.sort((a,b)=>(b.status==="strong_candidate")-(a.status==="strong_candidate")||b.snr-a.snr);
+  let h=good.length?intro+`<div class="finds">${good.slice(0,12).map(card).join("")}</div>`:`<div class="empty">Nothing yet, and that's expected. Most stars don't have a planet I can detect, and the ones that do are usually already known. I check a few hundred new stars every six hours and post anything promising here.</div>`;
   if(known.length)h+=`<h3 style="margin:44px 0 10px">Things I found that astronomers already knew about</h3><p style="color:#d5def7">These are reassuring: I found them blind, without being told they were there.</p><div class="finds">${known.slice(0,6).map(card).join("")}</div>`;
   $("findsBox").innerHTML=h}
 
@@ -599,7 +612,7 @@ function axes(x,box,xr,yr,o={}){const {xl="",yl="",xlog=false,yf=v=>v.toFixed(3)
 function dots(x,A,xs,ys,n,c,r){x.fillStyle=c;for(let i=0;i<n;i++){if(ys[i]==null)continue;x.fillRect(A.X(xs[i])-r/2,A.Y(ys[i])-r/2,r,r)}}
 function line(x,A,xs,ys,n,c,lw){x.strokeStyle=c;x.lineWidth=lw;x.beginPath();let prev=null;for(let i=0;i<n;i++){if(ys[i]==null){prev=null;continue}const px=A.X(xs[i]),py=A.Y(ys[i]);prev!=null&&xs[i]-prev<.5?x.lineTo(px,py):x.moveTo(px,py);prev=xs[i]}x.stroke()}
 function msg(x,w,h,t){x.fillStyle=COL.line;x.font="400 22px Kalam,cursive";x.textAlign="center";x.textBaseline="middle";x.fillText(t,w/2,h/2)}
-const ppm=v=>((v-1)*1e6).toFixed(0);
+const ppm=v=>{const x=(v-1)*1e6;return(Math.abs(x)>=2000?Math.round(x/500)*500:Math.round(x)).toLocaleString()};
 function stage(){if(!REC)return;const {x,w,h}=fit($("stagec"));x.fillStyle=COL.deep;x.fillRect(0,0,w,h);
   const el=performance.now()-stepStart,p=DUR[step]?Math.min(1,el/DUR[step]):1,box={x:78,y:20,w:w-100,h:h-70},L=REC.lc,g=REC._sig,tE=L.t[L.t.length-1];
   if(step===0){const s=REC.star,cx=w/2,cy=h/2-10;let a=11+(+REC.tic||3)%100000;const r=()=>(a=(a*16807)%2147483647)/2147483647;for(let i=0;i<240;i++){const u=r(),v=r(),m=r();x.fillStyle=`rgba(238,243,255,${.15+.5*m})`;x.fillRect(cx+(u*w-cx)*(1+ease(p)*.5),cy+(v*h-cy)*(1+ease(p)*.5),1.3,1.3)}

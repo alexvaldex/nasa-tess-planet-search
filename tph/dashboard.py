@@ -25,7 +25,10 @@ def stats():
     met = json.loads((config.MODELS / "metrics.json").read_text()) if (config.MODELS / "metrics.json").exists() else {}
     runs = _load(config.RESULTS / "runs.csv")
     runs_list = runs[["started_utc", "stars", "new_candidates"]].to_dict("records") if len(runs) else []
+    vpath = config.RESULTS / "verify.json"
+    verify = json.loads(vpath.read_text()) if vpath.exists() else {}
     return {
+        "verify": {"checked_utc": verify.get("checked_utc"), "catalogs": verify.get("catalogs")},
         "runs": runs_list,
         "updated": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "stars_queried": int(len(s)), "stars_analyzed": int(len(analyzed)),

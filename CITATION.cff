@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Tess: an autonomous planet hunter for NASA TESS data"
+type: software
+authors:
+  - family-names: Valdez
+    given-names: Alejandro
+    affiliation: University of Central Florida
+version: 1.0.0
+date-released: 2026-10-13
+license: MIT
+repository-code: "https://github.com/alexvaldex/nasa-tess-planet-search"
+url: "https://alexvaldex.github.io/nasa-tess-planet-search/"
+keywords:
+  - exoplanets
+  - TESS
+  - transit search
+  - machine learning
+  - astronomy
