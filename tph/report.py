@@ -18,7 +18,9 @@ def _safe(fn, default=None):
     try:
         return fn()
     except Exception as exc:
-        print(f"    ({fn.__name__ if hasattr(fn, '__name__') else 'query'} failed: {exc})")
+        import traceback
+        print("    query failed:")
+        traceback.print_exc()
         return default
 
 
@@ -180,10 +182,17 @@ def all_sectors(tic):
                 kw = {"flux_column": "kspsap_flux"} if str(tab["author"][i]) == "QLP" else {}
                 lc = sr[i].download(download_dir=tmp, quality_bitmask="default", **kw).remove_nans()
             except Exception as exc:
-                print(f"    sector {sec}: {exc}")
-                continue
+                print(f"    sector {sec} ({tab['author'][i]}): download failed: {exc}")
+                try:   # fall back to the default flux column
+                    lc = sr[i].download(download_dir=tmp, quality_bitmask="default").remove_nans()
+                except Exception as exc2:
+                    print(f"    sector {sec}: fallback failed too: {exc2}")
+                    continue
             t = np.asarray(lc.time.value, float); f = np.asarray(lc.flux.value, float)
+            ok = np.isfinite(t) & np.isfinite(f)
+            t, f = t[ok], f[ok]
             med = np.nanmedian(f)
+            print(f"    sector {sec}: {len(t)} points from {tab['author'][i]}")
             if len(t) < 100 or not np.isfinite(med) or med <= 0:
                 continue
             out.append({"sector": sec, "author": str(tab["author"][i]), "t": t, "f": f / med})

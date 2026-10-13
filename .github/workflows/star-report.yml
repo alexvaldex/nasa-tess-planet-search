@@ -22,7 +22,7 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python -m tph report ${{ github.event.inputs.tics || '267889592 415954197' }}
+      - run: mkdir -p results/reports && python -m tph report ${{ github.event.inputs.tics || '267889592 415954197' }} 2>&1 | tee results/reports/log.txt
       - name: Commit
         run: |
           git config user.name "tess-hunter-bot"
