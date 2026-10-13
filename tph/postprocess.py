@@ -51,7 +51,18 @@ def apply():
     if not config.CANDIDATES_CSV.exists():
         return
     c = pd.read_csv(config.CANDIDATES_CSV)
+    # Deep-dive verdicts are permanent: re-apply them every build so a bot run that
+    # started from an older copy of the table can't undo them.
+    fpath = config.RESULTS / "followup.json"
+    if fpath.exists():
+        for x in json.loads(fpath.read_text()):
+            m = c["id"] == x["id"]
+            if m.any() and x["new"] != x["old"]:
+                c.loc[m, "status"] = x["new"]
+                c.loc[m, "note"] = "Deep dive: " + x["note"]
     c, changed = veto_common_periods(c)
+    if fpath.exists():
+        changed |= {x["tic"] for x in json.loads(fpath.read_text()) if x["new"] != x["old"]}
     c.to_csv(config.CANDIDATES_CSV, index=False)
     if not changed:
         return
