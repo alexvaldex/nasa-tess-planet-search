@@ -39,7 +39,7 @@ Each one exposed a hole in Tess's vetting, and both holes are now fixed:
 - The secondary-eclipse test relied on a library value that came back with a zero error, which silently hid a 54-sigma second eclipse. Tess now measures it directly.
 - The test only looked halfway round the orbit, so eccentric binaries slipped past. Tess now searches the whole orbit (zero of 16 simulated planets wrongly flagged).
 
-As far as Tess can tell, neither binary is listed in VSX, the Gaia DR3 eclipsing-binary catalog, SIMBAD or the TESS eclipsing-binary catalog. The evidence is in [`results/reports/`](results/reports/) and [`results/followup.json`](results/followup.json).
+As far as Tess can tell, neither binary is listed in VSX, the Gaia DR3 eclipsing-binary catalog, SIMBAD or the TESS eclipsing-binary catalog. The evidence is in [`results/reports/`](results/reports/) and [`results/followup.json`](results/followup.json), and both case files are written up in the printable [field file (PDF)](docs/media/tess-field-file.pdf).
 
 **Still open:** TIC 374098817 (a possible 2.8 Earth-radius planet on a 20-hour orbit, holding up across three observing seasons), TIC 233729835 and TIC 230202008. All three are faint signals and need more data before anyone calls them planets.
 
