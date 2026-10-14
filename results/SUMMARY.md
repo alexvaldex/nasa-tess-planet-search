@@ -1,22 +1,22 @@
 # Results summary
 
-_Last updated 2026-10-14 16:54 UTC by the hunting bot._
+_Last updated 2026-10-14 17:13 UTC by the hunting bot._
 
-- Stars analyzed: **16,715**
-- TESS sectors processed: **29,263**
-- Light curve points searched: **88,046,053**
-- Signals passing detection: **10,958**
+- Stars analyzed: **17,099**
+- TESS sectors processed: **29,775**
+- Light curve points searched: **89,828,703**
+- Signals passing detection: **11,254**
 
   - strong candidate: 2
-  - candidate: 27
+  - candidate: 29
   - known planet: 3
   - known toi: 16
   - known system: 4
   - known eb: 14
-  - likely eb: 602
-  - variable star: 288
-  - systematic: 9604
-  - low score: 398
+  - likely eb: 622
+  - variable star: 293
+  - systematic: 9872
+  - low score: 399
 
 **Validation:** blind search recovered 241 of 281 confirmed TESS planets (86%).
 
@@ -28,6 +28,7 @@ _Last updated 2026-10-14 16:54 UTC by the hunting bot._
 | TIC446172360.01 | 0.81 | 14.3936 | 3372 | 6.8 | 21.1 |  |  |
 | TIC126315595.01 | 1.00 | 8.3154 | 1172 | 2.9 | 7.1 |  |  |
 | TIC406239216.02 | 1.00 | 2.7699 | 334 | 1.7 | 8.6 |  |  |
+| TIC120050564.02 | 0.99 | 7.2537 | 1152 | 5.4 | 7.2 |  |  |
 | TIC67466087.01 | 0.97 | 4.3945 | 424 | 1.8 | 8.0 |  |  |
 | TIC233094203.01 | 0.96 | 14.1738 | 2238 | 5.7 | 8.5 |  |  |
 | TIC278140156.01 | 0.95 | 2.4549 | 298 | 2.8 | 9.4 |  |  |
@@ -43,9 +44,8 @@ _Last updated 2026-10-14 16:54 UTC by the hunting bot._
 | TIC149104476.01 | 0.73 | 12.8437 | 1693 | 4.3 | 9.6 |  |  |
 | TIC25118913.02 | 0.72 | 26.7349 | 3747 | 7.4 | 10.1 |  |  |
 | TIC416576650.01 | 0.69 | 13.9053 | 468 | 3.6 | 7.1 |  |  |
+| TIC119827675.01 | 0.68 | 1.1448 | 1991 | 5.0 | 7.7 |  |  |
 | TIC308025548.02 | 0.67 | 12.0429 | 2851 | 6.0 | 7.6 |  |  |
 | TIC25132307.01 | 0.66 | 13.4023 | 3210 | 5.1 | 9.3 |  |  |
 | TIC449803299.02 | 0.65 | 0.5407 | 918 | 4.9 | 7.4 |  |  |
 | TIC25899624.01 | 0.64 | 12.7336 | 5740 | 10.5 | 12.3 |  |  |
-| TIC363600442.01 | 0.62 | 0.9686 | 84 | 1.2 | 7.3 |  |  |
-| TIC284900031.02 | 0.60 | 12.6551 | 748 | 3.4 | 7.4 |  |  |
