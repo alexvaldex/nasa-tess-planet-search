@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-13T23:55:57+00:00",
+  "checked_utc": "2026-10-14T01:09:03+00:00",
   "catalogs": {
     "tois": 8151,
     "ctois": 5138,
@@ -67,6 +67,34 @@
       "id": "TIC67466087.01",
       "tic": 67466087,
       "period": 4.39448,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC25899624.01",
+      "tic": 25899624,
+      "period": 12.733589,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC446172360.01",
+      "tic": 446172360,
+      "period": 14.393575,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC115620634.02",
+      "tic": 115620634,
+      "period": 5.622602,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC445045766.02",
+      "tic": 445045766,
+      "period": 2.516132,
       "catalog_status": "new",
       "note": ""
     }
