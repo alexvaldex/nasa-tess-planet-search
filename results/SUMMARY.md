@@ -1,11 +1,11 @@
 # Results summary
 
-_Last updated 2026-10-14 13:03 UTC by the hunting bot._
+_Last updated 2026-10-14 13:07 UTC by the hunting bot._
 
-- Stars analyzed: **13,571**
-- TESS sectors processed: **23,791**
-- Light curve points searched: **72,097,927**
-- Signals passing detection: **8,775**
+- Stars analyzed: **13,641**
+- TESS sectors processed: **23,863**
+- Light curve points searched: **72,313,138**
+- Signals passing detection: **8,779**
 
   - strong candidate: 1
   - candidate: 18
@@ -13,7 +13,7 @@ _Last updated 2026-10-14 13:03 UTC by the hunting bot._
   - known toi: 11
   - known system: 3
   - known eb: 14
-  - likely eb: 516
+  - likely eb: 520
   - variable star: 211
   - systematic: 7659
   - low score: 339
