@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-14T01:09:03+00:00",
+  "checked_utc": "2026-10-14T02:09:37+00:00",
   "catalogs": {
     "tois": 8151,
     "ctois": 5138,
@@ -95,6 +95,13 @@
       "id": "TIC445045766.02",
       "tic": 445045766,
       "period": 2.516132,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC406239216.02",
+      "tic": 406239216,
+      "period": 2.769861,
       "catalog_status": "new",
       "note": ""
     }
