@@ -17417,3 +17417,27 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 71097641,,,,,,,,,,,download_error,271.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 71095916,,,,,,,,,,,download_error,271.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 71245913,,,,,,,,,,,download_error,270.6,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71245834,,,,,,,,,,,download_error,270.6,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71126434,,,,,,,,,,,download_error,270.5,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71125932,,,,,,,,,,,download_error,270.6,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71097346,,,,,,,,,,,download_error,270.5,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71155489,2026-10-14,99 100,QLP,6425.0,153.666325353375,-34.6793810524786,12.4262,17.063078,20.99,1.0,systematic,13.0,
+71097958,,,,,,,,,,,download_error,270.5,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71096179,,,,,,,,,,,download_error,270.6,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71126458,,,,,,,,,,,download_error,270.6,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+71218111,2026-10-14,99 100,QLP,5904.0,154.011845354058,-34.9845448350286,12.3516,10.246711,16.25,1.0,systematic,19.0,
+71217910,2026-10-14,99 100,QLP,5959.0,154.026558271052,-35.246076501526,11.5388,10.260572,17.04,1.0,systematic,21.2,
+71032024,2026-10-14,99 100,QLP,5687.0,153.099142364183,-34.8281762817521,12.5183,13.606674,15.54,0.0,no_signal,35.3,
+71216695,2026-10-14,99 100,QLP,5928.0,153.910939077181,-35.1773871939863,12.8111,12.232721,11.27,2.0,systematic,31.2,
+71125919,2026-10-14,99 100,QLP,5989.0,153.588113448154,-34.5936344820816,12.5022,9.264036,38.39,2.0,known_toi,31.0,
+71095988,2026-10-14,99 100,QLP,6424.0,153.329361155633,-35.0150143313741,11.9396,13.113606,28.71,2.0,systematic,32.0,
+71125801,2026-10-14,99 100,QLP,6095.0,153.529375761855,-34.4485422896134,12.5757,13.429734,26.54,2.0,systematic,33.5,
+71155062,2026-10-14,99 100,QLP,6422.0,153.727740238961,-35.1966492720787,11.3185,13.440166,32.42,1.0,systematic,31.2,
+71127567,2026-10-14,99 100,QLP,6418.0,153.733032939326,-35.4155806642,10.6233,12.960301,28.24,1.0,systematic,30.9,
+71033701,2026-10-14,99 100,QLP,5988.0,153.113165663965,-35.149272016146,12.6594,13.482016,26.18,2.0,systematic,33.3,
+71218029,2026-10-14,99 100,QLP,5912.0,153.991221234708,-35.0856843673278,12.9717,10.236373,14.9,1.0,systematic,25.2,
+71033822,2026-10-14,99 100,QLP,5992.0,153.144996112823,-35.022137498376,11.0156,13.970477,19.94,1.0,systematic,23.3,
+71097805,2026-10-14,99 100,QLP,5901.0,153.454907152623,-34.6774596514239,12.9377,15.842531,7.96,0.0,no_signal,23.2,
+71245851,2026-10-14,99 100,QLP,6017.0,154.164146043855,-35.0233923235198,12.7724,13.450396,23.48,2.0,systematic,21.6,
+71162226,2026-10-14,99 100,QLP,6026.0,153.892764224236,-34.6973792565784,11.5806,13.58959,24.38,1.0,systematic,24.0,
+71126568,2026-10-14,99 100,QLP,6405.0,153.571632631011,-35.32067501674,12.3042,13.067652,38.33,1.0,systematic,26.0,
