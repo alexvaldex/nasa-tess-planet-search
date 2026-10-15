@@ -1,22 +1,22 @@
 # Results summary
 
-_Last updated 2026-10-15 00:26 UTC by the hunting bot._
+_Last updated 2026-10-15 04:35 UTC by the hunting bot._
 
-- Stars analyzed: **21,176**
-- TESS sectors processed: **37,307**
-- Light curve points searched: **112,854,092**
-- Signals passing detection: **14,033**
+- Stars analyzed: **21,333**
+- TESS sectors processed: **37,627**
+- Light curve points searched: **113,598,756**
+- Signals passing detection: **14,135**
 
-  - strong candidate: 3
-  - candidate: 39
+  - strong candidate: 5
+  - candidate: 41
   - known planet: 5
-  - known toi: 20
+  - known toi: 21
   - known system: 8
   - known eb: 18
-  - likely eb: 720
-  - variable star: 380
-  - systematic: 12360
-  - low score: 480
+  - likely eb: 731
+  - variable star: 382
+  - systematic: 12433
+  - low score: 491
 
 **Validation:** blind search recovered 241 of 281 confirmed TESS planets (86%).
 
@@ -25,11 +25,14 @@ _Last updated 2026-10-15 00:26 UTC by the hunting bot._
 | ID | Score | Period (d) | Depth (ppm) | Rp (R⊕) | SNR | Flags | Plot |
 |---|---|---|---|---|---|---|---|
 | TIC149501498.01 | 1.00 | 1.5000 | 1081 | 5.5 | 18.8 |  |  |
+| TIC191722763.01 | 0.99 | 12.8541 | 5128 | 11.4 | 17.7 |  |  |
+| TIC326861147.01 | 0.96 | 12.7179 | 9724 | 12.1 | 17.1 |  |  |
 | TIC461560472.01 | 0.82 | 13.5237 | 4723 | 4.4 | 11.1 |  |  |
 | TIC446172360.01 | 0.81 | 14.3936 | 3372 | 6.8 | 21.1 |  |  |
 | TIC126315595.01 | 1.00 | 8.3154 | 1172 | 2.9 | 7.1 |  |  |
 | TIC406239216.02 | 1.00 | 2.7699 | 334 | 1.7 | 8.6 |  |  |
 | TIC331945249.02 | 0.99 | 5.8940 | 2937 | 4.5 | 9.6 |  |  |
+| TIC461593008.01 | 0.99 | 14.6296 | 1423 | 4.1 | 7.1 |  |  |
 | TIC120050564.02 | 0.99 | 7.2537 | 1152 | 5.4 | 7.2 |  |  |
 | TIC219815508.01 | 0.98 | 19.9565 | 1932 | 3.1 | 8.0 |  |  |
 | TIC67466087.01 | 0.97 | 4.3945 | 424 | 1.8 | 8.0 |  |  |
@@ -40,12 +43,9 @@ _Last updated 2026-10-15 00:26 UTC by the hunting bot._
 | TIC257484286.01 | 0.92 | 3.0994 | 873 | 1.8 | 8.1 |  |  |
 | TIC233729835.01 | 0.91 | 4.1773 | 1062 | 3.9 | 7.0 |  |  |
 | TIC303291127.01 | 0.91 | 4.1868 | 473 | 2.7 | 7.2 |  |  |
+| TIC461631160.02 | 0.89 | 13.6282 | 1754 | 3.7 | 9.2 |  |  |
 | TIC264298149.01 | 0.89 | 1.5218 | 694 | 3.6 | 9.3 |  |  |
 | TIC80370023.01 | 0.89 | 8.3531 | 1488 | 3.9 | 7.2 |  |  |
 | TIC56838892.01 | 0.87 | 3.1802 | 3092 | 4.5 | 7.2 |  |  |
 | TIC374098817.01 | 0.77 | 0.8306 | 279 | 2.7 | 9.2 |  |  |
 | TIC173671086.02 | 0.76 | 13.4532 | 12688 | 16.7 | 21.1 |  |  |
-| TIC23465723.01 | 0.75 | 14.7119 | 1088 | 3.1 | 7.8 |  |  |
-| TIC39077655.02 | 0.74 | 5.6176 | 430 | 1.8 | 7.8 |  |  |
-| TIC149104476.01 | 0.73 | 12.8437 | 1693 | 4.3 | 9.6 |  |  |
-| TIC354248642.02 | 0.73 | 14.9174 | 7517 | 8.0 | 13.6 |  |  |
