@@ -1,8 +1,8 @@
 {
- "state": "running",
- "note": "",
+ "state": "idle",
+ "note": "next run in under 6 hours",
  "run_started": "2026-10-16T09:57:09+00:00",
- "updated": "2026-10-16T10:46:01+00:00",
+ "updated": "2026-10-16T10:46:07+00:00",
  "targets": 800,
  "done": 800,
  "candidates_this_run": 2,
