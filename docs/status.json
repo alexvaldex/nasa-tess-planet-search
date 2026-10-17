@@ -1,58 +1,14 @@
 {
- "state": "running",
- "note": "",
+ "state": "idle",
+ "note": "next run in under 6 hours",
  "run_started": "2026-10-17T20:41:16+00:00",
- "updated": "2026-10-17T21:38:00+00:00",
+ "updated": "2026-10-17T21:38:08+00:00",
  "targets": 800,
- "done": 796,
- "candidates_this_run": 4,
+ "done": 800,
+ "candidates_this_run": 5,
  "run_id": "39067709080",
  "repo": "alexvaldex/nasa-tess-planet-search",
  "feed": [
-  {
-   "tic": 459911895,
-   "status": "no_signal",
-   "ra": 58.7694440283984,
-   "dec": 0.0521716688259782,
-   "tmag": 11.3159,
-   "sectors": "5",
-   "period": 1.750994,
-   "sde": 8.34,
-   "seconds": 5.9
-  },
-  {
-   "tic": 425160157,
-   "status": "no_signal",
-   "ra": 58.7064375060134,
-   "dec": -0.117809813373834,
-   "tmag": 12.6689,
-   "sectors": "5",
-   "period": null,
-   "sde": null,
-   "seconds": 4.8
-  },
-  {
-   "tic": 425175716,
-   "status": "no_signal",
-   "ra": 59.1240019310413,
-   "dec": -0.511276522043383,
-   "tmag": 12.367,
-   "sectors": "5",
-   "period": null,
-   "sde": null,
-   "seconds": 5.2
-  },
-  {
-   "tic": 425160120,
-   "status": "no_signal",
-   "ra": 58.6507378072761,
-   "dec": 0.00870975452291672,
-   "tmag": 12.4984,
-   "sectors": "5",
-   "period": 2.804807,
-   "sde": 8.37,
-   "seconds": 5.7
-  },
   {
    "tic": 425163051,
    "status": "no_signal",
@@ -283,6 +239,50 @@
    "period": 3.129636,
    "sde": 7.94,
    "seconds": 54.4
+  },
+  {
+   "tic": 346542616,
+   "status": "no_signal",
+   "ra": 55.1798148488312,
+   "dec": 26.6395608557088,
+   "tmag": 11.3353,
+   "sectors": "42 43 44",
+   "period": 2.400616,
+   "sde": 8.33,
+   "seconds": 52.1
+  },
+  {
+   "tic": 346593710,
+   "status": "no_signal",
+   "ra": 55.3142716846019,
+   "dec": 26.3163980207786,
+   "tmag": 12.2948,
+   "sectors": "42 43 44",
+   "period": null,
+   "sde": null,
+   "seconds": 34.2
+  },
+  {
+   "tic": 346542797,
+   "status": "no_signal",
+   "ra": 55.2370588421781,
+   "dec": 26.3270252129467,
+   "tmag": 9.27366,
+   "sectors": "42 43 44",
+   "period": null,
+   "sde": null,
+   "seconds": 33.3
+  },
+  {
+   "tic": 427580018,
+   "status": "candidate",
+   "ra": 54.9487593237705,
+   "dec": 25.8222223735214,
+   "tmag": 12.691,
+   "sectors": "42 43 44",
+   "period": 12.876344,
+   "sde": 21.34,
+   "seconds": 42.7
   }
  ]
 }
