@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-17T06:03:37+00:00",
+  "checked_utc": "2026-10-17T11:06:01+00:00",
   "catalogs": {
     "tois": 8151,
     "ctois": 5138,
@@ -676,6 +676,62 @@
       "id": "TIC166007699.01",
       "tic": 166007699,
       "period": 7.782984,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC313338108.01",
+      "tic": 313338108,
+      "period": 14.017157,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC142153585.02",
+      "tic": 142153585,
+      "period": 0.536105,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC317025268.01",
+      "tic": 317025268,
+      "period": 1.118177,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC317025272.01",
+      "tic": 317025272,
+      "period": 1.117863,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC220393111.01",
+      "tic": 220393111,
+      "period": 14.368054,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC267459128.02",
+      "tic": 267459128,
+      "period": 0.538492,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC267460038.01",
+      "tic": 267460038,
+      "period": 14.076047,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC52687726.02",
+      "tic": 52687726,
+      "period": 1.816124,
       "catalog_status": "new",
       "note": ""
     }
