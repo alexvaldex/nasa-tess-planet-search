@@ -64742,3 +64742,72 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 46558896,,,,,,,,,,,download_error,472.1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 332916358,,,,,,,,,,,download_error,470.1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 46529673,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+333041090,,,,,,,,,,,download_error,384.1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+332971967,,,,,,,,,,,download_error,344.4,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46558953,,,,,,,,,,,download_error,90.3,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46559162,,,,,,,,,,,download_error,380.4,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46529487,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46637145,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46624524,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46624641,,,,,,,,,,,download_error,336.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46529420,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46529692,,,,,,,,,,,download_error,575.0,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+332916548,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+332859218,,,,,,,,,,,download_error,302.0,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46559177,,,,,,,,,,,download_error,302.1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+332859262,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46529546,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46559044,,,,,,,,,,,download_error,378.1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46529405,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+332916287,,,,,,,,,,,download_error,351.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46559219,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+332971942,,,,,,,,,,,download_error,308.4,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46624715,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+46624474,,,,,,,,,,,download_error,301.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46637357,,,,,,,,,,,download_error,301.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46637320,,,,,,,,,,,download_error,357.6,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46558909,2026-10-18,98,QLP,7962.0,84.6443448322083,-12.1895511342319,11.9747,14.337911,7.61,0.0,no_signal,22.1,
+46637256,2026-10-18,98,QLP,6858.0,85.1235718769197,-11.9466488761335,11.8291,14.301447,12.22,1.0,low_score,18.5,
+332972154,2026-10-18,98,QLP,7034.0,85.0812349626333,-11.9582417111942,12.1865,14.383773,8.92,1.0,systematic,12.6,
+46624266,2026-10-18,98,QLP,7846.0,84.9028167778845,-12.2083448956252,11.3124,15.025685,11.39,2.0,systematic,23.7,
+332859314,,,,,,,,,,,download_error,324.3,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+332916595,,,,,,,,,,,download_error,338.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46559236,2026-10-18,98,QLP,6644.0,84.7169840735947,-12.1925866896673,12.0431,15.111523,20.71,0.0,no_signal,15.8,
+332859034,2026-10-18,98,QLP,7229.0,84.522945151812,-11.6562443005507,12.9976,14.315447,19.37,2.0,systematic,21.9,
+332916535,2026-10-18,98,QLP,6839.0,84.9411073965309,-11.6726057456737,11.1891,14.301444,28.6,0.0,no_signal,24.9,
+332916560,2026-10-18,98,QLP,7963.0,84.9179118640293,-11.627940285211,12.5575,14.333348,26.92,2.0,systematic,21.8,
+46624313,2026-10-18,98,QLP,7248.0,84.8751522479111,-12.113918844699,12.5639,14.338295,8.6,0.0,no_signal,21.4,
+332859344,2026-10-18,98,QLP,6400.0,84.6519501948286,-11.6147468581231,12.296,14.314266,22.32,1.0,systematic,20.1,
+46559190,2026-10-18,98,QLP,7153.0,84.7694698381989,-12.117780072861,12.0689,14.295864,11.62,1.0,systematic,19.1,
+332972128,,,,,,,,,,,download_error,345.4,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46637094,,,,,,,,,,,download_error,301.6,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46529378,2026-10-18,98,QLP,7958.0,84.4170353246816,-11.990741543066,9.25978,14.429909,22.55,2.0,systematic,16.8,
+18233166,2026-10-18,79 80,QLP,7355.0,264.772451447855,32.5405832900337,12.7831,13.989688,31.22,1.0,systematic,23.4,
+332859327,2026-10-18,98,QLP,7670.0,84.6359682123543,-11.642076085751,10.3695,14.369966,24.13,2.0,systematic,30.0,
+18233154,2026-10-18,79 80,TESS-SPOC,4808.0,264.836920131771,32.5225357103141,10.1289,13.72295,17.16,2.0,systematic,29.9,
+18119035,2026-10-18,79 80,QLP,7401.0,264.250985805014,32.1871811857308,12.3588,14.126913,31.22,2.0,systematic,29.5,
+18118814,2026-10-18,79 80,QLP,7374.0,264.278088899289,31.827621425376,12.8418,14.107142,26.81,2.0,systematic,22.2,
+332972001,,,,,,,,,,,download_error,335.1,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+46559317,,,,,,,,,,,download_error,301.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+18181167,2026-10-18,79 80,QLP,7413.0,264.456353315646,32.1023533123754,12.0331,13.859849,32.91,2.0,systematic,39.7,
+18275440,2026-10-18,79 80,QLP,7353.0,265.118459729445,32.159976362893,12.1585,14.057974,30.9,1.0,systematic,46.5,
+18229896,2026-10-18,79 80,QLP,7321.0,264.622601518927,32.1037437456652,12.9864,13.941315,26.09,2.0,systematic,27.7,
+18118940,2026-10-18,79 80,QLP,7411.0,264.288408278039,32.0195954551978,12.5168,14.166618,33.37,1.0,systematic,54.0,
+18183948,2026-10-18,79 80,QLP,7361.0,264.602336536262,31.9455514365637,12.7904,14.087433,32.03,2.0,systematic,45.8,
+18230002,2026-10-18,79 80,QLP,6599.0,264.73758578815,31.9531761083341,12.7679,14.00426,30.37,0.0,no_signal,36.6,
+18275614,2026-10-18,79 80,QLP,7401.0,265.029478516953,32.4505120472006,12.8694,14.062877,30.38,1.0,systematic,47.9,
+18229788,2026-10-18,79 80,QLP TESS-SPOC,6419.0,264.735561710043,32.2449695781177,11.6289,14.176467,29.52,0.0,no_signal,11.5,
+18272304,2026-10-18,79 80,QLP,7416.0,264.960561728209,32.1680575089042,11.9626,14.126924,29.21,1.0,systematic,12.6,
+18183763,2026-10-18,79 80,QLP,7410.0,264.595931528476,31.6558140394102,12.6926,14.077595,25.3,2.0,systematic,12.6,
+18229672,2026-10-18,79 80,QLP TESS-SPOC,6405.0,264.612696102039,32.4154197539973,11.5608,13.902741,33.95,0.0,no_signal,20.2,
+18118941,2026-10-18,79 80,QLP,7379.0,264.20501361356,32.0270466772039,12.0213,14.136817,33.15,1.0,systematic,25.5,
+18272161,2026-10-18,79 80,QLP,7131.0,264.9351647524,32.3897021829245,11.7565,14.154599,35.24,2.0,systematic,30.0,
+18116190,2026-10-18,79 80,QLP,6297.0,264.116325880396,32.0457668207123,11.8866,17.018695,18.66,2.0,systematic,31.2,
+18180893,2026-10-18,79 80,QLP,7322.0,264.367873428374,32.5502402287141,11.8929,14.077596,31.48,2.0,systematic,26.9,
+18232789,2026-10-18,79 80,QLP,7388.0,264.766858554504,32.0142051749764,11.8294,14.112088,33.43,1.0,systematic,24.5,
+18183990,2026-10-18,79 80,QLP,7424.0,264.560028969402,32.0055872168496,12.5693,14.053065,31.52,1.0,systematic,25.5,
+18181213,2026-10-18,79 80,TESS-SPOC,4814.0,264.383277405428,32.042019981756,10.0464,1.243578,7.55,0.0,no_signal,20.1,
+18229838,2026-10-18,79 80,QLP,7428.0,264.740016420539,32.1790615142308,12.7408,14.033505,30.65,2.0,systematic,21.0,
+18229601,2026-10-18,79 80,QLP,7401.0,264.662459368339,32.5142852230161,12.844,14.161652,33.34,1.0,systematic,18.7,
+18316487,2026-10-18,79 80,QLP,7316.0,265.169406637449,31.968138347959,11.8427,13.831334,26.92,1.0,systematic,20.3,
+18272416,2026-10-18,79 80,QLP,7412.0,264.948942385311,32.0116096799547,12.3405,14.092362,32.66,2.0,systematic,25.8,
