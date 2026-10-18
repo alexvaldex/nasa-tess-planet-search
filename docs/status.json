@@ -1,69 +1,14 @@
 {
- "state": "running",
- "note": "",
+ "state": "idle",
+ "note": "next run in under 6 hours",
  "run_started": "2026-10-18T06:55:11+00:00",
- "updated": "2026-10-18T10:05:51+00:00",
+ "updated": "2026-10-18T11:55:13+00:00",
  "targets": 800,
- "done": 788,
+ "done": 793,
  "candidates_this_run": 4,
  "run_id": "39105687146",
  "repo": "alexvaldex/nasa-tess-planet-search",
  "feed": [
-  {
-   "tic": 24259060,
-   "status": "systematic",
-   "ra": 277.464215509929,
-   "dec": 33.7741330512689,
-   "tmag": 12.7653,
-   "sectors": "53 54",
-   "period": 12.988219,
-   "sde": 33.09,
-   "seconds": 11.2
-  },
-  {
-   "tic": 321921222,
-   "status": "likely_eb",
-   "ra": 276.703552928071,
-   "dec": 34.1581202038943,
-   "tmag": 12.1966,
-   "sectors": "53 54",
-   "period": 12.98821,
-   "sde": 38.82,
-   "seconds": 11.9
-  },
-  {
-   "tic": 321920557,
-   "status": "no_signal",
-   "ra": 276.74972627797,
-   "dec": 33.5535339471798,
-   "tmag": 10.7871,
-   "sectors": "53 54",
-   "period": null,
-   "sde": null,
-   "seconds": 8.6
-  },
-  {
-   "tic": 321921138,
-   "status": "likely_eb",
-   "ra": 276.678818078655,
-   "dec": 34.0787431021306,
-   "tmag": 12.868,
-   "sectors": "53 54",
-   "period": 13.023608,
-   "sde": 35.11,
-   "seconds": 144.0
-  },
-  {
-   "tic": 24259009,
-   "status": "systematic",
-   "ra": 277.471728214213,
-   "dec": 33.8157242803607,
-   "tmag": 12.5957,
-   "sectors": "53 54",
-   "period": 13.072607,
-   "sde": 26.5,
-   "seconds": 14.2
-  },
   {
    "tic": 24259486,
    "status": "analysis_error",
@@ -283,6 +228,61 @@
    "period": 25.098616,
    "sde": 26.0,
    "seconds": 38.9
+  },
+  {
+   "tic": 22316149,
+   "status": "systematic",
+   "ra": 183.735761633348,
+   "dec": -47.633791210994,
+   "tmag": 12.6451,
+   "sectors": "99 100 101",
+   "period": 12.782055,
+   "sde": 28.01,
+   "seconds": 42.8
+  },
+  {
+   "tic": 429231809,
+   "status": "likely_eb",
+   "ra": 183.985410462064,
+   "dec": -47.9607342106034,
+   "tmag": 12.8346,
+   "sectors": "99 100 101",
+   "period": 26.315944,
+   "sde": 28.36,
+   "seconds": 36.2
+  },
+  {
+   "tic": 148077168,
+   "status": "likely_eb",
+   "ra": 248.174745935891,
+   "dec": 13.7490775824289,
+   "tmag": 12.6628,
+   "sectors": "79",
+   "period": 7.060242,
+   "sde": 16.83,
+   "seconds": 6.8
+  },
+  {
+   "tic": 148052129,
+   "status": "no_signal",
+   "ra": 247.99368247234,
+   "dec": 14.115679763762,
+   "tmag": 11.013,
+   "sectors": "79",
+   "period": 2.427679,
+   "sde": 8.4,
+   "seconds": 10.9
+  },
+  {
+   "tic": 148118631,
+   "status": "no_signal",
+   "ra": 248.619738012458,
+   "dec": 14.5023924274818,
+   "tmag": 11.2359,
+   "sectors": "79",
+   "period": null,
+   "sde": null,
+   "seconds": 6.5
   }
  ]
 }
