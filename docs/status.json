@@ -1,69 +1,14 @@
 {
- "state": "running",
- "note": "",
+ "state": "idle",
+ "note": "next run in under 6 hours",
  "run_started": "2026-10-18T04:23:03+00:00",
- "updated": "2026-10-18T05:28:53+00:00",
+ "updated": "2026-10-18T05:29:01+00:00",
  "targets": 800,
- "done": 795,
+ "done": 800,
  "candidates_this_run": 3,
  "run_id": "39096847097",
  "repo": "alexvaldex/nasa-tess-planet-search",
  "feed": [
-  {
-   "tic": 332698302,
-   "status": "no_signal",
-   "ra": 63.4844478831185,
-   "dec": -12.9131804812124,
-   "tmag": 12.2359,
-   "sectors": "32",
-   "period": 0.957352,
-   "sde": 7.79,
-   "seconds": 6.5
-  },
-  {
-   "tic": 332698147,
-   "status": "no_signal",
-   "ra": 63.4920464769016,
-   "dec": -12.2473314481694,
-   "tmag": 12.7943,
-   "sectors": "32",
-   "period": null,
-   "sde": null,
-   "seconds": 3.1
-  },
-  {
-   "tic": 332698329,
-   "status": "no_signal",
-   "ra": 63.4463807954454,
-   "dec": -13.0350275110398,
-   "tmag": 12.878,
-   "sectors": "32",
-   "period": 4.787864,
-   "sde": 7.8,
-   "seconds": 6.3
-  },
-  {
-   "tic": 332706053,
-   "status": "no_signal",
-   "ra": 63.5416601654156,
-   "dec": -12.3155049401017,
-   "tmag": 10.9568,
-   "sectors": "32",
-   "period": 2.191523,
-   "sde": 7.22,
-   "seconds": 7.7
-  },
-  {
-   "tic": 332660437,
-   "status": "no_signal",
-   "ra": 63.2125612693155,
-   "dec": -12.9070983852114,
-   "tmag": 12.3917,
-   "sectors": "32",
-   "period": 4.519209,
-   "sde": 8.48,
-   "seconds": 4.8
-  },
   {
    "tic": 70888423,
    "status": "no_signal",
@@ -283,6 +228,61 @@
    "period": null,
    "sde": null,
    "seconds": 173.5
+  },
+  {
+   "tic": 332697919,
+   "status": "no_signal",
+   "ra": 63.3088864967431,
+   "dec": -12.4740668685447,
+   "tmag": 12.4138,
+   "sectors": "32",
+   "period": 3.793613,
+   "sde": 8.42,
+   "seconds": 198.6
+  },
+  {
+   "tic": 418785695,
+   "status": "systematic",
+   "ra": 311.862439915911,
+   "dec": -18.3971167337913,
+   "tmag": 12.6614,
+   "sectors": "92",
+   "period": 7.93004,
+   "sde": 19.86,
+   "seconds": 249.7
+  },
+  {
+   "tic": 70888689,
+   "status": "no_signal",
+   "ra": 63.9488628030538,
+   "dec": -12.7054532861279,
+   "tmag": 12.9169,
+   "sectors": "32",
+   "period": 7.753763,
+   "sde": 8.74,
+   "seconds": 202.4
+  },
+  {
+   "tic": 70888389,
+   "status": "no_signal",
+   "ra": 63.7951320690163,
+   "dec": -12.4632762990456,
+   "tmag": 10.0964,
+   "sectors": "32",
+   "period": 4.687926,
+   "sde": 9.08,
+   "seconds": 172.3
+  },
+  {
+   "tic": 332698244,
+   "status": "no_signal",
+   "ra": 63.3910912236416,
+   "dec": -12.6199787029009,
+   "tmag": 12.6604,
+   "sectors": "32",
+   "period": null,
+   "sde": null,
+   "seconds": 190.5
   }
  ]
 }
