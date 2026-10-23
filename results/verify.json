@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-21T23:54:53+00:00",
+  "checked_utc": "2026-10-23T01:55:12+00:00",
   "catalogs": {
     "tois": 8151,
     "ctois": 5139,
@@ -74,13 +74,6 @@
       "id": "TIC406239216.02",
       "tic": 406239216,
       "period": 2.769861,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
-      "id": "TIC284900031.02",
-      "tic": 284900031,
-      "period": 12.655148,
       "catalog_status": "new",
       "note": ""
     },
@@ -498,13 +491,6 @@
       "note": ""
     },
     {
-      "id": "TIC324046056.01",
-      "tic": 324046056,
-      "period": 13.661314,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
       "id": "TIC324046056.02",
       "tic": 324046056,
       "period": 13.625775,
@@ -536,13 +522,6 @@
       "id": "TIC417643237.01",
       "tic": 417643237,
       "period": 13.00471,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
-      "id": "TIC387496770.02",
-      "tic": 387496770,
-      "period": 20.921969,
       "catalog_status": "new",
       "note": ""
     },
@@ -606,13 +585,6 @@
       "id": "TIC267459128.02",
       "tic": 267459128,
       "period": 0.538492,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
-      "id": "TIC267460038.01",
-      "tic": 267460038,
-      "period": 14.076047,
       "catalog_status": "new",
       "note": ""
     },
@@ -792,13 +764,6 @@
       "note": ""
     },
     {
-      "id": "TIC307159743.01",
-      "tic": 307159743,
-      "period": 13.628645,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
       "id": "TIC286925638.01",
       "tic": 286925638,
       "period": 14.920234,
@@ -886,13 +851,6 @@
       "id": "TIC49785459.01",
       "tic": 49785459,
       "period": 0.867266,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
-      "id": "TIC332516904.02",
-      "tic": 332516904,
-      "period": 13.072714,
       "catalog_status": "new",
       "note": ""
     },
@@ -1009,13 +967,6 @@
       "note": ""
     },
     {
-      "id": "TIC44222376.01",
-      "tic": 44222376,
-      "period": 2.715654,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
       "id": "TIC126318618.01",
       "tic": 126318618,
       "period": 9.081809,
@@ -1033,13 +984,6 @@
       "id": "TIC29786701.01",
       "tic": 29786701,
       "period": 2.567414,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
-      "id": "TIC29786701.02",
-      "tic": 29786701,
-      "period": 17.632984,
       "catalog_status": "new",
       "note": ""
     },
@@ -1180,6 +1124,286 @@
       "id": "TIC138234512.01",
       "tic": 138234512,
       "period": 7.436878,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC159441469.01",
+      "tic": 159441469,
+      "period": 11.526101,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC159304737.02",
+      "tic": 159304737,
+      "period": 12.922893,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC151957941.02",
+      "tic": 151957941,
+      "period": 13.812298,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC160420599.01",
+      "tic": 160420599,
+      "period": 14.935701,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC393566206.01",
+      "tic": 393566206,
+      "period": 1.489053,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC238061135.01",
+      "tic": 238061135,
+      "period": 2.008664,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC289463006.01",
+      "tic": 289463006,
+      "period": 4.397761,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC288266416.01",
+      "tic": 288266416,
+      "period": 15.581019,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC270537251.02",
+      "tic": 270537251,
+      "period": 6.539901,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC279580180.02",
+      "tic": 279580180,
+      "period": 4.357056,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC94745304.01",
+      "tic": 94745304,
+      "period": 6.478253,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC77042237.01",
+      "tic": 77042237,
+      "period": 1.430982,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC15832720.01",
+      "tic": 15832720,
+      "period": 1.348987,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC21621406.01",
+      "tic": 21621406,
+      "period": 2.579213,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC207434202.01",
+      "tic": 207434202,
+      "period": 17.561333,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC274485542.01",
+      "tic": 274485542,
+      "period": 19.770236,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC274508091.01",
+      "tic": 274508091,
+      "period": 6.923255,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC308537764.02",
+      "tic": 308537764,
+      "period": 0.811155,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC142055009.01",
+      "tic": 142055009,
+      "period": 10.901762,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC417177708.01",
+      "tic": 417177708,
+      "period": 3.486574,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC230282268.01",
+      "tic": 230282268,
+      "period": 3.473308,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC71034517.01",
+      "tic": 71034517,
+      "period": 6.048353,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC330539779.01",
+      "tic": 330539779,
+      "period": 13.009278,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC330543056.01",
+      "tic": 330543056,
+      "period": 1.332774,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC341411983.01",
+      "tic": 341411983,
+      "period": 26.553357,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC157659966.01",
+      "tic": 157659966,
+      "period": 3.110653,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC395092482.01",
+      "tic": 395092482,
+      "period": 2.192584,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC255755420.01",
+      "tic": 255755420,
+      "period": 1.091821,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC255756387.01",
+      "tic": 255756387,
+      "period": 14.223554,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC255742494.01",
+      "tic": 255742494,
+      "period": 1.202915,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC31476193.01",
+      "tic": 31476193,
+      "period": 12.322827,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC363459345.01",
+      "tic": 363459345,
+      "period": 1.678146,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC409457058.02",
+      "tic": 409457058,
+      "period": 1.328989,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC265074369.01",
+      "tic": 265074369,
+      "period": 6.37851,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC241192225.01",
+      "tic": 241192225,
+      "period": 1.755666,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC309753573.01",
+      "tic": 309753573,
+      "period": 15.942174,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC452412478.01",
+      "tic": 452412478,
+      "period": 3.404896,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC452382808.02",
+      "tic": 452382808,
+      "period": 0.664722,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC36828950.01",
+      "tic": 36828950,
+      "period": 1.136417,
+      "catalog_status": "new",
+      "note": ""
+    },
+    {
+      "id": "TIC320497447.01",
+      "tic": 320497447,
+      "period": 16.458565,
       "catalog_status": "new",
       "note": ""
     }
