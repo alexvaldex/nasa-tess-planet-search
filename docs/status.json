@@ -1,47 +1,14 @@
 {
- "state": "running",
- "note": "",
+ "state": "idle",
+ "note": "next run in under 6 hours",
  "run_started": "2026-10-25T23:59:20+00:00",
- "updated": "2026-10-26T00:36:25+00:00",
+ "updated": "2026-10-26T00:36:43+00:00",
  "targets": 800,
- "done": 797,
+ "done": 800,
  "candidates_this_run": 2,
  "run_id": "40247105842",
  "repo": "alexvaldex/nasa-tess-planet-search",
  "feed": [
-  {
-   "tic": 148115214,
-   "status": "systematic",
-   "ra": 248.491486696784,
-   "dec": 16.6710153341968,
-   "tmag": 12.4653,
-   "sectors": "79",
-   "period": 7.072088,
-   "sde": 23.52,
-   "seconds": 38.2
-  },
-  {
-   "tic": 148075703,
-   "status": "no_signal",
-   "ra": 248.206229180061,
-   "dec": 17.2067289733251,
-   "tmag": 10.4474,
-   "sectors": "79",
-   "period": null,
-   "sde": null,
-   "seconds": 43.5
-  },
-  {
-   "tic": 148075746,
-   "status": "likely_eb",
-   "ra": 248.229268020955,
-   "dec": 17.1124781608703,
-   "tmag": 12.875,
-   "sectors": "79",
-   "period": 7.403312,
-   "sde": 13.39,
-   "seconds": 49.0
-  },
   {
    "tic": 148115261,
    "status": "no_signal",
@@ -283,6 +250,39 @@
    "period": 6.886385,
    "sde": 11.11,
    "seconds": 37.7
+  },
+  {
+   "tic": 425161102,
+   "status": "systematic",
+   "ra": 58.6136787645255,
+   "dec": -3.99630250881439,
+   "tmag": 12.463,
+   "sectors": "31",
+   "period": 5.245183,
+   "sde": 15.71,
+   "seconds": 35.0
+  },
+  {
+   "tic": 425158249,
+   "status": "no_signal",
+   "ra": 58.4481795468693,
+   "dec": -4.49703315887578,
+   "tmag": 12.9896,
+   "sectors": "31",
+   "period": 2.802652,
+   "sde": 7.3,
+   "seconds": 32.6
+  },
+  {
+   "tic": 425161983,
+   "status": "no_signal",
+   "ra": 58.7338560135939,
+   "dec": -4.45137814433982,
+   "tmag": 12.1964,
+   "sectors": "31",
+   "period": 2.263495,
+   "sde": 8.04,
+   "seconds": 36.9
   }
  ]
 }
