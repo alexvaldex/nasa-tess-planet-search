@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-27T18:31:21+00:00",
+  "checked_utc": "2026-10-27T19:58:46+00:00",
   "catalogs": {
     "tois": 8151,
     "ctois": 5139,
@@ -7,13 +7,6 @@
     "tess_ebs": 4578
   },
   "candidates": [
-    {
-      "id": "TIC230202008.02",
-      "tic": 230202008,
-      "period": 8.032213,
-      "catalog_status": "new",
-      "note": ""
-    },
     {
       "id": "TIC233729835.01",
       "tic": 233729835,
@@ -1663,13 +1656,6 @@
       "id": "TIC149036935.02",
       "tic": 149036935,
       "period": 13.606763,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
-      "id": "TIC288064733.01",
-      "tic": 288064733,
-      "period": 0.562753,
       "catalog_status": "new",
       "note": ""
     },
