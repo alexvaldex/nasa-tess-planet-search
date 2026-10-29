@@ -57519,7 +57519,7 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 128709482,2026-10-17,104,QLP,3309.0,299.734958568223,-46.3901802199429,12.4805,8.295123,25.97,0.0,no_signal,5.1,
 128801559,2026-10-17,104,QLP,3480.0,300.402890885737,-46.341266449807,12.7393,7.989202,22.88,0.0,no_signal,5.3,
 128792965,2026-10-17,104,QLP,3526.0,300.076548069948,-46.7653815690686,12.0995,7.943618,17.07,1.0,systematic,5.2,
-128725566,2026-10-17,104,QLP,3171.0,299.782664063621,-46.0216587671201,12.4535,5.826892,17.79,2.0,likely_eb,5.4,
+128725566,2026-10-17,104,QLP,3171.0,299.782664063621,-46.0216587671201,12.4535,5.826892,17.79,2.0,systematic,5.4,
 128677858,2026-10-17,104,QLP,3475.0,299.271361574203,-46.2971754216825,12.8262,6.691758,26.03,2.0,systematic,6.6,
 283676448,2026-10-17,1751,,,62.2859986123006,7.50110453257866,11.9797,,,,too_little_data,2.4,
 283609503,2026-10-17,32,TESS-SPOC,3270.0,61.8492925036478,7.14269449159901,12.8701,,,0.0,no_signal,5.0,
@@ -190064,3 +190064,52 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 370225948,,,,,,,,,,,download_error,344.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 101277696,,,,,,,,,,,download_error,90.4,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
 101232914,,,,,,,,,,,download_error,223.6,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+166464725,,,,,,,,,,,download_error,163.6,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101229917,,,,,,,,,,,download_error,76.3,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101178295,,,,,,,,,,,download_error,0.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101174714,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101274562,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101174778,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+166425163,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101178023,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+219926746,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101230017,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101178091,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101229626,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+166464280,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101229691,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101229894,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101178357,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101178101,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101174735,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101274709,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101230018,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101175213,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+166464714,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101274254,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101274479,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+166464513,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101178392,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101174971,,,,,,,,,,,download_error,0.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+166464688,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+101277792,,,,,,,,,,,download_error,384.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+101178346,2026-10-29,104,QLP,3616.0,299.15006951303,-50.6213322514542,11.869,6.776583,14.62,0.0,no_signal,88.8,
+101178076,2026-10-29,104,QLP,3585.0,299.168998922141,-50.2004106970192,12.6576,6.642804,25.47,1.0,systematic,30.6,
+101229937,2026-10-29,104,QLP,3560.0,299.435324455919,-50.1706160600692,12.8438,6.640372,27.81,2.0,systematic,158.3,
+166424873,2026-10-29,104,QLP,3572.0,298.684622885867,-50.3400940555251,11.683,7.887235,16.05,0.0,no_signal,10.5,
+166464539,2026-10-29,104,QLP,3562.0,298.750474979163,-50.2331785635507,12.981,6.636767,25.23,2.0,systematic,9.1,
+101232869,2026-10-29,104,QLP,3573.0,299.567735934359,-49.9589792151548,12.7221,6.654833,21.56,2.0,systematic,9.1,
+101274701,2026-10-29,104,QLP,3125.0,299.707601456614,-49.96299542051,12.7778,7.066442,21.25,1.0,systematic,10.5,
+101274549,2026-10-29,104,QLP,3578.0,299.631513915797,-50.1859946085424,12.0897,7.905787,19.3,1.0,systematic,13.5,
+101230132,2026-10-29,104,QLP,3503.0,299.382802437567,-49.8809458576801,12.9103,6.602095,27.82,1.0,systematic,7.4,
+101274533,2026-10-29,104,QLP,3572.0,299.701791624971,-50.2146874053271,12.9753,6.629567,28.17,2.0,systematic,8.0,
+101229861,2026-10-29,67,TESS-SPOC,2484.0,299.391356106173,-50.3168290977314,10.7729,2.428104,10.11,0.0,no_signal,10.9,
+101177917,2026-10-29,104,QLP,3582.0,299.154344964804,-49.9701956478038,10.7963,8.114969,24.33,1.0,systematic,9.7,
+166425091,2026-10-29,104,QLP,3566.0,298.698947872691,-50.031782219576,12.3418,7.973639,18.31,1.0,systematic,7.1,
+101274391,2026-10-29,104,QLP,3582.0,299.690066513906,-50.4425178269529,12.4423,6.651212,21.75,2.0,systematic,142.8,
+101177953,2026-10-29,104,QLP,3421.0,299.222603085742,-50.0229367355768,12.8759,8.123581,8.81,1.0,systematic,6.0,
+101175117,2026-10-29,104,QLP,3592.0,299.008805097115,-50.0849005616267,12.7278,7.154749,17.99,0.0,no_signal,4.5,
+101233159,2026-10-29,104,QLP,3595.0,299.490309445594,-50.3463850231501,11.0163,6.586699,27.64,0.0,no_signal,4.3,
+101277769,2026-10-29,104 105,SPOC,5962.0,299.939748787166,-50.3471939774588,11.488,15.304868,10.74,2.0,likely_eb,13.2,
+101277626,2026-10-29,104,QLP,3488.0,299.928232949347,-50.1614621209843,11.9239,8.425013,25.87,0.0,no_signal,4.9,
+101174928,2026-10-29,104,QLP,3416.0,298.985791194664,-50.3980813388638,12.8864,6.753673,10.58,2.0,systematic,4.7,
