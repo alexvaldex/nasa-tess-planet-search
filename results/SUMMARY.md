@@ -1,10 +1,10 @@
 # Results summary
 
-_Last updated 2026-10-31 16:17 UTC by the hunting bot._
+_Last updated 2026-10-31 16:27 UTC by the hunting bot._
 
-- Stars analyzed: **216,000**
-- TESS sectors processed: **372,526**
-- Light curve points searched: **1,124,352,789**
+- Stars analyzed: **216,076**
+- TESS sectors processed: **372,640**
+- Light curve points searched: **1,124,654,841**
 - Signals passing detection: **139,577**
 
   - strong candidate: 47
