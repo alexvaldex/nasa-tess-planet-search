@@ -136099,7 +136099,7 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 467157148,2026-10-23,74,TESS-SPOC,2182.0,131.752949354666,56.4671837196416,12.5441,2.04815,7.36,0.0,no_signal,5.9,
 467158314,2026-10-23,74,TESS-SPOC,2188.0,131.908640823152,55.8201086387901,10.9683,1.613624,7.37,0.0,no_signal,6.9,
 467155259,2026-10-23,74,TESS-SPOC,2188.0,131.468101483026,55.9061036354444,12.088,,,0.0,no_signal,3.9,
-445066715,2026-10-23,74,QLP,3096.0,130.623999668815,56.3036020226693,12.9223,4.92664,7.87,1.0,low_score,4.7,
+445066715,2026-10-23,74,QLP,3096.0,130.623999668815,56.3036020226693,12.9223,4.92664,7.87,1.0,systematic,4.7,
 445069447,2026-10-23,74,TESS-SPOC,2187.0,130.936572392225,56.1738093276611,11.6729,3.283328,7.32,0.0,no_signal,7.2,
 35010880,2026-10-23,46,TESS-SPOC,3007.0,179.435298190705,-2.07496196736963,12.1918,,,0.0,no_signal,3.6,
 35020369,2026-10-23,46,TESS-SPOC,3007.0,179.786103207637,-2.38671273575066,12.9783,4.657461,7.95,0.0,no_signal,5.1,
@@ -232154,3 +232154,30 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 161516485,,,,,,,,,,,download_error,272.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 161515560,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 161567676,,,,,,,,,,,download_error,275.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+424507633,,,,,,,,,,,download_error,275.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+161574446,,,,,,,,,,,download_error,421.2,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235725083,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235762085,,,,,,,,,,,download_error,401.2,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235728224,,,,,,,,,,,download_error,272.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+284271887,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+424511097,,,,,,,,,,,download_error,273.0,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235729220,,,,,,,,,,,download_error,273.0,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235765046,,,,,,,,,,,download_error,273.0,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235728898,,,,,,,,,,,download_error,487.4,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+284271984,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+424507464,,,,,,,,,,,download_error,278.4,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235762575,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235766343,,,,,,,,,,,download_error,272.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235762218,,,,,,,,,,,download_error,272.8,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235765198,,,,,,,,,,,download_error,272.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+424507361,,,,,,,,,,,download_error,330.2,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235725487,,,,,,,,,,,download_error,272.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235725349,,,,,,,,,,,download_error,272.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235725485,,,,,,,,,,,download_error,536.3,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235725438,,,,,,,,,,,download_error,272.7,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235725161,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235728878,2026-11-01,74,QLP,3654.0,276.55348114677,25.0886760795529,12.6848,6.875984,15.45,2.0,systematic,384.7,
+235728672,,,,,,,,,,,download_error,305.2,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235762888,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+424511310,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+235725965,,,,,,,,,,,download_error,272.9,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
