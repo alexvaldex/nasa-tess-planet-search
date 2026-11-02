@@ -242028,3 +242028,12 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 67587344,2026-11-02,47,TESS-SPOC,3135.0,131.179901803907,39.5343177828496,11.438,6.124239,10.49,0.0,no_signal,6.7,
 67588647,2026-11-02,47,TESS-SPOC,3136.0,131.306351672454,39.0225983596719,12.7086,7.161695,7.4,0.0,no_signal,6.9,
 67596571,2026-11-02,47,QLP,3302.0,131.631654834194,39.4693407358239,12.9631,4.772201,8.11,1.0,systematic,8.5,
+328010314,,,,,,,,,,,download_error,602.0,Timeout limit of 600 exceeded.
+434098977,,,,,,,,,,,download_error,602.0,Timeout limit of 600 exceeded.
+328010274,,,,,,,,,,,download_error,602.3,Timeout limit of 600 exceeded.
+434099986,,,,,,,,,,,download_error,602.0,Timeout limit of 600 exceeded.
+434101189,,,,,,,,,,,download_error,602.2,Timeout limit of 600 exceeded.
+434101335,,,,,,,,,,,download_error,602.2,Timeout limit of 600 exceeded.
+434097633,,,,,,,,,,,download_error,602.3,Timeout limit of 600 exceeded.
+434098979,,,,,,,,,,,download_error,602.3,Timeout limit of 600 exceeded.
+434096729,,,,,,,,,,,download_error,610.1,Timeout limit of 600 exceeded.

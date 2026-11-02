@@ -2,11 +2,111 @@
  "state": "running",
  "note": "",
  "run_started": "2026-11-02T02:15:05+00:00",
- "updated": "2026-11-02T02:16:07+00:00",
+ "updated": "2026-11-02T02:39:09+00:00",
  "targets": 800,
- "done": 0,
+ "done": 9,
  "candidates_this_run": 0,
  "run_id": "41376620164",
  "repo": "alexvaldex/nasa-tess-planet-search",
- "feed": []
+ "feed": [
+  {
+   "tic": 328010314,
+   "status": "download_error",
+   "ra": 352.403355790195,
+   "dec": -14.6591755005294,
+   "tmag": 10.8651,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.0
+  },
+  {
+   "tic": 434098977,
+   "status": "download_error",
+   "ra": 352.76684402845,
+   "dec": -14.6842537078928,
+   "tmag": 12.8229,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.0
+  },
+  {
+   "tic": 328010274,
+   "status": "download_error",
+   "ra": 352.410238795618,
+   "dec": -14.5419161920569,
+   "tmag": 11.9421,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.3
+  },
+  {
+   "tic": 434099986,
+   "status": "download_error",
+   "ra": 352.879571675277,
+   "dec": -14.5973029045819,
+   "tmag": 12.7796,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.0
+  },
+  {
+   "tic": 434101189,
+   "status": "download_error",
+   "ra": 352.960210628518,
+   "dec": -14.6583329037556,
+   "tmag": 12.9749,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.2
+  },
+  {
+   "tic": 434101335,
+   "status": "download_error",
+   "ra": 352.978567238268,
+   "dec": -13.9138011816521,
+   "tmag": 12.6709,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.2
+  },
+  {
+   "tic": 434097633,
+   "status": "download_error",
+   "ra": 352.608208646294,
+   "dec": -13.9809951352055,
+   "tmag": 12.285,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.3
+  },
+  {
+   "tic": 434098979,
+   "status": "download_error",
+   "ra": 352.784189171948,
+   "dec": -14.6797487399603,
+   "tmag": 11.8815,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 602.3
+  },
+  {
+   "tic": 434096729,
+   "status": "download_error",
+   "ra": 352.49061393706,
+   "dec": -14.6397518181571,
+   "tmag": 12.8604,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 610.1
+  }
+ ]
 }
