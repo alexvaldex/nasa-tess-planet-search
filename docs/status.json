@@ -1,124 +1,14 @@
 {
- "state": "running",
- "note": "",
+ "state": "idle",
+ "note": "next run in under 6 hours",
  "run_started": "2026-11-06T13:44:15+00:00",
- "updated": "2026-11-06T14:33:39+00:00",
+ "updated": "2026-11-06T14:34:04+00:00",
  "targets": 800,
- "done": 790,
+ "done": 800,
  "candidates_this_run": 4,
  "run_id": "42227736340",
  "repo": "alexvaldex/nasa-tess-planet-search",
  "feed": [
-  {
-   "tic": 402337355,
-   "status": "no_signal",
-   "ra": 220.116879465225,
-   "dec": 5.81646393916675,
-   "tmag": 12.8971,
-   "sectors": "51",
-   "period": null,
-   "sde": null,
-   "seconds": 7.3
-  },
-  {
-   "tic": 368726116,
-   "status": "no_signal",
-   "ra": 220.376642322909,
-   "dec": 5.9228652214911,
-   "tmag": 12.2076,
-   "sectors": "51",
-   "period": 5.114591,
-   "sde": 8.8,
-   "seconds": 6.8
-  },
-  {
-   "tic": 402337364,
-   "status": "no_signal",
-   "ra": 220.141259884468,
-   "dec": 5.77676106395902,
-   "tmag": 11.8471,
-   "sectors": "51",
-   "period": 1.520108,
-   "sde": 7.28,
-   "seconds": 11.1
-  },
-  {
-   "tic": 421851571,
-   "status": "no_signal",
-   "ra": 219.994821942622,
-   "dec": 6.1086173050212,
-   "tmag": 12.8233,
-   "sectors": "51",
-   "period": 3.619481,
-   "sde": 9.02,
-   "seconds": 11.8
-  },
-  {
-   "tic": 421851713,
-   "status": "no_signal",
-   "ra": 219.9374894358,
-   "dec": 6.54610769077577,
-   "tmag": 12.1466,
-   "sectors": "51",
-   "period": 2.082942,
-   "sde": 7.99,
-   "seconds": 4.9
-  },
-  {
-   "tic": 421851688,
-   "status": "no_signal",
-   "ra": 219.938497757366,
-   "dec": 6.47065398602217,
-   "tmag": 12.1269,
-   "sectors": "51",
-   "period": 1.914274,
-   "sde": 7.26,
-   "seconds": 9.6
-  },
-  {
-   "tic": 449158830,
-   "status": "no_signal",
-   "ra": 219.542804133733,
-   "dec": 6.31939085601748,
-   "tmag": 11.9048,
-   "sectors": "51",
-   "period": null,
-   "sde": null,
-   "seconds": 8.3
-  },
-  {
-   "tic": 446452133,
-   "status": "no_signal",
-   "ra": 220.11567254854,
-   "dec": 6.28505381902994,
-   "tmag": 12.5671,
-   "sectors": "51",
-   "period": 3.886851,
-   "sde": 9.56,
-   "seconds": 10.1
-  },
-  {
-   "tic": 402337340,
-   "status": "no_signal",
-   "ra": 220.036815404508,
-   "dec": 5.90171184025363,
-   "tmag": 12.3789,
-   "sectors": "51",
-   "period": 2.310817,
-   "sde": 10.41,
-   "seconds": 7.6
-  },
-  {
-   "tic": 402362768,
-   "status": "no_signal",
-   "ra": 220.214331988191,
-   "dec": 5.73369961931654,
-   "tmag": 10.5633,
-   "sectors": "51",
-   "period": 1.622366,
-   "sde": 7.24,
-   "seconds": 8.4
-  },
   {
    "tic": 402337321,
    "status": "no_signal",
@@ -283,6 +173,116 @@
    "period": 0.591352,
    "sde": 9.44,
    "seconds": 11.5
+  },
+  {
+   "tic": 101386980,
+   "status": "no_signal",
+   "ra": 148.849141691644,
+   "dec": -31.8739598247114,
+   "tmag": 12.2204,
+   "sectors": "99",
+   "period": 2.948552,
+   "sde": 9.43,
+   "seconds": 10.6
+  },
+  {
+   "tic": 101386787,
+   "status": "no_signal",
+   "ra": 148.901188121452,
+   "dec": -31.5946703655153,
+   "tmag": 12.1956,
+   "sectors": "89",
+   "period": 1.613559,
+   "sde": 8.95,
+   "seconds": 7.5
+  },
+  {
+   "tic": 101386838,
+   "status": "systematic",
+   "ra": 148.812143707637,
+   "dec": -31.6593960249052,
+   "tmag": 12.6839,
+   "sectors": "99",
+   "period": 6.852624,
+   "sde": 9.46,
+   "seconds": 10.1
+  },
+  {
+   "tic": 48369599,
+   "status": "likely_eb",
+   "ra": 149.582272034375,
+   "dec": -31.9066482148814,
+   "tmag": 12.034,
+   "sectors": "89",
+   "period": 4.286371,
+   "sde": 11.86,
+   "seconds": 9.4
+  },
+  {
+   "tic": 101501497,
+   "status": "no_signal",
+   "ra": 149.460615056467,
+   "dec": -31.6387741403304,
+   "tmag": 11.6985,
+   "sectors": "89",
+   "period": 2.837806,
+   "sde": 7.22,
+   "seconds": 12.2
+  },
+  {
+   "tic": 101386766,
+   "status": "no_signal",
+   "ra": 148.849067260487,
+   "dec": -31.5625515901335,
+   "tmag": 12.6136,
+   "sectors": "89",
+   "period": 4.155345,
+   "sde": 9.33,
+   "seconds": 10.6
+  },
+  {
+   "tic": 48369719,
+   "status": "likely_eb",
+   "ra": 149.487054626756,
+   "dec": -31.7400837901221,
+   "tmag": 11.23,
+   "sectors": "89",
+   "period": 9.275264,
+   "sde": 25.56,
+   "seconds": 10.4
+  },
+  {
+   "tic": 101501934,
+   "status": "no_signal",
+   "ra": 149.333487760406,
+   "dec": -32.2512311743349,
+   "tmag": 12.9428,
+   "sectors": "89",
+   "period": 4.300854,
+   "sde": 8.5,
+   "seconds": 11.1
+  },
+  {
+   "tic": 48370056,
+   "status": "no_signal",
+   "ra": 149.472195171754,
+   "dec": -31.2765308244687,
+   "tmag": 12.3108,
+   "sectors": "35 36",
+   "period": 4.237295,
+   "sde": 7.39,
+   "seconds": 15.9
+  },
+  {
+   "tic": 48372493,
+   "status": "no_signal",
+   "ra": 149.644338728553,
+   "dec": -31.8440179571525,
+   "tmag": 11.5733,
+   "sectors": "89",
+   "period": null,
+   "sde": null,
+   "seconds": 9.4
   }
  ]
 }
