@@ -1,22 +1,22 @@
 # Results summary
 
-_Last updated 2026-11-07 00:20 UTC by the hunting bot._
+_Last updated 2026-11-07 00:45 UTC by the hunting bot._
 
-- Stars analyzed: **284,788**
-- TESS sectors processed: **491,262**
-- Light curve points searched: **1,488,429,477**
-- Signals passing detection: **186,428**
+- Stars analyzed: **284,918**
+- TESS sectors processed: **491,460**
+- Light curve points searched: **1,489,321,361**
+- Signals passing detection: **186,551**
 
-  - strong candidate: 64
+  - strong candidate: 65
   - candidate: 287
   - known planet: 86
   - known toi: 246
   - known system: 111
   - known eb: 234
-  - likely eb: 3739
-  - variable star: 4340
-  - systematic: 174633
-  - low score: 2688
+  - likely eb: 3742
+  - variable star: 4345
+  - systematic: 174745
+  - low score: 2690
 
 **Validation:** blind search recovered 241 of 281 confirmed TESS planets (86%).
 
@@ -38,6 +38,7 @@ _Last updated 2026-11-07 00:20 UTC by the hunting bot._
 | TIC149501498.01 | 1.00 | 1.5000 | 1081 | 5.5 | 18.8 |  |  |
 | TIC21125033.01 | 0.99 | 0.9118 | 1865 | 6.1 | 21.3 |  |  |
 | TIC59977848.01 | 0.99 | 4.5844 | 2872 | 6.8 | 17.3 |  |  |
+| TIC59648605.01 | 0.99 | 5.3030 | 4293 | 9.8 | 16.6 |  |  |
 | TIC232051190.01 | 0.99 | 2.0174 | 881 | 3.1 | 11.7 |  |  |
 | TIC141328885.01 | 0.99 | 1.7935 | 24512 | 14.4 | 80.3 |  |  |
 | TIC318192124.01 | 0.99 | 0.9563 | 5170 | 8.4 | 40.7 |  |  |
@@ -48,4 +49,3 @@ _Last updated 2026-11-07 00:20 UTC by the hunting bot._
 | TIC130471383.02 | 0.98 | 19.0923 | 762 | 2.5 | 10.7 |  |  |
 | TIC47513269.01 | 0.98 | 2.7650 | 9549 | 13.9 | 74.5 |  |  |
 | TIC424901420.02 | 0.98 | 15.9625 | 2393 | 6.8 | 18.5 |  |  |
-| TIC38088984.01 | 0.98 | 2.5443 | 14146 | 19.6 | 166.9 |  |  |
