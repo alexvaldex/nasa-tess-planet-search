@@ -298164,3 +298164,5 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 247015136,2026-11-06,42 43 44,TESS-SPOC,8288.0,37.5767286498577,20.5992413071846,12.3665,3.07069,8.6,0.0,no_signal,40.5,
 247012003,2026-11-06,42 43 44,TESS-SPOC,8289.0,37.3727125917842,21.0517027952778,12.7456,1.503063,7.2,0.0,no_signal,30.0,
 269858127,,,,,,,,,,,download_error,650.0,Timeout limit of 600 exceeded.
+269858385,,,,,,,,,,,download_error,650.0,Timeout limit of 600 exceeded.
+260964841,,,,,,,,,,,download_error,650.0,Timeout limit of 600 exceeded.
