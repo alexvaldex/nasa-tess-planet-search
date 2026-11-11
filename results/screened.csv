@@ -348434,3 +348434,25 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 382031782,2026-11-11,4 5 6 7,SPOC TESS-SPOC,5690.0,78.8324902813027,-54.285278657987,10.5862,2.377659,7.31,0.0,no_signal,206.6,
 382027619,2026-11-11,4 5 6 7,TESS-SPOC,3830.0,78.4533195916227,-53.9399851802211,11.9173,7.711826,7.24,0.0,no_signal,61.6,
 382031535,2026-11-11,4 5 6 7,QLP TESS-SPOC,3848.0,78.7170626769059,-54.2380705306974,12.6591,,,0.0,no_signal,34.4,
+382043432,2026-11-11,66 67 68 69,QLP,13220.0,79.0528612527774,-54.7058651785599,12.9652,0.632574,10.45,1.0,systematic,95.5,
+382027742,2026-11-11,64 65 66 67,QLP,14979.0,78.5416340925912,-54.3099496407629,12.7264,14.203499,14.44,1.0,systematic,138.2,
+382031437,2026-11-11,64 65 66 67,QLP,14978.0,78.6150151846826,-54.527887051364,12.4429,29.736828,8.49,0.0,no_signal,185.1,
+219397766,2026-11-11,30 31 32 33,QLP,13467.0,78.0451424153262,-53.9457147370266,12.9285,1.550886,8.96,0.0,no_signal,109.9,
+382067829,2026-11-11,64 65 66 67,QLP,14980.0,79.4438389824067,-54.033746046693,12.5273,19.758712,9.98,1.0,systematic,116.7,
+382067715,2026-11-11,65 66 67 68,QLP,13973.0,79.5167737171974,-54.3521106801657,11.6332,18.871391,7.96,0.0,no_signal,152.9,
+358401951,2026-11-11,64 65 66 67,QLP,14979.0,78.0337198891232,-54.5069199018467,12.9471,,,0.0,no_signal,161.5,
+358401737,,,,,,,,,,,download_error,600.4,Timeout limit of 600 exceeded.
+257722316,,,,,,,,,,,download_error,600.9,Timeout limit of 600 exceeded.
+382043729,,,,,,,,,,,download_error,600.5,Timeout limit of 600 exceeded.
+219410915,,,,,,,,,,,download_error,600.7,Timeout limit of 600 exceeded.
+257722339,,,,,,,,,,,download_error,600.4,Timeout limit of 600 exceeded.
+382031951,,,,,,,,,,,download_error,600.5,Timeout limit of 600 exceeded.
+382031912,,,,,,,,,,,download_error,600.4,Timeout limit of 600 exceeded.
+382043620,,,,,,,,,,,download_error,601.0,Timeout limit of 600 exceeded.
+382043614,,,,,,,,,,,download_error,158.7,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+257722167,,,,,,,,,,,download_error,604.3,Timeout limit of 600 exceeded.
+382031456,,,,,,,,,,,download_error,610.8,Timeout limit of 600 exceeded.
+382031449,,,,,,,,,,,download_error,611.0,Timeout limit of 600 exceeded.
+257722341,,,,,,,,,,,download_error,603.5,Timeout limit of 600 exceeded.
+257722321,,,,,,,,,,,download_error,638.5,Timeout limit of 600 exceeded.
+406141417,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
