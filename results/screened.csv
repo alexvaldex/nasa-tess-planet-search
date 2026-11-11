@@ -348456,3 +348456,18 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 257722341,,,,,,,,,,,download_error,603.5,Timeout limit of 600 exceeded.
 257722321,,,,,,,,,,,download_error,638.5,Timeout limit of 600 exceeded.
 406141417,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+405465935,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+358401771,,,,,,,,,,,download_error,661.6,Timeout limit of 600 exceeded.
+405647226,,,,,,,,,,,download_error,625.9,Timeout limit of 600 exceeded.
+405946488,,,,,,,,,,,download_error,638.5,Timeout limit of 600 exceeded.
+405800955,,,,,,,,,,,download_error,653.0,Timeout limit of 600 exceeded.
+405645699,,,,,,,,,,,download_error,652.2,Timeout limit of 600 exceeded.
+405946478,,,,,,,,,,,download_error,668.7,Timeout limit of 600 exceeded.
+405948002,2026-11-11,45 46,QLP TESS-SPOC,6376.0,142.372052810071,8.11264677602948,12.9284,12.150303,16.61,1.0,systematic,603.7,
+405948046,,,,,,,,,,,download_error,637.5,Timeout limit of 600 exceeded.
+405948025,,,,,,,,,,,download_error,635.9,Timeout limit of 600 exceeded.
+405465967,,,,,,,,,,,download_error,621.1,Timeout limit of 600 exceeded.
+405645687,,,,,,,,,,,download_error,118.6,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+405800977,,,,,,,,,,,download_error,636.1,Timeout limit of 600 exceeded.
+405948031,,,,,,,,,,,download_error,606.6,Timeout limit of 600 exceeded.
+405645702,,,,,,,,,,,download_error,655.9,Timeout limit of 600 exceeded.
