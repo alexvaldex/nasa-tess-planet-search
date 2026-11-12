@@ -348561,3 +348561,6 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 159569011,,,,,,,,,,,download_error,652.1,Timeout limit of 600 exceeded.
 459802051,,,,,,,,,,,download_error,604.3,Timeout limit of 600 exceeded.
 357316466,,,,,,,,,,,download_error,604.2,Timeout limit of 600 exceeded.
+159550007,,,,,,,,,,,download_error,647.1,Timeout limit of 600 exceeded.
+357316433,,,,,,,,,,,download_error,606.6,Timeout limit of 600 exceeded.
+159569609,,,,,,,,,,,download_error,652.6,Timeout limit of 600 exceeded.
