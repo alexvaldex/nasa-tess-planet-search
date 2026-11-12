@@ -1,11 +1,11 @@
 # Results summary
 
-_Last updated 2026-11-12 15:40 UTC by the hunting bot._
+_Last updated 2026-11-12 16:11 UTC by the hunting bot._
 
-- Stars analyzed: **342,845**
-- TESS sectors processed: **589,590**
-- Light curve points searched: **1,789,998,063**
-- Signals passing detection: **224,708**
+- Stars analyzed: **342,912**
+- TESS sectors processed: **589,805**
+- Light curve points searched: **1,790,667,042**
+- Signals passing detection: **224,774**
 
   - strong candidate: 75
   - candidate: 310
@@ -13,11 +13,11 @@ _Last updated 2026-11-12 15:40 UTC by the hunting bot._
   - known toi: 300
   - blend of known: 1
   - known system: 132
-  - known eb: 264
-  - likely eb: 4020
-  - variable star: 4981
-  - systematic: 211585
-  - low score: 2942
+  - known eb: 266
+  - likely eb: 4021
+  - variable star: 4985
+  - systematic: 211641
+  - low score: 2945
 
 **Validation:** blind search recovered 241 of 281 confirmed TESS planets (86%).
 
