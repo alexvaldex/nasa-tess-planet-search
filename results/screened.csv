@@ -367443,3 +367443,12 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 237201797,2026-11-13,22 23 24 25,QLP TESS-SPOC,4573.0,292.808115070884,72.6743200041353,12.6228,13.912038,13.29,2.0,systematic,50.1,
 237212584,2026-11-13,83 84 85 86,TESS-SPOC,12067.0,294.325259373816,72.4405977361433,10.672,22.690459,10.82,0.0,no_signal,91.7,
 237207125,2026-11-13,22 23 24 25,QLP TESS-SPOC,4141.0,293.844690721529,72.5338606414405,12.461,13.555976,15.6,0.0,no_signal,51.7,
+200699381,,,,,,,,,,,download_error,645.7,Timeout limit of 600 exceeded.
+207150917,,,,,,,,,,,download_error,645.1,Timeout limit of 600 exceeded.
+207175122,,,,,,,,,,,download_error,648.2,Timeout limit of 600 exceeded.
+299887611,,,,,,,,,,,download_error,649.4,Timeout limit of 600 exceeded.
+207150947,,,,,,,,,,,download_error,686.5,Timeout limit of 600 exceeded.
+207174954,,,,,,,,,,,download_error,685.9,Timeout limit of 600 exceeded.
+207150847,,,,,,,,,,,download_error,686.6,Timeout limit of 600 exceeded.
+207175126,,,,,,,,,,,download_error,685.9,Timeout limit of 600 exceeded.
+207150952,,,,,,,,,,,download_error,604.2,Timeout limit of 600 exceeded.
