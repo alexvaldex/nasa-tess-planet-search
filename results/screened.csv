@@ -368080,3 +368080,22 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 294984764,,,,,,,,,,,download_error,601.1,Timeout limit of 600 exceeded.
 165190548,,,,,,,,,,,download_error,603.2,Timeout limit of 600 exceeded.
 165152230,,,,,,,,,,,download_error,600.8,Timeout limit of 600 exceeded.
+165189496,,,,,,,,,,,download_error,600.7,Timeout limit of 600 exceeded.
+165185521,,,,,,,,,,,download_error,766.7,Timeout limit of 600 exceeded.
+231918823,,,,,,,,,,,download_error,600.7,Timeout limit of 600 exceeded.
+231917618,,,,,,,,,,,download_error,600.9,Timeout limit of 600 exceeded.
+165190528,,,,,,,,,,,download_error,621.8,Timeout limit of 600 exceeded.
+231918855,,,,,,,,,,,download_error,601.7,Timeout limit of 600 exceeded.
+165185425,,,,,,,,,,,download_error,601.1,Timeout limit of 600 exceeded.
+231917241,,,,,,,,,,,download_error,694.1,Timeout limit of 600 exceeded.
+165206896,,,,,,,,,,,download_error,684.2,Timeout limit of 600 exceeded.
+165152175,,,,,,,,,,,download_error,601.9,Timeout limit of 600 exceeded.
+231919106,,,,,,,,,,,download_error,600.8,Timeout limit of 600 exceeded.
+165212330,,,,,,,,,,,download_error,604.2,Timeout limit of 600 exceeded.
+165185555,,,,,,,,,,,download_error,602.1,Timeout limit of 600 exceeded.
+165152313,,,,,,,,,,,download_error,601.3,Timeout limit of 600 exceeded.
+165189261,,,,,,,,,,,download_error,601.2,Timeout limit of 600 exceeded.
+165210736,,,,,,,,,,,download_error,527.4,502 Server Error: Bad Gateway for url: https://mast.stsci.edu/api/v0/invoke
+165189350,,,,,,,,,,,download_error,514.2,502 Server Error: Bad Gateway for url: https://mast.stsci.edu/api/v0/invoke
+231919038,,,,,,,,,,,download_error,253.3,502 Server Error: Bad Gateway for url: https://mast.stsci.edu/api/v0/invoke
+165210923,,,,,,,,,,,download_error,644.3,Timeout limit of 600 exceeded.
