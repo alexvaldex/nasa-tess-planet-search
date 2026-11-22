@@ -1,12 +1,12 @@
 {
  "state": "running",
  "note": "",
- "run_started": "2026-11-22T14:46:26+00:00",
- "updated": "2026-11-22T14:50:41+00:00",
+ "run_started": "2026-11-22T15:39:56+00:00",
+ "updated": "2026-11-22T15:52:17+00:00",
  "targets": 800,
  "done": 0,
  "candidates_this_run": 0,
- "run_id": "45034535398",
+ "run_id": "45039459485",
  "repo": "alexvaldex/nasa-tess-planet-search",
  "feed": []
 }
