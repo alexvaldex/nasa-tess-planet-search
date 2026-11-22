@@ -368750,3 +368750,23 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 125483617,,,,,,,,,,,download_error,168.6,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
 6180790,,,,,,,,,,,download_error,169.3,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
 6181279,,,,,,,,,,,download_error,631.9,Timeout limit of 600 exceeded.
+6128390,,,,,,,,,,,download_error,600.3,Timeout limit of 600 exceeded.
+6181231,,,,,,,,,,,download_error,600.3,Timeout limit of 600 exceeded.
+6180499,,,,,,,,,,,download_error,683.8,Timeout limit of 600 exceeded.
+6128453,,,,,,,,,,,download_error,679.0,Timeout limit of 600 exceeded.
+6127748,,,,,,,,,,,download_error,679.2,Timeout limit of 600 exceeded.
+6127942,,,,,,,,,,,download_error,655.8,Timeout limit of 600 exceeded.
+6119469,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+6180483,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+339385415,,,,,,,,,,,download_error,600.3,Timeout limit of 600 exceeded.
+6127989,,,,,,,,,,,download_error,652.3,Timeout limit of 600 exceeded.
+6128610,,,,,,,,,,,download_error,98.5,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+6127754,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+6128321,,,,,,,,,,,download_error,177.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+6128562,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+6127853,,,,,,,,,,,download_error,600.4,Timeout limit of 600 exceeded.
+339385364,,,,,,,,,,,download_error,600.3,Timeout limit of 600 exceeded.
+125483527,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+6180481,,,,,,,,,,,download_error,157.6,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+6181183,,,,,,,,,,,download_error,600.3,Timeout limit of 600 exceeded.
+6127880,2026-11-22,91,QLP,2905.0,210.828166399503,-18.6788216587482,12.7814,7.07405,19.57,2.0,systematic,382.0,
