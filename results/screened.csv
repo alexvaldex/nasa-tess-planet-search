@@ -368508,3 +368508,30 @@ tic,date,sectors,authors,n_points,ra,dec,tmag,best_period,best_sde,n_signals,sta
 154548066,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
 154513060,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
 154492433,,,,,,,,,,,download_error,90.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154512398,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154485523,,,,,,,,,,,download_error,172.8,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154485692,,,,,,,,,,,download_error,173.2,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154510914,,,,,,,,,,,download_error,173.4,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154512365,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154490097,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154485765,,,,,,,,,,,download_error,178.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154512250,,,,,,,,,,,download_error,177.7,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154510812,,,,,,,,,,,download_error,177.5,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154513066,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154548088,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154549493,,,,,,,,,,,download_error,600.4,Timeout limit of 600 exceeded.
+154492488,,,,,,,,,,,download_error,600.3,Timeout limit of 600 exceeded.
+154484015,,,,,,,,,,,download_error,605.6,Timeout limit of 600 exceeded.
+154485534,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154485649,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+179438795,,,,,,,,,,,download_error,90.1,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+179438607,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+179438877,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+179439014,,,,,,,,,,,download_error,90.0,"Request failed.  If this problem persists, please notify archive[at]stsci.edu.'"
+154510935,,,,,,,,,,,download_error,642.5,Timeout limit of 600 exceeded.
+154549428,,,,,,,,,,,download_error,642.3,Timeout limit of 600 exceeded.
+154490132,,,,,,,,,,,download_error,642.9,Timeout limit of 600 exceeded.
+154485824,,,,,,,,,,,download_error,600.3,Timeout limit of 600 exceeded.
+154512252,,,,,,,,,,,download_error,600.7,Timeout limit of 600 exceeded.
+154549447,,,,,,,,,,,download_error,617.2,Timeout limit of 600 exceeded.
+974833,,,,,,,,,,,download_error,688.5,Timeout limit of 600 exceeded.
