@@ -2,11 +2,188 @@
  "state": "running",
  "note": "",
  "run_started": "2026-11-22T01:00:45+00:00",
- "updated": "2026-11-22T01:05:35+00:00",
+ "updated": "2026-11-22T01:25:14+00:00",
  "targets": 800,
- "done": 0,
+ "done": 16,
  "candidates_this_run": 0,
  "run_id": "44969285332",
  "repo": "alexvaldex/nasa-tess-planet-search",
- "feed": []
+ "feed": [
+  {
+   "tic": 154549441,
+   "status": "download_error",
+   "ra": 188.084913488421,
+   "dec": 75.5381141749736,
+   "tmag": 11.8075,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 170.9
+  },
+  {
+   "tic": 154492480,
+   "status": "download_error",
+   "ra": 186.579645805447,
+   "dec": 75.6204726931879,
+   "tmag": 12.1928,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 171.1
+  },
+  {
+   "tic": 154510852,
+   "status": "download_error",
+   "ra": 186.939159520871,
+   "dec": 75.8993556364055,
+   "tmag": 11.3901,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 171.2
+  },
+  {
+   "tic": 154492432,
+   "status": "download_error",
+   "ra": 186.683074695469,
+   "dec": 75.2491755590911,
+   "tmag": 10.9224,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 601.5
+  },
+  {
+   "tic": 154490083,
+   "status": "download_error",
+   "ra": 185.614321752148,
+   "dec": 75.3283110843343,
+   "tmag": 12.0381,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 600.9
+  },
+  {
+   "tic": 154512337,
+   "status": "download_error",
+   "ra": 187.314518588261,
+   "dec": 75.7179094368466,
+   "tmag": 12.886,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 601.4
+  },
+  {
+   "tic": 154510811,
+   "status": "download_error",
+   "ra": 187.155256934402,
+   "dec": 76.0751936406324,
+   "tmag": 12.6753,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 601.0
+  },
+  {
+   "tic": 154512293,
+   "status": "download_error",
+   "ra": 187.457396543728,
+   "dec": 75.5167285082029,
+   "tmag": 12.7134,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 601.2
+  },
+  {
+   "tic": 154490122,
+   "status": "download_error",
+   "ra": 185.984781530931,
+   "dec": 75.5675320431933,
+   "tmag": 12.614,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 167.8
+  },
+  {
+   "tic": 154474856,
+   "status": "download_error",
+   "ra": 184.55552812027,
+   "dec": 75.8161450584653,
+   "tmag": 12.2008,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 168.2
+  },
+  {
+   "tic": 154510806,
+   "status": "download_error",
+   "ra": 187.11022171759,
+   "dec": 76.0959322878549,
+   "tmag": 12.1122,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 606.9
+  },
+  {
+   "tic": 154549453,
+   "status": "download_error",
+   "ra": 187.960323511947,
+   "dec": 75.5887398618666,
+   "tmag": 10.6965,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 606.7
+  },
+  {
+   "tic": 154490115,
+   "status": "download_error",
+   "ra": 185.66649891655,
+   "dec": 75.5144674341592,
+   "tmag": 12.9347,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 606.5
+  },
+  {
+   "tic": 154548066,
+   "status": "download_error",
+   "ra": 187.781537318278,
+   "dec": 75.8331592329205,
+   "tmag": 11.3564,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 90.1
+  },
+  {
+   "tic": 154513060,
+   "status": "download_error",
+   "ra": 187.884782819854,
+   "dec": 76.0374484738472,
+   "tmag": 11.0062,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 90.0
+  },
+  {
+   "tic": 154492433,
+   "status": "download_error",
+   "ra": 186.570288800938,
+   "dec": 75.2496291488369,
+   "tmag": 11.8012,
+   "sectors": "",
+   "period": null,
+   "sde": null,
+   "seconds": 90.2
+  }
+ ]
 }

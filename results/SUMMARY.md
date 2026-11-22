@@ -1,6 +1,6 @@
 # Results summary
 
-_Last updated 2026-11-16 08:59 UTC by the hunting bot._
+_Last updated 2026-11-22 01:25 UTC by the hunting bot._
 
 - Stars analyzed: **350,813**
 - TESS sectors processed: **604,076**
