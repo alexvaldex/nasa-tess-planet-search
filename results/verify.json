@@ -1,9 +1,9 @@
 {
-  "checked_utc": "2026-11-16T04:13:48+00:00",
+  "checked_utc": "2026-11-25T10:16:42+00:00",
   "catalogs": {
     "tois": 8175,
     "ctois": 5139,
-    "confirmed_planets": 6161,
+    "confirmed_planets": 6162,
     "tess_ebs": 4578
   },
   "candidates": [
@@ -1999,13 +1999,6 @@
       "id": "TIC177266064.01",
       "tic": 177266064,
       "period": 1.034836,
-      "catalog_status": "new",
-      "note": ""
-    },
-    {
-      "id": "TIC93052454.02",
-      "tic": 93052454,
-      "period": 13.015109,
       "catalog_status": "new",
       "note": ""
     },
